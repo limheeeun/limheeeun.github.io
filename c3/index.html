@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>하이델</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="16">
+    <!--   신형 브라우저와 안드로이드폰-->
+    <link rel="shourtcut icon" type="image/x-con" href="32">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="57">
+    <!--   아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="72">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="114">
+    <!-- IE10 이상-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="144">
+    
+    
+        <!-- 맵(웹 사이트)의 이름-->
+    <meta name="application-name" content="hidel Site">
+    <!--  맵(웹 사이트) 저작자 이름-->
+    <meta name="author" content="LimHE"> 
+    <!-- 현재 문서 설명-->
+    <meta name="description" content="hidel Site">
+    <!--  현재 문서의 제작 도구-->
+    <meta name="generator" content="Barckit">
+    <!--   검색엔진에서 검색되게 할 키워드-->
+    <meta name="keywords" content="하이델, 빵, bread, 포항빵집">
+    
+    <!--    자동 새로고침 설정-->
+    <meta http-equiv="refresh" content="180">
+    
+    <!--   반응형, 모바일, 태블릿 사이트일 경우-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, ueser-scalable=no">   
+    
+    <!--  사용 폰트 설정-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/grid.css">
+    
+<!--    <script src="media.js"></script>-->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    
+<!--    이미지 슬라이드-->
+    <script>
+        $(document).ready(function(){
+        var wd = $(window).width();
+        var cnt = $(".imgBox li").length - 1;
+        var intv = setInterval(function(){ nextAni(); }, 5000);
+        
+        function nextAni(){
+               $(".imgBox").not(":animated").animate({"margin-left":-wd+"px"}, 800, function(){
+                   $(".imgBox li").eq(0).appendTo($(".imgBox"));
+                   $(".imgBox").css("margin-left", "0px");
+                   $(".numBtnFrame li").eq(0).appendTo($(".numBtnFrame"));
+                   $(".numBtnFrame li button").removeClass("on");
+                   $(".numBtnFrame li").eq(0).find("button").addClass("on");
+               }); 
+        }
+        function prevAni(){
+               $(".imgBox li").eq(cnt).prependTo($(".imgBox"));
+               $(".imgBox").css("margin-left", -wd+"px");
+               $(".imgBox").not(":animated").animate({"margin-left":"0px"}, 800, function(){
+                   $(".numBtnFrame li").eq(cnt).prependTo($(".numBtnFrame"));
+                   $(".numBtnFrame li button").removeClass("on");
+                   $(".numBtnFrame li").eq(0).find("button").addClass("on");
+               }); 
+        }
+        $(".lrBtn.left").click(function(){
+            clearInterval(intv);
+            prevAni();
+            intv = setInterval(function(){ nextAni(); }, 5000);
+        });
+        $(".lrBtn.right").click(function(){
+            clearInterval(intv);
+            nextAni();
+            intv = setInterval(function(){ nextAni(); }, 5000);
+        });
+    });
+    </script>
+<!--    메뉴 스크롤-->
+      <script>
+        $(document).ready(function(){
+           $(window).scroll(function(){
+               var scTop = $(window).scrollTop();
+               if(scTop>=120){
+                   $(".hdWrap1").not(":animated").slideUp(300);
+                   $(".header").css("position", "fixed").css("height", "80px");
+               } else {
+                   $(".hdWrap1").not(":animated").slideDown(500);
+                   $(".header").css("position", "absolute").css("height", "220px");;
+               }
+           });
+        });    
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#gnb label").click(function(){
+                var th = $(this).attr("for");
+                var thId = "#"+th;
+                var scObj = $(thId).offset();
+                var scDist = scObj.top;
+                $("body, html").not(":animated").animate({"scrollTop":scDist}, 600);
+                $("#gnb label").removeClass("on");
+                $(this).addClass("on");
+            });
+        });
+    </script>
+    <script>
+    $(document).ready(function(){
+       var obj1, obj2, obj3, obj4, obj5, obj6;
+       obj1 = $("#main").offset();
+       obj2 = $("#sub1").offset();    
+       obj3 = $("#sub2").offset();    
+       obj4 = $("#sub3").offset();    
+       obj5 = $("#sub4").offset();    
+       obj6 = $("#sub5").offset();    
+
+       $(window).scroll(function(){
+          var sct = $(window).scrollTop(); 
+          $("#gnb label").removeClass("on");
+          if(sct >= obj6.top-200) {
+             $("#gnb li").eq(5).find("label").addClass("on"); 
+          } else if(sct >= obj5.top-80) {
+             $("#gnb li").eq(4).find("label").addClass("on"); 
+          } else if(sct >= obj4.top-80) {
+             $("#gnb li").eq(3).find("label").addClass("on"); 
+          } else if(sct >= obj3.top-80) {
+             $("#gnb li").eq(2).find("label").addClass("on"); 
+          } else if(sct >= obj2.top-80) {
+             $("#gnb li").eq(1).find("label").addClass("on"); 
+          } else {
+             $("#gnb li").eq(0).find("label").addClass("on");  
+          }
+       }); 
+    });    
+    </script>
+    <style>
+    @charset "utf-8";
+
+    * {margin: 0;padding: 0; list-style: none; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
+    a {color:inherit; text-decoration: none;}
+    button {cursor: pointer;}
+    body,html {width: 100%; height: 100%;}
+    
+    
+    .header {width: 100%; height: 280px; z-index: 100; position: absolute; top: 0; left: 0; background-color: #4a2022;}
+    .hdWrap1 {width: 100%; height: 220px; border-bottom: 1px solid #f2cb85; padding-top: 32px;}
+    .logo { width: 1200px; height: 150px; margin: 0 auto; text-indent: -9999px; background-image: url("./img/logo.jpg"); background-repeat: no-repeat; background-position: center center; }
+    .hdWrap2 {width: 100%; height: 80px;}    
+
+    #gnb  {width: 1200px; height: 80px; margin: auto; }
+    #gnb li {float: left; line-height: 80px; text-align: center;}
+    #gnb li label {display: block; color: #ffffff; line-height: 60px; text-align: center; font-size: 16px; padding-left: 45px; padding-right: 45px; font-weight: 300; cursor:pointer;}
+    #gnb li label.on {background-image: url(""); background-repeat: no-repeat; background-position: center top;}
+
+    .pg {clear: both; width: 100%; min-height: 500px; position: relative;}
+    .vs {clear:both; padding-top:200px; position:relative; width:100%; overflow:hidden; }
+    .imgBox {width: 400%; height: 950px;}
+    .imgBox li { width: 25%; float:left; height:950px; background-repeat: no-repeat; background-position:center bottom; background-size:100% 100%; position: relative;}
+    .imgBox li.item1{background-image: url("./img/vsimg01.jpg");}
+    .imgBox li.item2{background-image: url("./img/vsimg02.jpg");}
+    .imgBox li.item3{background-image: url("./img/vsimg03.jpg");}
+    .imgBox li.item4{background-image: url("./img/vsimg01.jpg");}
+
+    .lrBtnBox {position: absolute; z-index: 60; top: 580px; width: 100%;}
+    .lrBtn {display: block; width: 52px; height: 52px; background-size:52px 52px; background-repeat: no-repeat; background-position:center center; background-color:transparent; position:absolute; cursor:pointer;}
+    .lrBtn.left { background-image:url("./img/arrow_left.png"); left:200px; }
+    .lrBtn.right { background-image:url("./img/arrow_right.png"); 
+        right:200px; }
+
+    .numBtnBox { position:absolute; bottom:105px; z-index:61; left: 0; 
+        width:100%; height:40px; }    
+    .numBtnFrame { width:200px; position:relative; margin:0 auto; height:40px; }
+    .numBtnFrame li { position:absolute; top:0; width:40px; height: 38px; border-radius:20px;  }
+    .numBtnFrame li.item1 { left:0; }    
+    .numBtnFrame li.item2 { left:50px; }    
+    .numBtnFrame li.item3 { left:100px; }    
+    .numBtnFrame li.item4 { left:150px; }
+    .numBtn { display:block; width: 40px; height: 38px; 
+        background-color:transparent; background-image:url(""); background-repeat: no-repeat; 
+    background-position: center center; cursor:pointer; }
+    .numBtn.on { background-image:url("g"); }
+    
+    #sub1 {width: 100%; height: 1271px; background: url("./img/page1.jpg") center top no-repeat; margin: 0 auto; border: 0; outline: 0; background-size: auto;}
+    .wrap11 {text-align: center; padding-top: 230px; line-height: 1.3; clear: both; margin: 0px auto;}
+    .pTitle {font-size: 60px;}
+    .pComent {font-size: 40px;}
+    .grid {clear: both; width: 1200px; margin: 0 auto; padding-top: 50px;}
+    .grid .col4 {float: left; width: 380px;height: 480px; margin-right: 30px;}
+    .grid .col4.last {margin-right: 0;}
+    .boxFrame {text-align: center; box-sizing: border-box; border: 1px solid #d7d7d7; margin-right: 15px; min-height: 480px;}
+    .bFtxt {font-weight: 300; line-height: 1.3; padding-top: 30px;}
+    .boxImg { display:block; width:100%; height: auto; }
+
+    .wrap12 {clear:both; padding-top:90px; width:1200px; margin:0px auto; text-align:center; color:#444; }
+
+    #sub2 {width: 100%; height: 850px;background: url("img/flour_img.jpg") center top no-repeat; order:0; outline:0; margin-top:-1px;}
+    .wrap21 { color:#fff; text-align:center;}
+    .p2Title {font-size: 55px; color: #ffffff; padding-top: 250px;padding-bottom: 20px; text-align: center; border-bottom: 1px solid #ffffff;}
+    .p2Coment {font-size: 20px; color: #ffffff; padding-top: 20px; line-height: 1.3;}
+    #sub2_2 {width: 100%; height:600px; background-image:url("./img/page2_img03.jpg"); background-repeat: no-repeat; 
+        background-position:center center; border:0; outline:0; margin-top:-1px; background-size:auto;} 
+    #sub3  { width: 100%; height:850px; background: url("img/salt_img.jpg") center top no-repeat; border:0; outline:0; margin-top:-1px; background-size:125%; }
+    .wrap31 { color:#fff; text-align:center;}
+
+    #sub4 { width: 100%; height:850px;  background: url("./img/vsimg04.jpg") center top no-repeat; border:0; outline:0; margin-top:-1px; background-size:125%; }
+    .wrap41 { height: 100%; margin: 0 auto; text-align: center;}
+
+    /*이벤트 팝업창*/
+    .popBox {width:100%; height: 100%; min-height:1100px;background:rgba(0,0,0,0.6); position:fixed; top:80px; left:0; z-index:80; display:none; }    
+    .popFrame {width:1200px; height:800px; background-color:#fff; margin:0 auto; background-image:url("");background-size:cover; margin-top:10px; position:relative; border:1px solid #ccc; }   
+    .popTit {color: #f2cb85; text-shadow:0px 0px 6px #333, 0px 0px 5px #222, 0px 0px 4px #111, 0px 0px 3px #000;text-indent:20px; line-height:80px; font-size:24px;  } 
+    .popCloseBtn { display:block; width: 80px; height: 80px; position:absolute; right:0; top:0; background-image:url("./img/btn_close.png"); background-repeat: no-repeat; background-position: center center; cursor:pointer; }
+    .popContTit {color:#474747;font-weight: 400;font-size: 36px;  line-height:100px;  text-align: center; }  
+    .popImgBox {width: 752px; margin:110px auto; position:relative; }  
+    .ckItem {display:none; } 
+    #popCk1:checked ~ .popBox { display:block; }   
+    .popOpenBtn {color:#fff;font-weight:300;font-size:24px;border-radius:30px;background:#694927;padding:7px 40px;display:inline-block; margin-top:40px; cursor: pointer; }  
+
+    #sub4_2  { width: 100%; height:1000px; background-image: url("/img/vsimg06.jpg"); background-repeat: no-repeat; background-position:center top; border:0; outline:0; margin-top:-1px; background-size:125%; color: #fff; text-align: center;} 
+    .titBox4 { width: 1200px; margin:0 auto; color:#fff; text-align:center; }
+    .p3Title { font-size:62px; padding-top:80px; padding-bottom:50px; font-weight:400; } 
+    .p3Coment { font-weight:200; font-size:25px; padding-bottom:50px; }    
+    .iconLst { width:1200px; margin:0 auto; color:#fff; padding-top:50px; }
+    .iconLst li { float:left; text-align:center; }
+    .col3 { width:264px; margin-right:48px; }    
+    .col3.last { margin-right:0; } 
+    .iconTit { height:100px; font-size:24px; padding:15px; }  
+    .iconTxt { font-weight:300; font-size:20px; padding:15px; border-top:2px solid #f2cb85; padding-top:40px; }  
+
+     #sub4_3 {width: 100%; height:3280px; background-color:#fff;}
+    .wrap61 {width: 1200px; margin:0 auto; text-align:center;color:#474747;}
+    .p4Title {font-weight:700; font-size:50px;
+    line-height:1.2; padding-top:50px; padding-bottom: 25px; }    
+    .p4Coment {font-weight:200; font-size:25px; line-height:1.2; border-bottom:2px solid #d9d9d9; padding-bottom:30px; padding-top:5px; }
+    .LstFrame { width: 1200px; margin:0 auto;}     
+    .imgLst { background:#f2f2f2; } 
+    .imgLst li { padding:80px 80px 30px 80px; }
+    .imgLst .itemBox {min-height:300px; padding-left:400px; background-repeat:no-repeat; background-position:left center; } 
+    .itemBox { color:#482c29; background:#f2f2f2;}  
+    .itemBox.item1 { background-image:url("./img/bread1.jpg"); }    
+    .itemBox.item2 { background-image:url("./img/cake1.jpg"); }    
+    .itemBox.item3 { background-image:url("./img/sandwich1.jpg"); }    
+    .itemTit {font-size:36px; font-weight:400; line-height:1.3; }
+    .itemTit .txt {font-size:46px; font-weight:700; padding-bottom:20px; display:block;}  
+    .itemCon { font-size:18px; font-weight:400; line-height:1.3; padding-top:20px; border-top:2px solid #ccc;  }
+    .itemComent { font-size:14px; font-weight:700; }
+    .itemBox a { color:#482c29; } 
+    .itemMore { display:block;width:150px;height:50px;line-height:50px;font-size:18px;  color:#482c29;text-align:center;border:2px solid #482c29;box-sizing:border-box; font-weight:600; margin-top: 20px; }  
+    .itemMore:hover { border:2px solid #f2cb85; color:#f2cb85; }   
+    .imgLst.con1:before { content:""; display:block; width: 385px;height: 369px; position:absolute; left:60px; top:30%; z-index:20; }   
+    .imgLst.con2:after { content:""; display:block; width: 359px; height: 380px; position:absolute; right:60px; bottom:10%; z-index:20;  }
+
+    .videoWrap { width: 1200px; padding-top:100px; margin:0 auto; padding: 50px;}
+
+    /*풋터*/
+    .footer { width: 100%; clear:both; height: 110px;  background:#4a2022; color:#777; }   
+    .ftWrap { width: 1200px; margin:0 auto; background-image:url(""); background-repeat:no-repeat; background-position:0px 40px; }    
+    .copyright { text-align:right; font-size:12px; line-height:1.3; padding-top:30px; font-weight:300; }
+
+    </style>
+</head>
+<body>
+    <header class="header" style="position: absolute;">
+        <div class="hdWrap1" style="display: block;">
+            <h1 class="logo">로고</h1>
+        </div>
+        <div class="hdWrap2">
+            <nav id="gnb">
+                <ul class="mnb clearfix">
+                    <li><label for="main" class="on">HOME</label></li>
+                    <li><label for="sub1">건강한 베이커리</label></li>
+                    <li><label for="sub2">황금빛 밀가루</label></li>
+                    <li><label for="sub3">신안 천일염</label></li>
+                    <li><label for="sub4">순수 유기농 우유</label></li>
+                    <li><label for="sub5">TV CF</label></li>
+                    <li><label for="popck2">하이델 이벤트</label></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="main" class="pg">
+        <figure class="vs">
+            <ul class="imgBox">
+                <li class="item1"></li>
+                <li class="item2"></li>
+                <li class="item3"></li>
+                <li class="item4"></li>
+            </ul>
+            <ul class="lrBtnBox">
+                <li class="leftFr"><button class="lrBtn left"></button></li>
+                <li class="rightFr"><button class="lrBtn right"></button></li>
+            </ul>
+            <div class="numBtnBox">
+                <ul class="numBtnFrame">
+                    <li class="item1">
+                        <button class="numBtn on"></button></li>
+                    <li class="item2">
+                        <button class="numBtn"></button></li>
+                    <li class="item3">
+                        <button class="numBtn"></button></li>
+                    <li class="item4">
+                        <button class="numBtn"></button></li>
+                </ul>
+            </div>
+        </figure>
+    </div>
+    <div id="sub1" class="pg">
+       <div class="wrap11">
+          <h2 class="pTitle">건강한 데일리 베이커리, 하이델</h2>
+           <p class="pComent">아침을 시작하는 빵, 하이델은 맛과 건강을 함께 생각합니다.</p>
+       </div>
+        <ul class="grid">
+            <li class="col4">
+                <div class="boxFrame">
+                    <img src="img/flour_vsimg.jpg" alt="황금빛 밀가루" class="boxImg">
+                    <p class="bFtxt">황금빛 속이 꽉 찬 밀, 끊임없는 정성으로 만든 밀가루. 빵의 개성있는 식감을 잘 살려주는 맞춤 밀가루를 사용합니다.</p>
+                </div>
+            </li>
+            <li class="col4">
+                <div class="boxFrame">
+                    <img src="img/salt_vsimg.jpg" alt="신안 천일염" class="boxImg">
+                    <p class="bFtxt">풍부한 미네랄 함량을 자랑하는 천일염. 소량의 소금까지도 허투루 쓰지 않습니다.</p>
+                </div>
+            </li>
+            <li class="col4 last">
+                <div class="boxFrame">
+                    <img src="img/milk_vsimg.jpg" alt="1등급 우유" class="boxImg">
+                    <p class="bFtxt">풍부한 미네랄 함량을 자랑하는 천일염. 소량의 소금까지도 허투루 쓰지 않습니다.</p>
+                </div>
+            </li>
+        </ul>
+        <div class="wrap12">
+        <h2 class="pTitle2">하이델만의 기술력
+            <span class="txt">머라머라 &amp; 머시기머시기</span>
+        </h2>
+        <p class="pComent2">그풍부한 미네랄 함량을 자랑하는 천일염. 소량<br>
+        <span class="txt">랑하는 천일염</span>풍부한 미네랄 함량을 자랑하는 천</p>
+    </div>
+           
+    </div>
+    <div id="sub2" class="pg">
+        <div class="wrap21">
+            <h2 class="p2Title">황금빛 밀가루</h2>
+            <p class="p2Coment">하이델은 빵마다의 개성 있는 식감을 살려주는 맞춤 밀가루를 사용합니다. <br>패스트리에는 바삭함을 더욱 살려주는 패스트리 전용 밀가루를, 식빵에는 촉촉하고 쫄깃한 식감을 살려주는 식빵 전용 밀가루를, <br>쿠키에는 더욱 바삭한 식감을 살려주는 쿠키용 밀가루를 사용합니다
+            </p>
+        </div>
+    </div>
+    <div id="sub2_2" class="pg"></div>
+    <div id="sub3" class="pg">
+       <div class="wrap31">
+            <h2 class="p2Title">신안 천일염</h2>
+            <p class="p2Coment">소금도 대한민국 명품 갯벌 전남 신안 신의도 염전에서 선인들의 방법 그대로 오직 바람과 햇볕의 힘으로만 얻은 귀한 천일염, ‘오천년의 신비’를 사용 합니다.<br>간수 제거, 세척, 자연탈수, 자연 건조는 물론 3단계의 이물 제거 과정을 통해 완성된 ‘오천년의 신비는’ 
+            세계적으로 유명한 프랑스 게랑드 천일염보다 칼륨, 칼슘, 마그네슘 등의<br>천연 미네랄 성분이 3배가 높습니다.
+            5000년 동안의 오랜 시간이 쌓여 만들어진 갯벌, 그 갯벌 위 뜨거운 태양아래 충분히 필요한 시간만큼 두어 귀하게 얻고<br>
+            6단계의 까다로운 공정을 거친 천일염 이여야만 ‘오천년의 신비’가 될 수 있습니다.
+            </p>
+        </div>
+    </div>
+    <div id="sub4" class="pg">
+       <div class="wrap41">
+            <h2 class="p2Title">순수 유기농 우유</h2>
+            <p class="p2Coment">빵에서 밀가루, 물 다음으로 많이 들어가는 재료, 우유 그것을 깨끗하고 <br>영양 가득 한 가장 우유다운 우유로 바꾸기 위해 청정 전북 완주의 단일목장에서 집유한 유기농 우유를 순우유 시리즈의 재료로 선택하였습니다.
+            </p>
+        </div>
+    </div>
+    <input type="checkbox" id="popCk1" class="ckItem">
+    <div id="popBox1" class="popBox">
+        <div class="popFrame">
+            <h3 class="popTit">대광목장 유기농 우유</h3>
+            <label for="popCk1" class="popCloseBtn"></label>
+            <h2 class="popContTit">유기농 우유, 하이델 건강의 맛 밑받침이 되다</h2>
+            <div class="popImgBox">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="sub4_2" class="pg">
+        <div class="wrap51">
+            <h2 class="p3Title">하이델만의 특별한 재료</h2>
+            <p class="p3Coment">맛 뿐만 아니라 건강까지 책임지는 하이델을 만나보세요.</p>
+        </div>
+        <ul class="iconLst">
+            <li class="col4">
+                <div class="iconBoxFrame">
+                    <img src="./img/icon_flour.png" alt="밀가루">
+                    <h3 class="iconTit">Gold Flour</h3>
+                    <p class="iconTxt">빵마다 개성있는 식감을 살려주는<br>
+                    베이커리 전용 밀가루</p>
+                </div>
+            </li>
+            <li class="col4">
+                <div class="iconBoxFrame">
+                    <img src="./img/icon_salt.png" alt="천연소금">
+                    <h3 class="iconTit">Nature Salt</h3>
+                    <p class="iconTxt">대한민국 명품 갯벌,<br> 전남 신안 신의도 염전에서<br>
+                    선인들의 방법 그대로 오직 바람과<br> 햇볕의 힘으로만 얻은 귀한 천일염</p>
+                </div>
+            </li>
+            <li class="col4 last">
+                <div class="iconBoxFrame">
+                    <img src="./img/icon_milk.png" alt="유기농우유">
+                    <h3 class="iconTit">Organic Milk</h3>
+                    <p class="iconTxt">영양 가득한 가장 우유다운 우유로<br> 
+                    바꾸기 위해 청정 전북 완주의 <br>단일목장에서 집유한 유기농 우유</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="sub4_3" class="pg">
+        <div class="wrap61">
+            <h2 class="p4Title">건강한 아침의 맛</h2>
+            <p class="p4Coment">황금빛 밀가루, 신안 천일염, 순수 유기농 우유를 통해<br>하이델의 건강한 아침의 맛을 경험해보세요.</p>
+        </div>
+        <div class="LstFrame">
+            <ul class="imgLst con1">
+                <li class="itemSpl">
+                    <div class="itemBox item1">
+                        <h2 class="itemTit">bread<span class="txt">옛날카레고로케</span></h2>
+                        <p class="itemCon">하이델만의 정통 레시피로 만든 추억의 옛날 카레고로케</p>
+                        <a href="#" class="itemMore">제품 구매하기</a>
+                    </div>
+                </li>
+                <li class="itemSpl">
+                    <div class="itemBox item2">
+                        <h2 class="itemTit">cake<span class="txt">스윗소원상자</span></h2>
+                        <p class="itemCon">크림치즈 요거트 생크림이 샌드된 케이크에
+상큼한 베리류를 통째로 넣고 화려하게 장식한 생크림 케이크</p>
+                        <a href="#" class="itemMore">제품 구매하기</a>
+                    </div>
+                </li>
+                <li class="itemSpl">
+                    <div class="itemBox item3">
+                        <h2 class="itemTit">sandwich<span class="txt">그릴드떡갈비샌드위치</span></h2>
+                        <p class="itemCon">그릴에 구운 떡갈비에 매콤한 할라피뇨와 구운양파를 곁들인 샌드위치</p>
+                        <a href="#" class="itemMore">제품 구매하기</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="sub5" class="pg">
+        <div class="videoWrap">
+            <iframe width="1200" height="675" src="/vdo/milk.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="ftWrap">
+            <p class="copyright">경북 포항시 남구 상공로 251 TEL:054-273-3353 <br>하이델 베이커리<span class="cp">COPYRIGHT © HIDEL BAKERY ALL RIGHTS RESERVED</span>
+            </p>
+        </div>
+    </footer>
+    <input type="checkbox" id="popCk2" class="ckItem">
+    <div id="popBox2" class="popBox">
+        <div class="popFrame">
+            <h3 class="popTit">이벤트</h3>
+            <label for="popCk2" class="popCloseBtn"></label>
+            <div class="popImgBox">
+                <img src="" alt="">
+            </div>
+            <div class="popBtnFrame">
+                <label for="popCk3" class="popBtn item1"></label>
+                <label for="popCk4" class="popBtn item2"></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
