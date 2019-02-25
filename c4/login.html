@@ -1,0 +1,228 @@
+<?php
+    @session_start();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>우리금산</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_16x16.ico">
+    <!--   신형 브라우저와 안드로이드폰-->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_32x32.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="img/favicon/ci_57x57.ico">
+    <!--   아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="/img/favicon/ci_72x72.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="/img/favicon/ci_114x114.ico">
+    <!-- IE10 이상-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="144">
+    
+    
+        <!-- 맵(웹 사이트)의 이름-->
+    <meta name="application-name" content="geumsan county office Site">
+    <!--  맵(웹 사이트) 저작자 이름-->
+    <meta name="author" content="LimHE"> 
+    <!-- 현재 문서 설명-->
+    <meta name="description" content="geumsan county office Site">
+    <!--  현재 문서의 제작 도구-->
+    <meta name="generator" content="Barckit">
+    <!--   검색엔진에서 검색되게 할 키워드-->
+    <meta name="keywords" content="금산, 금산군청, geumsan, ">
+    <!--    자동 새로고침 설정-->
+    <meta http-equiv="refresh" content="180">
+    <!--   반응형, 모바일, 태블릿 사이트일 경우-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, ueser-scalable=no">   
+    <!--  사용 폰트 설정-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <!--    CSS 불러오기-->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./grid.css">
+    
+    <script src="./jquery-1.11.1.js"></script>
+    <script src="./main.js"></script>
+    <script src="./main2.js"></script>
+    
+    <!-- sub GNB -->
+    <style>
+    .hd {width: 100%; height: 60px; position:relative; top: 0; z-index: 100;}
+    .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
+    .logo {display: block; width:130px; height: 38px; background-image: url("img/ci_05.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 6px; left: 0;}
+    
+    #gnb {width: 900px; margin: 0 auto; padding-top: 15px;}
+    #gnb li {float: left; padding-left: 15px; text-align: center;}
+    #gnb li a {color: #000; font-weight: 500; font-size: 17px;}
+        
+    #topNav {position: absolute; right: 0px; top: 15px;}
+    #topNav li {float: left; padding-left: 15px; text-align: center; font-weight: 600;}
+    #topNav li a {color: #000; font-weight: 500; font-size: 17px;}
+    </style>
+    
+    <!-- sub GNB2 -->
+    <style>
+    .hd2 {width: 100%; height: 130px; background: #5ea67f;}
+    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative;top: 30%;}
+    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_white.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0;}
+    #gnb2 {width:500px; height: 45px; background-color: #fff; margin-left: 400px;} 
+    #searchForm {clear: both; }
+    #keyword {border:0; outline: 0; background: #fff; display: block; width: 400px; height: 45px; float: left; padding-left: 10px;}
+    .frmBtn.searchBtn {width: 60px; height: 60px; background:url("./img/searchBtn.png"); background-position: center 8px; background-repeat: no-repeat; background-size: 50% 50%; float: right; }
+    </style>
+    
+    <!-- login -->
+    <style>
+    .login {width: 1200px; height: 550px; margin: 0 auto;}
+    .frmBox {clear:both;width:100%; margin-top: 40px;margin: 40px 0 auto;}
+    .frmBox h1.frmTitle {text-align:center;line-height:2;}
+    .frmBox p.frmCom {text-align: center;line-height: 1.8;margin: 20px 0;color: #666;}
+    .frmFrame {list-style:none;width:80%;margin:0 auto;padding-bottom:30px;}
+
+    .loginFrm {width:400px;}   
+    .frmFrame li {clear:both;padding:20px 0px;}
+        
+    .findFrm {margin:0 auto; list-style:none;width:300px; margin:0 auto; padding-bottom:30px;}
+    .findFrm li {float: left;text-indent: 20px;padding:20px 0px;}
+    .findFrm li:before {}
+    .findFrm li a {font-size: 15px; color: #666;}
+        
+    .frmHalf {float:left;width:100%;}
+        
+    .inData {display:block;line-height:36px;height:36px;width:80%;margin:0 auto;text-indent:15px;outline:0;border:1px solid #333;background:transparent;}
+    .inData.btn {text-indent:0px;text-align:center;color:#fff;background:#5ea67f;outline:0;font-size:16px;border:0;cursor: pointer;}
+    </style>
+    
+    <!--footer-->
+    <style>
+    #footer { width: 1200px; height: 170px; margin: 0 auto;border-top: 1px solid #d0d0d0;  }
+    #footer .footer_top { width: 100%; height: auto; padding: 0; }
+    #footer .ftLst ul li {position: relative; float: left; padding: 0 10px;}
+    #footer .ftLst ul li:first-child { padding-left: 0;}
+    #footer .ftLst ul li:before { content: ''; position: absolute; top: 50%; left: 0; display: block; width: 1px; height: 14px; margin-top: -6px; background: #dcdcdc;}
+    #footer .ftLst ul li:first-child:before { display: none;}
+    #footer .ftLst ul li a { font-size: 14px; color:#636363;}
+    #footer .ftLst ul {line-height: 50px;}
+    #footer .ftLst ul:after { display: block; content: ''; clear: both;}
+
+    #footer .footer_buttom { padding: 11px 0; border-top: 1px solid #ccc; text-align:left;}
+    #footer .footer_buttom {padding-top: 30px;}
+    #footer .footer_buttom .address { display: inline-block; vertical-align: top; float: left; }
+    #footer .footer_buttom .address p { padding-bottom: 0; margin-bottom: 0; padding-left: 30px;}
+    #footer .footer_buttom .address p:after{ display: block; content: ''; clear: both;}
+    #footer .ftlogo img {float: left;display: block; width: 300px; height: 33px;}
+    #footer .footer_buttom .address p.city {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.call {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.copy {font-size: 13px; margin:0; text-align:left;}
+    #footer .footer_buttom .address .map {font-size: 11px;}
+
+    #footer .footer_buttom .mark { float: left; padding-left: 350px;}
+    </style>
+</head>
+<body>
+<header>
+    <div id="header_top" class="hd">
+       <div class="hdWrap">
+           <a href="index.html" class="logo"></a>
+       <nav id="gnb">
+       <ul>
+           <li class="gnbItem1"><a href="login.html">로그인</a></li>
+           <li class="gnbItem1"><a href="login.html">나의금산</a></li>
+           <li class="gnbItem1"><a href="login.html">전자우편</a></li>
+           <li class="gnbItem1"><a href="geumsan.html">우리금산</a></li>
+           <li class="gnbItem1"><a href="citizen.html">소통참여</a></li>
+           <li class="gnbItem1"><a href="geumsan.html">부서안내</a></li>
+           <li class="gnbItem1"><a href="geumsan.html">청사안내도</a></li>
+       </ul>
+       </nav>
+       <nav id="topNav">
+           <ul>
+               <li><a href="media.html">미디어</a></li>
+               <li><a href="">전자민원</a></li>
+               <li><a href="">정보공개</a></li>
+               <li><a href="">분야별정보</a></li>
+           </ul>
+       </nav>   
+       </div>      
+    </div>
+    <div id="header_bottom" class="hd2">
+        <div class="hdWrap2">
+            <a href="index.html" class="logo2"></a>
+        <nav id="gnb2">
+            <form action="" id="searchForm">
+                <input type="text" id="keyword" placeholder="검색어를 입력해 주세요." autofocus name="keyword">
+                <input type="submit" class="frmBtn searchBtn" value="">
+            </form>
+        </nav>
+        </div>
+    </div>
+</header>
+<main class="login">
+<div class="frmBox" style="min-height: 480px;">
+    <h1 class="frmTitle">로그인</h1>
+    <p class="frmCom">금산군청 홈페이지를 방문해주셔서 감사합니다.
+    <br>로그인하시면 보다 편리하게 서비스 이용이 가능합니다.</p>
+    <form action="login_ok.php" method="post" name="loginFrm" class="frm">
+        <ul class="frmFrame loginFrm">
+            <li>
+                <div class="frmHalf">
+                    <input type="text" name="userid" id="memId" class="inData" placeholder="아이디 입력" required autofocus>
+                </div>
+            </li>
+            <li>
+                <div class="frmHalf">
+                    <input type="password" name="userpw" id="memPw" class="inData" placeholder="비밀번호 입력" required>
+                </div>
+            </li>
+            <li>
+                <div class="frmHalf">
+                    <input type="submit" value="로그인" class="inData btn">
+                </div>
+            </li>
+        </ul>  
+        <ul class="findFrm">
+            <li><a href="">아이디 찾기</a></li>
+            <li><a href="">비밀번호 찾기</a></li>
+            <li><a href="">회원가입</a></li>
+        </ul>
+    </form>     
+</div>
+</main>
+
+<footer id="footer">
+   <div class="footer_top">
+       <div class="ftLst">
+       <ul>
+           <li><a href="">개인정보처리방침</a></li>
+           <li><a href="">저작권정책</a></li>
+           <li><a href="">이메일집단수집거부</a></li>
+           <li><a href="">뷰어다운로드</a></li>
+       </ul>
+       <div class="snsLst">
+           <ul>
+               <li><a href=""></a></li>
+               <li><a href=""></a></li>
+               <li><a href=""></a></li>
+           </ul>
+       </div>
+       </div>
+   </div>
+   <div class="footer_buttom">
+       <a href="" class="ftlogo">
+           <img src="./img/ci_black.gif" alt=""></a>
+       <div class="address">
+            <p class="city">[32733] 충청남도 금산군 금산읍 군청길 13
+                <a href=""  onclick="" class="map">[찾아오시는 길]</a></p>
+            <p class="call">전화번호 : 041-750-2114 </p>
+            <p class="copy">&copy; COPYRIGHT(C) 2015 BY GEUMSAN COUNTY ALL RIGHTS RESERVED</p>
+       </div>
+       <div class="mark">
+            <a href="" onclick="" title="웹접근성 품질마크">
+            <img src="./img/accessibility.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a>
+       </div>
+   </div> 
+</footer> 
+</body>
+</html>

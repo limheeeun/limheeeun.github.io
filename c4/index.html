@@ -34,11 +34,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, ueser-scalable=no">   
     <!--  사용 폰트 설정-->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
-    <!--    CSS 불러오기-->
+    
+    
+    <!-- CSS 불러오기-->
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./grid.css">
     
+    <!-- js 불러오기 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="./jquery-1.11.1.js"></script>
+    <script src="./weather/jquery.xdomainajax.js"></script>
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <script>
+        var city = "Geumsan,KR";  //도시명 변경
+        function parseWeather() {
+            loadJSON(function (response) {
+                var jsonData = JSON.parse(response);
+                document.getElementById("todaysWeather").innerHTML = jsonData["list"][0]["weather"][0]["main"];
+            });
+        }
+        function loadJSON(callback) { //url의 json 데이터 불러오는 함수
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&cnt=7&appid=2a1ad423e9fad1a3ceda81fda56b1366";
+            var request = new XMLHttpRequest();
+            request.overrideMimeType("application/json");
+            request.open('GET', url, true);
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == "200") {
+                    callback(request.responseText);
+                }
+            };
+            request.send(null);
+        }
+        window.onload = function () {
+            parseWeather();
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+        setTimeout(function (){
+            var wed = $("#todaysWeather").text();
+            console.log(wed.trim().toLocaleLowerCase());
+            
+            if (wed.toLocaleLowerCase() == 'clear') {
+                $("#weatherTxt").text("날씨 : 맑음");
+                $("#weatherPic img").attr("src" ,"./img/weathericon/icon_01.gif");
+            } else if(wed.toLocaleLowerCase() == 'rain') {
+                $("#weatherTxt").text("날씨 : 비");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_19.gif");
+            } else if(wed.toLocaleLowerCase() == 'few clouds') {
+                $("#weatherTxt").text("날씨 : 구름 조금");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_03.gif");
+            } else if(wed.toLocaleLowerCase() == 'snow') {
+                $("#weatherTxt").text("날씨 : 눈");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_23.gif");
+            } else if(wed.toLocaleLowerCase() == 'broken clouds') {
+                $("#weatherTxt").text("날씨 : 구름 많음");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_04.gif");
+            } else {
+                $("#weatherTxt").text("날씨 : 흐림");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_16.gif");
+            }
+        }, 400);
+    });
+/* 날씨 변수
+few clouds
+broken clouds
+overcast clouds
+scattered clouds
+rain
+snow
+clear
+sky is clear
+heavy intensity rain
+light rain
+moderate rain
+thunderstorm
+mist ....
+*/
+    </script>
+    <!-- 복사하여 붙여 넣기 끝 -->
+    
     <script src="./main.js"></script>
     <script src="./main2.js"></script>
 
@@ -49,6 +128,7 @@
     .tbImg {position: absolute;}
     .tbClose {position: absolute; z-index: 99; padding-top: 80px; right: 350px; bottom: 10px; }
     .tbClose .input {display: block; width: 180px; height: 25px; background-color:rgba(0,0,0,0.5); color: #fff; border-radius: 50px; text-align: center; }
+        
     .hd {width: 100%; height: 100px; position:relative; top: 0; z-index: 100;}
     .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
     .logo {display: block; width: 100px; height: 85px; background-image: url("img/ci_02.jpg"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 0px; left: 0;}
@@ -64,13 +144,15 @@
     
     <!-- GNB2 -->
     <style>
-    .hd2 {width: 100%; height: 100px; padding-top: 20px;}
-    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative;}    
-    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_01.gif"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0;}
-    #gnb2 {width:500px; height: 45px; border: 4px solid #5ea67f ; margin-left: 350px;} 
+    .hd2 {width: 100%; height: 120px;}
+    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative; }    
+    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_01.gif"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0; margin-top: 20px;}
+    #gnb2 {width:500px; height: 45px; border: 4px solid #5ea67f ; margin-left: 350px; margin-top: 20px; float: left;} 
     #searchForm {clear: both; }
     #keyword {border:0; outline: 0; background: #fff; display: block; width: 400px; height: 45px; float: left; padding-left: 10px;}
     .frmBtn.searchBtn {width: 60px; height: 60px; background:url("./img/searchBtn.png"); background-position: center 8px; background-repeat: no-repeat; background-size: 50% 50%; float: right; }
+        
+    .weatherForm {width: 200px; float: left; margin-left: 130px;} 
     </style>
     
     <!-- page1 -->
@@ -84,7 +166,7 @@
     .ban { min-width: 6006px;}
     .ban li {width: 858px; float: left; height: 385px; }
     .ban li img {width: 858px;}
-    .btnFrame {position: absolute; z-index: 90; width: 858px;top: 50%;}
+    .btnFrame {position: absolute; z-index: 90; width: 858px;top: 53%;}
     .btnFrame li {width: 40px; height: 40px;}
     .btnFrame .left {float: left; }
     .btnFrame .right {float: right; }
@@ -95,7 +177,7 @@
     </style>
     
     <!--
-     원래 이미지 비율 
+     슬라이드 비주얼 이미지 원래 이미지 비율 
     <style>
     #slide {margin-left: 360px; width: 610px; height: 385px; overflow: hidden; }
     .ban { min-width: 4270px; }
@@ -124,6 +206,7 @@
     .page2 {width: 1200px; margin: 0 auto; margin-top: 20px;}
     .page2 ul:after {content:''; display:block; clear:both;margin-left: -59px;}
     .page2 li {float: left; width: 90px; height: 116px; margin-top: 40px; margin-left: 59px;} 
+    .page2 li a {color: #333;}
     .page2 li p {width: 100px; height: 100px;}
         
     </style>
@@ -145,11 +228,9 @@
     .page3 #board1 .notiTxt li {padding: 8px 0; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .page3 #board1 .notiTxt a {font-size: 17px; color: #333; }
     .page3 #board1 .ntxt {color: #5ea67f; font-size: 17px; font-weight: 800;}
-        
+    
     .page3 #board1 .notiImg, #board1 .notiTxt {float: left;}
-        
-/*    #may {width: 360px; height: 178px; float: right; padding: 26px 0 0 26px; margin-top: 5px; position: relative; box-sizing: border-box;}*/
-        
+
     .page3 #may {float: right; width: 360px; height: 178px; padding: 17px 0 0 25px; margin-top: 30px; background:url("./img/mayImg.jpg") no-repeat 100% 0; position: relative; box-sizing: border-box;}
     #may .mayTit {font-size: 30px; color: #000; padding-left: 10px;}
     #may .mayCom {font-size: 16px; padding-left: 28px; color: #666;}
@@ -195,6 +276,7 @@
     .page5 .newsBorad > section {float: left;display: block; width: 380px; height: 500px;}
         
     .page5 .newsBorad ul {width: 1200px;}
+    .page5 .newsBorad li a {color: #333;}
     .page5 .newsBorad a {display: block; width: 380px; height: 200px; }
     .page5 .newsBorad a img {display: block; width: 100%; height: 100%; overflow: hidden; padding-bottom: 20px; }    
     
@@ -267,7 +349,7 @@
     
     <!--footer-->
     <style>
-    #footer { width: 1200px; height: 170px; margin: 0 auto;border-top: 1px solid #d0d0d0;  }
+    #footer { width: 1200px; height: 170px; margin: 0 auto;border-top: 1px solid #d0d0d0; clear: both;  }
     #footer .footer_top { width: 100%; height: auto; padding: 0; }
     #footer .ftLst ul li {position: relative; float: left; padding: 0 10px;}
     #footer .ftLst ul li:first-child { padding-left: 0;}
@@ -311,9 +393,12 @@
            <a href="index.html" class="logo"></a>
        <nav id="gnb">
        <ul>
+           <li class="gnbItem1"><a href="login.html">로그인</a></li>
+           <li class="gnbItem1"><a href="login.html">나의금산</a></li>
+           <li class="gnbItem1"><a href="login.html">전자우편</a></li>
            <li class="gnbItem1"><a href="geumsan.html">우리금산</a></li>
            <li class="gnbItem1"><a href="citizen.html">소통참여</a></li>
-           <li class="gnbItem1"><a href="geumsan.html">부서안내</a></li>
+           <li class="gnbItem1"><a href="geumsan_sub11.html">부서안내</a></li>
            <li class="gnbItem1"><a href="geumsan.html">청사안내도</a></li>
        </ul>
        </nav>
@@ -330,15 +415,19 @@
     <div id="header_bottom" class="hd2">
         <div class="hdWrap2">
             <a href="index.html" class="logo2"></a>
-        <nav id="gnb2">
-            <form action="" id="searchForm">
-                <input type="text" id="keyword" placeholder="검색어를 입력해 주세요." autofocus name="keyword">
-                <input type="submit" class="frmBtn searchBtn" value="">
-            </form>
-        </nav>
-        <nav class="weather">
-
-        </nav>
+            <nav id="gnb2">
+                <form action="" id="searchForm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해 주세요." autofocus name="keyword">
+                    <input type="submit" class="frmBtn searchBtn" value="">
+                </form>
+            </nav>
+            <nav class="weatherForm">
+                <div id="todaysWeather" style="display:none;"></div>
+                <div id="weatherTxt"></div>
+                <div id="weatherPic">
+                    <img src="" alt="">
+                </div>
+            </nav>
         </div>
     </div>
 </header>
@@ -366,11 +455,11 @@
    <div id="sideban" class="page">
        <ul class="side">
            <li><a href="" class="sideimg1">
-               <img src="http://placehold.it/340x100" alt=""></a></li>
+               <img src="./img/slide_ban03.jpg" alt="민원서비스"></a></li>
            <li><a href="" class="sideimg2">
-               <img src="http://placehold.it/340x100" alt=""></a></li>
+               <img src="./img/slide_ban02.jpg" alt="금산인삼"></a></li>
            <li><a href="" class="sideimg3">
-               <img src="http://placehold.it/340x100" alt=""></a></li>
+               <img src="./img/slide_ban01.jpg" alt="평생학습포탈"></a></li>
        </ul>
    </div>
    </div>
@@ -471,8 +560,8 @@
                    <p class="mayCom">금산군수 문정우</p>
                </a>
            <ul>
-               <li ><a href="" class="chief">열린군수실</a></li>
-               <li ><a href="" class="gunsu">공약사항</a></li>
+               <li ><a href="https://www.geumsan.go.kr/chief/" class="chief">열린군수실</a></li>
+               <li ><a href="http://www.geumsan.go.kr/html/gunsu/sub03/sub03_0303.html" class="gunsu">공약사항</a></li>
            </ul>
            </div>
        </div>
