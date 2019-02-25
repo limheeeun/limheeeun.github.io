@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>날씨 API - openweather</title>
+    <!-- 복사하여 붙여 넣기 시작 -->
+    <script src="jquery.xdomainajax.js"></script>
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <script>
+        var city = "Daejeon,KR";  //도시명 변경
+        function parseWeather() {
+            loadJSON(function (response) {
+                var jsonData = JSON.parse(response);
+                document.getElementById("todaysWeather").innerHTML = jsonData["list"][0]["weather"][0]["main"];
+            });
+        }
+        function loadJSON(callback) { //url의 json 데이터 불러오는 함수
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&cnt=7&appid=2a1ad423e9fad1a3ceda81fda56b1366";
+            var request = new XMLHttpRequest();
+            request.overrideMimeType("application/json");
+            request.open('GET', url, true);
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == "200") {
+                    callback(request.responseText);
+                }
+            };
+            request.send(null);
+        }
+        window.onload = function () {
+            parseWeather();
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+        setTimeout(function (){
+            var wed = $("#todaysWeather").text();
+            console.log(wed.trim().toLocaleLowerCase());
+            
+            if (wed.toLocaleLowerCase() == 'clear') {
+                $("#weatherTxt").text("날씨 : 맑음");
+                $("#weatherPic img").attr("src" ,"icon_01.gif");
+            } else if(wed.toLocaleLowerCase() == 'rain') {
+                $("#weatherTxt").text("날씨 : 비");
+                $("#weatherPic img").attr("src", "icon_19.gif");
+            } else if(wed.toLocaleLowerCase() == 'few clouds') {
+                $("#weatherTxt").text("날씨 : 구름조금");
+                $("#weatherPic img").attr("src", "icon_03.gif");
+            } else if(wed.toLocaleLowerCase() == 'snow') {
+                $("#weatherTxt").text("날씨 : 눈");
+                $("#weatherPic img").attr("src", "icon_23.gif");
+            } else if(wed.toLocaleLowerCase() == 'broken clouds') {
+                $("#weatherTxt").text("날씨 : 구름 많음");
+                $("#weatherPic img").attr("src", "icon_04.gif");
+            } else {
+                $("#weatherTxt").text("날씨 : 흐림");
+                $("#weatherPic img").attr("src", "icon_16.gif");
+            }
+        }, 400);
+    });
+/* 날씨 변수
+few clouds
+broken clouds
+overcast clouds
+scattered clouds
+rain
+snow
+clear
+sky is clear
+heavy intensity rain
+light rain
+moderate rain
+thunderstorm
+mist ....
+*/
+    </script>
+    <!-- 복사하여 붙여 넣기 끝 -->
+</head>
+<body>
+    <div id="todaysWeather" style="display:none;"></div>
+    <div id="weatherTxt"></div>
+    <div id="weatherPic">
+        <img src="" alt="">
+    </div>
+</body>
+</html>

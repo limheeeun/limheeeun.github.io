@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>날씨 API - openweather</title>
+    <!-- XHTTP 추가 시작 -->
+    <script src="jquery.xdomainajax.js"></script>
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <!-- XHTTP 추가 끝 -->
+    <!-- 날씨를 원하는 옵션을 넣고 받아오기 시작 -->
+    <script>
+    var city = "Daejeon,KR";  //도시명을 영어로 원하는 도시이름 넣기
+    var imgURL, temp1, temp2, hum, we, deWe, weImg, wdSpd, country, cloud;    
+    function weathering(){    
+        var apiURI = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+"2a1ad423e9fad1a3ceda81fda56b1366";
+        $.ajax({
+            url: apiURI,
+            dataType: "json",
+            type: "GET",
+            async: "false",
+            success: function(resp) {
+                console.log(resp);
+                temp1 = (resp.main.temp- 273.15).toFixed(2);
+                hum = resp.main.humidity;
+                we = resp.weather[0].main;
+                deWe = resp.weather[0].description;
+                weImg = resp.weather[0].icon;
+                wdSpd = resp.wind.speed;
+                country = resp.sys.country;
+                cloud = resp.clouds.all;
+                console.log("현재온도 : "+ (resp.main.temp- 273.15) );
+                console.log("현재습도 : "+ resp.main.humidity);
+                console.log("날씨 : "+ resp.weather[0].main );
+                console.log("상세날씨설명 : "+ resp.weather[0].description );
+                console.log("날씨 이미지 : "+ resp.weather[0].icon );
+                console.log("바람   : "+ resp.wind.speed );
+                console.log("나라   : "+ resp.sys.country );
+                console.log("도시이름  : "+ resp.name );
+                console.log("구름  : "+ (resp.clouds.all) +"%" ); 
+                imgURL = "./weather-icons/svg/wi-day-" + resp.weather[0].main.toLowerCase() + ".svg";
+                console.log(imgURL);
+                return resp;
+            }
+        });
+        
+        
+    }
+    $(document).ready(function(){
+        var weat = weathering();
+        setTimeout(function (){
+            $("#weatherTxt").text(deWe+", "+temp1);
+            $("#weatherImg").attr("src", imgURL);
+            
+        }, 400);
+    });
+/* 날씨 변수
+few clouds
+broken clouds
+overcast clouds
+scattered clouds
+rain
+snow
+clear
+sky is clear
+heavy intensity rain
+light rain
+moderate rain
+thunderstorm
+mist ....
+*/
+    </script>
+    <!-- 날씨를 원하는 옵션을 넣고 받아오기 시작 -->
+    <style>
+        #weatherImg { width: 50px; height: 50px; }    
+    </style>
+</head>
+<body>
+<div id="weather">
+    <p id="weatherTxt"></p>
+    <img src="" alt="날씨이미지" id="weatherImg">
+</div>   
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>날씨 API - openweather</title>
+    <!-- 복사하여 붙여 넣기 시작 -->
+    <script src="jquery.xdomainajax.js"></script>
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <script>
+    var lat = 36.3504567; //북위 변경할 것
+    var lon = 127.38481869; //동경 변경할 것    
+$(document).ready(function(){
+	$.ajax({
+		url:"http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=2a1ad423e9fad1a3ceda81fda56b1366",
+		dataType:"json",
+		success:function(city){
+			console.log(city);
+			$.each(city.list, function(key) {
+				// 오늘 날짜 구하는 코딩
+				var now = new Date();
+			    var year= now.getFullYear();
+			    var mon = (now.getMonth()+1)>9 ? ''+(now.getMonth()+1) : '0'+(now.getMonth()+1);
+			    var day = now.getDate()>9 ? ''+now.getDate() : '0'+now.getDate();
+			    var today = year + '-' + mon + '-' + day;
+			    var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');	// 요일
+
+			    // api에서 받는 날짜
+			    var date = city.list[key].dt_txt.substring(0,10)
+			    var time = city.list[key].dt_txt.substring(11,13)
+			    var yoil = new Date(date).getDay();	// 받아 오는 날짜의 요일 일-0 월-1 화-2....
+			    var todayLabel = week[yoil];
+			    // 최고온도 절대 온도로 받아 옴으로
+			    var max=(Math.round(city.list[key].main.temp_max) - 273)+"˚C";
+			    // 날씨
+			    var weath = city.list[key].weather[0].description;
+			    if(date === today) {
+			    	if(time==='12'){
+		    		if (weath === 'sky is clear') {
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'few clouds'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'scattered clouds'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'broken clouds'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'overcast clouds'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'shower rain'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'light rain'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'moderate rain'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'Rain'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'Thunderstorm'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'snow'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	} else if(weath === 'mist'){
+			    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+			    	}
+			    	}
+			    } else {
+			    	if(time==='12'){
+			    		if (weath === 'sky is clear') {
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'few clouds'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'scattered clouds'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'broken clouds'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'overcast clouds'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'shower rain'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'light rain'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'moderate rain'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'Rain'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'Thunderstorm'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'snow'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	} else if(weath === 'mist'){
+				    		$("#weather").append(date + "의 날씨는 " + weath + " 최고 온도는 " + max+"<br/>");
+				    	}
+			    	}
+			    }
+			});
+		}
+	});
+});
+/* 날씨 변수
+few clouds
+broken clouds
+overcast clouds
+scattered clouds
+rain
+snow
+clear
+sky is clear
+heavy intensity rain
+light rain
+moderate rain
+thunderstorm
+mist ....
+*/
+    </script>
+    <!-- 복사하여 붙여 넣기 끝 -->
+</head>
+<body>
+    <div id="weather"></div>
+</body>
+</html>
