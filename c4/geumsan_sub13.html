@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>우리금산</title>
+    
+    <!-- 구형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_16x16.ico">
+    <!-- 신형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_32x32.ico">
+    <!-- IE10 이상-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="144">
+    
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="img/favicon/ci_57x57.ico">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="/img/favicon/ci_114x114.ico">
+    <!-- 안드로이드폰(Galaxy S8+) -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_152x152.ico">
+    
+    <!-- 아이패드 mini4 홈스크린 아이콘-->
+    <link rel="apple-touch-icon" size="72x72" href="/img/favicon/ci_72x72.ico">
+    <!-- 아이패드 mini4 -->
+    <link rel="shourtcut icon" size="152x152" href="/img/favicon/ci_152x152.ico">
+    
+    <!-- 맵(웹 사이트)의 이름-->
+    <meta name="application-name" content="geumsan county office Site">
+    <!-- 맵(웹 사이트) 저작자 이름-->
+    <meta name="author" content="LimHE"> 
+    <!-- 현재 문서 설명-->
+    <meta name="description" content="geumsan county office Site">
+    <!-- 현재 문서의 제작 도구-->
+    <meta name="generator" content="Barckit">
+    <!-- 검색엔진에서 검색되게 할 키워드-->
+    <meta name="keywords" content="금산, 금산군청, geumsan, ">
+    <!-- 자동 새로고침 설정-->
+    <meta http-equiv="refresh" content="180">
+    
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, ueser-scalable=no">
+    
+    <!-- 미디어 쿼리 설정 -->
+    <!--   모바일 기기의 폭 : 767px 이하-->
+    <link rel="stylesheet" href="mobile.css" media="screen and (min-width:767px)">
+    <!--   모바일 기기의 폭 : 767px 이하 회전할 때-->
+    <link rel="stylesheet" href="mobile.css" media="screen and (min-width:767px) and orientation(landscape)">
+    
+    <!--   태블릿 : 768 px 이상 ~ 959px 이하-->
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:959px)">
+    <!--   태블릿 : 768 px 이상 ~ 959px 이하 회전할 때-->
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width:768px) and (max-width:1024px) and orientation(landscape)">
+       
+    <!--   데스크탑 : 968 px 이상-->
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width:960px)">  
+    
+    <!--   프린터 : 960 px 이상-->
+    <link rel="stylesheet" href="print.css" media="print">      
+ 
+    <!-- 크로스 브라우징 -->
+    <style>
+    /*-moz(파이어폭스) -o(오페라) -webkit(사파리) */
+    body, html {-ms-overflow-style:none;}
+    ::-webkit-scrollbar {display: none;}
+    ::-o-scrollbar {display: none;}
+    ::-moz-scrollbar {display: none;}
+    </style>
+      
+     <!-- 찾아오시는 길 구글지도 -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+    <script> 
+    //좌표 값을 바꿔서 입력 36.3491563,127.3776857
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(36.109065, 127.488105);
+      var mapOptions = {
+        zoom: 17,
+        center: myLatlng
+      }
+
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: '금산군청'	  //레이블을 바꿔서 입력
+
+      });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+     </script>
+     <script>
+    $(function(){
+    //   setTimeout(function(){
+    //       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+    //   }, 1000); 
+    });    
+    </script>
+             
+    <!-- 사용 폰트 설정-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    <!--    CSS 불러오기-->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./grid.css">
+    
+    <script src="./jquery-1.11.1.js"></script>
+    <script src="./main.js"></script>
+    <script src="./main2.js"></script>
+
+    <!-- sub GNB -->
+    <style>
+    .hd {width: 100%; height: 60px; position:relative; top: 0; z-index: 100;}
+    .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
+    .logo {display: block; width:130px; height: 38px; background-image: url("img/ci_05.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 6px; left: 0;}
+    
+    #gnb {width: 900px; margin: 0 auto; padding-top: 15px;}
+    #gnb li {float: left; padding-left: 15px; text-align: center;}
+    #gnb li a {color: #000; font-weight: 500; font-size: 17px;}
+        
+    #topNav {position: absolute; right: 0px; top: 15px;}
+    #topNav li {float: left; padding-left: 15px; text-align: center; font-weight: 600;}
+    #topNav li a {color: #000; font-weight: 500; font-size: 17px;}
+    </style>
+    
+    <!-- sub GNB2 -->
+    <style>
+    .hd2 {width: 100%; height: 130px; background: #5ea67f;}
+    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative;top: 30%;}
+    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_white.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0;}
+    #gnb2 {width:500px; height: 45px; background-color: #fff; margin-left: 400px;} 
+    #searchForm {clear: both; }
+    #keyword {border:0; outline: 0; background: #fff; display: block; width: 400px; height: 45px; float: left; padding-left: 10px;}
+    .frmBtn.searchBtn {width: 60px; height: 60px; background:url("./img/searchBtn.png"); background-position: center 8px; background-repeat: no-repeat; background-size: 50% 50%; float: right; }
+    </style>
+    
+    <!-- LNB -->
+    <style>
+    .sub1 {width: 1200px; margin: 0 auto; position: relative;}
+    .subBox1 { position: relative;float: left;width: 1200px;padding: 55px 0 100px 0; box-sizing: border-box;height: 100%; }
+    .lnb {position: relative; width: 200px; height: 1000px; border-right: 1px solid #eff1f1;padding-right: 20px; margin-bottom: 20px; float: left;}
+    .lnb .lnbTit { width: 180px; border-bottom: 2px solid #333; margin: 0 10px 10px 10px; padding-top: 10px;}
+    .lnb .lnbTit h2 {text-align: center; font-size: 26px; margin-bottom: 10px;}
+    .lnb .lnbBox {clear: both; margin: 10px; }
+    .lnb .lnbBox li {line-height: 42px;  }
+    .lnb .lnbBox li a {display: block; line-height: 42px; }
+    .lnb .lnbBox li a.menu1 {background: #fff; color: #666; padding-left: 10px;}
+    .lnb .lnbBox li:hover a.menu1 {background: #5ea67f; color: #fff;}
+    .lnb .lnbBox li .sub1 {width: 180px; height: 0; overflow: hidden; transition: 0.6s; transition-delay: 0.2s; opacity: 0; background-color: #eff1f1; color: #b2b2b2; }
+    .lnb .lnbBox li:hover .sub1 { width: 180px; height: 180px; opacity: 1;}
+    .lnb .lnbBox .sub1 li a {color: #333; line-height: 32px; border: 0; margin-left: 15px; margin-top: 10px;}
+    .lnb .lnbBox .sub1 li a:hover {color: #5ea67f;}
+    </style>
+    
+    <!-- page1 군청안내>찾아오시는 길 -->
+    <style>
+    .page_area {width: 912px; padding: 0 0 60px; float: right; min-height: 600px; background: #fff; vertical-align: baseline;}
+    #page1 {position: relative;}
+    #page1 h2.p1Tit {font-size: 40px; font-weight: 300; line-height: 2; text-align: center;}
+    #page1 p.p1Com {text-align: center; letter-spacing: 2px; margin-bottom: 20px;}
+    #page1 .homeTxt {color: #333;}
+    .page1Box {width: 912px; height: auto; }
+        
+    .pgBox5 {width: 100%; height: 1400px; margin: 0 auto;  padding-top: 20px;}
+    .pgItem11 {margin-bottom: 5px; font-weight: 100; color: #666; }
+    .pgItem21 {margin-top: 30px;}
+    .pgTable21 {width: 100%; margin-top: 50px; }
+    .pgTable21 tr {height: 180px;}
+    .pgTable21 tr.lst1 {height: 120px;}
+    .pgTable21 tr.lst2 {height: 200px;}
+     
+    p.pCom {font-size: 14px; float: left;margin-top: 5px;}
+    p.pCom span {float: left;margin-right: 5px;}
+    p.pCom2 {font-size: 14px; float: left;margin-top: 5px;}
+    p.pCom2:before {content: '·'}
+    p.pCom2 span {float: left;margin-right: 5px;}
+    p.pCom2_2 {font-size: 14px; float: left;margin-top: 5px; margin-left: 68px;}
+    p.pCom2_2:before {content: '·'}
+    .pgTit {float: left; font-size: 18px; font-weight: 300; color:#267bc9;}
+    .pgTit2 {padding-top: 20px; font-size: 25px; }
+    .pgCom {color:#444; font-size: 14px;}
+    .point {color: #5ea67f; }
+    .table_point {display: block; width: 60px; text-align:center; font-size: 14px; color:#4365b9; border:1px solid #4365b9; border-radius: 30px; }
+    .table_point2 {display: block; width: 60px; text-align:center; font-size: 14px; color:#005fa8; border:1px solid #005fa8; border-radius: 30px; }
+    .table_point3 {display: block; width: 60px; text-align:center; font-size: 14px; color:#a72e75; border:1px solid #a72e75; border-radius: 30px; }
+    </style>
+    
+    <!--footer-->
+    <style>
+    #footer { width: 1200px; height: 170px; margin: 0 auto;border-top: 1px solid #d0d0d0; clear: both; }
+    #footer .footer_top { width: 100%; height: auto; padding: 0; }
+    #footer .ftLst ul li {position: relative; float: left; padding: 0 10px;}
+    #footer .ftLst ul li:first-child { padding-left: 0;}
+    #footer .ftLst ul li:before { content: ''; position: absolute; top: 50%; left: 0; display: block; width: 1px; height: 14px; margin-top: -6px; background: #dcdcdc;}
+    #footer .ftLst ul li:first-child:before { display: none;}
+    #footer .ftLst ul li a { font-size: 14px; color:#636363;}
+    #footer .ftLst ul {line-height: 50px;}
+    #footer .ftLst ul:after { display: block; content: ''; clear: both;}
+
+    #footer .footer_buttom { padding: 11px 0; border-top: 1px solid #ccc; text-align:left;}
+    #footer .footer_buttom {padding-top: 30px;}
+    #footer .footer_buttom .address { display: inline-block; vertical-align: top; float: left; }
+    #footer .footer_buttom .address p { padding-bottom: 0; margin-bottom: 0; padding-left: 30px;}
+    #footer .footer_buttom .address p:after{ display: block; content: ''; clear: both;}
+    #footer .ftlogo img {float: left;display: block; width: 300px; height: 33px;}
+    #footer .footer_buttom .address p.city {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.call {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.copy {font-size: 13px; margin:0; text-align:left;}
+    #footer .footer_buttom .address .map {font-size: 12px; color:#333;}
+    #footer .footer_buttom .mark { float: left; padding-left: 350px;}
+    </style>
+</head>
+<body>
+<header>
+    <div id="header_top" class="hd">
+       <div class="hdWrap">
+           <a href="index.html" class="logo"></a>
+       <nav id="gnb">
+       <ul>
+           <li class="gnbItem1"><a href="login.html">로그인</a></li>
+           <li class="gnbItem1"><a href="login.html">나의금산</a></li>
+           <li class="gnbItem1"><a href="login.html">전자우편</a></li>
+           <li class="gnbItem1"><a href="geumsan.html">우리금산</a></li>
+           <li class="gnbItem1"><a href="citizen.html">소통참여</a></li>
+           <li class="gnbItem1"><a href="geumsan_sub11.html">부서안내</a></li>
+           <li class="gnbItem1"><a href="geumsan_sub14.html">청사안내도</a></li>
+       </ul>
+       </nav>
+       <nav id="topNav">
+           <ul>
+               <li><a href="media.html">미디어</a></li>
+               <li><a href="">전자민원</a></li>
+               <li><a href="">정보공개</a></li>
+               <li><a href="">분야별정보</a></li>
+           </ul>
+       </nav>   
+       </div>      
+    </div>
+    <div id="header_bottom" class="hd2">
+        <div class="hdWrap2">
+            <a href="index.html" class="logo2"></a>
+            <nav id="gnb2">
+                <form action="" id="searchForm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해 주세요." autofocus name="keyword">
+                    <input type="submit" class="frmBtn searchBtn" value="">
+                </form>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="sub1">
+    <div class="subBox1">
+        <div class="lnb">
+            <div class="lnbTit">
+                <h2>우리금산</h2>
+            </div>
+            <nav class="lnbBox">
+                <ul>
+                    <li>
+                        <a href="" class="menu1">군청안내
+                            <ul class="sub1">
+                                <li><a href="geumsan_sub11.html">행정조직도</a></li>
+                                <li><a href="">관내주요기관</a></li>
+                                <li><a href="geumsan_sub13.html">찾아오시는 길</a></li>
+                                <li><a href="geumsan_sub14.html">3D청사안내도</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="" class="menu1">금산의 상징
+                            <ul class="sub1">
+                                <li><a href="">심벌/로고</a></li>
+                                <li><a href="">마스코트</a></li>
+                                <li><a href="">공동브랜드</a></li>
+                                <li><a href="">상징물</a></li>
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="" class="menu1">금산의 역사</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <div class="page_area">
+        <div id="page1">
+            <div class="page1Box">
+                <h2 class="p1Tit">찾아오시는 길</h2>
+                <p class="p1Com">
+                    <a href="index.html" class="homeTxt">Home</a> > 
+                    <a href="geumsan.html" class="homeTxt">우리금산</a> > 
+                    <a href="" class="homeTxt">군청안내</a> > 
+                    <a href="geumsan_sub14.html" class="homeTxt">찾아오시는 길</a>
+                </p>
+                <div class="pgBox5">
+                    <div class="pgItem11">
+                        <p class="pgCom">[32733] 충청남도 금산군 금산읍 군청길 13</p>
+                    </div>
+                    <div id="mapFrame"></div>
+                    <div id="map_canvas" style="width: 912px; height: 500px;"></div>
+                    <div class="pgItem21">
+                        <h2>지역별 교통편</h2>
+                        <table class="pgTable21">
+                            <tr>
+                                <th class="col2">
+                                    <p class="pgTit">서울</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point">자동차</span>경부고속도로 → 비룡분기점 → 남부순환도로 → 대전ㆍ통영간 고속도로 → 추부ㆍ금산IC</p>
+                                <p class="pCom"><span class="table_point2">기차</span>KTX (1시간소요), 새마을(1시간35분소요), 무궁화(1시간45분소요)</p>
+                                <p class="pCom2"><span class="table_point3">버스</span>서울강남터미널 → 금산고속버스터미널 (하루11회, 2시간 20분 소요)
+                                <br>※ 금산터미널에서 도보로 10분소요</p>
+                                <p class="pCom2_2">서울 동서울터미널 → 대전 (153,2km, 2시간 소요)
+                                <br>06:30~23:35 / 1일 12회 / 1시간~2시간 간격</p>
+                                </td>
+                            </tr>
+                            <tr class="lst1">
+                                <th class="col2">
+                                    <p class="pgTit">부산</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point">자동차</span>경부고속도로 → 비룡분기점 → 남부순환도로 → 대전ㆍ통영간 고속도로 → 추부ㆍ금산IC</p>
+                                <p class="pCom"><span class="table_point2">기차</span>KTX (1시간50분소요), 새마을(2시간45분소요), 무궁화(3시간15분소요)</p>
+                                <p class="pCom"><span class="table_point3">버스</span>부산 → 대전 (283.0km 3시간 30분 소요) / 06:30 ~ 19:00 / 1일 10회 / 1시간 ~ 1시간30분 간격</p>
+                                </td>
+                            </tr>
+                            <tr class="lst1">
+                                <th class="col2">
+                                    <p class="pgTit">대구</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point">자동차</span>경부고속도로 → 비룡분기점 → 남부순환도로 → 대전ㆍ통영간 고속도로 → 추부ㆍ금산IC</p>
+                                <p class="pCom"><span class="table_point3">버스</span>동대구 → 대전(148.7km, 2시간소요) / 06:00~20:30 / 1일 23회 / 40분 간격</p>
+                                </td>
+                            </tr>
+                            <tr class="lst1">
+                                <th class="col2">
+                                    <p class="pgTit">광주</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point">자동차</span>호남고속도로 → 남부순환도로 → 대전ㆍ통영간 고속도로 → 추부ㆍ금산IC</p>
+                                <p class="pCom"><span class="table_point3">버스</span>광주 → 대전 (178.7km, 1시간50분소요) / 05:40~20:30 / 1일 33회 / 20분~40분 간격</p>
+                                </td>
+                            </tr>
+                            <tr class="lst1">
+                                <th class="col2">
+                                    <p class="pgTit">전주</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point3">버스</span>전주 → 대전 (90.4km, 1시간20분) / 06:20~21:30 / 1일 34회 / 20분~30분 간격</p>
+                                </td>
+                            </tr>
+                            <tr class="lst2">
+                                <th class="col2">
+                                    <p class="pgTit">강릉</p>
+                                </th>
+                                <td class="col10">
+                                <p class="pCom"><span class="table_point2">자동차</span>영동고속도로 → 호법분기점(중부고독도로) → 남이분기점(경부고속도로) → 비룡분기점(대전남부순환고속도로) → 남대전분기점(대전통영간고속도로) → 금산IC</p>
+                                <p class="pCom2"><span class="table_point3">버스</span>강릉고속버스터미널 → 대전고속버스터미널 (4시간 소요, 배차시간 120분)
+                                </p>
+                                <p class="pCom2_2">대전시외버스터미널 → 금산시외버스터미널 (1시간 소요, 배차시간 5분~10분)
+                                </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- footer -->
+<footer id="footer">
+   <div class="footer_top">
+       <div class="ftLst">
+       <ul>
+           <li><a href="">개인정보처리방침</a></li>
+           <li><a href="">저작권정책</a></li>
+           <li><a href="">이메일집단수집거부</a></li>
+           <li><a href="">뷰어다운로드</a></li>
+       </ul>
+       <div class="snsLst">
+           <ul>
+               <li><a href=""></a></li>
+               <li><a href=""></a></li>
+               <li><a href=""></a></li>
+           </ul>
+       </div>
+       </div>
+   </div> 
+   <div class="footer_buttom">
+       <a href="" class="ftlogo">
+           <img src="./img/ci_black.gif" alt=""></a>
+       <div class="address">
+            <p class="city">[32733] 충청남도 금산군 금산읍 군청길 13
+                <a href="geumsan_sub13.html"  onclick="" class="map">[찾아오시는 길]</a></p>
+            <p class="call">전화번호 : 041-750-2114 </p>
+            <p class="copy">&copy; COPYRIGHT(C) 2015 BY GEUMSAN COUNTY ALL RIGHTS RESERVED</p>
+       </div>
+       <div class="mark">
+            <a href="" onclick="" title="웹접근성 품질마크">
+            <img src="./img/accessibility.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a>
+       </div>
+   </div> 
+</footer>
+ 
+</body>
+</html>
