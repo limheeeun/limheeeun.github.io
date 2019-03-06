@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+
+/*
+     GNB 
+    .tb {width: 100%; height: 100px; margin: 0 auto; position: relative;}
+    .tbImg {position: absolute;}
+    .tbClose {position: absolute; z-index: 99; padding-top: 80px; right: 350px; bottom: 10px; }
+    .tbClose .input {display: block; width: 180px; height: 25px; background-color:rgba(0,0,0,0.5); color: #fff; border-radius: 50px; text-align: center; }
+    .input input[type="checkbox"] {display: inline-block; width: 10px; height: 10px; z-index: 999;}   
+    .input label {font-size: 14px;}    
+        
+    .hd {width: 100%; height: 100px; position:relative; top: 0; z-index: 100;}
+    .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
+    .logo {display: block; width: 100px; height: 85px; background-image: url("img/ci_02.jpg"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 0px; left: 0;}
+    
+    #gnb {width: 900px; margin: 0 auto; padding-top: 35px;}
+    #gnb li {float: left; padding-left: 15px; text-align: center;}
+    #gnb li a {color: #000; font-weight: 600; font-size: 17px;}
+        
+    #topNav {position: absolute; right: 0px; top: 35px;}
+    #topNav li {float: left; padding-left: 15px; text-align: center; font-weight: 600;}
+    #topNav li a {color: #000; font-weight: 600; font-size: 17px;}
+*/
+
+    
+/*
+     GNB2 
+
+    .hd2 {width: 100%; height: 120px;}
+    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative; }    
+    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_01.gif"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0; margin-top: 20px;}
+    #gnb2 {width:500px; height: 45px; border: 4px solid #5ea67f ; margin-left: 350px; margin-top: 20px; float: left;} 
+    #searchForm {clear: both; }
+    #keyword {border:0; outline: 0; background: #fff; display: block; width: 400px; height: 45px; float: left; padding-left: 10px;}
+    .frmBtn.searchBtn {width: 60px; height: 60px; background:url("./img/searchBtn.png"); background-position: center 8px; background-repeat: no-repeat; background-size: 50% 50%; float: right; }
+        
+    .weatherForm {width: 200px; float: left; margin-left: 130px;}
+*/
+
+    /* 모바일 GNB */
+    .container {width: 100%; height: 100%;}
+    .mhd {width: 100%; height: 60px; position: relative; clear: both; border-bottom: 1px solid #5ea67f;}
+    .mhd label {display: block; width: 40px; height: 40px; line-height: 40px;position: absolute; top: 10px; z-index: 90;}
+    .logoFrame {text-align: center; padding-top: 10px; }
+    .logoFrame a img {display: block; width: 100px; height: 40px; margin: 0 auto;}
+    .gnbCall {left: 10px;}
+    .tnbCall {right: 10px;}
+    .tnbCall span {display: block; width: 40px; height: 2px; margin-top: 8px; background: #5ea67f;}
+    .ck {display: none;}
+    #mgnb {position: fixed; top: 60px; left: -100%; width: 100%; height: calc(100% - 60px); z-index: 99; transition: 0.6s; background:rgba(0,0,0,0.8);}
+    #mtnb {position: fixed; top: 60px; right: -100%; width: 100%; height: calc(100% - 60px); z-index: 99; transition: 0.6s; background:rgba(0,0,0,0.8);}
+    nav ul {border-bottom: 1px solid #999;}
+    nav ul li {line-height: 4; border-top:1px solid #999;}
+    nav ul li a {color: #fff; font-size: 0.9em; display: block; padding-left: 20%;}
+    .closeBtn {display: block; width: 40px; height: 40px; line-height: 40px;font-size:2em; text-align: center; color:#fff; position: absolute; right: 30px;top: 10px;}
+
+    #ck1:checked ~ #mgnb {left: 0;}
+    #ck1:checked ~ #mtnb {right: -100%;}
+    #ck2:checked ~ #mgnb {left: -100%;}
+    #ck2:checked ~ #mtnb {right: 0;}
+
+    
+    /* page1 */
+
+    .page1 {width: 360px; height: 227px; margin: 0 auto;}
+
+    
+    /* 슬라이드 비주얼 이미지 */
+
+    #slide {width: 360px; height: 227px; overflow: hidden; float: left; }
+    .ban { min-width: 2520px;}
+    .ban li {width: 360px; float: left; height: 277px; }
+    .ban li img {width: 360px;}
+    .btnFrame {position: absolute; z-index: 90; width: 360px;top: 20%;}
+    .btnFrame li {width: 40px; height: 40px;}
+    .btnFrame .left {float: left; }
+    .btnFrame .right {float: right; }
+
+    .btnFrame .banBtn {display: block; width: 40px; height: 40px; background-size: 40px 40px; background-repeat: no-repeat;}
+    .prevBtn {background: url("./img/prevBtn.png");}
+    .nextBtn {background: url("./img/nextBtn.png");}
+    
+    /* page2 */
+    .page2 {width: 360px; margin: 0 auto; margin-top: 10px;}
+    .page2 ul:after {content:''; display:block; clear:both;margin-left: -59px;}
+    .page2 li {float: left; width: 90px; height: 116px; margin-top: 10px; margin-left: 30px;} 
+    .page2 li a {color: #333;}
+    .page2 li p {width: 100px; height: 100px;}
+    
+    /* page3 금산은 지금, 열린 군수실 */
+    .page3 {width: 360px;height: 100%; margin: 0 auto; margin-top: 20px;}
+        
+    .page3 #board1 {display: block; width: 360px; height: 100%; float: left;}
+    .page3 #board1 h2 {padding-bottom: 5px;}
+/*
+    .page3 #board1 .notiImg { width:237px; height:136px; position:relative; overflow:hidden; padding-top: 10px;}
+    .page3 #board1 p img {width:100%; height:100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
+    .page3 #board1 .notiImg:hover img {transform: scale(1.1);}
+    .page3 #board1 .txt {background-color:rgba(0,0,0,0.5); padding:11px 20px; position:absolute; left:0; bottom:0; width:100%; box-sizing:border-box;} 
+    .page3 #board1 .txt a {color:#fff; font-size:16px; font-weight:700; width:100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display:inline-block; vertical-align:middle;}
+*/
+    .page3 #board1 h2 {font-size: 24px; margin-left: 15px;}
+    .page3 #board1 .notiTxt {width: 360px; margin: 0 auto;}
+    .page3 #board1 .notiTxt {margin: 0 5px 0 5px; }
+    .page3 #board1 .notiTxt li {padding: 8px 0; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page3 #board1 .notiTxt a {font-size: 17px; color: #333; }
+    .page3 #board1 .ntxt {color: #5ea67f; font-size: 17px; font-weight: 800;}
+    
+    .page3 #board1 .notiImg, #board1 .notiTxt {float: left;}
+
+    .page3 #may {float: right; width: 360px; height: 200px; padding: 17px 0 0 25px; margin-top: 10px; background:url("./img/mayImg.jpg") no-repeat 100% 0; position: relative; box-sizing: border-box;}
+    #may .mayTit {font-size: 30px; color: #000; padding-left: 10px;}
+    #may .mayCom {font-size: 16px; padding-left: 28px; color: #666;}
+    #may ul {width: 230px; margin-top: 15px; margin-left: 10px; }
+    #may li {float: left; position: relative; width: 120px; border-radius: 30px; background: #fff; text-align: center;}
+    #may li a {width: 120px; font-size: 16px; color: #5ea67f; }
+    #may li:first-child {margin-top: 0;}
+    #may li {margin-top: 8px;}
+    
+    /* page4 */
+
+    .page4 {width: 360px; height: 100%; margin: 0 auto; margin-top: 50px;  position: relative;}
+    #sevi {width: 360px; float: left; margin: 15px; }
+    #sevi li.seviItme1 {width: 120px; margin-top: 20px; float: left;}
+    #sevi li img {display: block; width: 60px; height: 60px; }
+    #sevi .seviTit a {display: block; width:87px; height:30px; position:absolute; border: 1px solid #000; float: right;}
+/*
+    #sevi2 {width: 360px; float: right;margin-bottom: 30px;}    
+    #sevi2 .seviBtn {clear: both;}
+    #sevi2 .seviBtn .setBtn {float: right; font-size: 16px; color: #333;  }
+    #sevi2 .seviBtn img {float: right; display: block; width: 20px; height: 20px; padding-left: 5px; text-align: center;}
+    #sevi2 .seviLst {margin-top: 55px;}
+    #sevi2 .seviLst li {border-bottom: 1px solid #999; line-height: 40px;}
+    #sevi2 .seviLst li a {font-size: 18px; color: #333;}
+*/
+    
+    /* page5 새소식 */
+    .page5 {width: 360px; height: 2450px; margin: 0 auto; clear: both;}
+    .page5 #news h1 {margin:15px; font-size: 24px;}
+    .page5 #news h2 {display: block; width: 70px; height: 32px; color: #fff; text-align: center; line-height: 32px; z-index: 99; font-size: 16px;}
+    .page5 .newsBorad {position: relative;}
+    .page5 li {border-bottom: 1px solid #333; clear: both;}
+        
+    /*카테고리별 색상정의*/
+    .page5 .newsBorad h2.p_life {background-color: #c35c3c;}
+    .page5 .newsBorad h2.p_trip {background-color: #028ab6;}
+    .page5 .newsBorad h2.p_cul {background-color: #9b64d3;;}
+    .page5 .newsBorad h2.p_news {background-color: #599100;}
+    .page5 .newsBorad h2.p_person {background-color: #e44869;}
+        
+    .page5 .newsBorad > section {float: left;display: block; width: 380px; height: 500px;}
+        
+    .page5 .newsBorad ul {width: 1200px;}
+    .page5 .newsBorad li a {color: #333;}
+    .page5 .newsBorad a {display: block; width: 380px; height: 200px; }
+    .page5 .newsBorad a img {display: block; width: 100%; height: 100%; overflow: hidden; padding-bottom: 20px; }    
+    
+    .page5 .newsLstmenu1 .newsLst1 {width: 1200px; height: 350px;}
+    .page5 .newsLstmenu1 .newsLst1 li {float: left; width: 380px; height: 350px; }    
+    .page5 .newsLstmenu1 .newsLst1 li h2 {position: absolute; z-index: 99; margin-top: 182px; }
+    .page5 .newsLstmenu1 .newsLst1 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
+    .page5 .newsLstmenu1 .newsLst1 li p {width: 380px; height: 70px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
+        
+    .page5 .newsLstmenu2 .newsLst2 {float: left;width: 380px; height: 400px;}
+    .page5 .newsLstmenu2 .newsLst2 li { width: 380px; height: 200px;}
+    .page5 .newsLstmenu2 .newsLst2 li h2 {margin: 20px 0;}
+    .page5 .newsLstmenu2 .newsLst2 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
+    .page5 .newsLstmenu2 .newsLst2 li p {width: 380px; height: 78px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
+        
+    .page5 .newsLstmenu2 .newsLst21 {float: left;width: 380px; height: 400px;margin-top: 40px;}
+    .page5 .newsLstmenu2 .newsLst21 li {width: 380px; height: 400px;}
+    .page5 .newsLstmenu2 .newsLst21 li h2 {position: absolute; z-index: 99; margin-top: 182px;}
+    .page5 .newsLstmenu2 .newsLst21 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
+    .page5 .newsLstmenu2 .newsLst21 li p {width: 380px; height: 120px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
+        
+    .page5 .newsLstmenu2 .newsLst22 {float: left;width: 380px; height: 400px; }
+    .page5 .newsLstmenu2 .newsLst22 li { width: 380px; height: 200px; }
+    .page5 .newsLstmenu2 .newsLst22 li h2 {margin: 20px 0; }
+    .page5 .newsLstmenu2 .newsLst22 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
+    .page5 .newsLstmenu2 .newsLst22 li p {width: 380px; height: 70px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
+      
+    
+    /* page6 */
+    .page6 {width: 360px; height: 700px; margin: 0 auto;}
+
+    /*이벤트신청*/
+    .page6 .eventLst {width: 380px; height: 250px; float: left; margin-right: 30px; }
+    .page6 .eventLst li {position: relative; width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page6 .eventLst a {color: #333;}
+    .page6 .eventLst ul {margin-top: 10px; }
+    .page6 .eventLst li {float: left; line-height: 30px; }
+    .page6 .eventLst .event_env {color: #069363; }
+    .page6 .eventLst .event_work {color: #e44869; }
+    .page6 .eventLst .event_wel {color: #d76000; }
+
+    /*이달의 행사 및 축제*/
+    .page6 .festiLst {width: 380px; height: 250px; float: left; margin-right: 30px; }
+    .page6 .festiLst li {position: relative; width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page6 .festiLst a {color: #333;}
+    .page6 .festiLst ul {margin-top: 10px;}
+    .page6 .festiLst li {float: left; line-height: 30px; }
+    .page6 .festiLst .festi_cul {color: #9b64d3; }
+    .page6 .festiLst .festi_eco {color: #069363; }
+
+    /*생활정보 서비스*/
+    .page6 .life_serviceLst {width: 380px; height: 250px; float: left;}
+    .page6 .life_serviceLst ul {}
+    .page6 .life_serviceLst ul:after {content: '';display: block; clear: both; }
+    .page6 .life_serviceLst li {display: block; width: 180px; height: 40px; background-color:#ddd; margin-top: 10px;  margin-right: 10px;  }
+    .page6 .life_serviceLst li a {display:inline-block; width:100%; height:100%; color:#333; text-indent:20px; line-height:40px;}
+        
+    
+    /* 하단배너 슬라이드 */
+    .banner {width: 360px; margin: 0 auto;}
+    #banner {width: 360px; height: 80px; overflow: hidden; float: left;  }
+    .ban2 {min-width: 2450px; }
+    .ban2 li {width: 234px; height: 37px; margin-right: 10px; margin-bottom: 20px; float: left; }
+    .ban2 li a img {display: block; width: 234px; height: 37px; }
+        
+    
+    /* footer */
+    #footer { width:360px; height: 200px; margin: 0 auto;border-top: 1px solid #d0d0d0; clear: both;  }
+    #footer .footer_top { width: 100%; height: auto; padding: 0; }
+    #footer .ftLst ul li {position: relative; float: left; padding: 0 5px;}
+    #footer .ftLst ul li:first-child { padding-left: 0;}
+    #footer .ftLst ul li:before { content: ''; position: absolute; top: 50%; left: 0; display: block; width: 1px; height: 12px; margin-top: -6px; background: #dcdcdc;}
+    #footer .ftLst ul li:first-child:before { display: none;}
+    #footer .ftLst ul li a { font-size: 10px; color:#636363;}
+    #footer .ftLst ul {line-height: 30px;}
+    #footer .ftLst ul:after { display: block; content: ''; clear: both;}
+
+    #footer .footer_buttom { padding: 11px 0; border-top: 1px solid #ccc; text-align:left;}
+    #footer .footer_buttom {padding-top: 20px;}
+    #footer .footer_buttom .address { display: inline-block; vertical-align: top; float: left; padding-top: 15px;}
+    #footer .footer_buttom .address p { padding-left: 5px;}
+    #footer .footer_buttom .address p:after{ display: block; content: ''; clear: both;}
+    #footer .ftlogo img {float: left;display: block; width: 300px; height: 33px;}
+    #footer .footer_buttom .address p.city {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.call {font-size: 13px; font-weight:500;}
+    #footer .footer_buttom .address p.copy {font-size: 13px; margin:0; text-align:left;}
+    #footer .footer_buttom .address .map {font-size: 12px; color:#333;}
+    #footer .footer_buttom .mark { float: left; padding-left: 350px;}
+    
+
+    
+    

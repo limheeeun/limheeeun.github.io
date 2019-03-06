@@ -39,7 +39,7 @@
     
     <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    
+        
  
     <!-- 크로스 브라우징 -->
     <style>
@@ -57,12 +57,13 @@
     <!-- CSS 불러오기-->
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./grid.css">
-    
+    <link rel="stylesheet" href="mobile.css">
     
     <!-- js 불러오기 -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     
     <!-- 모바일, 태블릿 바꾸기 -->
+<!--
     <script>
     $(document).ready(function(){
        var mediaWd = parseInt($(window).width());
@@ -75,17 +76,15 @@
         }
     });    
     </script>
-    
+-->
     <script src="./weather/jquery.xdomainajax.js"></script>
-    
     <script>
     var request = new XMLHttpRequest();
     request.open('GET', '/', async=true);
     request.send();
     </script>
-    
     <script>
-        var city = "Daejeon,KR";  //도시명 변경
+        var city = "Geumsan,KR";  //도시명 변경
         function parseWeather() {
             loadJSON(function (response) {
                 var jsonData = JSON.parse(response);
@@ -108,7 +107,6 @@
             parseWeather();
         }
     </script>
-    
     <script>
     $(document).ready(function(){
         setTimeout(function (){
@@ -156,271 +154,51 @@ mist ....
     
     <script src="./main.js"></script>
     <script src="./main2.js"></script>
-
-   
-    <!-- GNB -->
-    <style>
-    .tb {width: 100%; height: 100px; margin: 0 auto; position: relative;}
-    .tbImg {position: absolute;}
-    .tbClose {position: absolute; z-index: 99; padding-top: 80px; right: 350px; bottom: 10px; }
-    .tbClose .input {display: block; width: 180px; height: 25px; background-color:rgba(0,0,0,0.5); color: #fff; border-radius: 50px; text-align: center; }
-    .input input[type="checkbox"] {display: inline-block; width: 10px; height: 10px; z-index: 999;}   
-    .input label {font-size: 14px;}    
-        
-    .hd {width: 100%; height: 100px; position:relative; top: 0; z-index: 100;}
-    .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
-    .logo {display: block; width: 100px; height: 85px; background-image: url("img/ci_02.jpg"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 0px; left: 0;}
-    
-    #gnb {width: 900px; margin: 0 auto; padding-top: 35px;}
-    #gnb li {float: left; padding-left: 15px; text-align: center;}
-    #gnb li a {color: #000; font-weight: 600; font-size: 17px;}
-        
-    #topNav {position: absolute; right: 0px; top: 35px;}
-    #topNav li {float: left; padding-left: 15px; text-align: center; font-weight: 600;}
-    #topNav li a {color: #000; font-weight: 600; font-size: 17px;}
-    </style>
-    
-    <!-- GNB2 -->
-    <style>
-    .hd2 {width: 100%; height: 120px;}
-    .hdWrap2 {width: 1200px; margin: 0 auto; position: relative; }    
-    .logo2 {display: block; height: 33px; width: 300px; background-image:url("./img/ci_01.gif"); background-repeat: no-repeat; background-size: 100%; background-position: center center; position: absolute; top: 10px; left: 0; margin-top: 20px;}
-    #gnb2 {width:500px; height: 45px; border: 4px solid #5ea67f ; margin-left: 350px; margin-top: 20px; float: left;} 
-    #searchForm {clear: both; }
-    #keyword {border:0; outline: 0; background: #fff; display: block; width: 400px; height: 45px; float: left; padding-left: 10px;}
-    .frmBtn.searchBtn {width: 60px; height: 60px; background:url("./img/searchBtn.png"); background-position: center 8px; background-repeat: no-repeat; background-size: 50% 50%; float: right; }
-        
-    .weatherForm {width: 200px; float: left; margin-left: 130px;} 
-    </style>
-    
-    <!-- page1 -->
-    <style>
-    .page1 {width: 1200px; height: 385px; margin: 0 auto;}
-    </style>
-    
-    <!-- 슬라이드 비주얼 이미지 -->
-    <style>
-    #slide {width: 858px; height: 385px; overflow: hidden; float: left; }
-    .ban { min-width: 6006px;}
-    .ban li {width: 858px; float: left; height: 385px; }
-    .ban li img {width: 858px;}
-    .btnFrame {position: absolute; z-index: 90; width: 858px;top: 53%;}
-    .btnFrame li {width: 40px; height: 40px;}
-    .btnFrame .left {float: left; }
-    .btnFrame .right {float: right; }
-
-    .btnFrame .banBtn {display: block; width: 40px; height: 40px; background-size: 40px 40px; cursor: pointer; background-repeat: no-repeat;}
-    .prevBtn {background: url("./img/prevBtn.png");}
-    .nextBtn {background: url("./img/nextBtn.png");}
-    </style>
-    
-    <!--
-     슬라이드 비주얼 이미지 원래 이미지 비율 
-    <style>
-    #slide {margin-left: 360px; width: 610px; height: 385px; overflow: hidden; }
-    .ban { min-width: 4270px; }
-    .ban li {width: 610px; float: left; height: 385px; }
-    .btnFrame {position: absolute; z-index: 90; width: 610px;top: 50%;}
-    .btnFrame li {width: 40px; height: 40px;}
-    .btnFrame .left {float: left; }
-    .btnFrame .right {float: right; }
-
-    .btnFrame .banBtn {display: block; width: 40px; height: 40px; background-size: 40px 40px; cursor: pointer; background-repeat: no-repeat;}
-    .prevBtn {background-image: url("./img/prevBtn.png");}
-    .nextBtn {background-image: url("./img/nextBtn.png");}
-    </style>
--->
-    <!-- 사이드배너 -->
-    <style>
-    .page1 #sideban {width: 330px; height: 385px; float: right; }
-    .page1 #sideban li:first-child {margin-top: 0;}
-    .page1 #sideban li {margin-top: 38.5px;} 
-    </style>
-    
-     <!-- page2 -->
-    <style>
-    .page2 {width: 1200px; margin: 0 auto; margin-top: 20px;}
-    .page2 ul:after {content:''; display:block; clear:both;margin-left: -59px;}
-    .page2 li {float: left; width: 90px; height: 116px; margin-top: 40px; margin-left: 59px;} 
-    .page2 li a {color: #333;}
-    .page2 li p {width: 100px; height: 100px;}
-    </style>
-    
-    <!-- page3 금산은 지금, 열린 군수실-->
-    <style>
-    .page3 {width: 1200px;height: 195px; margin: 0 auto; margin-top: 20px;}
-        
-    .page3 #board1 {display: block; width: 780px; height: 195px; float: left;}
-    .page3 #board1 h2 {padding-bottom: 15px;}
-    .page3 #board1 .notiImg { width:237px; height:136px; position:relative; overflow:hidden; padding-top: 10px;}
-    .page3 #board1 p img {width:100%; height:100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
-    .page3 #board1 .notiImg:hover img {transform: scale(1.1);}
-    .page3 #board1 .txt {background-color:rgba(0,0,0,0.5); padding:11px 20px; position:absolute; left:0; bottom:0; width:100%; box-sizing:border-box;} 
-    .page3 #board1 .txt a {color:#fff; font-size:16px; font-weight:700; width:100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display:inline-block; vertical-align:middle;}
-    
-    .page3 #board1 .notiTxt {width: 465px; margin: 0 0 0 35px;}
-    .page3 #board1 .notiTxt {margin: 0 0 0 25px; }
-    .page3 #board1 .notiTxt li {padding: 8px 0; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .page3 #board1 .notiTxt a {font-size: 17px; color: #333; }
-    .page3 #board1 .ntxt {color: #5ea67f; font-size: 17px; font-weight: 800;}
-    
-    .page3 #board1 .notiImg, #board1 .notiTxt {float: left;}
-
-    .page3 #may {float: right; width: 360px; height: 178px; padding: 17px 0 0 25px; margin-top: 30px; background:url("./img/mayImg.jpg") no-repeat 100% 0; position: relative; box-sizing: border-box;}
-    #may .mayTit {font-size: 30px; color: #000; padding-left: 10px;}
-    #may .mayCom {font-size: 16px; padding-left: 28px; color: #666;}
-    #may ul {width: 230px; margin-top: 15px; margin-left: 10px; }
-    #may li {float: left; position: relative; width: 120px; border-radius: 30px; background: #fff; text-align: center;}
-    #may li a {width: 120px; font-size: 16px; color: #5ea67f; }
-    #may li:first-child {margin-top: 0;}
-    #may li {margin-top: 8px;}
-    </style>
-    
-    <!--page4-->
-    <style>
-    .page4 {width: 1200px; height: 300px; margin: 0 auto; margin-top: 50px; border-bottom: 2px solid #333; position: relative;}
-    #sevi {width: 780px; float: left; }
-    #sevi ul {margin-top: 10px;}
-    #sevi li.seviItme1 {width: 150px; margin-top: 20px; float: left;}
-    #sevi li img {display: block; width: 60px; height: 60px; }
-    #sevi .seviTit a {display: block; width:87px; height:30px; position:absolute; border: 1px solid #000; float: right;}
-    #sevi2 {width: 360px; float: right;}    
-    #sevi2 .seviBtn {clear: both; margin-top: 20px;}
-    #sevi2 .seviBtn .setBtn {float: right; font-size: 16px; color: #333;  }
-    #sevi2 .seviBtn img {float: right; display: block; width: 20px; height: 20px; padding-left: 5px; text-align: center;}
-    #sevi2 .seviLst {margin-top: 55px;}
-    #sevi2 .seviLst li {border-bottom: 1px solid #999; line-height: 40px;}
-    #sevi2 .seviLst li a {font-size: 18px; color: #333;}
-    </style>
-    
-    <!--page5 새소식-->
-    <style>
-    .page5 {width: 1200px; height: 930px; margin: 0 auto;}
-    .page5 #news h1 {margin-top: 20px;margin-bottom: 20px;}
-    .page5 #news h2 {display: block; width: 70px; height: 32px; color: #fff; text-align: center; line-height: 32px; z-index: 99; font-size: 16px;}
-    .page5 .newsBorad {position: relative;}
-    .page5 li {border-bottom: 1px solid #333;}
-        
-    /*카테고리별 색상정의*/
-    .page5 .newsBorad h2.p_life {background-color: #c35c3c;}
-    .page5 .newsBorad h2.p_trip {background-color: #028ab6;}
-    .page5 .newsBorad h2.p_cul {background-color: #9b64d3;;}
-    .page5 .newsBorad h2.p_news {background-color: #599100;}
-    .page5 .newsBorad h2.p_person {background-color: #e44869;}
-        
-    .page5 .newsBorad > section {float: left;display: block; width: 380px; height: 500px;}
-        
-    .page5 .newsBorad ul {width: 1200px;}
-    .page5 .newsBorad li a {color: #333;}
-    .page5 .newsBorad a {display: block; width: 380px; height: 200px; }
-    .page5 .newsBorad a img {display: block; width: 100%; height: 100%; overflow: hidden; padding-bottom: 20px; }    
-    
-    .page5 .newsLstmenu1 .newsLst1 {width: 1200px; height: 350px;}
-    .page5 .newsLstmenu1 .newsLst1 li {float: left; width: 380px; height: 350px; }    
-    .page5 .newsLstmenu1 .newsLst1 li h2 {position: absolute; z-index: 99; margin-top: 182px; }
-    .page5 .newsLstmenu1 .newsLst1 li:first-child {margin-left: 0;}
-    .page5 .newsLstmenu1 .newsLst1 li {margin-left: 30px;}
-    .page5 .newsLstmenu1 .newsLst1 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
-    .page5 .newsLstmenu1 .newsLst1 li p {width: 380px; height: 70px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-        
-    .page5 .newsLstmenu2 .newsLst2 {float: left;width: 380px; height: 400px;}
-    .page5 .newsLstmenu2 .newsLst2 li { width: 380px; height: 200px; margin-right: 30px;}
-    .page5 .newsLstmenu2 .newsLst2 li h2 {margin: 20px 0;}
-    .page5 .newsLstmenu2 .newsLst2 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
-    .page5 .newsLstmenu2 .newsLst2 li p {width: 380px; height: 78px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-        
-    .page5 .newsLstmenu2 .newsLst21 {float: left;width: 380px; height: 400px; margin-left: 30px; margin-top: 40px;}
-    .page5 .newsLstmenu2 .newsLst21 li {width: 380px; height: 400px;}
-    .page5 .newsLstmenu2 .newsLst21 li h2 {position: absolute; z-index: 99; margin-top: 182px;}
-    .page5 .newsLstmenu2 .newsLst21 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
-    .page5 .newsLstmenu2 .newsLst21 li p {width: 380px; height: 120px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-        
-    .page5 .newsLstmenu2 .newsLst22 {float: left;width: 380px; height: 400px; }
-    .page5 .newsLstmenu2 .newsLst22 li { width: 380px; height: 200px; margin-left: 30px; }
-    .page5 .newsLstmenu2 .newsLst22 li h2 {margin: 20px 0; }
-    .page5 .newsLstmenu2 .newsLst22 li h3 {width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-bottom: 10px;}
-    .page5 .newsLstmenu2 .newsLst22 li p {width: 380px; height: 70px; white-space: normal; overflow: hidden; text-overflow: ellipsis; }
-      
-    </style>
-    
-    <!--page6-->
-    <style>
-    .page6 {width: 1200px; height: 300px; margin: 0 auto;}
-    /*이벤트신청*/
-    .page6 .eventLst {width: 380px; height: 300px; float: left; margin-right: 30px; }
-    .page6 .eventLst li {position: relative; width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .page6 .eventLst a {color: #333;}
-    .page6 .eventLst ul {margin-top: 10px; }
-    .page6 .eventLst li {float: left; line-height: 30px; }
-    .page6 .eventLst .event_env {color: #069363; }
-    .page6 .eventLst .event_work {color: #e44869; }
-    .page6 .eventLst .event_wel {color: #d76000; }
-    /*이달의 행사 및 축제*/
-    .page6 .festiLst {width: 380px; height: 300px; float: left; margin-right: 30px; }
-    .page6 .festiLst li {position: relative; width: 380px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .page6 .festiLst a {color: #333;}
-    .page6 .festiLst ul {margin-top: 10px;}
-    .page6 .festiLst li {float: left; line-height: 30px; }
-    .page6 .festiLst .festi_cul {color: #9b64d3; }
-    .page6 .festiLst .festi_eco {color: #069363; }
-    /*생활정보 서비스*/
-    .page6 .life_serviceLst {width: 380px; height: 300px; float: left;}
-    .page6 .life_serviceLst ul {}
-    .page6 .life_serviceLst ul:after {content: '';display: block; clear: both; }
-    .page6 .life_serviceLst li {display: block; width: 180px; height: 40px; background-color:#ddd; margin-top: 10px;  margin-right: 10px;  }
-    .page6 .life_serviceLst li a {display:inline-block; width:100%; height:100%; color:#333; text-indent:20px; line-height:40px;}
-        
-    </style>
-    
-    <!--하단배너 슬라이드-->
-    <style>
-    .banner {width: 1200px; height: 80px; margin: 0 auto;}
-    #banner {width: 1200px; height: 37px; overflow: hidden; float: left;  }
-    .ban2 {min-width: 2450px; }
-    .ban2 li {width: 234px; height: 37px; margin-right: 10px; margin-bottom: 20px; float: left; }
-    .ban2 li a img {display: block; width: 234px; height: 37px; }
-        
-    </style>
-    
-    <!--footer-->
-    <style>
-    #footer { width: 1200px; height: 170px; margin: 0 auto;border-top: 1px solid #d0d0d0; clear: both;  }
-    #footer .footer_top { width: 100%; height: auto; padding: 0; }
-    #footer .ftLst ul li {position: relative; float: left; padding: 0 10px;}
-    #footer .ftLst ul li:first-child { padding-left: 0;}
-    #footer .ftLst ul li:before { content: ''; position: absolute; top: 50%; left: 0; display: block; width: 1px; height: 14px; margin-top: -6px; background: #dcdcdc;}
-    #footer .ftLst ul li:first-child:before { display: none;}
-    #footer .ftLst ul li a { font-size: 14px; color:#636363;}
-    #footer .ftLst ul {line-height: 50px;}
-    #footer .ftLst ul:after { display: block; content: ''; clear: both;}
-
-    #footer .footer_buttom { padding: 11px 0; border-top: 1px solid #ccc; text-align:left;}
-    #footer .footer_buttom {padding-top: 30px;}
-    #footer .footer_buttom .address { display: inline-block; vertical-align: top; float: left; }
-    #footer .footer_buttom .address p { padding-bottom: 0; margin-bottom: 0; padding-left: 30px;}
-    #footer .footer_buttom .address p:after{ display: block; content: ''; clear: both;}
-    #footer .ftlogo img {float: left;display: block; width: 300px; height: 33px;}
-    #footer .footer_buttom .address p.city {font-size: 13px; font-weight:500;}
-    #footer .footer_buttom .address p.call {font-size: 13px; font-weight:500;}
-    #footer .footer_buttom .address p.copy {font-size: 13px; margin:0; text-align:left;}
-    #footer .footer_buttom .address .map {font-size: 12px; color:#333;}
-    #footer .footer_buttom .mark { float: left; padding-left: 350px;}
-    </style>
     
 </head>
 <body>
-    <div id="topBanner" class="tb">
-        <figure class="tbImg">
-            <a href="">
-            <img src="./img/topbanner.jpg" alt="탑배너"></a>
-        </figure>
-        <div class="tbClose">
-            <span class="input">
-                <input type="checkbox" name="notoday1" id="notoday1">
-                <label for="notoday1">오늘 하루만 보지 않기</label>
-            </span>
-        </div>
+<div class="container">
+    <div id="mhd">
+    <input type="checkbox" id="ck1" class="ck">
+    <input type="checkbox" id="ck2" class="ck"> 
+    <header class="mhd">
+        <label for="ck1" class="gnbCall">
+            <img src="./mobile/user.png" alt="회원정보">
+        </label>
+        <h1 class="logoFrame">
+            <a href="mobile.html" class="mlogo">
+                <img src="./img/ci_02.jpg" alt="로고">
+            </a>
+        </h1>
+        <label for="ck2" class="tnbCall">
+            <span class="lst1"></span>
+            <span class="lst2"></span>
+            <span class="lst3"></span>
+        </label>
+    </header>
+    <nav id="mgnb">
+        <ul>
+            <li><a href="">로그인</a></li>
+            <li><a href="">나의금산</a></li>
+            <li><a href="">전자우편</a></li>
+            <li><a href="">우리금산</a></li>
+            <li><a href="">소통참여</a></li>
+            <li><a href="">부서안내</a></li>
+            <li><a href="">청사안내도</a></li>
+        </ul>
+        <label for="ck1" class="closeBtn"></label>
+    </nav>
+    <nav id="mtnb">
+        <ul>
+            <li><a href="">미디어</a></li>
+            <li><a href="">전자민원</a></li>
+            <li><a href="">정보공개</a></li>
+            <li><a href="">분야별정보</a></li>
+        </ul>
+        <label for="ck1" class="closeBtn"></label>
+    </nav>
     </div>
+<!--
 <header>
     <div id="header_top" class="hd">
        <div class="hdWrap">
@@ -465,18 +243,19 @@ mist ....
         </div>
     </div>
 </header>
+-->
 <main class="content">
    <!--page1-->
     <div class="page1">
     <div id="slide" class="page">
        <ul class="ban">
-           <li><a href=""><img src="./img/vsimg01.jpg" alt="세계중요농업유산등재"></a></li>
-           <li><a href=""><img src="./img/vsimg02.jpg" alt="전자도서관"></a></li>
-           <li><a href=""><img src="./img/vsimg03.jpg" alt="금산역사문화박물관"></a></li>
-           <li><a href=""><img src="./img/vsimg04.jpg" alt="책대출반납"></a></li>
-           <li><a href=""><img src="./img/vsimg05.jpg" alt="2019년사업체조사"></a></li>
-           <li><a href=""><img src="./img/vsimg06.jpg" alt="어느멋진날에김동규"></a></li>
-           <li><a href=""><img src="./img/vsimg07.jpg" alt="전국노래자랑"></a></li>
+           <li><a href=""><img src="./mobile/vsimg01.jpg" alt="세계중요농업유산등재"></a></li>
+           <li><a href=""><img src="./mobile/vsimg02.jpg" alt="전자도서관"></a></li>
+           <li><a href=""><img src="./mobile/vsimg03.jpg" alt="금산역사문화박물관"></a></li>
+           <li><a href=""><img src="./mobile/vsimg04.jpg" alt="책대출반납"></a></li>
+           <li><a href=""><img src="./mobile/vsimg05.jpg" alt="2019년사업체조사"></a></li>
+           <li><a href=""><img src="./mobile/vsimg06.jpg" alt="어느멋진날에김동규"></a></li>
+           <li><a href=""><img src="./mobile/vsimg07.jpg" alt="전국노래자랑"></a></li>
        </ul>
        <ul class="btnFrame">
            <li class="left">
@@ -487,6 +266,7 @@ mist ....
            </li>
        </ul>
     </div>
+<!--
    <div id="sideban" class="page">
        <ul class="side">
            <li><a href="" class="sideimg1">
@@ -496,7 +276,8 @@ mist ....
            <li><a href="" class="sideimg3">
                <img src="./img/slide_ban01.jpg" alt="평생학습포탈"></a></li>
        </ul>
-   </div>
+    </div>
+-->
    </div>
    <!--page2-->
    <div class="page2">
@@ -557,6 +338,7 @@ mist ....
    <div class="page3">
       <div id="board1" class="page">
            <h2>금산은 지금</h2>
+<!--
            <div class="notiImg">
               <p class="img">
                   <a href="">
@@ -567,6 +349,7 @@ mist ....
                  <a href="">금산군보건소, 보호자없는 병원 사업 호응</a>
               </p> 
            </div>
+-->
            <div class="notiTxt">
                <ul>
                    <li>
@@ -662,6 +445,7 @@ mist ....
                </ul>
            </div>
        </div>   
+<!--
        <div id="sevi2" class="page">
            <div class="seviBtn">
               <a href="" class="setBtn">설정하기
@@ -678,6 +462,7 @@ mist ....
                </ul>
            </div>
        </div>
+-->
        
        
    </div>
@@ -878,29 +663,26 @@ mist ....
                <li><a href="">이메일집단수집거부</a></li>
                <li><a href="">뷰어다운로드</a></li>
            </ul>
-           <div class="snsLst">
-               <ul>
-                   <li><a href=""></a></li>
-                   <li><a href=""></a></li>
-                   <li><a href=""></a></li>
-               </ul>
-           </div>
            </div>
        </div>
        <div class="footer_buttom">
            <a href="" class="ftlogo">
-               <img src="./img/ci_black.gif" alt=""></a>
+               <img src="./img/ci_black.gif" alt="">
+            </a>
            <div class="address">
                 <p class="city">[32733] 충청남도 금산군 금산읍 군청길 13
                     <a href="geumsan_sub13.html"  onclick="" class="map">[찾아오시는 길]</a></p>
                 <p class="call">전화번호 : 041-750-2114 </p>
                 <p class="copy">&copy; COPYRIGHT(C) 2015 BY GEUMSAN COUNTY ALL RIGHTS RESERVED</p>
            </div>
+<!--
            <div class="mark">
                 <a href="" onclick="" title="웹접근성 품질마크">
                 <img src="./img/accessibility.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a>
            </div>
+-->
        </div> 
-   </footer>   
+   </footer>
+</div>   
 </body>
 </html>
