@@ -1,0 +1,17 @@
+#nav, #content{background-color:#ccc;margin:5px; padding:5px;}  /*메뉴와 본문 배경색, 여백지정*/
+ul{margin:0; padding:0; list-style:none;}                                      /*목록 여백 초기화, 머리 기호 없애기*/
+ul > li{display:inline;}                                                                /*메뉴 목록 수평으로*/
+label, #menu{display:none;}                                                      /*메뉴 아이콘과 체크박스 숨김*/
+
+ 
+
+
+@media screen and (max-width: 44em)                                       /*화면 너비 44em 이하에서 스타일 적용*/
+{
+label {display: block;}                                                              /*메뉴 아이콘 드러내기*/
+#nav{position: absolute;left: -20em; width: 10em;}  /*메뉴 위치: 왼쪽으로 -20em절대 위치, 너비 10em*/
+
+ul > li{display:block;}                                                              /*메뉴 목록 수직으로*/
+input:checked ~ #nav{left: 0;}                                                  /*아이콘 클릭시 메뉴 위치가 left:0으로 이동*/
+input:checked ~ #content {margin-left: 10.5em; margin-right: -10.5em;} /*동시에 본문 위치가 이동*/
+}

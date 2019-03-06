@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif;font-family: 'Raleway', sans-serif;}
+a {text-decoration: none;}
+li {list-style: none;}
+
+#nav, #content{background-color:#000;}
+ul{margin:0; padding:0; list-style:none;}
+ul > li{display:inline;}
+label, #menu, #menu2 {display:none;}
+
+/* 로고 */
+#container {width: 100%; height: 100%; clear: both;}
+.hd {width: 100%; position: fixed; z-index: 20;  }
+.logo {display: block; position: absolute; width: 160px; height: 50px; background-image: url("./img/logo_re.png"); background-size: 160px 50px; background-repeat: no-repeat; margin: 5px; z-index: 2; margin: 15px 5px 5px 12px;}
+
+
+/* 메뉴 리스트 */ 
+label.menuLst {right: 50px; clear: both; margin: 10px 5px 5px 15px;}
+.menuLst span {display: block; width: 35px; height: 2px; clear: both; background: #be0000; position: absolute; z-index: 10;}
+.menuLst .lst1 {top: 12px;}
+.menuLst .lst2 {top: 23px;}
+.menuLst .lst3 {top: 35px;}
+
+
+/* 서브메뉴 열면 나오는 로고 */        
+.sublogo img {display: block; width: 160px; height: 50px; margin: 15px 5px 5px 12px;}
+label {display: block; position: absolute;}
+ul > li{display:block;}
+
+#menu:checked ~ #nav {right: 0; display: block; } 
+
+
+/* sub 메뉴 리스트 */ 
+label.menuLst2 {right: 50px; clear: both; top: 0;}
+.menuLst2 span {display: block; width: 40px; height: 2px; clear: both; background: #fff; position: absolute; z-index: 11;}
+.menuLst2 .lst4 {top: 12px;}
+.menuLst2 .lst5 {top: 26px;}
+.menuLst2 .lst6 {top: 40px;}
+
+.vsTitBox {width: 100%; margin: 0 auto; position: absolute; top: 38%; z-index: 2; color:#fff; text-align: center; }
+.vsTitBox h1, .vsTitBox h3 {font-weight: 100;}
+.vsTitBox button {width: 150px; height: 40px; margin-top: 40px; border-radius: 30px; font-size: 14px; background:transparent; border: 0; outline: 0; background-color: #be0000; color: #fff; }  
+
+/* sub 메뉴 열었을 때 */
+#nav {position: fixed; width: 100%; height: 100%; right: -100%; transition: 0.5s; z-index: 31;background:rgba(255,255,255,0.8);}
+#nav_top {width: 100%; height: 200px; margin-top: 200px;}
+#nav .sub {width: 100%; height: 400px; position: absolute; z-index: 31;}
+#nav .sub a {display: block; text-align: center; text-decoration: none; color: #333; line-height: 3; font-weight: 600;}
+
+.bg {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background:rgba(255,255,255,0.9); z-index: 31;}
+.btn-r {width: 100px; height: 100px; position: absolute; height: 25px; top: 0; right: 0; padding-top: 10px;text-align: right;}
+a.close {position: absolute; top: 38px; right: 0px; transform:translateY(-60%); width: 70px; height: 70px; transition: transform 0.3s;}
+a.close::before, a.close::after {content: ""; position: absolute; top: 58%; left: 50%; width: 1px; height: 40px; background-color: #000; transform: translateX(-50%) translateY(-50%) rotate(45deg);} 
+a.close::after {transform: translateX(-50%) translateY(-50%) rotate(-45deg);}
+
+
+/* 슬라이드 이미지 */
+.vs {width: 100%; height: 100%;overflow: hidden;}
+.vsBox {width: 400%; height: 100%;}
+.vsBox li {float: left; width: 25%; height: 740px; background-position: center center; background-size: cover; background-repeat: no-repeat; position: relative;}
+.vsBox .vsImg .item1 {background-image:url(./img/gal01.jpg);}
+.vsBox .vsImg .item2 {background-image:url(./img/gal02.jpg);}
+.vsBox .vsImg .item3 {background-image:url(./img/gal03.jpg);}
+.vsBox .vsImg .item4 {background-image:url(./img/gal04.jpg);}
+
+
+/* page1 */
+.page1 {width: 100%; height: 740px; background-color: #000; margin: 0 auto;}
+.page1 .pgTit {text-align: center; color: #fff; }
+.page1 .pgTit h1 {font-size: 30px; font-weight: 100;padding: 75px 0 5px 0;}
+.page1 .pgTit h2 {font-size: 20px; font-weight: 200;line-height: 3;}
+.page1 .pgTit h3 {font-size: 12px; font-weight: 200;line-height: 1.4; padding: 10px 0 60px 0; }
+
+.page1 .pg1Img {width: 80%; height: 200px; margin: 0 auto; padding-bottom: 40px; }
+.page1 .pg1Img img {width: 100%; height: 100%; }
+
+.page1 .pg1Btn {width: 100%; margin: 0 auto;}
+.page1 .pg1Btn a {display: block; width: 120px; height: 30px; margin: 0 auto; color:#fff; text-decoration: none; border: 1px solid #fff; border-radius: 30px; text-align: center; line-height: 1.8;}
+
+
+/* page2 */
+.page2 {width: 100%; height: 1050px; background-color: #000; margin: 0 auto;}
+.page2 .pgTit2 h1 {color: #fff; text-align: center; font-size: 30px; font-weight: 100;}
+.page2 .pgTit2 h3 {color: #fff; text-align: center; font-weight: 100; font-size: 14px; line-height: 3;}
+.page2 ul {margin-top: 30px;}
+.page2 li { width: 140px; height: 140px; overflow: hidden; margin-left: 8%; margin-bottom: 25px; float: left;}
+.page2 li img {display: block; width: 100%; height: 100%; }
+.page2 .moreBtn2 {display: block; width: 140px; height: 30px; border-radius: 30px; border: 1px solid #fff; outline: 0; margin: 0 auto; color:#fff; border: 1px solid #fff; text-align: center; line-height: 1.8; background:transparent; }
+
+
+/* page3 */
+.page3 {width: 100%; height: 1300px; margin: 0 auto; background: #000; line-height: 1.3; }
+.page3 h1 {color: #fff; text-align: center; font-size: 30px; padding: 10px 0 50px 0; font-weight: 200;}
+.page3 [class^="conBox"] {width: 100%; height: 265px; }
+.page3 img {display: block; width: 100%; height: auto;}
+.page3 p, .page3 h4 {color: #fff; text-align: center; line-height: 2; font-size: 14px;}
+.page3 .moreBtn3 {display: block; width: 160px; height: 30px; border-radius: 30px; border: 1px solid #fff; outline: 0; margin: 0 auto; color:#fff; border: 1px solid #fff; text-align: center; line-height: 1.8; background:transparent; margin: 50px auto 30px auto;}
+
+
+/* page4 */
+.page4 {width: 100%; height: 1000px; background-color: #000; margin: 0 auto;}
+.page4 .pgTit4 h1 {color: #fff; text-align: center; font-size: 30px; font-weight: 100;}
+.page4 .pgTit4 h3 {color: #fff; text-align: center; font-weight: 100; font-size: 14px; line-height: 3;}
+.page4 ul {margin-top: 30px;}
+.page4 li { width: 140px; height: 140px; overflow: hidden; margin-left: 8%; margin-bottom: 25px; float: left;}
+.page4 li img {display: block; width: 100%; height: 100%; }
+.page4 .moreBtn4 {display: block; width: 100px; height: 30px; border-radius: 30px; border: 1px solid #fff; outline: 0; margin: 0 auto; color:#fff; border: 1px solid #fff; text-align: center; line-height: 1.8; background:transparent; }
+
+
+/* page5 */
+/*
+.page5 {width: 100%; height: 500px; margin: 0 auto; background:#000; }
+.page5 .pgTit5 {text-align: center; color: #fff; font-size: 30px; font-weight: 200;}
+#cont {width: 100%; margin: 0 auto;}
+#cont .inputItem1, #cont .inputItem2, #cont .inputItem3 {width: 100%; height: 30px; font-size: 15px;}
+#cont .inputItem4 {width: 100%; font-size: 15px;}
+*/
+
+.page5 { clear:both; width: 100%; background:#000; border-top: 1px solid #333; border-bottom: 1px solid #333;}
+.pgTit5 { font-size:1.6em; font-weight: 200; padding:1em; text-align:center; color:#fff; padding-top:1.2em;}
+
+.pageLst { clear:both; width:100%; }    
+.pageLst a { display:block; height:auto; text-align:center; padding:10px; }    
+.pageLst a img { display:block; width:90%; margin:0 auto; height: auto; }
+.pageMore { display:block; margin:0 auto; margin-top:20px; color:#333; font-size:1.1em; text-align:center; padding:15px; border:2px solid #333; width:180px;}  
+.pageLst li a { position:relative; }    
+.pageLst li a:after { content:attr(data-value); display:block; min-width:240px; line-height:40px; font-size:1.1em; text-align:center; position:absolute; top:5em; z-index:30; color:#f1d30b; padding:2em; text-shadow:2px 2px 2px #333, -2px -2px 2px #333;  }
+.frmLst li { min-height:32px; clear:both; width:100%; }    
+
+#contact .inputItem { width: 90%; height: 30px; border:1px solid #999; color:#999; margin: 10px auto; display:block; float:none; }
+#contact .inputItem1 { width: 90%; height: 100px; border:1px solid #999; color:#999; margin: 10px auto; display:block; float:none; text-indent: 10px; line-height: 2.5; font-size: 13px;}
+
+input[class^="inputItem"] {text-indent: 10px;}
+input#send {margin-left: 20px; float: left;}
+label.sendTit {margin-left: 40px; width: 90%; font-size: 14px; color: #fff;}
+.itemSend {width: 100%; margin: 0 auto; }
+.contactBtn {width: 90%; height: 30px; margin-top: 30px; border: 1px solid #fff; outline: 0; background:transparent; color: #fff; margin: 50px auto; display:block; float:none;}
+
+
+/* 풋터 */
+#ft {width: 100%; height: 300px; padding-top: 15px; background-color: #000; color: #fff;}
+.ftBox {width: 90%; height: 200px; margin: 0 auto; text-align: center; line-height: 1.5;}
+.ftBox h2 {font-size: 20px; padding: 10px 0 10px 0;}
+.ftBox h4 {font-size: 14px;}
+
+button.mapBtn {width: 120px; height: 30px; border-radius: 20px; margin: 20px 0 20px 0; font-size: 12px; background: #be0000; color: #fff; border: 0; outline: 0; }
+.snsBtn {width: 100%; height: 20px; margin: 0 auto;}
+.snsBtn ul {margin-left: 10%;}
+.snsBtn li {float: left; margin-left: 17px;}
+.snsBtn li a {color: #fff; font-size: 12px;}
+
+.copyright {clear: both; width: 80%; margin: 0 auto; text-align: center; margin-top: 30px;}
+.copyright h4 {font-size: 14px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
