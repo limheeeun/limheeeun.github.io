@@ -63,6 +63,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     
     <!-- 모바일, 태블릿 바꾸기 -->
+<!--
     <script>
     $(document).ready(function(){
        var mediaWd = parseInt($(window).width());
@@ -75,6 +76,7 @@
         }
     });    
     </script>
+-->
     
     <script src="./weather/jquery.xdomainajax.js"></script>
     
@@ -204,10 +206,10 @@ mist ....
     .ban { min-width: 6006px;}
     .ban li {width: 858px; float: left; height: 385px; }
     .ban li img {width: 858px;}
-    .btnFrame {position: absolute; z-index: 90; width: 858px;top: 53%;}
-    .btnFrame li {width: 40px; height: 40px;}
-    .btnFrame .left {float: left; }
-    .btnFrame .right {float: right; }
+    .btnFrame {position: absolute; z-index: 90; width: 858px;top: 53%; }
+    .btnFrame li {width: 40px; height: 40px; background:rgba(0,0,0,0.5);}
+    .btnFrame .left {float: left; border-radius: 0 10px 10px 0; margin-left: 5px; }
+    .btnFrame .right {float: right; border-radius: 10px 0 0 10px; margin-right: 5px; }
 
     .btnFrame .banBtn {display: block; width: 40px; height: 40px; background-size: 40px 40px; cursor: pointer; background-repeat: no-repeat;}
     .prevBtn {background: url("./img/prevBtn.png");}
