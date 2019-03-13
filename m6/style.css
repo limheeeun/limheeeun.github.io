@@ -46,7 +46,7 @@ label.menuLst2 {right: 50px; clear: both; top: 0;}
 /* sub 메뉴 열었을 때 */
 #nav {position: fixed; width: 100%; height: 100%; right: -100%; transition: 0.5s; z-index: 31;background:rgba(255,255,255,0.8);}
 #nav_top {width: 100%; height: 200px; margin-top: 200px;}
-#nav .sub {width: 100%; height: 400px; position: absolute; z-index: 31;}
+#nav .sub {width: 100%; position: absolute; z-index: 31;}
 #nav .sub a {display: block; text-align: center; text-decoration: none; color: #333; line-height: 3; font-weight: 600;}
 
 .bg {position: absolute; top: 0; left: 0; width: 100%; height: 100vh; background:rgba(255,255,255,0.9); z-index: 31;}
@@ -69,9 +69,9 @@ a.close::after {transform: translateX(-50%) translateY(-50%) rotate(-45deg);}
 /* page1 */
 .page1 {width: 100%; height: 740px; background-color: #000; margin: 0 auto;}
 .page1 .pgTit {text-align: center; color: #fff; }
-.page1 .pgTit h1 {font-size: 30px; font-weight: 100;padding: 75px 0 5px 0;}
-.page1 .pgTit h2 {font-size: 20px; font-weight: 200;line-height: 3;}
-.page1 .pgTit h3 {font-size: 12px; font-weight: 200;line-height: 1.4; padding: 10px 0 60px 0; }
+.page1 .pgTit h1 {font-size: 30px; font-weight: 100; padding: 75px 0 5px 0;}
+.page1 .pgTit h2 {font-size: 20px; font-weight: 200; line-height: 3;}
+.page1 .pgTit h3 {font-size: 12px; font-weight: 200; line-height: 1.4; padding: 10px 0 60px 0; }
 
 .page1 .pg1Img {width: 80%; height: 200px; margin: 0 auto; padding-bottom: 40px; }
 .page1 .pg1Img img {width: 100%; height: 100%; }
@@ -81,17 +81,17 @@ a.close::after {transform: translateX(-50%) translateY(-50%) rotate(-45deg);}
 
 
 /* page2 */
-.page2 {width: 100%; height: 1050px; background-color: #000; margin: 0 auto;}
+.page2 {width: 100%; min-height: 1200px; background-color: #000; margin: 0 auto;}
 .page2 .pgTit2 h1 {color: #fff; text-align: center; font-size: 30px; font-weight: 100;}
 .page2 .pgTit2 h3 {color: #fff; text-align: center; font-weight: 100; font-size: 14px; line-height: 3;}
-.page2 ul {margin-top: 30px;}
-.page2 li { width: 140px; height: 140px; overflow: hidden; margin-left: 8%; margin-bottom: 25px; float: left;}
+.page2 ul {margin-top: 30px; text-align: center;}
+.page2 li { display: inline-block; width: 140px; height: 140px; overflow: hidden;  margin-bottom: 25px;}
 .page2 li img {display: block; width: 100%; height: 100%; }
 .page2 .moreBtn2 {display: block; width: 140px; height: 30px; border-radius: 30px; border: 1px solid #fff; outline: 0; margin: 0 auto; color:#fff; border: 1px solid #fff; text-align: center; line-height: 1.8; background:transparent; }
 
 
 /* page3 */
-.page3 {width: 100%; height: 1300px; margin: 0 auto; background: #000; line-height: 1.3; }
+.page3 {width: 100%; height: 1350px; margin: 0 auto; background: #000; line-height: 1.3; }
 .page3 h1 {color: #fff; text-align: center; font-size: 30px; padding: 10px 0 50px 0; font-weight: 200;}
 .page3 [class^="conBox"] {width: 100%; height: 265px; }
 .page3 img {display: block; width: 100%; height: auto;}
@@ -103,8 +103,8 @@ a.close::after {transform: translateX(-50%) translateY(-50%) rotate(-45deg);}
 .page4 {width: 100%; height: 1000px; background-color: #000; margin: 0 auto;}
 .page4 .pgTit4 h1 {color: #fff; text-align: center; font-size: 30px; font-weight: 100;}
 .page4 .pgTit4 h3 {color: #fff; text-align: center; font-weight: 100; font-size: 14px; line-height: 3;}
-.page4 ul {margin-top: 30px;}
-.page4 li { width: 140px; height: 140px; overflow: hidden; margin-left: 8%; margin-bottom: 25px; float: left;}
+.page4 ul {text-align: center;}
+.page4 li {display: inline-block; width: 140px; height: 140px; overflow: hidden; margin-bottom: 25px;}
 .page4 li img {display: block; width: 100%; height: 100%; }
 .page4 .moreBtn4 {display: block; width: 100px; height: 30px; border-radius: 30px; border: 1px solid #fff; outline: 0; margin: 0 auto; color:#fff; border: 1px solid #fff; text-align: center; line-height: 1.8; background:transparent; }
 
@@ -140,29 +140,23 @@ label.sendTit {margin-left: 40px; width: 90%; font-size: 14px; color: #fff;}
 
 
 /* 풋터 */
-#ft {width: 100%; height: 300px; padding-top: 15px; background-color: #000; color: #fff;}
+#ft {width: 100%; height: 300px; padding-top: 15px; background-color: #000; color: #fff; clear: both; }
 .ftBox {width: 90%; height: 200px; margin: 0 auto; text-align: center; line-height: 1.5;}
 .ftBox h2 {font-size: 20px; padding: 10px 0 10px 0;}
 .ftBox h4 {font-size: 14px;}
 
 button.mapBtn {width: 120px; height: 30px; border-radius: 20px; margin: 20px 0 20px 0; font-size: 12px; background: #be0000; color: #fff; border: 0; outline: 0; }
 .snsBtn {width: 100%; height: 20px; margin: 0 auto;}
-.snsBtn ul {margin-left: 10%;}
-.snsBtn li {float: left; margin-left: 17px;}
+.snsBtn ul {text-align: center;}
+.snsBtn li {display: inline-block; margin-left: 17px;}
 .snsBtn li a {color: #fff; font-size: 12px;}
 
 .copyright {clear: both; width: 80%; margin: 0 auto; text-align: center; margin-top: 30px;}
 .copyright h4 {font-size: 14px; }
 
 
-
-
-
-
-
-
-
-
+/* 탑 버튼*/
+#upBtn { position:fixed; z-index:5; right: 20px; bottom:2%; }
 
 
 
