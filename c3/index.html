@@ -144,10 +144,10 @@
 
     * {margin: 0;padding: 0; list-style: none; font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box;}
     a {color:inherit; text-decoration: none;}
-    button {cursor: pointer;}
+    button {cursor: pointer; background-color: transparent;}
     body,html {width: 100%; height: 100%;}
-    
-    
+    </style>
+    <style>
     .header {width: 100%; height: 280px; z-index: 100; position: absolute; top: 0; left: 0; background-color: #4a2022;}
     .hdWrap1 {width: 100%; height: 220px; border-bottom: 1px solid #f2cb85; padding-top: 32px;}
     .logo { width: 1200px; height: 150px; margin: 0 auto; text-indent: -9999px; background-image: url("./img/logo.jpg"); background-repeat: no-repeat; background-position: center center; }
@@ -157,7 +157,8 @@
     #gnb li {float: left; line-height: 80px; text-align: center;}
     #gnb li label {display: block; color: #ffffff; line-height: 60px; text-align: center; font-size: 16px; padding-left: 45px; padding-right: 45px; font-weight: 300; cursor:pointer;}
     #gnb li label.on {background-image: url(""); background-repeat: no-repeat; background-position: center top;}
-
+    </style>
+    <style>
     .pg {clear: both; width: 100%; min-height: 500px; position: relative;}
     .vs {clear:both; padding-top:200px; position:relative; width:100%; overflow:hidden; }
     .imgBox {width: 400%; height: 950px;}
@@ -168,24 +169,21 @@
     .imgBox li.item4{background-image: url("./img/vsimg01.jpg");}
 
     .lrBtnBox {position: absolute; z-index: 60; top: 580px; width: 100%;}
-    .lrBtn {display: block; width: 52px; height: 52px; background-size:52px 52px; background-repeat: no-repeat; background-position:center center; background-color:transparent; position:absolute; cursor:pointer;}
+    .lrBtn {display: block; width: 52px; height: 52px; background-size:30px 30px; background-repeat: no-repeat; background-position:center center; background-color:transparent; position:absolute; cursor:pointer;}
     .lrBtn.left { background-image:url("./img/arrow_left.png"); left:200px; }
-    .lrBtn.right { background-image:url("./img/arrow_right.png"); 
-        right:200px; }
+    .lrBtn.right { background-image:url("./img/arrow_right.png"); right:200px; }
 
-    .numBtnBox { position:absolute; bottom:105px; z-index:61; left: 0; 
-        width:100%; height:40px; }    
+    .numBtnBox { position:absolute; bottom:105px; z-index:61; left: 0; width:100%; height:40px; }    
     .numBtnFrame { width:200px; position:relative; margin:0 auto; height:40px; }
     .numBtnFrame li { position:absolute; top:0; width:40px; height: 38px; border-radius:20px;  }
     .numBtnFrame li.item1 { left:0; }    
     .numBtnFrame li.item2 { left:50px; }    
     .numBtnFrame li.item3 { left:100px; }    
     .numBtnFrame li.item4 { left:150px; }
-    .numBtn { display:block; width: 40px; height: 38px; 
-        background-color:transparent; background-image:url(""); background-repeat: no-repeat; 
-    background-position: center center; cursor:pointer; }
+    .numBtn { display:block; width: 40px; height: 38px;background-color:transparent; background-image:url(""); background-repeat: no-repeat;background-position: center center; cursor:pointer; }
     .numBtn.on { background-image:url("g"); }
-    
+    </style>
+    <style>
     #sub1 {width: 100%; height: 1271px; background: url("./img/page1.jpg") center top no-repeat; margin: 0 auto; border: 0; outline: 0; background-size: auto;}
     .wrap11 {text-align: center; padding-top: 230px; line-height: 1.3; clear: both; margin: 0px auto;}
     .pTitle {font-size: 60px;}
@@ -198,16 +196,25 @@
     .boxImg { display:block; width:100%; height: auto; }
 
     .wrap12 {clear:both; padding-top:90px; width:1200px; margin:0px auto; text-align:center; color:#444; }
-
+    </style>
+    
+    <!-- sub2 -->
+    <style>
     #sub2 {width: 100%; height: 850px;background: url("img/flour_img.jpg") center top no-repeat; order:0; outline:0; margin-top:-1px;}
     .wrap21 { color:#fff; text-align:center;}
     .p2Title {font-size: 55px; color: #ffffff; padding-top: 250px;padding-bottom: 20px; text-align: center; border-bottom: 1px solid #ffffff;}
     .p2Coment {font-size: 20px; color: #ffffff; padding-top: 20px; line-height: 1.3;}
-    #sub2_2 {width: 100%; height:600px; background-image:url("./img/page2_img03.jpg"); background-repeat: no-repeat; 
-        background-position:center center; border:0; outline:0; margin-top:-1px; background-size:auto;} 
+    #sub2_2 {width: 100%; height:600px; background-image:url("./img/page2_img03.jpg"); background-repeat: no-repeat;background-position:center center; border:0; outline:0; margin-top:-1px; background-size:auto;} 
+    </style>
+    
+    <!-- sub3 -->
+    <style>
     #sub3  { width: 100%; height:850px; background: url("img/salt_img.jpg") center top no-repeat; border:0; outline:0; margin-top:-1px; background-size:125%; }
     .wrap31 { color:#fff; text-align:center;}
-
+    </style>
+    
+    <!-- sub4 -->
+    <style>
     #sub4 { width: 100%; height:850px;  background: url("./img/vsimg04.jpg") center top no-repeat; border:0; outline:0; margin-top:-1px; background-size:125%; }
     .wrap41 { height: 100%; margin: 0 auto; text-align: center;}
 
@@ -222,18 +229,18 @@
     #popCk1:checked ~ .popBox { display:block; }   
     .popOpenBtn {color:#fff;font-weight:300;font-size:24px;border-radius:30px;background:#694927;padding:7px 40px;display:inline-block; margin-top:40px; cursor: pointer; }  
 
-    #sub4_2  { width: 100%; height:1000px; background-image: url("/img/vsimg06.jpg"); background-repeat: no-repeat; background-position:center top; border:0; outline:0; margin-top:-1px; background-size:125%; color: #fff; text-align: center;} 
+    #sub4_2 { width: 100%; height:1000px; background-image: url("./img/vsimg06.jpg"); background-repeat: no-repeat; background-position:center top; border:0; outline:0; margin-top:-1px; background-size:125%; color: #fff; text-align: center;} 
     .titBox4 { width: 1200px; margin:0 auto; color:#fff; text-align:center; }
     .p3Title { font-size:62px; padding-top:80px; padding-bottom:50px; font-weight:400; } 
     .p3Coment { font-weight:200; font-size:25px; padding-bottom:50px; }    
-    .iconLst { width:1200px; margin:0 auto; color:#fff; padding-top:50px; }
+    .iconLst { width:1200px; margin:0 auto; color:#fff; padding-top:50px; padding-left: 140px;  }
     .iconLst li { float:left; text-align:center; }
     .col3 { width:264px; margin-right:48px; }    
     .col3.last { margin-right:0; } 
     .iconTit { height:100px; font-size:24px; padding:15px; }  
     .iconTxt { font-weight:300; font-size:20px; padding:15px; border-top:2px solid #f2cb85; padding-top:40px; }  
 
-     #sub4_3 {width: 100%; height:3280px; background-color:#fff;}
+     #sub4_3 {width: 100%; height:1500px; background-color:#fff;}
     .wrap61 {width: 1200px; margin:0 auto; text-align:center;color:#474747;}
     .p4Title {font-weight:700; font-size:50px;
     line-height:1.2; padding-top:50px; padding-bottom: 25px; }    
@@ -255,15 +262,40 @@
     .itemMore:hover { border:2px solid #f2cb85; color:#f2cb85; }   
     .imgLst.con1:before { content:""; display:block; width: 385px;height: 369px; position:absolute; left:60px; top:30%; z-index:20; }   
     .imgLst.con2:after { content:""; display:block; width: 359px; height: 380px; position:absolute; right:60px; bottom:10%; z-index:20;  }
-
-    .videoWrap { width: 1200px; padding-top:100px; margin:0 auto; padding: 50px;}
-
-    /*풋터*/
+    </style>
+    <!-- 비디오 -->
+    <style>
+    .videoWrap { width: 1200px; padding-top:100px; margin:0 auto; padding-bottom: 50px; }
+    </style>
+    <!-- 풋터 -->
+    <style>
     .footer { width: 100%; clear:both; height: 110px;  background:#4a2022; color:#777; }   
     .ftWrap { width: 1200px; margin:0 auto; background-image:url(""); background-repeat:no-repeat; background-position:0px 40px; }    
     .copyright { text-align:right; font-size:12px; line-height:1.3; padding-top:30px; font-weight:300; }
-
     </style>
+    <!-- 팝업창 -->
+    <style>
+    #popBox2, #popBox3, #popBox4, #popBox5 { display:none; }    
+    #popCk2:checked ~ #popBox2 { display:block; }
+    #popCk3:checked ~ #popBox3 { display:block; }
+    #popCk4:checked ~ #popBox4 { display:block; }
+    #popCk5:checked ~ #popBox5 { display:block; }
+    #popBox2 .popFrame { background-image:url("..jpg"); background-size:auto 100%;background-position:center center; height: 910px; }
+    .popImgBox { text-align:center; }
+    #popBox2 .popImgBox { width:1200px; height:auto; padding: 0; margin: 0; text-align:center; }
+    .popBtnFrame { position:absolute; width:488px; height:58px; bottom:10px;  left:300px; }
+    .popBtn { display:block; height:58px; width:230px; cursor:pointer}
+    .popBtn.item1 { float:left; }    
+    .popBtn.item2 { float:right; } 
+    #popBox3 .popFrame  { background-color:#fff; height: 800px; }  
+    #popBox3 .popImgBox { width: 1200px; height: auto; background-color:#fff; margin-top:0px; min-height:900px; }
+    #popBox4 .popFrame { background-color:#fff; height:880px; overflow-y:visible; }
+    #popBox4 .popImgBox { width: 1200px; height:500px; margin-top:50px; }
+    #popBox4 .popImgBox img { width: 600px; }   
+    .popBtn2 { display:block; width:160px; line-height:40px;background:#632e11; color:#fff; text-align:center; margin:0 auto; margin-top: 100px; cursor:pointer; }
+    </style>
+    
+    
 </head>
 <body>
     <header class="header" style="position: absolute;">
@@ -279,7 +311,7 @@
                     <li><label for="sub3">신안 천일염</label></li>
                     <li><label for="sub4">순수 유기농 우유</label></li>
                     <li><label for="sub5">TV CF</label></li>
-                    <li><label for="popck2">하이델 이벤트</label></li>
+                    <li><label for="popCk2">하이델 이벤트</label></li>
                 </ul>
             </nav>
         </div>
@@ -456,18 +488,102 @@
         </div>
     </footer>
     <input type="checkbox" id="popCk2" class="ckItem">
-    <div id="popBox2" class="popBox">
-        <div class="popFrame">
-            <h3 class="popTit">이벤트</h3>
-            <label for="popCk2" class="popCloseBtn"></label>
-            <div class="popImgBox">
-                <img src="" alt="">
-            </div>
-            <div class="popBtnFrame">
-                <label for="popCk3" class="popBtn item1"></label>
-                <label for="popCk4" class="popBtn item2"></label>
-            </div>
+<div id="popBox2" class="popBox">
+    <div class="popFrame">
+        <h3 class="popTit">이벤트</h3>
+        <label for="popCk2" class="popCloseBtn"></label>
+        <div class="popImgBox">
+            <img src="" class="eventImg" alt="메인이벤트">
+        </div>
+        <div class="popBtnFrame">
+            <label for="popCk3" class="popBtn item1"></label>
+            <label for="popCk4" class="popBtn item2"></label>
         </div>
     </div>
+</div>
+<input type="checkbox" id="popCk3" class="ckItem">
+<div id="popBox3" class="popBox">
+    <div class="popFrame">
+        <h3 class="popTit">제품안내 보기</h3>
+        <label for="popCk3" class="popCloseBtn"></label>
+        <div class="popImgBox">
+            <img src="" class="eventImg" alt="제품안내">
+        </div>
+    </div>
+</div>
+<input type="checkbox" id="popCk4" class="ckItem">
+<div id="popBox4" class="popBox">
+    <div class="popFrame">
+        <h3 class="popTit">이벤트 바로가기</h3>
+        <label for="popCk4" class="popCloseBtn"></label>
+        <div class="popImgBox">
+            <img src="" class="eventImg" alt="이벤트">
+        </div>
+        <div class="popBtnFrame">
+            <label for="popCk5" class="popBtn2">이벤트 신청</label>
+        </div>
+    </div>
+</div>
+<input type="checkbox" id="popCk5" class="ckItem">
+<div class="popBox" id="popBox5">
+    <div class="popFrame">
+        <h3 class="popTit">개인정보 수집 및 이용에 관한 정책</h3>
+        <label for="popCk5" class="popCloseBtn"></label>
+        <div class="privacy_wrap">
+            <ul class="list">
+                <li class="li_tit">(주) 일동후디스는 원활한 이벤트 진행을 위하여 다음과 같이 고객님의 개인정보를 수집 및 이용 합니다.</li>
+                <li>고객님이 입력한 개인정보는 '정보통신망 이용촉진 및 정보보호 등에 관한 법률'에 따라 (주) 일동후디스가 수집, 활용 및 취급 시 본인의 동의를 얻어야 하는 정보입니다. 
+                입력하신 개인정보는 고객님의 사전동의 없이는 함부로 공개하지 않으며,아래의 용도 외에는 활용되지 않습니다.</li>
+                <li class="li_tit">1. 개인정보 수집항목 및 수집 목적</li>
+                <li>1-1. 수집이용목적 : 이벤트 진행 및 경품발송, TM</li>
+                <li>1-2. 수집항목(필수) : 이름, 전화번호, 주소, 아기월령, 수유현황</li>
+                <li>1-3. 보유/이용기간 : 이벤트 종료일로부터 90일간 </li>
+                <li class="li_tit">2. 고객은 개인정보 수집을 거부할 수 있습니다.</li>
+                <li>다만, 거부할 경우 본 이벤트에 참여하실 수 없습니다. </li>
+                <li class="li_tit">3. 귀하는 고객정보 수집 및 이용에 동의하지 않으실 수 있으나,   이 경우 이벤트 참여가 제한될 수 있습니다.</li>
+            </ul>
+            <div class="agree"><label><input type="checkbox" id="agree" name="agree">이벤트 유의사항 및 개인정보활용에 동의 합니다.</label></div>
+        </div>
+        <div class="info_wrap">
+            <ul class="info_form">
+                <li class="info_li_mar">
+                    <label class="label_tit">1. 이름</label>
+                    <input class="name_info" type="text" name="userName" value="" maxlength="20">
+                </li>
+                <li class="info_li_mar">
+                    <label class="label_tit">2. 전화번호</label>
+                    <select id="userPhone1" name="userPhone1" title="연락처 앞번호 선택">
+                        <option value="010" selected="">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                    </select>
+                    <span>-</span>
+                    <input class="num_info" type="text" name="userPhone2" value="" maxlength="4" onkeyup="onlyNumberCheck(this)" title="연락처 중간번호 입력">
+                    <span>-</span>
+                    <input class="num_info" type="text" name="userPhone3" value="" maxlength="4" onkeyup="onlyNumberCheck(this)" title="연락처 뒤번호 입력">
+                </li>
+                <li class="info_li_mar">
+                    <label class="label_tit">3. 주소</label>
+                    <div class="add_wrap">
+                        <div class="post_wrap">
+                            <input class="num_info" type="text" name="post" id="post" value="" readonly="">
+                            <button class="post_btn" type="button" name="button" value="" onclick="goPopup();">우편번호 검색</button>
+                        </div>
+                        <input class="add_info" type="text" name="addr1" id="addr1" value="" readonly="">
+                        <input class="add_info" type="text" name="addr2" id="addr2" value="" placeholder="상세주소를 입력해주세요.">
+                    </div>
+                </li>
+                <li class="info_li_mar">
+                    <label class="label_tit">4. 공유 URL</label>
+                    <input class="name_info" type="text" name="snsUrl" value="">
+                </li>
+            </ul>
+            <a class="apply_btn">참여 완료</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
