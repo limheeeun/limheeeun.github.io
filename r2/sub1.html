@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIDIER DUBOUT</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa16.ico">
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa32.ico">
+    <!-- 안드로이드 iOS -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa152.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/didier_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/didier_fa114.ico">
+    <!-- iPAD 홈스크린 -->
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/didier_fa72.ico">
+    <!-- Chrome 웹스토어 -->
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/didier_fa128.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+ 
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="./sub1.css">
+    
+    <!-- 제이쿼리 연결 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./top.js"></script>
+    
+    <style>
+    @media screen and (min-width:960px) { 
+        .hd { position:fixed; width:260px; height:100%; left:0;  z-index:90;}
+        .logo img { width:150px; }  
+        #container { position:relative; width:80%; margin-right: -100%; padding-left:300px; padding-right: 100px;  
+        }
+        .mo { display:none; }
+        .mobile { display:none; }
+        .vs .mobile { display:none; }    
+        .desk { display:block; }
+        #gnb { position:relative; top:auto; right:auto; height:auto; }
+        .btn-x {display: none;}
+        .dia_header { height:90px; }
+        .login_btn { margin-left:45px; }
+        .page-link-area { width: 90%; }
+        .content_title { font-size:2.4em; line-height: 5; }
+        
+        .maison {width: 70%; margin: 0 auto;}
+        .maison li a {color: #333; font-weight: 100; font-size: 1em;}
+        .imgBox img {display: block; width: 800px; height: auto; margin: 0 auto;}
+        
+        .footer {position:relative; width: 90%; float:left; margin-right: -100%; padding-left:260px;}
+
+        
+    }
+        
+        
+    </style>
+</head>
+<body>
+<header class="hd">
+    <input type="radio" name="collapRa" class="raItem" id="noSel" checked>
+
+    <input type="radio" name="collapRa" class="raItem" id="sel2">
+    <input type="radio" name="collapRa" class="raItem" id="sel3">
+    <input type="radio" name="collapRa" class="raItem" id="sel4">
+    
+    <a href="index.html" class="logo">
+        <img src="./img/logo_te.png" alt="로고">
+    </a>
+    <label for="sel2" class="menuLst mo"></label>
+    <div id="gnb">
+        <div class="gnb_top">
+            <div class="btn-x">
+                <a href="" class="close"></a>
+            </div>
+            <label for="sel3" class="login">Login</label>
+            <label for="sel4" class="memship">Membership</label>
+            <div class="button">
+                <button class="shop">SHOP</button>
+            </div>    
+        </div>
+        <ul class="gnb">
+            <li class="item1">
+                <a href="sub1.html"><span>MAISON</span></a>
+                <ul class="sub">
+                    <li class="sub_menu1">
+                        <a href="">Story</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Design Inspiration</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Muse</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Launching</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item2">
+                <a href="sub2.html"><span>MARIAGE</span></a>
+            </li>
+            <li class="item3">
+                <a href="sub3.html"><span>COLLECTION</span></a>
+                <ul class="sub">
+                    <li class="sub_menu1">
+                        <a>Mariage</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2019</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2018</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2017</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2016</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2015</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2014</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2013</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item4">
+                <a href="sub4.html"><span>COLLABORATION</span></a>
+            </li>
+            <li class="item5">
+                <a href="sub5.html"><span>STORE</span></a>
+            </li>
+        </ul>    
+    </div>
+    <div id="loginFrm">
+        <a href="index.html" class="logo log">
+        <img src="./img/logo_te.png" alt="로고">
+        </a>
+        <h2 class="selTit">Login</h2>
+        <form action="login_ok.php" method="post" name="loginFrm" class="frm">
+            <div class="frmWrap">
+               <ul class="frmFrame loginFrm">
+                    <li>
+                        <div class="frmHalf">
+                            <input type="text" name="userid" id="memId" class="inData" placeholder="ID" required autofocus>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="frmHalf">
+                            <input type="password" name="userpw" id="memPw" class="inData" placeholder="PASSWORD" required>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="frmHalf">
+                            <input type="submit" value="로그인" class="inData btn">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="findWrap">
+                <ul class="findFrm">
+                    <li><a href="">아이디 찾기</a></li>
+                    <li><a href="">비밀번호 찾기</a></li>
+                    <li><a href="">회원가입</a></li>
+                </ul>
+            </div>
+        </form>
+        <div class="footer_gnb">
+            <ul class="link-area">
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">이메일무단수집금지</a></li>
+            </ul>
+            <p class="copyright">
+                서울특별시 강남구 삼성로342(세정빌딩)    Tel. 080.350.0368<br>
+                COPYRIGHT (주) 세정서울지사 ALL RIGHT RESERVED.
+            </p>
+            <div class="sns">
+                <a href="https://www.facebook.com/didierdubotkorea" class="facebook" target="_blank">
+                    <img src="./img/facebook.png" alt="페이스북">
+                </a>
+                <a href="https://www.instagram.com/didierdubot_official/?hl=ko" class="insta" target="_blank">
+                    <img src="./img/instagram.png" alt="인스타그램" target="_blank">
+                </a>
+                <a href="https://www.youtube.com/user/DIDIERDUBOTKOREA" class="youtube">
+                    <img src="./img/youtube.png" alt="유투브" target="_blank">
+                </a>
+                <a href="https://www.weibo.com/u/5794804949" class="weibo">
+                    <img src="./img/weibo.png" alt="웨이보" target="_blank">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="container">
+    <section class="maison">
+        <ul class="top_menu">
+            <li class="menu1
+            " on><a href="sub1.html">Story</a></li>
+            <li class="menu2"><a href="">Design Inspiration</a></li>
+            <li class="menu3"><a href="">Muse</a></li>
+            <li class="menu4"><a href="">Launching</a></li>
+        </ul>
+        <div class="txtBox">
+            <p class="txtCom">
+                <br><br>
+                디디에 두보(DIDIER DUBOT)는 프렌치 감성을 바탕으로
+                듀얼 페미니티를 표현하는 프리미엄 브릿지 주얼리 브랜드이다.
+                듀얼 페미니티는 '관능미와 순수함'이라는 양면적인 여성미를 표현하는 것으로,
+                이 두 가지 코드의 조화를 선보이는 디디에 두보는
+                '프렌치 센슈얼'이라는 새로운 주얼리 컨셉을 제안한다.
+            </p>
+        </div>
+        <div class="imgBox">
+            <img src="./img/story_img011.jpg" alt="">
+        </div>
+        <div class="txtBox">
+            <p class="txtCom">
+                <br><br>
+                " 여자는 남을 유혹할 만큼 아름다울 필요는 없지만,
+                남을 유혹할 만큼 관능적이어야 하죠.
+                마드모아젤은 소녀로 보이고 싶지않아요.
+                여자라면 누구나 센슈얼한 매력을 가지고 있죠. "
+                <br><br>
+                - 여자의 주얼리, 디디에 두보(DIDIER DUBOT)
+            </p>
+        </div>
+        <div class="imgBox">
+            <img src="./img/story_img02.jpg" alt="">
+        </div>
+        <div class="txtBox">
+            <h2>BRAND SPIRIT</h2>
+            <p class="txtCom">
+                디디에 두보는 여성의 내적, 외적인 아름다움에 대한 열망에서 시작되었다.여성의 진정한 아름다움에 대한 탐구는 예쁜 소녀가 아닌 성숙함을 바탕으로 여성만이 가지는 센슈얼한 매력을 지니는 것이라는 명제로 발전했고, 이를 바탕으로 양귀비에서 영감 받은 센슈얼 무드의 주얼리를 런칭했다.
+            </p>
+        </div>
+        <div class="imgBox">
+            <img src="./img/story_img03.jpg" alt="">
+        </div>
+        <div class="txtBox">
+            <h2>SYMBOL</h2>
+            <p class="txtCom">
+                브랜드 심볼은 양귀비. 매혹, 유혹을 상징하는 양귀비(Opium poppy)는 디디에 두보가 표현하고자 하는 ‘관능’과 ‘순수’ 두 가지 매력을 동시에 지니는 ‘듀얼 페미니티(Dual Feminity)’를 가장 잘 표현하는 꽃이다. 양귀비의 매력은 이니셜 D의 시크함과 만나 Edition 8의 디자인에 다양하게 표현된다.
+            </p>
+        </div>
+    </section>  
+</div>
+<footer class="footer">
+    <ul class="link-area" style="clear: both;">
+        <li><a href="">개인정보처리방침</a></li>
+        <li><a href="">이용약관</a></li>
+        <li><a href="">이메일무단수집금지</a></li>
+    </ul>
+    <p class="copyright">
+            서울특별시 강남구 삼성로342(세정빌딩)    Tel. 080.350.0368<br>
+            COPYRIGHT (주) 세정서울지사 ALL RIGHT RESERVED.
+    </p>
+    <div class="sns mobile">
+        <a href="https://www.facebook.com/didierdubotkorea" class="facebook" target="_blank">
+            <img src="./img/facebook.png" alt="페이스북">
+        </a>
+        <a href="https://www.instagram.com/didierdubot_official/?hl=ko" class="insta" target="_blank">
+            <img src="./img/instagram.png" alt="인스타그램" target="_blank">
+        </a>
+        <a href="https://www.youtube.com/user/DIDIERDUBOTKOREA" class="youtube">
+            <img src="./img/youtube.png" alt="유투브" target="_blank">
+        </a>
+        <a href="https://www.weibo.com/u/5794804949" class="weibo">
+            <img src="./img/weibo.png" alt="웨이보" target="_blank">
+        </a>
+    </div>
+</footer>
+<a href="index.html" id="upBtn">
+    <img src="./img/next.png" alt="">
+</a>
+</body>
+</html>

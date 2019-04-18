@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DIDIER DUBOUT</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa16.ico">
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa32.ico">
+    <!-- 안드로이드 iOS -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/didier_fa152.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/didier_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/didier_fa114.ico">
+    <!-- iPAD 홈스크린 -->
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/didier_fa72.ico">
+    <!-- Chrome 웹스토어 -->
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/didier_fa128.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+ 
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- 제이쿼리 연결 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./top.js"></script>
+    <script src="./slide.js"></script>
+    <script src="./slide2.js"></script>
+
+    
+    <style>
+    @media screen and (min-width:960px) { 
+        .hd { position:fixed; width:260px; height:100%; left:0;  z-index:90; float: left;}
+        .logo img { width:150px; padding-top: 17px; }  
+        #container { position:relative; width: 90%; float:left; margin-right: -100%; padding-left:260px; }
+        .mo { display:none; }
+        .mobile { display:none; }
+        .vs .mobile { display:none; }   
+        .close {display: none;}
+        .desk { display:block; }
+        #gnb { position:relative; top:auto; right:auto; height:auto; }
+        .dia_header { height:90px; }
+        .login_btn { margin-left:45px; }
+        #loginFrm {padding-top: 5%;}
+        .selTit {width: 520px; margin: 0 auto; }
+        .frm {width: 600px; height: auto; margin: 0 auto; }
+        .page-link-area { width: 90%; }
+        .content_title { font-size:2.4em; line-height: 5; }
+        .footer_gnb {display: none;}
+        .footer {position:relative; width: 90%; float:left; margin-right: -100%; padding-left:260px;}
+    }
+        
+    </style>
+        
+</head>
+<body>
+<header class="hd">
+    <input type="radio" name="collapRa" class="raItem" id="noSel" checked>
+    <input type="radio" name="collapRa" class="raItem" id="sel2">
+    <input type="radio" name="collapRa" class="raItem" id="sel3">
+    <input type="radio" name="collapRa" class="raItem" id="sel4">
+    
+    <a href="index.html" class="logo">
+        <img src="./img/logo_te.png" alt="로고">
+    </a>
+    <label for="sel2" class="menuLst mo"></label>
+    <div id="gnb">
+        <div class="gnb_top">
+            <div class="btn-x">
+                <a href="" class="close"></a>
+            </div>
+            <label for="sel3" class="login">Login</label>
+            <label for="sel4" class="memship">Membership</label>
+            <div class="button">
+                <button class="shop"  onclick="location.href='http://www.didierdubot.co.kr/'">SHOP</button>
+            </div>    
+        </div>
+        <ul class="gnb">
+            <li class="item1">
+                <a href=""><span>MAISON</span></a>
+                <ul class="sub">
+                    <li class="sub_menu1">
+                        <a href="sub1.html">Story</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Design Inspiration</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Muse</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">Launching</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item2">
+                <a href="sub2.html"><span>MARIAGE</span></a>
+            </li>
+            <li class="item3">
+                <a href="sub3.html"><span>COLLECTION</span></a>
+                <ul class="sub">
+                    <li class="sub_menu1">
+                        <a>Mariage</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2019</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2018</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2017</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2016</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2015</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2014</a>
+                    </li>
+                    <li class="sub_menu1">
+                        <a href="">2013</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item4">
+                <a href="sub4.html"><span>COLLABORATION</span></a>
+            </li>
+            <li class="item5">
+                <a href="sub5.html"><span>STORE</span></a>
+            </li>
+        </ul>  
+    </div>
+    <div class="sns">
+        <a href="https://www.facebook.com/didierdubotkorea" class="facebook" target="_blank">
+            <img src="./img/facebook.png" alt="페이스북">
+        </a>
+        <a href="https://www.instagram.com/didierdubot_official/?hl=ko" class="insta" target="_blank">
+            <img src="./img/instagram.png" alt="인스타그램" target="_blank">
+        </a>
+        <a href="https://www.youtube.com/user/DIDIERDUBOTKOREA" class="youtube">
+            <img src="./img/youtube.png" alt="유투브" target="_blank">
+        </a>
+        <a href="https://www.weibo.com/u/5794804949" class="weibo">
+            <img src="./img/weibo.png" alt="웨이보" target="_blank">
+        </a>
+    </div>
+    <div id="loginFrm">
+        <a href="index.html" class="logo log">
+        <img src="./img/logo_te.png" alt="로고">
+        </a>
+        <h2 class="selTit">Login</h2>
+        <form action="login_ok.php" method="post" name="loginFrm" class="frm">
+            <div class="frmWrap">
+               <ul class="frmFrame loginFrm">
+                    <li>
+                        <div class="frmHalf">
+                            <input type="text" name="userid" id="memId" class="inData" placeholder="ID" required autofocus>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="frmHalf">
+                            <input type="password" name="userpw" id="memPw" class="inData" placeholder="PASSWORD" required>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="frmHalf">
+                            <input type="submit" value="로그인" class="inData btn">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="findWrap">
+                <ul class="findFrm">
+                    <li><a href="">아이디 찾기</a></li>
+                    <li><a href="">비밀번호 찾기</a></li>
+                    <li><a href="">회원가입</a></li>
+                </ul>
+            </div>
+        </form>
+        <div class="footer_gnb">
+            <ul class="link-area">
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">이용약관</a></li>
+                <li><a href="">이메일무단수집금지</a></li>
+            </ul>
+            <p class="copyright">
+                서울특별시 강남구 삼성로342(세정빌딩)    Tel. 080.350.0368<br>
+                COPYRIGHT (주) 세정서울지사 ALL RIGHT RESERVED.
+            </p>
+            <div class="sns">
+                <a href="https://www.facebook.com/didierdubotkorea" class="facebook" target="_blank">
+                    <img src="./img/facebook.png" alt="페이스북">
+                </a>
+                <a href="https://www.instagram.com/didierdubot_official/?hl=ko" class="insta" target="_blank">
+                    <img src="./img/instagram.png" alt="인스타그램" target="_blank">
+                </a>
+                <a href="https://www.youtube.com/user/DIDIERDUBOTKOREA" class="youtube">
+                    <img src="./img/youtube.png" alt="유투브" target="_blank">
+                </a>
+                <a href="https://www.weibo.com/u/5794804949" class="weibo">
+                    <img src="./img/weibo.png" alt="웨이보" target="_blank">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="container">
+    <figure class="vs">
+        <h1 class="vs_tit">Couleur de femme</h1>
+        <img src="./img/vs_bg.jpg" alt="비주얼" class="mobile">
+        <ul class="imgBox desk">
+            <li class="img_frm1">
+                <video src="./video/videoplayback_2017.mp4" autoplay loop muted></video>
+<!--                <img src="./img/vs_bg.jpg" alt="비주얼1">-->
+                <h2 class="ban_title"></h2>
+            </li>
+        </ul>
+    </figure>
+    <section class="main_content">
+        <h2 class="page_title">Collection</h2>
+        <div class="wrap desk">
+            <div class="slide_wrap">
+                <div class="wrapper1" style="max-width: 100%; margin: 0px auto;">
+                    <div class="slide_view" style="width: 100%; overflow: hidden; position: relative; height: 550px;">
+                        <ul class="slide_box" style="width: auto; position: relative;">
+                            <li class="col12 first item on">
+                                <a href="">
+                                    <div class="img_area" style="background:url('./img/ban_2019.jpg') no-repeat 50% 50%;"></div>
+                                </a>
+                                <div class="box_abs">
+                                    <div class="box_inner">
+                                        <h2 class="tit">19' Le vent chaud_La D.D</h2>
+                                        <p class="cont">프렌치 센슈얼 주얼리 디디에 두보의 새로운 뮤즈로 변치 않는 아름다움을 간직한 이나영이 선정되었다. 2019년 새롭게 출시된 메시지 주얼리 "KISS ME"와 함께 브라운관에 복귀한 그녀는 꾸민 듯, 안 꾸민 듯 한 본인의 고유의 자연스러운 아름다움을 뽐내는 프랑스 여성처럼 디디에 두보의 프렌치 감성과 딱 맞아 떨어지는 모델이다.</p>
+                                        <a href="" class="btn">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col12 item">
+                                <a href="">
+                                    <div class="img_area" style="background:url('./img/ban_2018.jpg') no-repeat 50% 50%;"></div>
+                                </a>
+                                <div class="box_abs">
+                                    <div class="box_inner">
+                                        <h2 class="tit">18' La réalité et Le rêve</h2>
+                                        <p class="cont">디디에 두보가 비오는 날의 파리를 담은 몽 파리 컬렉션을 출시했다. 몽 파리(Mon Paris)’컬렉션은 브랜드 아이덴티티가 담긴 프리미엄 라인으로 천연석과 프렌치스러운 엔티크 컬러가 바탕이 되었다. 빗방울이 떨어져 맺힌 모습을 다이아몬드의 불규칙한 배열을 통해 표현하였고 센슈얼골드 컬러와 은은한 그레이 컬러의 엔티크 도금의 부드러운 색감이 시선을 사로잡는다.</p>
+                                        <a href="" class="btn">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col12 item">
+                                <a href="">
+                                    <div class="img_area" style="background:url('./img/ban_2017.jpg') no-repeat 50% 50%;"></div>
+                                </a>
+                                <div class="box_abs">
+                                    <div class="box_inner">
+                                        <h2 class="tit">17' Couleur de femme</h2>
+                                        <p class="cont"></p>
+                                        <a href="" class="btn">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="col12 item">
+                                <a href="">
+                                    <div class="img_area" style="background:url('./img/ban_2016.jpg') no-repeat 50% 50%;"></div>
+                                </a>
+                                <div class="box_abs">
+                                    <div class="box_inner">
+                                        <h2 class="tit">16' Respiration et repos</h2>
+                                        <p class="cont"></p>
+                                        <a href="" class="btn">READ MORE</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="slide_control">
+                            <li class="slide_num on">01</li>
+                            <li class="slide_num">02</li>
+                            <li class="slide_num">03</li>
+                            <li class="slide_num">04</li>
+                            <em>/</em>
+                            <li class="slide_all_index">04</li>
+                        </ul>
+                        <ul class="lr_btn">
+                            <li class="prev">
+                                <button class="btn"></button>
+                            </li>
+                            <li class="next">
+                                <button class="btn"></button>
+                            </li>
+                        </ul>
+                    </div>
+<!--
+                    <div class="slide_control">
+                        <div class="slide_num">
+                            <span class="num_index">01</span>
+                            <em>/</em>
+                            <span class="all_index">04</span>
+                        </div>
+                        <div class="slide_arrow">
+                            <a href="" class="prevBtn"></a>
+                            <a href="" class="nextBtn"></a>
+                        </div>
+                    </div>
+-->
+                </div>
+            </div>
+        </div>
+<!-- 이미지 슬라이드-->
+        <div class="ban1 mobile">
+            <ul class="ban_frame" id="vs_data1">
+                <li class="ban_item1">
+                    <img src="./img/ban_2019.jpg" alt="배너1">
+                    <div class="titBox">   
+                        <h3 class="contentTit">19' Le vent chaud_La D.D<br>with leenayoung</h3>
+                        <a href="" class="more"></a>
+                    </div>    
+                </li>
+                <li class="ban_item2">
+                    <img src="./img/ban_2018.jpg" alt="배너2">
+                    <div class="titBox">   
+                        <h3 class="contentTit">18' La réalité et Le rêve</h3>
+                        <a href="" class="more"></a>
+                    </div>    
+                </li>
+                <li class="ban_item3">
+                    <img src="./img/ban_2017.jpg" alt="배너3">
+                    <div class="titBox">   
+                        <h3 class="contentTit">17' Couleur de femme</h3>
+                        <a href="" class="more"></a>
+                    </div>    
+                </li>
+                <li class="ban_item4">
+                    <img src="./img/ban_2016.jpg" alt="배너3">
+                    <div class="titBox">   
+                        <h3 class="contentTit">16' Respiration et repos</h3>
+                        <a href="" class="more"></a>
+                    </div>    
+                </li>
+            </ul>
+            <div class="btn_frame">
+                <ul class="btn_box">
+                    <li class="item1"><button class="btn on" data="1"></button></li>
+                    <li class="item2"><button class="btn" data="2"></button></li>
+                    <li class="item3"><button class="btn" data="3"></button></li>
+                    <li class="item4"><button class="btn" data="4"></button></li>
+                </ul>
+            </div> 
+        </div>
+    </section>
+    <section class="main_instagram">
+        <h2 class="page_title">Instagram</h2>
+        <p class="page_subtitle">@didierdubot_official</p>
+        <div class="wrap desk">
+        <ul class="insta1">
+            <li class="insta_item1">
+                <a href="https://www.instagram.com/p/BwDyBvcBgGm/">
+                    <img src="./img/insta_1.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item2">
+                <a href="https://www.instagram.com/p/BwBGSRLFPgI/">
+                    <img src="./img/insta_2.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item3">
+                <a href="https://www.instagram.com/p/Bv-oy5jhFXc/">
+                    <img src="./img/insta_3.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item4">
+                <a href="https://www.instagram.com/p/Bv24WwahYaS/">
+                    <img src="./img/insta_4.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item5">
+                <a href="https://www.instagram.com/p/Bv1GtIkBw7v/">
+                    <img src="./img/insta_5.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <ul class="insta1">
+            <li class="insta_item1">
+                <a href="https://www.instagram.com/p/BvybBAjFhhz/">
+                    <img src="./img/insta_6.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item2">
+                <a href="https://www.instagram.com/p/BvwPCUNlp5s/">
+                    <img src="./img/insta_7.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item3">
+                <a href="https://www.instagram.com/p/Bvtel1bhPG8/">
+                    <img src="./img/insta_8.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item4">
+                <a href="https://www.instagram.com/p/BvksYUJA7Pt/">
+                    <img src="./img/insta_9.jpg" alt="">
+                </a>
+            </li>
+            <li class="insta_item5">
+                <a href="https://www.instagram.com/p/BviH66vAsMe/">
+                    <img src="./img/insta_10.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <ul class="link-area">
+        <li><a href="">개인정보처리방침</a></li>
+        <li><a href="">이용약관</a></li>
+        <li><a href="">이메일무단수집금지</a></li>
+    </ul>
+    <p class="copyright">
+            서울특별시 강남구 삼성로342(세정빌딩)    Tel. 080.350.0368<br>
+            COPYRIGHT (주) 세정서울지사 ALL RIGHT RESERVED.
+    </p>
+</footer>
+<a href="index.html" id="upBtn">
+    <img src="./img/next.png" alt="">
+</a>
+</body>
+</html>
