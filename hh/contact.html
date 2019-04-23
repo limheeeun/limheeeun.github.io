@@ -17,7 +17,7 @@
     <!--  외부 스타일 시트  -->
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="./css/aboutme.css" />
+    <link rel="stylesheet" type="text/css" href="./css/contact.css" />
 
     <!-- 폰트 설정 -->
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
@@ -140,26 +140,25 @@
                         <div class="map_canvas"></div>
                     </div>
                     <div class="contact_form">
-                        <form action="" id="cont">
-                            <ul class="pageLst frmLst">
-                                <li class="item">
-                                    <input type="text" class="inputItem" placeholder="Name *">
-                                </li>
-                                <li class="item">
-                                    <input type="email" class="inputItem" placeholder="Email *">
-                                </li>
-                            </ul>
-                            <ul class="pageLst frmLst">
-                                <li class="item">
-                                    <input type="tel" class="inputItem" placeholder="Tel *">
-                                </li>
-                                <li class="item">
-                                    <textarea name="memo" id="memo" cols="40" rows="7" class="inputItem1">내용을 입력해주세요</textarea>
-                                </li>
-                                <li class="itemSend">
-                                    <input type="submit" value="SEND" class="contactBtn">
-                                </li>
-                            </ul>
+                        <h5>ddddd</h5>
+                        <form action="" id="postForm" class="formFrame">
+                            <fieldset>
+                                <input type="text" class="frmInput2" id="post_title" placeholder="제목을 입력해주세요">
+                            </fieldset> 
+                            <fieldset>
+                                <input type="password" class="frmInput2" id="post_pw" placeholder="암호를 입력해주세요">
+                            </fieldset>
+                            <fieldset>
+                                <input type="email" class="frmInput2" id="post_email" placeholder="이메일 주소를 입력해주세요">
+                            </fieldset>
+                            <fieldset>
+                                <textarea name="memo" id="post_memo" cols="30" rows="10" class="frmMemo"></textarea>
+                            </fieldset>
+                            <fieldset>
+                                <input type="submit" class="ico-check frmBtn">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <input type="submit" class="ico-repair frmBtn">
+                            </fieldset>       
                         </form>
                     </div>
                     <div class="prof_box">
