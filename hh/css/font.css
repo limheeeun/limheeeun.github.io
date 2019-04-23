@@ -1,0 +1,61 @@
+@font-face {
+    font-family:"Mont-ExtraLightDEMO";
+    src:url("./font/mont/Mont-ExtraLightDEMO.eot");
+    src:url("./font/mont/Mont-ExtraLightDEMO.eot?#iefix") format("embeded-opentype"), 
+        url("./font/mont/Mont-ExtraLightDEMO.woff") format("woff"),
+        url("./font/mont/Mont-ExtraLightDEMO.oft") format("oft"),
+        url("./font/mont/Mont-ExtraLightDEMO.ttf") format("truetype");
+    }
+
+@font-face {
+    font-family:"Mont-HeavyDEMO";
+    src:url("./font/mont/Mont-HeavyDEMO.eot");
+    src:url("./font/mont/Mont-HeavyDEMO.eot?#iefix") format("embeded-opentype"), 
+        url("./font/mont/Mont-HeavyDEMO.woff") format("woff"),
+        url("./font/mont/Mont-HeavyDEMO.oft") format("oft"),
+        url("./font/mont/Mont-HeavyDEMO.ttf") format("truetype");
+    }
+
+
+@font-face {
+    font-family:"hangultuelgothic";
+    src:url("./font/hangultuelgothic/hangultuelgothic.eot");
+    src:url("./font/hangultuelgothic/hangultuelgothic.eot?#iefix") format("embeded-opentype"), 
+        url("./font/hangultuelgothic/hangultuelgothic.woff") format("woff"),
+        url("./font/hangultuelgothic/hangultuelgothic.oft") format("oft"),
+        url("./font/hangultuelgothic/hangultuelgothic.ttf") format("truetype");
+    }
+
+@font-face {
+    font-family:"yesevaOne";
+    src:url("./font/yesevaOne/YesevaOne-Regular.eot");
+    src:url("./font/yesevaOne/YesevaOne-Regular.eot?#iefix") format("embeded-opentype"), 
+        url("./font/yesevaOne/YesevaOne.woff") format("woff"),
+        url("./font/yesevaOne/YesevaOne-Regular.ttf") format("truetype");
+    }
+
+@font-face {
+    font-family:"Virgula-Vulgaris";
+    src:url("./font/virgula/Virgula Vulgaris Bold.eot");
+    src:url("./font/virgula/Virgula Vulgaris Bold.eot?#iefix") format("embeded-opentype"), 
+        url("./font/virgula/Virgula-Vulgaris.woff") format("woff"),
+        url("./font/virgula/Virgula Vulgaris Bold.ttf") format("truetype");
+    }
+
+
+@font-face {
+    font-family:"TypoSlab";
+    src:url("./font/typoslab/TypoSlab.eot");
+    src:url("./font/typoslab/TypoSlab.eot?#iefix") format("embeded-opentype"), 
+        url("./font/typoslab/TypoSlab.woff") format("woff"),
+        url("./font/typoslab/TypoSlab.ttf") format("truetype");
+    }
+
+
+
+
+
+
+
+
+
