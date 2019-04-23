@@ -1,167 +1,173 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>:: l i m h e e e u n ::</title>
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" href="./css/font.css">
-		<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="./css/aboutme.css" />
-       
-        <!-- 폰트 설정 -->
-		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-		
-        <!-- 제이쿼리 -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script>document.documentElement.className = 'js';</script>
-		<script> //햄버거 토글 메뉴
-        $(document).ready(function(){
-          $(".list").click(function(){
-            $(this).toggleClass("is-active");
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>:: l i m h e e e u n ::</title>
+
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa16.ico">
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa32.ico">
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa152.ico">
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/hh_fa57.ico">
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/hh_fa114.ico">
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/hh_fa72.ico">
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/hh_fa128.ico">
+
+    <!--  외부 스타일 시트  -->
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="./css/aboutme.css" />
+
+    <!-- 폰트 설정 -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- 제이쿼리 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>document.documentElement.className = 'js';</script>
+    <script> //햄버거 토글 메뉴
+    $(document).ready(function(){
+      $(".list").click(function(){
+        $(this).toggleClass("is-active");
+      });
+    });
+    </script>
+    <script src="js/prefixfree.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script> 
+        //좌표 값을 바꿔서 입력 36.3491563,127.3776857
+        function initialize() {
+          var myLatlng = new google.maps.LatLng(36.338144, 127.384836);
+          var mapOptions = {
+            zoom: 17,
+            center: myLatlng
+          }
+
+          var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: '개인사이트'	  //레이블을 바꿔서 입력
+
           });
-        });
-        </script>
-        <script src="js/prefixfree.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script> 
-            //좌표 값을 바꿔서 입력 36.3491563,127.3776857
-            function initialize() {
-              var myLatlng = new google.maps.LatLng(36.338144, 127.384836);
-              var mapOptions = {
-                zoom: 17,
-                center: myLatlng
-              }
 
-              var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        }
 
-              var marker = new google.maps.Marker({
-                  position: myLatlng,
-                  map: map,
-                  title: '개인사이트'	  //레이블을 바꿔서 입력
+        google.maps.event.addDomListener(window, 'load', initialize);
+         </script>
+</head>
+<body class="contents">
+    <div class="about_contact">
+        <span class="line_contact">copyright 2019. heeeun. All rights reserved.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="line_contact"><span class="point">EMAIL</span> 071381@naver.com</span>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="line_contact"><span class="point">TEL</span> 010-1234-1234</span>
+    </div>
+    <main class="con_wrap">
+        <div class="dummy">
+            <div class="dummy__icon">
+                <a href="index.html" class="icon icon--logo">
+                    <img src="./img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="dummy__icon">
+                <input type="checkbox" id="ck1" class="ck">
+                <label for="ck1" class="list" id="list_id">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </label>
+                <nav class="gnb desk">
+                    <div class="gnb_wrap">
+                        <ul class="profile">
+                            <li></li>
+                        </ul>
+                        <ul class="menu">
+                            <li>
+                                <div class="menu_box">
+                                    <h2>맞아요제포트폴리오-</h2>
+                                    <h2>그래요그<span class="point">포트폴리오</span>입니다</h2>
+                                    <p class="contact">TEL : 010-1234-1234 · EMAIL : 071381@naver.com</p>
+                                    <ul class="menu_con1">
+                                        <li class="menu_con_wrap">
+                                            <a href="portfolio.html">PORTFOLIO</a>
+                                            <ul class="sub">
+                                                <li class="lst1">
+                                                    <a href="">MOBILE DESIGN</a>
+                                                </li>
+                                                <li class="lst1">
+                                                    <a href="">DESK DESIGN</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="sub">
+                                                <li class="lst1">
+                                                    <a href="">RESPONSIVE DESIGN</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="menu_con2"> 
+                                        <li class="menu_con_wrap"><a href="aboutme.html">ABOUTME</a></li>
+                                        <li class="menu_con_wrap"><a href="">WORKING</a></li>
+                                        <li class="menu_con_wrap"><a href="">CONTACT</a></li>
+                                        <p class="barcode">pickme</p>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav class="gnb_mo mobile">
+                    <ul class="gnb_mo_menu">
+                        <li><a href="">PORTFOLIO</a></li>
+                        <li><a href="">ABOUTME</a></li>
+                        <li><a href="">WORKING</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> 
+    <!-- 여기까지 공통 메뉴 -->
 
-              });
-
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
-             </script>
-	</head>
-	<body class="contents">
-	    <div class="about_contact">
-            <span class="line_contact">copyright 2019. heeeun. All rights reserved.</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="line_contact"><span class="point">EMAIL</span> 071381@naver.com</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="line_contact"><span class="point">TEL</span> 010-1234-1234</span>
-        </div>
-		<main class="con_wrap">
-			<div class="dummy">
-				<div class="dummy__icon">
-                    <a href="index.html" class="icon icon--logo">
-                        <img src="./img/logo.png" alt="">
-                    </a>
-				</div>
-				<div class="dummy__icon">
-                    <input type="checkbox" id="ck1" class="ck">
-                    <label for="ck1" class="list" id="list_id">
-                      <span class="line"></span>
-                      <span class="line"></span>
-                      <span class="line"></span>
-                    </label>
-                    <nav class="gnb desk">
-                        <div class="gnb_wrap">
-                            <ul class="profile">
-                                <li></li>
-                            </ul>
-                            <ul class="menu">
-                                <li>
-                                    <div class="menu_box">
-                                        <h2>맞아요제포트폴리오-</h2>
-                                        <h2>그래요그<span class="point">포트폴리오</span>입니다</h2>
-                                        <p class="contact">TEL : 010-1234-1234 · EMAIL : 071381@naver.com</p>
-                                        <ul class="menu_con1">
-                                            <li class="menu_con_wrap">
-                                                <a href="portfolio.html">PORTFOLIO</a>
-                                                <ul class="sub">
-                                                    <li class="lst1">
-                                                        <a href="">MOBILE DESIGN</a>
-                                                    </li>
-                                                    <li class="lst1">
-                                                        <a href="">DESK DESIGN</a>
-                                                    </li>
-                                                </ul>
-                                                <ul class="sub">
-                                                    <li class="lst1">
-                                                        <a href="">RESPONSIVE DESIGN</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <ul class="menu_con2"> 
-                                            <li class="menu_con_wrap"><a href="aboutme.html">ABOUTME</a></li>
-                                            <li class="menu_con_wrap"><a href="">WORKING</a></li>
-                                            <li class="menu_con_wrap"><a href="">CONTACT</a></li>
-                                            <p class="barcode">pickme</p>
-                                        </ul>
-                                    </div>
+        <div class="container">
+            <div class="page_wrap">
+                <section class="c1 page">
+                    <h3>&nbsp;</h3>
+                    <div class="contact_map">
+                        <div class="map_canvas"></div>
+                    </div>
+                    <div class="contact_form">
+                        <form action="" id="cont">
+                            <ul class="pageLst frmLst">
+                                <li class="item">
+                                    <input type="text" class="inputItem" placeholder="Name *">
+                                </li>
+                                <li class="item">
+                                    <input type="email" class="inputItem" placeholder="Email *">
                                 </li>
                             </ul>
-                        </div>
-                    </nav>
-                    <nav class="gnb_mo mobile">
-                        <ul class="gnb_mo_menu">
-                            <li><a href="">PORTFOLIO</a></li>
-                            <li><a href="">ABOUTME</a></li>
-                            <li><a href="">WORKING</a></li>
-                            <li><a href="">CONTACT</a></li>
-                        </ul>
-                    </nav>
-				</div>
-			</div> 
-        <!-- 여기까지 공통 메뉴 -->
-        
-			<div class="container">
-                <div class="page_wrap">
-                    <section class="c1 page">
-                        <h3>&nbsp;</h3>
-                        <div class="contact_map">
-                            <div class="map_canvas"></div>
-                        </div>
-                        <div class="contact_form">
-                            <form action="" id="cont">
-                                <ul class="pageLst frmLst">
-                                    <li class="item">
-                                        <input type="text" class="inputItem" placeholder="Name *">
-                                    </li>
-                                    <li class="item">
-                                        <input type="email" class="inputItem" placeholder="Email *">
-                                    </li>
-                                </ul>
-                                <ul class="pageLst frmLst">
-                                    <li class="item">
-                                        <input type="tel" class="inputItem" placeholder="Tel *">
-                                    </li>
-                                    <li class="item">
-                                        <textarea name="memo" id="memo" cols="40" rows="7" class="inputItem1">내용을 입력해주세요</textarea>
-                                    </li>
-                                    <li class="itemSend">
-                                        <input type="submit" value="SEND" class="contactBtn">
-                                    </li>
-                                </ul>
-                            </form>
-                        </div>
-                        <div class="prof_box">
-                            
-                        </div>
-                    </section>
-                </div>
+                            <ul class="pageLst frmLst">
+                                <li class="item">
+                                    <input type="tel" class="inputItem" placeholder="Tel *">
+                                </li>
+                                <li class="item">
+                                    <textarea name="memo" id="memo" cols="40" rows="7" class="inputItem1">내용을 입력해주세요</textarea>
+                                </li>
+                                <li class="itemSend">
+                                    <input type="submit" value="SEND" class="contactBtn">
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div class="prof_box">
+
+                    </div>
+                </section>
             </div>
-		</main>
-	</body>
+        </div>
+    </main>
+</body>
 </html>
