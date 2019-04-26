@@ -33,22 +33,25 @@
       $(".list").click(function(){
         $(this).toggleClass("is-active");
       });
-        $(window).scroll(function(){
-            var scTop = $(window).scrollTop();
-            console.log(scTop);
-            if (scTop >= 300){
-                $("#upBtn").fadeIn(600);
-            } else {
-                $("#upBtn").fadeOut(600);
-            }
-
+        var wd = $(window).width();
+        if(wd<=767){
+            $(window).scroll(function(){
+                var scTop = $(window).scrollTop();
+                if(scTop>=400){
+                    $("#top").fadeIn();
+                } else {
+                    $("#top").fadeOut();
+                }
+            });
+        } else {
+            $("#top").fadeOut();
+        }
             $("#upBtn").click(function(){
                 $("body, html").animate({
                     scrollTop: 0
                 }, 800);
                 return false;
             });
-        });    
     });
     </script>
     <script src="./js/aboutme.js"></script>
