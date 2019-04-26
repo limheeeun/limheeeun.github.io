@@ -259,9 +259,6 @@ table.license {width: 100%; margin-top: 5%;}
 
 /* 탑 버튼*/
 #upBtn { display: block;position:fixed; z-index:9999; right: 8%; bottom:4.5%;     display:none; }
-#upBtn.on { opacity: 1; }
-/*#upBtn:hover {opacity: 0.5;}*/
-
 
 /* 미디어 쿼리 */
 @media screen and (min-width: 50em) {
