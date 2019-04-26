@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:: l i m h e e e u n ::</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa16.png">
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa32.png">
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa152.png">
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/hh_fa57.png">
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/hh_fa114.png">
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/hh_fa72.png">
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/hh_fa128.png">
+    
+    <!--  외부 스타일 시트  -->
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/font.css">
+        
+    <!-- 폰트 설정 -->
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- 제이쿼리 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>document.documentElement.className = 'js';</script>
+    <script> //햄버거 토글 메뉴
+    $(document).ready(function(){
+      $(".list").click(function(){
+        $(this).toggleClass("is-active");
+      });
+    });
+    </script>
+
+    <script src="jquery.mousewheel.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+           $("body").mousewheel(function(event, delta) {
+              this.scrollLeft -= (delta * 30);
+              event.preventDefault();
+           });
+        });
+    </script>
+    <script type="text/javascript">
+    function ScrollControl() {
+    xpos = event.wheelDelta;
+    window.scrollBy(-xpos, 0);
+    }
+    </script>
+<!--    <script src="slide.js"></script>-->
+</head>
+<body onmousewheel="ScrollControl()">
+<div class="container">
+    <div class="dummy">
+        <div class="dummy__icon">
+            <a href="index.html" class="icon icon--logo">
+                <img src="./img/logo.png" alt="">
+            </a>
+        </div>
+        <div class="dummy__icon">
+            <input type="checkbox" id="ck1" class="ck">
+            <label for="ck1" class="list" id="list_id">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </label>
+            <nav class="gnb desk">
+                <div class="gnb_wrap">
+                    <ul class="profile">
+                        <li></li>
+                    </ul>
+                    <ul class="menu">
+                        <li>
+                            <div class="menu_box">
+                                <h2>맞아요제포트폴리오-</h2>
+                                <h2>그래요그<span class="point">포트폴리오</span>입니다</h2>
+                                <p class="contact">TEL : 010-1234-1234 · EMAIL : 071381@naver.com</p>
+                                <ul class="menu_con1">
+                                    <li class="menu_con_wrap">
+                                        <a href="portfolio.html">PORTFOLIO</a>
+                                        <ul class="sub">
+                                            <li class="lst1">
+                                                <a href="">MOBILE DESIGN</a>
+                                            </li>
+                                            <li class="lst1">
+                                                <a href="">DESK DESIGN</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="sub">
+                                            <li class="lst1">
+                                                <a href="">RESPONSIVE DESIGN</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="menu_con2"> 
+                                    <li class="menu_con_wrap"><a href="aboutme.html">ABOUTME</a></li>
+                                    <li class="menu_con_wrap"><a href="working.html">WORKING</a></li>
+                                    <li class="menu_con_wrap"><a href="contact.html">CONTACT</a></li>
+                                    <p class="barcode">pickme</p>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="gnb_mo mobile">
+                <ul class="gnb_mo_menu">
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="aboutme.html">ABOUTME</a></li>
+                    <li><a href="working.html">WORKING</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <main class="contents">
+        <div class="po_left">
+            <p class="po_title">
+                <img src="./img/bg.jpg" alt="">
+    <!--                i <br> my <br> me <br> mine <br> Work-->
+            </p>
+            <img src="./img/mousescroll.png" alt="">
+        </div>
+        <div class="po_right">
+            <ul class="gal" style="-ms-overflow-style: none;" >
+                <li class="gal_item1">
+                    <a href="" target="_blank">
+                        <img src="http://placehold.it/300x500" alt="">
+                    </a>
+                </li>
+                <li class="gal_item2">
+                    <a href="po_02.html" target="_blank">
+                        <img src="./img/gal_02.jpg" onmouseover="this.src='./img/galcover_02.jpg'" onmouseout="this.src='./img/gal_02.jpg'" alt="">
+                    </a>
+                </li>
+                <li class="gal_item3">
+                    <a href="http://limheeeun.github.io/r2/" target="_blank">
+                        <img src="http://placehold.it/300x500" alt="">
+                    </a>
+                </li>
+                <li class="gal_item4">
+                    <a href="http://limheeeun.github.io/m6/" target="_blank">
+                        <img src="./img/gal_04.jpg" onmouseover="this.src='./img/galcover_04.jpg'" onmouseout="this.src='./img/gal_04.jpg'" alt="">
+                    </a>
+                </li>
+                <li class="gal_item5">
+                    <a href="http://limheeeun.github.io/r2/" target="_blank">
+                        <img src="./img/gal_05.jpg" onmouseover="this.src='./img/galcover_05.jpg'" onmouseout="this.src='./img/gal_05.jpg'" alt="">
+                    </a>
+                </li>
+                <li class="gal_item6">
+                    <a href="http://limheeeun.github.io/r2/" target="_blank">
+                        <img src="./img/gal_06.jpg" onmouseover="this.src='./img/galcover_06.jpg'" onmouseout="this.src='./img/gal_06.jpg'" alt="">
+                    </a>
+                </li>
+                <li class="gal_item7">
+                    <a href="http://limheeeun.github.io/c2/" target="_blank">
+                        <img src="./img/gal_07.jpg" onmouseover="this.src='./img/galcover_07.jpg'" onmouseout="this.src='./img/gal_07.jpg'" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="ft">
+        <p class="copyright">Copyright 2019. LIM HEE EUN. All rights reserved.</p>
+    </footer>
+</div>    
+</body>
+</html>
