@@ -10,7 +10,7 @@ ul {list-style: none;}
 input {outline: 0; border: 0; display: none; }
 a { outline: none; text-decoration: none; }
 button {outline: 0; border: 0; background: transparent;}
-h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 2;}
+h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 
 @-webkit-keyframes fadeAllIn {
 	0%, 50% { opacity: 0; -webkit-transform: translate3d(-10px,0,0); transform: translate3d(-10px,0,0); }
@@ -24,7 +24,8 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 2;}
 
 /* 제일 상위 프레임 */
 .contents { width: 100%; background: #e8e8ec; color: #333; min-height: 100%; height: 100vh; position: relative;}
-.con_wrap { position: absolute; width: 90%; height: 90%; left: calc((100% - 90%) / 2); top: 5%; background: #fff; box-shadow: 5px 3px 15px #c7c5c5; }
+::-webkit-scrollbar { display:none; }
+.con_wrap { position: absolute; width: 90%; height: 90%; left: calc((100% - 90%) / 2); top: 5%; background: #fff; box-shadow: 5px 3px 15px #c7c5c5; overflow: scroll; -ms-overflow-style:none;}
 
 /* 꼬리말 */
 .about_contact {position: fixed; bottom: 2%; right: 5%;}
@@ -42,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 2;}
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
 	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
-.dummy__icon {width: calc(10vw - 20px); color: #b0b0b1;}
+.dummy__icon {width: 50px; color: #b0b0b1;}
 
 
 /* 메뉴 */
@@ -52,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 2;}
 .nav_menu li a:hover { text-decoration: line-through; text-decoration-color: yellow;}
 
 /* 햄버거 토글 메뉴 시작 */
-.list {position: absolute; z-index: 9999; top: 8%; left: 100px; width: calc(10vw - 20px); }
+.list {position: absolute; z-index: 9999; top: 8%; left: 100px; width: 50px; }
 .list .line{
   width: 25px;
   height: 1px;
@@ -78,11 +79,11 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 2;}
 }
 #list_id.is-active .line:nth-child(1){
   transform: translateY(9px);
-  background-color: #fff;
+  background-color: blue;
 }
 #list_id.is-active .line:nth-child(3){
   transform: translateY(-9px) rotate(90deg);
-  background-color: #fff;
+  background-color: blue;
 }
 /* 햄버거 토글 메뉴 끝 */
 
@@ -129,7 +130,7 @@ ul, h2, p {margin: 0; padding: 0;}
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
-.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 31; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; }
+.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 31; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Permanent Marker', cusrive; }
 .gnb_mo_menu {width: 80%; min-height: 100%; margin: 25vh auto;}
 .gnb_mo_menu li {line-height: 2;}
 .gnb_mo_menu li a {display: block; text-align: center; font-size: 1.8em; letter-spacing: 2px; color: #333; transition: 0.4s;  }
@@ -139,18 +140,35 @@ ul, h2, p {margin: 0; padding: 0;}
 
 
 /* 본문 */
-.container {width: 100%; height: 100%; margin: 0 auto; overflow: hidden; position: relative; }
-.page_wrap {width: 400%; height: 100%; position: relative; }
-.page_wrap section { width: 25%; float: left; }
+.container {width: 100%; margin: 0 auto; overflow: hidden; position: relative; }
+.page_wrap {width: 100%; position: relative; }
 
-.c1 { width:100%; height:100%; padding:1em; padding-top: 0; font-size:1em; position: relative;}
-input {display: block; }
-.contact_form {width: 50%; float: right; }
+.c1 { width:100%; padding:1em; padding-top: 0; position: relative;}
+.c1 h1 {line-height: auto; letter-spacing: 2px; text-indent: 6%; font-size: 2.5em;}
+.contact_info {width: 60%; float: left;}
+#map_canvas {width: 80%; height: 300px; margin: 0 auto;}
+.info_con {width: 80%; height: 100%; margin: 20px auto; line-height: 1.8; }
+.p_left {width: 25%; float: left; font-size: 0.5em; letter-spacing: 1px;}
+.p_right {width: 55%; float: left; font-size: 0.5em; letter-spacing: 1px;}
+
+.contact_form {width: 40%; float: right; }
+.contact_con {width: 80%; height: 100%; margin: 0 auto;}
+.contact_subcon {width: 80%; height: 100%; margin: 0 auto; font-size: 0.5em; margin-top: 10px;}
+.btn_box { width: 80%; height: auto; margin: 50px auto;}
+.email_btn {display: block; float: left ;width: 200px; height: 50px; background: blue; color: #fff; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1;}
+.email_btn:hover {opacity: 0.6;}
+.portfolio_btn {display: block; float: left; width: 200px; height: 50px; background: #fff; border: 1px solid blue; color: blue; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1; }
+.portfolio_btn:hover {opacity: 0.6;}
+
+/* 메세지보내기
 .formFrame fieldset { display:block; border:0; padding: 5px; }    
 .frmInput { display:block; width: 350px; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; margin-top:10px; font-size:14px; text-indent:1em; }
-.frmInput2 { display:block; width:350px; height:40px;  border:1px solid #333; color:#333; margin:10px auto; font-size:14px; text-indent:1em; }
-.frmBtn { text-indent:-9999px; float:left; background-color:#333; border:1px solid #333; margin-top: 10px; margin-left: 15px; }
-.frmMemo { display:block; width: 350px;  border:1px solid #333; color:#333;  margin:10px auto; font-size:14px; padding:1em; }
+.frmInput2 { display:block; width:350px; height:40px;  border-bottom:1px solid #333; color:#333; margin:10px auto; font-size:14px; text-indent:1em; }
+.frmMemo { display:block; width: 350px; border: 1px solid #333; color:#333; margin:10px auto; font-size:14px; padding:1em; }
+.frmBtn { display: block; float:left; background-color:#0014ff; width: 350px; height: 40px; margin-top: 10px; margin: 5px; font-size: 0.6em; color: #fff; transition: 0.8s; }
+.frmBtn:hover {color: #0014ff; background: #fff; border: 1px solid #333;}
+*/
+
 
 /* 미디어 쿼리 */
 @media screen and (min-width: 50em) {
@@ -167,6 +185,18 @@ input {display: block; }
 	.dummy {padding: 10px 15% 0 15%;}
 	.dummy__icon {width: calc(10vw - 10px);}
     .desk {display: none; }
+    .contact_form {margin-top: 30px;}
+    .btn_box a {display: block; width: 100px; height: 40px; line-height: 40px; font-size: 0.6em; margin-top: 40px; }
+    #map_canvas {display: none;}
+}
+
+@media screen and (max-width:576px){
+    .about_contact span:nth-child(2), .about_contact span:nth-child(3) {display: none;}
+    .about_contact span:first-child {bottom: 0; font-size: 0.2em;}
+    .contact_info {width: 100%; height: 50%;}
+    .contact_form {width: 100%; height: 50%;}
+    .email_btn, .portfolio_btn {font-size: 1em;}
+    .btn_box {margin: 0 auto;}
 }
 
 @media screen and (min-width:767px){
@@ -174,4 +204,6 @@ input {display: block; }
 }
 @media screen and (min-width:960px){
     .page { padding: 2em; padding-top: 0; font-size:2em; }
+
 }
+

@@ -6,23 +6,29 @@ ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background: transparent; outline: 0; border: 0; display: none; }
 
-.container{ width: 100%; height: 100%; background: url("../img/portfolio_visual_bg.png"); background-size: cover; overflow: hidden;}
+.container{ min-width: 100%; height: 100%; background-image: url("./"); background-size: cover; position: absolute; z-index: 999999; overflow-x: hidden; overflow-y: hidden; }
 
 /* 로고 */
 .icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; fill: currentColor;}
-.icon--logo img {display: block; width: 30px; padding-left: 50px;}
+.icon--logo img {display: block; width: 30px;}
 .dummy {width: 100%; display: -webkit-flex; display: -ms-flex; display: flex;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
-	justify-content: space-between; padding: 20px 0 20px; height: 15vh;}
-.dummy__icon {width: 50px; color: #b0b0b1;}
+	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
+.dummy__icon {width: calc(10vw - 20px); color: #b0b0b1;}
 
+
+/* 메뉴 */
+.nav_menu { position: absolute; right: 50px; top: 28px; }
+.nav_menu li { float: left; margin-right: 20px;}
+.nav_menu li a { display: block; color: #333; letter-spacing: 1px; }
+.nav_menu li a:hover { text-decoration: line-through; text-decoration-color: yellow;}
 
 /* 햄버거 토글 메뉴 시작 */
-.list {position: absolute; z-index: 9999; top: 8%; left: 100px; width: 50px; }
+.list {position: absolute; z-index: 9999; top: 8%; left: 140px; width: 50px; }
 .list .line{
   width: 25px;
   height: 1px;
@@ -108,39 +114,21 @@ ul, h2, p {margin: 0; padding: 0;}
 /* mobile 메뉴 끝*/
 
 /* --------- 여기까지 공통 CSS --------- */
-.contents {width: 100%; float: left;  overflow: hidden;}
-.port_wrap {width: 100%; height: 100%; }
-#port1 {position: relative; width: 100%; margin: 0 auto;}
-/*.contents>.port_wrap>.port {top: 162px;}*/
 
-
-.mask {position: relative; width: 100%; height: 679px; }
-#port1 .img {position: relative; width: 4800px; height: 679px;  }
-#port1 .img li {width: 1200px; height: 679px; float: left; margin-left: 5%; position: relative; }
-#port1 .img li img {display: block; width: 1200px; height: 650px; box-shadow: 3px 5px 5px #bcbcbc;}
-#port1 .img li .on {position: absolute; top: 0; left: 0; color: #fff; opacity: 0; visibility: hidden; transition: 0.8s; }
-#port1 .img li .on h2 {position: absolute; top: 25vh; left: 5%;}
-#port1 .img li .on h2:nth-child(1) {top: 25vh;}
-#port1 .img li .on h2:nth-child(2) {top: 28vh}
-#port1 .img li .on h2:nth-child(3) {top: 31vh}
-#port1 .img li:hover .on { opacity: 0.8; visibility: visible;}
-#port1 .img li:first-child {width: 1200px; }
-/*
-.mask {position: relative; height: 100%; overflow: hidden; }
-#port1 .img {position: relative; width: auto; height: 679px;  }
-#port1 .img li {position: absolute; overflow: hidden; left: 15%;  box-shadow: 3px 5px 5px #bcbcbc; }
-#port1 .img li img {display: block; height: 650px;}
-
-#port1 .img li:first-child {width: 1200px; }
-*/
-.btnBox { position:absolute; width:100%; left: 5%; bottom: 3%; z-index:20;  } 
-.btnBox li { width: 30px; height: 30px; background:rgba(255,204,0,0.8);  }
-.btnBox .prev { float:left; }
-.btnBox .next { float: left; }
-.btnBox li .btn { display:block; width:30px; height:30px; background:transparent;  cursor:pointer; 
-    background-repeat:no-repeat; background-position:center center; }
-.btnBox .prev .btn { background-image:url("./arrowLeft1.png"); }
-.btnBox .next .btn { background-image:url("./arrowRight1.png"); }
+.po_left {position: fixed; left: 0; width: 460px; height: 100%; background-color: #fff;}
+/*.po_left .po_title {font-size: 90px; font-family: 'Archivo Black'; line-height: 1; margin-left: 30px; color:  #764b8c;}*/
+.po_left .po_title img {display: block; position: fixed; left: 2%;}
+.po_left > img {position: fixed; display: block; width: 80px; top: 50%; left: 335px; animation: scroll 3s ease-in infinite;}
+@keyframes scroll {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(30px,0);}
+    100% {transform: translate(0,0);}
+}
+.po_right {float: right;}
+::-webkit-scrollbar {display:none;}
+.gal {margin-left: 485px; margin-top: 100px; width: 100%; height: 1080px; white-space: nowrap; overflow-x: scroll;}
+.gal li {display: inline-block; margin-right: 20px;}
+.gal li.gal_item2 a {display: block; width: 100%; height: 100%;}
 
 
 .ft {position: absolute; clear: both; width: 100%; bottom: 0;}

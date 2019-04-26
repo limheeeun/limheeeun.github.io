@@ -185,11 +185,11 @@ a { outline: none; text-decoration: none; }
 }
 #list_id.is-active .line:nth-child(1){
   transform: translateY(9px);
-  background-color: #fff;
+  background-color: blue;
 }
 #list_id.is-active .line:nth-child(3){
   transform: translateY(-9px) rotate(90deg);
-  background-color: #fff;
+  background-color: blue;
 }
 /* 햄버거 토글 메뉴 끝 */
 
@@ -236,7 +236,7 @@ ul, h2, p {margin: 0; padding: 0;}
 
 /* desk 메뉴 끝 */
 /* mobile 메뉴 시작*/
-.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 31; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; }
+.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 31; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Permanent Marker', cusrive; }
 .gnb_mo_menu {width: 80%; min-height: 100%; margin: 25vh auto;}
 .gnb_mo_menu li {line-height: 2;}
 .gnb_mo_menu li a {display: block; text-align: center; font-size: 1.8em; letter-spacing: 2px; color: #333; transition: 0.4s;  }
