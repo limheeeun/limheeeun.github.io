@@ -38,13 +38,13 @@
             $(window).scroll(function(){
                 var scTop = $(window).scrollTop();
                 if(scTop>=400){
-                    $("#top").fadeIn();
+                    $("#upBtn").fadeIn();
                 } else {
-                    $("#top").fadeOut();
+                    $("#upBtn").fadeOut();
                 }
             });
         } else {
-            $("#top").fadeOut();
+            $("#upBtn").fadeOut();
         }
             $("#upBtn").click(function(){
                 $("body, html").animate({
