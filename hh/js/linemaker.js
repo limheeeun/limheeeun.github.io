@@ -1,4 +1,4 @@
-$(function() {
+(function( $ ) {
     var lineMaker = new LineMaker({
         position: 'fixed',
         lines: [
