@@ -4,11 +4,11 @@ $(document).ready(function(){
     var len=$(".img li").length;
     var intv = setInterval(function(){
         nextAni();
-    }, 8000);
+    }, 6000);
     function nextAni(){
         $(".img").not(":animated").animate({
             "margin-left":-wd+"px"
-        }, 700, function(){ 
+        }, 1200, function(){ 
             $(".img li").eq(0).appendTo($(".img"));
             $(".img").css("margin-left", "0px");
         });
@@ -18,20 +18,28 @@ $(document).ready(function(){
         $(".img").css("margin-left", -wd+"px");
         $(".img").not(":animated").animate({
             "margin-left":"0px"
-        }, 700);
+        }, 1200);
     }
     $(".btnBox .next .btn").click(function(){
         clearInterval(intv);
         nextAni();
         intv = setInterval(function(){
             nextAni();
-        }, 8000);
+        }, 6000);
     });
     $(".btnBox .prev .btn").click(function(){
         clearInterval(intv);
         prevAni();
         intv = setInterval(function(){
             nextAni();
-        }, 8000);
+        }, 6000);
+    });
+    $(".img li").mouseover(function(){
+        clearInterval(intv);
+    });
+    $(".img li").mouseout(function(){
+        intv = setInterval(function(){
+            nextAni();
+        }, 6000);
     });
 });

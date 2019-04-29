@@ -1,7 +1,7 @@
 @charset "uft-8";
 
 * { margin: 0; padding: 0; }
-body, html { width: 100%; height: 100%; font-family: 'Muli', sans-serif; position: relative; overflow-y: hidden;}
+body, html { width: 100%; height: 100%; font-family: 'Muli', 'Gothic A1', sans-serif; position: relative; overflow-y: hidden;}
 ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background: transparent; outline: 0; border: 0; display: none; }
@@ -9,7 +9,7 @@ input, button {background: transparent; outline: 0; border: 0; display: none; }
 .container{ min-width: 100%; height: 100%; background-image: url("./"); background-size: cover; position: absolute; z-index: 999999; overflow-x: hidden; overflow-y: hidden; }
 
 /* 로고 */
-.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; fill: currentColor;}
+.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; position: absolute; left: 0; top: 8%;}
 .icon--logo img {display: block; width: 30px;}
 .dummy {width: 100%; display: -webkit-flex; display: -ms-flex; display: flex;
 	-webkit-align-items: center;
@@ -20,12 +20,6 @@ input, button {background: transparent; outline: 0; border: 0; display: none; }
 	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
 .dummy__icon {width: calc(10vw - 20px); color: #b0b0b1;}
 
-
-/* 메뉴 */
-.nav_menu { position: absolute; right: 50px; top: 28px; }
-.nav_menu li { float: left; margin-right: 20px;}
-.nav_menu li a { display: block; color: #333; letter-spacing: 1px; }
-.nav_menu li a:hover { text-decoration: line-through; text-decoration-color: yellow;}
 
 /* 햄버거 토글 메뉴 시작 */
 .list {position: absolute; z-index: 9999; top: 8%; left: 140px; width: 50px; }
