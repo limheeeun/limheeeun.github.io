@@ -36,7 +36,7 @@
       });
         var wd = $(window).width();
             $(window).scroll(function(){
-                scTop = $("body, html").scrollTop();
+                scTop = $(window).scrollTop();
                 console.log(scTop);
                 if(scTop>=400){
                     $("#upBtn").fadeIn();
