@@ -35,7 +35,6 @@
         $(this).toggleClass("is-active");
       });
         var wd = $(window).width();
-        if(wd<=767){
             $(window).scroll(function(){
                 scTop = $("body, html").scrollTop();
                 console.log(scTop);
@@ -45,9 +44,6 @@
                     $("#upBtn").fadeOut();
                 }
             });
-        } else {
-            $("#upBtn").fadeOut();
-        }
             $("#upBtn").click(function(){
                 $("body, html").animate({
                     scrollTop: 0
