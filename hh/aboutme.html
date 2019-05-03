@@ -30,13 +30,14 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script> //햄버거 토글 메뉴, top 버튼 스크롤
     $(document).ready(function(){
+        var scTop;
       $(".list").click(function(){
         $(this).toggleClass("is-active");
       });
         var wd = $(window).width();
         if(wd<=767){
             $(window).scroll(function(){
-                var scTop = $(window).scrollTop();
+                scTop = $(window).scrollTop();
                 console.log(scTop);
                 if(scTop>=400){
                     $("#upBtn").fadeIn();
