@@ -37,7 +37,7 @@
         var wd = $(window).width();
         if(wd<=767){
             $(window).scroll(function(){
-                scTop = $(window).scrollTop();
+                scTop = $("body, html").scrollTop();
                 console.log(scTop);
                 if(scTop>=400){
                     $("#upBtn").fadeIn();
