@@ -120,7 +120,7 @@ ul, h2, p {margin: 0; padding: 0;}
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
-.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 90; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Permanent Marker', cusrive; }
+.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 90; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Muli', 'Gothic A1', sans-serif; }
 .gnb_mo_menu {width: 80%; min-height: 100%; margin: 25vh auto;}
 .gnb_mo_menu li {line-height: 2;}
 .gnb_mo_menu li a {display: block; text-align: center; font-size: 1.8em; letter-spacing: 2px; color: #333; transition: 0.4s;  }
@@ -138,9 +138,9 @@ ul, h2, p {margin: 0; padding: 0;}
 .c1, .c2, .c3, .c4, c5 {width: 100%; height: 100%;}
 
 /* 프로필 */
-.prof_img {float: left; width: auto; }
+.prof_img {float: left; margin: 2%; width: auto; }
 .prof_img img {display: block; width: 80%; height: auto; margin: 0 auto; }
-.prof_box {float: right; width: 70%; }
+.prof_box {float: right; width: 65%; }
 .prof_box p {font-size: 0.6em;}
 .prof_box h5 {font-size: 1.2em; line-height: 2; text-align: center;}
 .about_title {background: blue; color: #fff; font-size: 1.8em; line-height: 3;}
@@ -164,7 +164,7 @@ ul, h2, p {margin: 0; padding: 0;}
 .about_bottom {width: 100%; height: 100%; margin-top: 15%;}
 
 /* 어빌리티 */
-.ability { width: 60%; float: left;}
+.ability { width: 60%; float: left;  margin-top: 5%;}
 @import url(https://fonts.googleapis.com/css?family=Lato:100,400);
 @-webkit-keyframes load {
   0% {
@@ -193,14 +193,14 @@ ul, h2, p {margin: 0; padding: 0;}
   content: attr(data-name);
   position: absolute;
   width: 100%;
-  bottom: -2rem;
+  bottom: -1.2rem;
   font-size: 15px;
   font-weight: 400;
 }
 
 .progress > li:last-child::before {
   content: attr(data-name);
-  bottom: -2.7rem;
+  bottom: -2.2rem;
 }
 .progress > li:after {
   content: attr(data-percent);
@@ -248,7 +248,7 @@ table.license {width: 100%; margin-top: 5%;}
 
 
 /* 탑 버튼*/
-#upBtn { display: block;position:fixed; z-index:9999; right: 8%; bottom:4.5%;     display:none; }
+#upBtn { display: block;position:fixed; z-index:9999; right: 8%; bottom:5%;     display:none; }
 
 /* 미디어 쿼리 */
 @media screen and (min-width: 50em) {
@@ -292,4 +292,6 @@ table.license {width: 100%; margin-top: 5%;}
     .btn_box li.item4 { left:60px; top: 0;}
     .table_list { font-size: 0.45em; }
     .table_con {font-size: 0.45em; }
+    .about_title {background: blue; color: #fff; font-size: 1em; line-height: 3;}
+    .ability {margin-top: 0;}
 }

@@ -27,7 +27,7 @@ a { outline: none; text-decoration: none; }
 
 /* Icons */
 .icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; fill: currentColor;}
-.icon--logo img {display: block; width: 30px;}
+.icon--logo img {display: block; width: 30px; position: absolute; top: 7%;}
 
 /* Header */
 .codrops-header { margin: 12vh 0 0 10%; padding: 2em; position: relative; }
@@ -149,7 +149,7 @@ a { outline: none; text-decoration: none; }
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
 	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
-.dummy__icon {width: calc(10vw - 20px); color: #b0b0b1;}
+.dummy__icon {width: calc(10vw - 20px); top: 7%; color: #b0b0b1;}
 
 
 /* 메뉴 */

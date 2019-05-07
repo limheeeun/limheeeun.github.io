@@ -28,21 +28,21 @@
     
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/horizontalscroll.js"></script>
     <script> //햄버거 토글 메뉴, top 버튼 스크롤
     $(document).ready(function(){
       $(".list").click(function(){
         $(this).toggleClass("is-active");
       });
-        $(window).scroll(function(){
-            var scTop = $(window).scrollTop();
-            console.log(scTop);
+        $(".con_wrap").scroll(function(){
+            var scTop = $(".con_wrap").scrollTop();
             if (scTop >= 300){
-                $("#upBtn").fadeIn(600);
+                $("#upBtn").fadeIn();
             } else {
-                $("#upBtn").fadeOut(600);
+                $("#upBtn").fadeOut();
             }
             $("#upBtn").click(function(){
-                $("body, html").animate({
+                $(".con_wrap").animate({
                     scrollTop: 0
                 }, 800);
                 return false;
@@ -53,8 +53,29 @@
     <script src="./js/port.js"></script>
     <script src="./js/prefixfree.min.js"></script>
     <script src="./js/scroll.js"></script>
+    <script> // 페이지 로딩 애니메이션
+    $(document).ready(function(){
+        setTimeout(function() {
+            $(".loading").addClass("end");
+        }, 1000);
+    });
+    </script>
+    <script> //탭 메뉴
+    $(document).ready(function(){
+        $(".nav_menu3 li a").click(function(){
+            $(".project").addClass("on");
+        });
+    });
+
+    </script>
 </head>
-<body>
+<body onmousewheel="ScrollControl()">
+<!--
+    <div class="loading">
+      <h4>loading</h4>
+      <span class="loading-box"></span>
+    </div>
+-->
     <div class="container">
         <div class="dummy">
             <div class="dummy__icon">
@@ -118,65 +139,56 @@
                     </ul>
                 </nav>
             </div>
+<!--
+            <div class="mousescroll">
+                <img src="./img/mousescroll.png" alt="">
+            </div>
+-->
             <div class="nav_menu">
                 <ul class="nav_menu3">
+                    <li><a href="">RESPONSIVE</a></li>
                     <li><a href="">DESK</a></li>
                     <li><a href="">MOBILE</a></li>
-                    <li><a href="">RESPONSIVE</a></li>
                 </ul>
             </div>
+            <nav class="navmenu">
+            <ul class="navmenu_box">
+                <li><a href="aboutme.html">어바웃</a></li>
+                <li><a href="portfolio.html">작업물</a></li>
+                <li><a href="working.html">과제물</a></li>
+                <li><a href="contact.html">연락처</a></li>
+            </ul>
+        </nav>
         </div>
-        <div class="mask_left"></div>
+        <div class="mask_left">
+            <iframe src="pug_bubble2.html" frameborder="0"></iframe>
+            <span class="po_line"></span>
+        </div>
         <main class="contents">
             <div class="port_wrap">
-                <div class="port project" id="port1">
+                <div class="port1 project on" id="responsive">
                     <div class="mask_wrap">
+                        <img src="./img/mousescroll.png" alt="">
                         <div class="mask">
                             <ul class="img">
                                 <li>
-                                    <div class="off">
+                                    <div class="img_off">
                                         <img src="./img/po_vs01.jpg" alt="">
                                     </div>
-                                    <div class="on">
+                                    <div class="img_on">
                                         <img src="./img/po_vsbl01.jpg" alt="">
                                         <h2 class="po_title">Brand DIDIER DOBUT</h2>
                                         <h2 class="po_type">Website Renewal Design</h2>
                                         <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
-                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="projectprocess.html#page1" target="_blank" class="po_process">Project Process</a>
                                         <a href="" class="po_website">Website</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="off">
+                                    <div class="img_off">
                                         <img src="./img/po_vs02.jpg" alt="">
                                     </div>
-                                    <div class="on">
-                                        <img src="./img/po_vsbl02.jpg" alt="">
-                                        <h2 class="po_title">Brand PATAGONIA</h2>
-                                        <h2 class="po_type">Website Renewal Design</h2>
-                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
-                                        <a href="" class="po_process">Project Process</a>
-                                        <a href="" class="po_website">Website</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="off">
-                                        <img src="./img/po_vs02.jpg" alt="">
-                                    </div>
-                                    <div class="on">
-                                        <img src="./img/po_vsbl02.jpg" alt="">
-                                        <h2 class="po_title">Brand PATAGONIA</h2>
-                                        <h2 class="po_type">Website Renewal Design</h2>
-                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
-                                        <a href="" class="po_process">Project Process</a>
-                                        <a href="" class="po_website">Website</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="off">
-                                        <img src="./img/po_vs02.jpg" alt="">
-                                    </div>
-                                    <div class="on">
+                                    <div class="img_on">
                                         <img src="./img/po_vsbl02.jpg" alt="">
                                         <h2 class="po_title">Brand PATAGONIA</h2>
                                         <h2 class="po_type">Website Renewal Design</h2>
@@ -189,6 +201,41 @@
                             <ul class="btnBox">
                                 <li class="prev"><button class="btn"></button></li>
                                 <li class="next"><button class="btn"></button></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="port2 project" id="desk">
+                    <div class="mask_wrap">
+                        <div class="mask">
+                            <ul class="img">
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_D1.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Dbl1.jpg" alt="">
+                                        <h2 class="po_title">County Office Geumsan</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_D2.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Dbl2.jpg" alt="">
+                                        <h2 class="po_title">Holding Company CJ</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>

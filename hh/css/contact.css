@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 	100% { opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
 }
 
+
 /* 제일 상위 프레임 */
 .contents { width: 100%; background: #e8e8ec; color: #333; min-height: 100%; height: 100vh; position: relative;}
 ::-webkit-scrollbar { display:none; }
@@ -34,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 
 
 /* 로고 */
-.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; fill: currentColor;}
+.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; fill: currentColor; }
 .icon--logo img {display: block; width: 30px;}
 .dummy {width: 100%; display: -webkit-flex; display: -ms-flex; display: flex;
 	-webkit-align-items: center;
@@ -127,6 +128,9 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb .menu_con2 li a:hover {text-decoration: line-through; }
 #ck1:checked ~ .gnb {top: 0; visibility: visible;}
 
+.navmenu {width: 500px; left: 50%; position: absolute;}
+.navmenu li {float: left;}
+
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
@@ -148,26 +152,29 @@ ul, h2, p {margin: 0; padding: 0;}
 .contact_info {width: 60%; float: left;}
 #map_canvas {width: 80%; height: 300px; margin: 0 auto;}
 .info_con {width: 80%; height: 100%; margin: 20px auto; line-height: 1.8; }
-.p_left {width: 25%; float: left; font-size: 0.5em; letter-spacing: 1px;}
-.p_right {width: 55%; float: left; font-size: 0.5em; letter-spacing: 1px;}
+.p_left {width: 25%; float: left; font-size: 0.5em; letter-spacing: 1px; line-height: 3;}
+.p_right {width: 55%; float: left; font-size: 0.5em; letter-spacing: 1px; line-height: 3;}
 
-.contact_form {width: 40%; float: right; }
-.contact_con {width: 80%; height: 100%; margin: 0 auto;}
+.contact_form {width: 40%; float: right; margin-top: -5%; }
+.contact_con {width: 80%; height: 100%; margin: 0 auto; }
 .contact_subcon {width: 80%; height: 100%; margin: 0 auto; font-size: 0.5em; margin-top: 10px;}
-.btn_box { width: 80%; height: auto; margin: 50px auto;}
+.btn_box { width: 80%; height: auto; margin: 30px auto;}
 .email_btn {display: block; float: left ;width: 200px; height: 50px; background: blue; color: #fff; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1;}
-.email_btn:hover {opacity: 0.6;}
+.email_btn:hover {background: #fff; border: 1px solid blue; color: blue;}
 .portfolio_btn {display: block; float: left; width: 200px; height: 50px; background: #fff; border: 1px solid blue; color: blue; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1; }
-.portfolio_btn:hover {opacity: 0.6;}
+.portfolio_btn:hover {background: blue; color: #fff;}
 
-/* 메세지보내기
+
+.formFrame_con {clear: both; width: 80%; margin: 0 auto;font-size: 0.4em; line-height: 1.5; }
+.formFrame {width: 100%; height: 100%; margin: 0 auto; }
+#postForm {clear: both; margin-top: 20%; }
 .formFrame fieldset { display:block; border:0; padding: 5px; }    
-.frmInput { display:block; width: 350px; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; margin-top:10px; font-size:14px; text-indent:1em; }
-.frmInput2 { display:block; width:350px; height:40px;  border-bottom:1px solid #333; color:#333; margin:10px auto; font-size:14px; text-indent:1em; }
-.frmMemo { display:block; width: 350px; border: 1px solid #333; color:#333; margin:10px auto; font-size:14px; padding:1em; }
-.frmBtn { display: block; float:left; background-color:#0014ff; width: 350px; height: 40px; margin-top: 10px; margin: 5px; font-size: 0.6em; color: #fff; transition: 0.8s; }
-.frmBtn:hover {color: #0014ff; background: #fff; border: 1px solid #333;}
-*/
+.frmInput { display:block; width: 80%; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; margin-top:5px; font-size:14px; text-indent:1em; }
+.frmInput2 { display:block; width: 80%; height:40px;  border-bottom:1px solid #333; color:#333; margin:5px auto; font-size:14px; text-indent:1em; }
+.frmMemo { display:block; width: 80%; border: 1px solid #333; color:#333; margin:5px auto; font-size:14px; padding:1em; }
+.frmBtn { display: block; width: 80%; height: 50px; background: #fff; border: 1px solid blue; color: blue; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1; margin: 0 auto; cursor: pointer;}
+.frmBtn:hover {background: blue; color: #fff;}
+
 
 
 /* 미디어 쿼리 */

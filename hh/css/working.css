@@ -1,28 +1,29 @@
 @charset "uft-8";
 
 * { margin: 0; padding: 0; }
-body, html { width: 100%; height: 100%; font-family: 'Muli', 'Gothic A1', sans-serif; position: relative; overflow-y: hidden;}
+body, html { width: 100%; height: 100%; font-family: 'Muli', 'Gothic A1', sans-serif; position: relative; }
 ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background: transparent; outline: 0; border: 0; display: none; }
 
-.container{ min-width: 100%; height: 100%; background-image: url("./"); background-size: cover; position: absolute; z-index: 999999; overflow-x: hidden; overflow-y: hidden; }
+.container{ width: 100%; height: 1080px; background: url("../img/portfolio_visual_bg.png"); background-size: cover; position: relative;}
+.container iframe {position:absolute; width: 100%; height: 100%;}
 
 /* 로고 */
-.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; position: absolute; left: 0; top: 8%;}
-.icon--logo img {display: block; width: 30px;}
+.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; position: absolute; left: 5%; top: 6%; z-index: 9999;}
+.icon--logo img {display: block; width: 30px; padding-left: 50px;}
 .dummy {width: 100%; display: -webkit-flex; display: -ms-flex; display: flex;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
-	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
-.dummy__icon {width: calc(10vw - 20px); color: #b0b0b1;}
+	justify-content: space-between; padding: 20px 0 20px; height: 12vh;}
+.dummy__icon {width: 50px; color: #b0b0b1;}
 
 
 /* 햄버거 토글 메뉴 시작 */
-.list {position: absolute; z-index: 9999; top: 8%; left: 140px; width: 50px; }
+.list {position: absolute; z-index: 9999; top: 6%; left: 200px; width: 50px; }
 .list .line{
   width: 25px;
   height: 1px;
@@ -48,11 +49,11 @@ input, button {background: transparent; outline: 0; border: 0; display: none; }
 }
 #list_id.is-active .line:nth-child(1){
   transform: translateY(9px);
-  background-color: blue;
+  background-color: #fff;
 }
 #list_id.is-active .line:nth-child(3){
   transform: translateY(-9px) rotate(90deg);
-  background-color: blue;
+  background-color: #fff;
 }
 /* 햄버거 토글 메뉴 끝 */
 
@@ -73,6 +74,9 @@ ul, h2, p {margin: 0; padding: 0;}
     100% {right: 0;}
 }
 
+/* 본문 시작 */
+.contents {width: 100%; }
+
 .gnb .menu li {float: left; color:#fff; margin-right: 10px;}
 .gnb .menu li:nth-child(2) {float: left;}
 .gnb .menu li:nth-child(3) {float: left;}
@@ -86,7 +90,6 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb .menu_box p.barcode {position: absolute; bottom: 15px; font-family: 'Libre Barcode 39', cursive; font-weight: 400; font-size: 3.5em; line-height: 2.5vh; }
 .gnb .menu_box li.menu_con_wrap {margin-top: 30px; }
 .gnb .menu_con1 {clear: both; }
-.gnb .menu_con1 li {}
 .gnb .menu_con1 li a { color: yellow; font-weight: bold; }
 .gnb .menu_con1 .sub > li.lst1 { float: left; line-height: 2; font-weight: 300; }
 .gnb .menu_con1 .sub > li.lst1:hover { text-decoration: line-through;}
@@ -96,6 +99,10 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb .menu_con2 li a:hover {text-decoration: line-through; }
 #ck1:checked ~ .gnb {top: 0; visibility: visible;}
 
+.navmenu {width: 600px; position: relative; float: left;}
+.navmenu li {float: left; margin-right: 15%; }
+.navmenu li a {display: block; color: #333;}
+.navmenu li a:hover {text-decoration: line-through; text-decoration-color: blue;}
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
@@ -109,8 +116,8 @@ ul, h2, p {margin: 0; padding: 0;}
 
 /* --------- 여기까지 공통 CSS --------- */
 
-.po_left {position: fixed; left: 0; width: 460px; height: 100%; background-color: #fff;}
-/*.po_left .po_title {font-size: 90px; font-family: 'Archivo Black'; line-height: 1; margin-left: 30px; color:  #764b8c;}*/
+/*
+.po_left {position: fixed; top: 0; left: 0; min-width: 18.5%; height: 100%; background-image: url("../img/portfolio_left_bg.png"); background-size: cover; z-index: 10;}
 .po_left .po_title img {display: block; position: fixed; left: 2%;}
 .po_left > img {position: fixed; display: block; width: 80px; top: 50%; left: 335px; animation: scroll 3s ease-in infinite;}
 @keyframes scroll {
@@ -118,38 +125,45 @@ ul, h2, p {margin: 0; padding: 0;}
     50% {transform: translate(30px,0);}
     100% {transform: translate(0,0);}
 }
-.po_right {float: right;}
+*/
+.po_right { width: 95%; height: 100%; margin: 0 auto; }
 ::-webkit-scrollbar {display:none;}
-.gal {margin-left: 485px; margin-top: 100px; width: 100%; height: 1080px; white-space: nowrap; overflow-x: scroll;}
-.gal li {display: inline-block; margin-right: 20px;}
+.gal { width: 100%; height: 800px; clear: both; text-align: center; position: absolute; z-index: 3;}
+.gal li {display: inline-block; margin-top: 1%; margin-right: 2%; animation: scale 3s; }
+
+@keyframes scale {
+    0% {transform: translateX(-100px);}
+    100% {transform: translateX(0);}
+    
+}
 .gal li.gal_item2 a {display: block; width: 100%; height: 100%;}
 
+.gal li a img {display: block; width: 250px; height: 250px; transition: 0.6s;}
+.gal li a img:hover {opacity: 0.8;}
 
-.ft {position: absolute; clear: both; width: 100%; bottom: 0;}
-.copyright {text-align: center; line-height: 100px; color: #fff;}
-
-
-
-
+.ft {position:absolute; clear: both; width: 100%; bottom: 0;}
+.copyright {text-align: center; height: 50px; line-height: 50px; color: #333;}
 
 
 
+/* 미디어 쿼리 */
+@media screen and (min-width: 50em) {
+	.actions { width: 14.5vw; margin: 2em 0 0 19vw; position: absolute; }
+    .mobile {display: none;}
+}
+/* 모바일 iPhone 6/7/8 */
+@media screen and (max-width: 50em) {
+	.dummy {padding: 10px 15% 0 15%;}
+	.dummy__icon {width: calc(10vw - 10px);}
+    .desk {display: none; }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (max-width:576px){
+    .about_contact span:nth-child(2), .about_contact span:nth-child(3) {display: none;}
+    .about_contact span:first-child {bottom: 0; font-size: 0.2em;}
+    .contact_info {width: 100%; height: 50%;}
+    .contact_form {width: 100%; height: 50%;}
+    .email_btn, .portfolio_btn {font-size: 1em;}
+    .btn_box {margin: 0 auto;}
+}
 

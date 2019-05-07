@@ -6,10 +6,81 @@ ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background: transparent; outline: 0; border: 0; display: none; }
 
+
+/*  로딩 애니메이션  */
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #0000bb;
+    z-index: 9999;
+    transition: all 3s;
+}
+
+.loading h4 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    top: 43%;
+    left: 38%;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.loading .loading-box:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    animation: loading1 3s ease-in-out infinite;
+}
+
+.loading .loading-box {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 47%;
+    left: 50.5%;
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.loading .loading-box:after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    animation: loading2 3s ease-in-out infinite;
+}
+
+.loading.end {
+    opacity: 0;
+    z-index: -1;
+}
+
+@keyframes loading1 {
+    0%{ left: -25px; background-color: rgba(255, 255, 255, .8); }
+    50%{ left: 0px; background-color: rgba(255, 255, 255, .1);}
+    100%{ left:-25px; background-color: rgba(255, 255, 255, .8); }
+}
+
+@keyframes loading2 {
+    0%{ left: 25px; background-color: rgba(255, 255, 255, .8); }
+    50%{ left: 0px; background-color: rgba(255, 255, 255, .1);}
+    100%{ left:25px; background-color: rgba(255, 255, 255, .8); }
+}
+
 .container{ width: 100%; height: 100%; background: url("../img/portfolio_visual_bg.png"); background-size: cover; overflow: hidden;}
 
 /* 로고 */
-.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; position: absolute; left: 0; top: 8%; z-index: 9999;}
+.icon {display: block; width: 1.5em; height: 1.5em; margin: 0 auto; position: absolute; left: 5%; top: 8%; z-index: 999;}
 .icon--logo img {display: block; width: 30px; padding-left: 50px;}
 .dummy {width: 100%; display: -webkit-flex; display: -ms-flex; display: flex;
 	-webkit-align-items: center;
@@ -22,7 +93,7 @@ input, button {background: transparent; outline: 0; border: 0; display: none; }
 
 
 /* 햄버거 토글 메뉴 시작 */
-.list {position: absolute; z-index: 9999; top: 8%; left: 100px; width: 50px; }
+.list {position: absolute; z-index: 999; top: 8%; left: 200px; width: 50px; }
 .list .line{
   width: 25px;
   height: 1px;
@@ -48,11 +119,11 @@ input, button {background: transparent; outline: 0; border: 0; display: none; }
 }
 #list_id.is-active .line:nth-child(1){
   transform: translateY(9px);
-  background-color: blue;
+  background-color: #fff;
 }
 #list_id.is-active .line:nth-child(3){
   transform: translateY(-9px) rotate(90deg);
-  background-color: blue;
+  background-color: #fff;
 }
 /* 햄버거 토글 메뉴 끝 */
 
@@ -96,6 +167,11 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb .menu_con2 li a:hover {text-decoration: line-through; }
 #ck1:checked ~ .gnb {top: 0; visibility: visible;}
 
+.navmenu {width: 600px; position: relative; float: left;}
+.navmenu li {float: left; margin-right: 15%; }
+.navmenu li a {display: block; color: #333;}
+.navmenu li a:hover {text-decoration: line-through; text-decoration-color: blue;}
+
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
@@ -105,46 +181,84 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb_mo_menu li a {display: block; text-align: center; font-size: 1.8em; letter-spacing: 2px; color: #333; transition: 0.4s;  }
 .gnb_mo_menu li a:hover {text-decoration: line-through blue; }
 #ck1:checked ~ .gnb_mo {top: 0; visibility: visible;}
+
 /* mobile 메뉴 끝*/
 
 /* --------- 여기까지 공통 CSS --------- */
-.contents {width: 100%; float: left;  overflow: hidden;}
+.contents {width: 100%; float: left; margin-left: 9%; overflow: hidden;}
 .port_wrap {width: 100%; height: 100%; }
-#port1 {position: relative; width: 100%; margin: 0 auto;}
-/*.contents>.port_wrap>.port {top: 162px;}*/
+#responsive {position: relative; width: 100%; margin: 0 auto;}
+#desk {position: absolute; width: 100%; top: 20%; left: 0;}
 
+.mousescroll {position: absolute; left: 30%;}
+.mousescroll img {display: block; width: 100px; animation: scroll 3s ease-in infinite; z-index: 99;}
+
+@keyframes scroll {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(30px,0);}
+    100% {transform: translate(0,0);}
+}
 
 /* 웹사이트 종류별 메뉴버튼 */
 .nav_menu {position: absolute; top: 8%; left: 20%; width: 500px; }
-.nav_menu li {float: left; margin-right: 2%;}
-.nav_menu li a {display: block; color: #333; font-weight: bold; line-height: 2;}
-.nav_menu li a:after {content: '·'; margin-left: 10%; color: #333;}
-.nav_menu li:last-child a:after {content: ''; }
+/*.nav_menu3 {text-align: center;}*/
+.nav_menu li {float: left; width: 23%; height: 40px; line-height: 40px; background: blue; text-align: center;}
+.nav_menu li:hover {background:rgba(255,255,255,0.8);}
+.nav_menu li:hover a {color: blue;}
+.nav_menu li a {position: relative; display: inline-block; color: #fff; line-height: 1.3; font-size: 0.8em;}
 
-.mask {position: relative; width: 100%; height: 679px; }
-.mask_left {position: absolute; top: 0; left: 0; width: 19.2%; height: 100%; background-image: url("../img/.jpg"); background-size: cover; z-index: 10;}
-#port1 .img {position: relative; width: 5600px; height: 679px;  }
-#port1 .img li {width: 1200px; height: 679px; float: left; margin-left: 100px; position: relative; }
-#port1 .img li:first-child {margin-left: 400px;}
-#port1 .img li img {display: block; width: 1200px; height: 650px; box-shadow: 3px 5px 5px #bcbcbc;}
-#port1 .img li .on {position: absolute; top: 0; left: 0; color: #fff; opacity: 0; visibility: hidden; transition: 0.8s; }
-#port1 .img li .on h2, .on h6 {position: absolute; top: 25vh; left: 5%;}
-#port1 .img li .on h2.po_title {top: 25vh;}
-#port1 .img li .on h2.po_type {top: 28vh;}
-#port1 .img li .on .po_level {top: 32vh; font-size: 0.7em;}
-#port1 .img li:hover .on { opacity: 1; visibility: visible;}
-#port1 .img li:first-child {width: 1200px; }
+
+
+::-webkit-scrollbar {display:none;}
+.mask_wrap > img {position: fixed; display: block; width: 70px; top: 45%; left: 2%; animation: scroll 3s ease-in infinite; z-index: 99;}
+
+@keyframes scroll {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(30px,0);}
+    100% {transform: translate(0,0);}
+}
+
+.mask {position: relative; width: 1200px; height: 679px; transform: matrix(1, 0, 0, 1, 0, 0);}
+.mask_left {position: fixed; top: 0; left: 0; min-width: 18.5%; height: 100%; /*background-image: url("../img/portfolio_left_bg.png");*/ background-size: cover; z-index: 10;}
+.mask_left .po_line {position: absolute; z-index: 3; top: 40%; left: 0; width: 400px; height: 5px; background: blue;}
+.mask_left iframe {width: 100%; height: 100%; }
+
+#responsive .img {position: relative; width: 3000px; height: 679px;  }
+#responsive .img li {width: 1200px; height: 679px; float: left; margin-right: 1%; }
+#responsive .img li img {display: block; width: 1200px; height: 650px; box-shadow: 3px 5px 5px #bcbcbc;}
+#responsive .img li .img_on {position: absolute; top: 0; left: 0; color: #fff; opacity: 0; visibility: hidden; transition: 0.8s; }
+#responsive .img li .img_on h2, .img_on h6 {position: absolute; top: 25vh; left: 5%;}
+#responsive .img li .img_on h2.po_title {top: 25vh;}
+#responsive .img li .img_on h2.po_type {top: 28vh;}
+#responsive .img li .img_on .po_level {top: 32vh; font-size: 0.7em;}
+#responsive .img li:hover .img_on { opacity: 1; visibility: visible;}
+#responsive .img li:first-child {width: 1200px; }
+
+#desk .img {position: relative; width: 200%; height: 679px;  }
+#desk .img li {width: 1200px; height: 679px; float: left; margin-left: 100px; position: relative; }
+#desk .img li:first-child {margin-left: 400px;}
+#desk .img li img {display: block; width: 1200px; height: 650px; box-shadow: 3px 5px 5px #bcbcbc;}
+#desk .img li .img_on {position: absolute; top: 0; left: 0; color: #fff; opacity: 0; visibility: hidden; transition: 0.8s; }
+#desk .img li .img_on h2, .img_on h6 {position: absolute; top: 25vh; left: 5%;}
+#desk .img li .img_on h2.po_title {top: 25vh;}
+#desk .img li .img_on h2.po_type {top: 28vh;}
+#desk .img li .img_on .po_level {top: 32vh; font-size: 0.7em;}
+#desk .img li:hover .img_on { opacity: 1; visibility: visible;}
+#desk .img li:first-child {width: 1200px; }
+
+.project.on {display: block;}
+.project {display: none;}
+
 .po_process {display: block; width: 200px; height: 40px; line-height: 40px; background: #fff; color: #333; text-align: center; position: absolute; top: 55%; left: 5%;  }
 .po_process:hover {background: blue; color: #fff;}
 .po_website {display: block; width: 200px; height: 40px; line-height: 40px; background: #fff; color: #333; text-align: center; position: absolute; top: 55%; left: 25%;  }
 .po_website:hover {background: blue; color: #fff;}
 
-.btnBox { position:absolute; width:100%; left: 3%; bottom: 0; z-index:20;  } 
+.btnBox { position:absolute; width:100%; left: 3%; bottom: 3%; z-index:20;  } 
 .btnBox li { width: 30px; height: 30px; background:black; border-radius: 30px; }
 .btnBox .prev { float:left; }
 .btnBox .next { float: left; margin-left: 20px; }
-.btnBox li .btn { display:block; width:30px; height:30px; background:transparent;  cursor:pointer; 
-    background-repeat:no-repeat; background-position:center; background-size: 50% 50%;  }
+.btnBox li .btn { display:block; width:30px; height:30px; background:transparent;  cursor:pointer; background-repeat:no-repeat; background-position:center; background-size: 50% 50%;  }
 .btnBox .prev .btn { background-image:url("../img/arrowLeft1.png"); }
 .btnBox .next .btn { background-image:url("../img/arrowRight1.png"); }
 
