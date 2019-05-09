@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 * {margin: 0; padding: 0;}
-body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif;font-family: 'Raleway', sans-serif;}
+body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', 'Raleway', sans-serif;}
 a {text-decoration: none;}
 li {list-style: none;}
 
@@ -44,7 +44,7 @@ label.menuLst2 {right: 50px; clear: both; top: 0;}
 .vsTitBox button {width: 150px; height: 40px; margin-top: 40px; border-radius: 30px; font-size: 14px; background:transparent; border: 0; outline: 0; background-color: #be0000; color: #fff; }  
 
 /* sub 메뉴 열었을 때 */
-#nav {position: fixed; width: 100%; height: 100%; right: -100%; transition: 0.5s; z-index: 31;background:rgba(255,255,255,0.8);}
+#nav {position: fixed; width: 100%; height: 100%; right: -100%; transition: 0.5s; z-index: 31; background:rgba(255,255,255,0.8);}
 #nav_top {width: 100%; height: 200px; margin-top: 200px;}
 #nav .sub {width: 100%; position: absolute; z-index: 31;}
 #nav .sub a {display: block; text-align: center; text-decoration: none; color: #333; line-height: 3; font-weight: 600;}

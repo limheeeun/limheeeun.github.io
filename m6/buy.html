@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>charm's</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/charms_fa16.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/charms_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/charms_fa114.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="./buy.css">   
+    
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Raleway" rel="stylesheet">
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>         
+    <script src="slide.js"></script>
+    
+</head>
+<body>
+<main id="container">
+    <div class="hd">
+        <a href="index.html" class="logo"></a>
+        <input type="checkbox" id="menu">
+        <input type="checkbox" id="ck2">
+        <label for="ck2" class="tnbCall">
+            <img src="./img/search.png" alt="">
+        </label> 
+        <label for="menu" class="menuLst">
+            <span class="lst1"></span>
+            <span class="lst2"></span>
+            <span class="lst3"></span>
+        </label>
+        <div id="nav">
+            <div id="nav_top">
+                <div class="bg">
+                    <figure class="sublogo">
+                        <img src="./img/logo_bl.png" alt="검은로고">
+                    </figure>
+                    <div class="btn-r">
+                        <a href="" class="close"></a>
+                    </div>
+                </div>    
+                <ul class="sub">
+                    <li><a href="shop.html">TOP</a></li>
+                    <li><a href="shop.html">BOTTOM</a></li>
+                    <li><a href="shop.html">OUTWEAR</a></li>
+                    <li><a href="shop.html">CAP</a></li>
+                    <li><a href="shop.html">ACC</a></li>
+                    <li><a href="shop.html">LAST</a></li>
+                    <br>
+                    <li>
+                       <a href="index.html">
+                           <i class="fa fa-home"></i> HOME
+                       </a>
+                    </li>
+                </ul>
+            </div>        
+        </div>
+        <nav id="tnb">
+            <div class="ser_close">
+                <label for="ck2" class="closeBtn2">
+                    <img src="./img/cancel.png" alt="">
+                </label>
+            </div>
+            <div class="search">
+                <form action="" id="searchForm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력하세요" autofocus name="keyword">
+                    <input type="submit" class="frmBtn searchBtn" value="">
+                </form>
+            </div>
+        </nav>
+    </div>    
+    <div class="page1">
+        <section class="pageBox1" >
+            <div class="buyImg">
+                <img src="./img/prod01.jpg" alt="">
+            </div>
+        </section>
+        <section class="pageBox2">
+            <div class="pageWrap2">    
+                <div class="buyBox">
+                    <div class="conFrm">
+                        <div class="conBox1">
+                            <h5 class="tit">PRICE</h5>
+                        </div>
+                        <div class="conBox2">
+                            <h5 class="com">KRW 98,000</h5>
+                        </div>
+                    </div>
+                    <div class="conFrm">
+                        <div class="wrap">
+                            <div class="conBox1">
+                                <h5>SIZE</h5>
+                            </div>
+                            <div class="conBox2">
+                                <select name="product">
+                                    <option value="[필수] 옵션을 선택해 주세요" selected="selected">[필수] 옵션을 선택해 주세요</option>
+                                    <option value="---------------">---------------</option>
+                                    <option value="FREE">FREE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnBox">
+                    <button class="buyBtn">BUY</button>
+                    <button class="addBtn">ADD CART</button>
+                </div>
+            </div>
+        </section>
+        <section class="pageBox3">
+            <img src="./img/productss01.jpg" alt="">
+        </section>
+    </div>
+    <footer class="ft">
+     <div class="ftBox">
+         <h2>CHARM'S</h2>
+         <h4 class="adr">서울특별시 강남구 도산대로 19길 24-1 3층</h4>
+         <h4 class="ema">korea_charms@naver.com</h4>
+         <h4 class="tel">02-794-6592</h4>
+         <button class="mapBtn">VIEW MAP</button>
+     </div>
+     <div class="snsBtn">
+         <ul>
+             <li>
+                <a href="">
+                    <i class="fa fa-instagram"></i> INSTAGRAM
+                </a>
+             </li>
+             <li>
+                <a href="">
+                    <i class="fa fa-facebook"></i> FACEBOOK
+                </a>
+             </li>
+             <li>
+                 <a href="">
+                    <i class="fa fa-weibo"></i> WEIBO
+                </a>
+             </li>
+         </ul>
+     </div>
+     <div class="copyright">
+         <h4 class="copy">ⓒ참스 All rights reserved.</h4>
+     </div>
+</footer>
+</main>
+<a href="#" class="btn listBtn" id="upBtn">
+    <img src="./img/next.png" alt="">
+</a>   
+</body>
+</html>

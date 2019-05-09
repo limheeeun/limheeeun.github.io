@@ -5,6 +5,7 @@ body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', 'Raleway', s
 a {text-decoration: none;}
 li {list-style: none;}
 input {display: none;}
+button {background: transparent; border: 0; outline: 0;}
 
 #nav, #content{background-color:#000;}
 ul{margin:0; padding:0; list-style:none;}
@@ -71,15 +72,35 @@ a.close::after {transform: translateX(-50%) translateY(-50%) rotate(-45deg);}
 
 
 /* page1 */
-.page1 {height: 100%; clear: both; }
-.pageBox {height: 100%; position: relative;}
-.proTit { line-height:1.8; font-size: 0.85em; color: #333; }    
-.proCom { font-size:0.8em; padding:0.25em; overflow:hidden; max-height:40px; white-space: nowrap; text-overflow: ellipsis; color: #333;} 
-.date { font-size:0.7em; padding:0.4em; } 
-.grid1 { width:100%; text-align: center; padding-top: 25px; }
-.grid1 li { display: inline-block; width:350px; padding-top: 20px; margin-top: 20px; margin-bottom: 20px; padding-bottom: 20px; }
-.grid1 li:nth-child(2n+1) { margin-right:10px; }    
-.grid1 li img { display:block; width:350px; height:auto; margin:0 auto 10px auto; }
+.page1 {width: 100%; min-height: 100%; }
+.pageBox1 {width: 100%; margin: 0 auto; float: left;}
+.pageBox2 {width: 100%; margin: 0 auto; float: left;}
+.pageBox3 {width: 100%; margin: 0 auto; }
+.buyImg {width: 100%;  }
+.buyImg img {display: block; width: 320px; margin: 0 auto; padding-top: 50px;}
+
+.pageWrap2 {width: 360px; margin: 0 auto;}
+
+.buyBox {width: 100%; min-height: 100px; padding-top: 100px; line-height: 2; }
+.conFrm {width: 40%; margin-left: 30px; }
+.wrap {display: block; width: 100%; margin: 0 auto; float: left;}
+[class*=conBox] { width:100px; display: table-cell; vertical-align: top; }
+.conBox > p {font-size: 15px; line-height: 1.2em; margin: 0; color: #565656; text-align: left;}
+.conBox > h3 {font-size: 1.25em; margin: 0; color: #0c569b; line-height: 1.15em; text-align: left;}
+.conBox1 {display: inline; float: left; width: 100px;}
+.conBox2 {float: left;}
+
+h5.tit {font-weight: 600;}
+h5.com {font-weight: 300;}
+
+/*구매, 장바구니 버튼*/
+.btnBox {width: 300px; margin-left: 30px; margin-top: 80px; line-height: 2;}
+.buyBtn {clear: both; width: 100%; height: 30px; border: 1px solid #333;}
+.addBtn {clear: both; width: 100%; height: 30px; border: 1px solid #999;}
+
+
+/* pageBox3 */
+.pageBox3 img {display: block; width: 80%; margin: 0 auto; padding-top: 100px; }
 
 
 /* 풋터 */
