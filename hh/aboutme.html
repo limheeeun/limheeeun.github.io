@@ -48,9 +48,8 @@
             }
         });
         $("#upBtn").click(function(){
-            console.log("위로");
-            $(".con_wrap").animate({
-                "scollTop": "0px"
+            $(".con_wrap").not(":animated").animate({
+                "scrollTop": "0px"
             }, 800);
         });
     });
