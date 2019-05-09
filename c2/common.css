@@ -1,0 +1,25 @@
+/*common.css = 공통 스타일*/
+@charset "UTF-8";
+
+    * {margin: 0; padding: 0;}
+    body, html {width: 100%; height: 100%; font-family: 'Poppins', sans-serif;}
+    a {text-decoration: none;}
+    ul {list-style:none;}
+    .page {width: 100%; height: 100%;}
+
+    .hd {width: 100%; height: 100px; background: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.6); position: fixed;top: 0; z-index: 100;}
+    .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
+    .logo {display: block; width: 75px; height: 64px; background-image: url("./CJ/img/logo/logo_foo.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; text-indent: -9999px; position: absolute; top: 0px; left: 0;}
+    
+    .hd:hover {background:rgba(255, 255, 255, 0.8)}
+    .hd:hover .logo {display: block; width: 75px; height: 64px; background-image: url("./CJ/img/logo/cj_logo.png");}
+
+    #topNav {position:absolute; right: 0px; top: 20px;}
+    #topNav li {float: left; padding-left: 15px; text-align: center;}
+    #topNav li a {color: #ffffff; font-size: 13px;}
+    .hd:hover #topNav a {color: #000000; }
+    .dotSplit:after {content: "·"; padding-left: 10px;}
+
+    #gnb {width: 900px; margin: 0 auto; margin-top: 28px;}
+
+
