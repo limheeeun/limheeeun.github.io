@@ -1,5 +1,0 @@
-@charset "utf-8";
-
-/* 데스크탑 */
-.wrap {background: #dd0;}
-.wrap:after {content:"데스크탑"; min-width: 1025px; line-height: 10; font-size: 50px;}
