@@ -12,15 +12,74 @@ a { outline: none; text-decoration: none; }
 button {outline: 0; border: 0; background: transparent;}
 h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 
-@-webkit-keyframes fadeAllIn {
-	0%, 50% { opacity: 0; -webkit-transform: translate3d(-10px,0,0); transform: translate3d(-10px,0,0); }
-	100% { opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+/*  로딩 애니메이션  */
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9999;
+    transition: all 3s;
 }
 
-@keyframes fadeAllIn {
-	0%, 50% { opacity: 0; -webkit-transform: translate3d(-10px,0,0); transform: translate3d(-10px,0,0); }
-	100% { opacity: 1; -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+.loading h4 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    top: 43%;
+    left: 38%;
+    color: #0000bb;
+    letter-spacing: 4px;
+    font-size: 1.2em;
 }
+
+.loading .loading-box:before{
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 0, .5);
+    top: 0px;
+    left: -25px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+}
+
+.loading .loading-box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 45%;
+    left: 50%;
+    border-radius: 20px;
+    background-color: #fff;
+    transform-origin:  50% 50%;
+    animation: loading 1s ease-in-out infinite;
+}
+
+.loading .loading-box:after{
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 255, .5);
+    top: 0px;
+    left: 25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+}
+.loading.end {
+    opacity: 0;
+    z-index: -1;
+}
+
+@keyframes loading {
+    0%{transform:rotate(0deg);}
+    50%{transform:rotate(180deg);}
+    100%{transform:rotate(180deg);}
+}
+
 
 
 /* 제일 상위 프레임 */
@@ -43,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 	align-items: center;
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: space-between;
-	justify-content: space-between; padding: 20px 20px 0 20px; height: 15vh;}
+	justify-content: space-between; padding: 20px 20px 0 45px; height: 15vh;}
 .dummy__icon {width: 50px; color: #b0b0b1;}
 
 
@@ -54,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0; padding: 0; line-height: 1.8;}
 .nav_menu li a:hover { text-decoration: line-through; text-decoration-color: yellow;}
 
 /* 햄버거 토글 메뉴 시작 */
-.list {position: absolute; z-index: 9999; top: 8%; left: 100px; width: 50px; }
+.list {position: absolute; z-index: 999; top: 8%; left: 100px; width: 50px; }
 .list .line{
   width: 25px;
   height: 1px;
@@ -156,8 +215,8 @@ ul, h2, p {margin: 0; padding: 0;}
 .p_right {width: 55%; float: left; font-size: 0.5em; letter-spacing: 1px; line-height: 3;}
 
 .contact_form {width: 40%; float: right; margin-top: -5%; }
-.contact_con {width: 80%; height: 100%; margin: 0 auto; }
-.contact_subcon {width: 80%; height: 100%; margin: 0 auto; font-size: 0.5em; margin-top: 10px;}
+.contact_con {width: 80%; height: 100%; margin: 0 auto; line-height: 1.5; }
+.contact_subcon {width: 80%; height: 100%; margin: 0 auto; font-size: 0.45em; margin-top: 10px; line-height: 1.5;}
 .btn_box { width: 80%; height: auto; margin: 30px auto;}
 .email_btn {display: block; float: left ;width: 200px; height: 50px; background: blue; color: #fff; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1;}
 .email_btn:hover {background: #fff; border: 1px solid blue; color: blue;}
@@ -165,13 +224,13 @@ ul, h2, p {margin: 0; padding: 0;}
 .portfolio_btn:hover {background: blue; color: #fff;}
 
 
-.formFrame_con {clear: both; width: 80%; margin: 0 auto;font-size: 0.4em; line-height: 1.5; }
+.formFrame_con {clear: both; width: 80%; margin: 0 auto; font-size: 0.4em; line-height: 1.8; }
 .formFrame {width: 100%; height: 100%; margin: 0 auto; }
-#postForm {clear: both; margin-top: 20%; }
+#postForm {clear: both; margin-top: 18%; }
 .formFrame fieldset { display:block; border:0; padding: 5px; }    
-.frmInput { display:block; width: 80%; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; margin-top:5px; font-size:14px; text-indent:1em; }
-.frmInput2 { display:block; width: 80%; height:40px;  border-bottom:1px solid #333; color:#333; margin:5px auto; font-size:14px; text-indent:1em; }
-.frmMemo { display:block; width: 80%; border: 1px solid #333; color:#333; margin:5px auto; font-size:14px; padding:1em; }
+/*.frmInput { display:block; width: 80%; height:60px; float:left; border:1px solid #333; color:#333; margin-left:50px; margin-top:5px; font-size:14px; text-indent:1em; }*/
+.frmInput2 { display:block; width: 80%; height: 25px; border-bottom:1px solid #333; color:#333; margin: 5px auto; font-size: 0.35em; text-indent: 0.5em; }
+.frmMemo { display:block; width: 80%; border: 1px solid #333; color:#333; margin:5px auto; font-size: 0.35em; padding:0.8em; }
 .frmBtn { display: block; width: 80%; height: 50px; background: #fff; border: 1px solid blue; color: blue; line-height: 50px; font-size: 0.5em; text-align: center; margin: 10px; transition: 0.8s; opacity: 1; margin: 0 auto; cursor: pointer;}
 .frmBtn:hover {background: blue; color: #fff;}
 

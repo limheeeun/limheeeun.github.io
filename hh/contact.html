@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>:: l i m h e e e u n ::</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>:: l i m h e e e u n ::</title>
 
-    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa16.png">
-    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa32.png">
-    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa152.png">
-    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/hh_fa57.png">
-    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/hh_fa114.png">
-    <link rel="shourtcut icon" type="72x72" href="./img/favicon/hh_fa72.png">
-    <link rel="shourtcut icon" type="128x128" href="./img/favicon/hh_fa128.png">
+<link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa16.png">
+<link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa32.png">
+<link rel="shourtcut icon" type="image/x-con" href="./img/favicon/hh_fa152.png">
+<link rel="apple-touch-icon" size="57x57" href="./img/favicon/hh_fa57.png">
+<link rel="apple-touch-icon" size="114x114" href="./img/favicon/hh_fa114.png">
+<link rel="shourtcut icon" type="72x72" href="./img/favicon/hh_fa72.png">
+<link rel="shourtcut icon" type="128x128" href="./img/favicon/hh_fa128.png">
 
-    <!--  외부 스타일 시트  -->
-    <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="./css/contact.css" />
+<!--  외부 스타일 시트  -->
+<link rel="stylesheet" href="./css/font.css">
+<link rel="stylesheet" type="text/css" href="./css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="./css/contact.css" />
 
-    <!-- 폰트 설정 -->
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
+<!-- 폰트 설정 -->
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
 
-    <!-- 제이쿼리 -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>document.documentElement.className = 'js';</script>
-    <script> //햄버거 토글 메뉴
-    $(document).ready(function(){
-      $(".list").click(function(){
-        $(this).toggleClass("is-active");
+<!-- 제이쿼리 -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="./js/loading.js"></script>
+<script>document.documentElement.className = 'js';</script>
+<script> //햄버거 토글 메뉴
+$(document).ready(function(){
+  $(".list").click(function(){
+    $(this).toggleClass("is-active");
+  });
+});
+</script>
+<script src="js/prefixfree.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script> 
+    //좌표 값을 바꿔서 입력 36.3491563,127.3776857
+    function initialize() {
+      var myLatlng = new google.maps.LatLng(36.338144, 127.384836);
+      var mapOptions = {
+        zoom: 17,
+        center: myLatlng
+      }
+
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: '개인사이트'	  //레이블을 바꿔서 입력
       });
-    });
-    </script>
-    <script src="js/prefixfree.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script> 
-        //좌표 값을 바꿔서 입력 36.3491563,127.3776857
-        function initialize() {
-          var myLatlng = new google.maps.LatLng(36.338144, 127.384836);
-          var mapOptions = {
-            zoom: 17,
-            center: myLatlng
-          }
-
-          var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-          var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: '개인사이트'	  //레이블을 바꿔서 입력
-          });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-         </script>
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 <body class="contents">
+    <div class="loading">
+<!--      <h4>loading</h4>-->
+      <span class="loading-box"></span>
+    </div>
     <div class="about_contact">
-        <span class="line_contact">Copyright 2019. heeeun. All rights reserved.</span>
+        <span class="line_contact">Copyright 2019. Lim Hee Eun. All rights reserved.</span>
         <span class="line_contact"><span class="point">EMAIL</span> 071381@naver.com</span>
         <span class="line_contact"><span class="point">PHONE</span> 010-6623-10XX</span>
     </div>
@@ -150,8 +155,8 @@
                         </div>
                     </div>
                     <div class="contact_form">
-                        <p class="contact_con">열정 가득 담은 자기소개서를<br>마지막까지 읽어주셔서 감사합니다!</p>
-                        <p class="contact_subcon">모든 준비가 끝났습니다. 작은 능력이지만 최상으로 발휘할 수 있도록 기회를 주는 곳, 블라블라.......생각이 안난다......</p>
+                        <p class="contact_con">열정 가득 임희은의 자기소개서를<br>마지막까지 읽어주셔서 감사합니다!</p>
+                        <p class="contact_subcon">모든 준비가 끝났습니다. 작은 능력이지만 최상으로 발휘할 수 있도록 기회를 주는 곳, 그곳에서 최고의 프로젝트를 최고의 그룹과 함께하길 소원합니다. </p>
                         <div class="btn_box">
                             <a href="mailto:071381@naver.com" target="_blank" class="email_btn">SEND TO EMAIL</a>
                             <a href="portfolio.html" class="portfolio_btn">PORTFOLIO</a>

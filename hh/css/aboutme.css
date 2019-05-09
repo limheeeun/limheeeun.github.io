@@ -177,6 +177,7 @@ ul, h2, p {margin: 0; padding: 0;}
 .gnb .menu_con2 li a:hover {text-decoration: line-through; }
 #ck1:checked ~ .gnb {top: 0; visibility: visible;}
 
+
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/

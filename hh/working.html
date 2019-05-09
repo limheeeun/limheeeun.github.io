@@ -26,6 +26,7 @@
 
     <!-- 제이쿼리 -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/loading.js"></script>
     <script>document.documentElement.className = 'js';</script>
     <script> //햄버거 토글 메뉴
     $(document).ready(function(){
@@ -36,172 +37,176 @@
     </script>
 </head>
 <body onmousewheel="ScrollControl()">
-<div class="container">
-    <iframe src="pug_bubble2.html" frameborder="0"></iframe>
-    <div class="dummy">
-        <div class="dummy__icon">
-            <a href="index.html" class="icon icon--logo">
-                <img src="./img/logo.png" alt="">
-            </a>
-        </div>
-        <div class="dummy__icon">
-            <input type="checkbox" id="ck1" class="ck">
-            <label for="ck1" class="list" id="list_id">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </label>
-            <nav class="gnb desk">
-                <div class="gnb_wrap">
-                    <ul class="profile">
-                        <li></li>
+    <div class="loading">
+<!--      <h4>loading</h4>-->
+      <span class="loading-box"></span>
+    </div>
+    <div class="container">
+        <iframe src="pug_bubble2.html" frameborder="0"></iframe>
+        <div class="dummy">
+            <div class="dummy__icon">
+                <a href="index.html" class="icon icon--logo">
+                    <img src="./img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="dummy__icon">
+                <input type="checkbox" id="ck1" class="ck">
+                <label for="ck1" class="list" id="list_id">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </label>
+                <nav class="gnb desk">
+                    <div class="gnb_wrap">
+                        <ul class="profile">
+                            <li></li>
+                        </ul>
+                        <ul class="menu">
+                            <li>
+                                <div class="menu_box">
+                                    <h2>맞아요제포트폴리오-</h2>
+                                    <h2>그래요그<span class="point">포트폴리오</span>입니다</h2>
+                                    <p class="contact">TEL : 010-1234-1234 · EMAIL : 071381@naver.com</p>
+                                    <ul class="menu_con1">
+                                        <li class="menu_con_wrap">
+                                            <a href="portfolio.html">PORTFOLIO</a>
+                                            <ul class="sub">
+                                                <li class="lst1">
+                                                    <a href="./portfolio.html#mobile">MOBILE DESIGN</a>
+                                                </li>
+                                                <li class="lst1">
+                                                    <a href="./portfolio.html#desk">DESK DESIGN</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="sub">
+                                                <li class="lst1">
+                                                    <a href="./portfolio.html#responsive">RESPONSIVE DESIGN</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="menu_con2"> 
+                                        <li class="menu_con_wrap"><a href="aboutme.html">ABOUTME</a></li>
+                                        <li class="menu_con_wrap"><a href="working.html">WORKING</a></li>
+                                        <li class="menu_con_wrap"><a href="contact.html">CONTACT</a></li>
+                                        <p class="barcode">pickme</p>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <nav class="gnb_mo mobile">
+                    <ul class="gnb_mo_menu">
+                        <li><a href="portfolio.html">PORTFOLIO</a></li>
+                        <li><a href="aboutme.html">ABOUTME</a></li>
+                        <li><a href="working.html">WORKING</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
                     </ul>
-                    <ul class="menu">
-                        <li>
-                            <div class="menu_box">
-                                <h2>맞아요제포트폴리오-</h2>
-                                <h2>그래요그<span class="point">포트폴리오</span>입니다</h2>
-                                <p class="contact">TEL : 010-1234-1234 · EMAIL : 071381@naver.com</p>
-                                <ul class="menu_con1">
-                                    <li class="menu_con_wrap">
-                                        <a href="portfolio.html">PORTFOLIO</a>
-                                        <ul class="sub">
-                                            <li class="lst1">
-                                                <a href="./portfolio.html#mobile">MOBILE DESIGN</a>
-                                            </li>
-                                            <li class="lst1">
-                                                <a href="./portfolio.html#desk">DESK DESIGN</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="sub">
-                                            <li class="lst1">
-                                                <a href="./portfolio.html#responsive">RESPONSIVE DESIGN</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <ul class="menu_con2"> 
-                                    <li class="menu_con_wrap"><a href="aboutme.html">ABOUTME</a></li>
-                                    <li class="menu_con_wrap"><a href="working.html">WORKING</a></li>
-                                    <li class="menu_con_wrap"><a href="contact.html">CONTACT</a></li>
-                                    <p class="barcode">pickme</p>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <nav class="gnb_mo mobile">
-                <ul class="gnb_mo_menu">
-                    <li><a href="portfolio.html">PORTFOLIO</a></li>
-                    <li><a href="aboutme.html">ABOUTME</a></li>
-                    <li><a href="working.html">WORKING</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                </nav>
+            </div>
+            <nav class="navmenu">
+                <ul class="navmenu_box">
+                    <li><a href="aboutme.html">어바웃</a></li>
+                    <li><a href="portfolio.html">작업물</a></li>
+                    <li><a href="working.html" style="text-decoration: line-through; text-decoration-color: blue;">과제물</a></li>
+                    <li><a href="contact.html">연락처</a></li>
                 </ul>
             </nav>
         </div>
-        <nav class="navmenu">
-            <ul class="navmenu_box">
-                <li><a href="aboutme.html">어바웃</a></li>
-                <li><a href="portfolio.html">작업물</a></li>
-                <li><a href="working.html" style="text-decoration: line-through; text-decoration-color: blue;">과제물</a></li>
-                <li><a href="contact.html">연락처</a></li>
-            </ul>
-        </nav>
-    </div>
-    <main class="contents">
-        <div class="po_left">
-            <p class="po_title"></p>
-        </div>
-        <div class="po_right">
-            <ul class="gal" style="-ms-overflow-style: none;" >
-                <li class="gal_item1">
-                    <a href="https://postimg.cc/w18xpWj5" target="_blank">
-                        <img src="./img/working01.jpg" onmouseover="this.src='./img/working01_b.jpg'"
-                        onmouseout="this.src='./img/working01.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item2">
-                    <a href="https://postimg.cc/kDGgF6HS" target="_blank">
-                        <img src="./img/working02.jpg" onmouseover="this.src='./img/working02_b.jpg'" onmouseout="this.src='./img/working02.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item3">
-                    <a href="https://postimg.cc/2L1jzMWG" target="_blank">
-                        <img src="./img/working03.jpg" onmouseover="this.src='./img/working03_b.jpg'" onmouseout="this.src='./img/working03.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item4">
-                    <a href="https://postimg.cc/hJgSJM6L" target="_blank">
-                        <img src="./img/working04.jpg" onmouseover="this.src='./img/working04_b.jpg'" onmouseout="this.src='./img/working04.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item5">
-                    <a href="https://postimg.cc/0K6xg4Ks" target="_blank">
-                        <img src="./img/working05.jpg" onmouseover="this.src='./img/working05_b.jpg'" onmouseout="this.src='./img/working05.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item6">
-                    <a href="https://postimg.cc/jwStc2sC" target="_blank">
-                        <img src="./img/working06.jpg" onmouseover="this.src='./img/working06_b.jpg'" onmouseout="this.src='./img/working06.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item7">
-                    <a href="https://postimg.cc/1n7PjStB" target="_blank">
-                        <img src="./img/working07.jpg" onmouseover="this.src='./img/working07_b.jpg'" onmouseout="this.src='./img/working07.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item8">
-                    <a href="https://postimg.cc/bSdxQ00z" target="_blank">
-                        <img src="./img/working08.jpg" onmouseover="this.src='./img/working08_b.jpg'" onmouseout="this.src='./img/working08.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item9">
-                    <a href="https://postimg.cc/Wtmt4LxW" target="_blank">
-                        <img src="./img/working09.jpg" onmouseover="this.src='./img/working09_b.jpg'" onmouseout="this.src='./img/working09.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item10">
-                    <a href="https://postimg.cc/d7tVH46q" target="_blank">
-                        <img src="./img/working10.jpg" onmouseover="this.src='./img/working10_b.jpg'" onmouseout="this.src='./img/working10.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item11">
-                    <a href="https://postimg.cc/NKc4Hc0K" target="_blank">
-                        <img src="./img/working11.jpg" onmouseover="this.src='./img/working11_b.jpg'" onmouseout="this.src='./img/working11.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item12">
-                    <a href="https://postimg.cc/Q9jk9Rx5" target="_blank">
-                        <img src="./img/working12.jpg" onmouseover="this.src='./img/working12_b.jpg'" onmouseout="this.src='./img/working12.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item13">
-                    <a href="https://postimg.cc/Z9Hvg04B" target="_blank">
-                        <img src="./img/working13.jpg" onmouseover="this.src='./img/working13_b.jpg'" onmouseout="this.src='./img/working13.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item14">
-                    <a href="https://postimg.cc/Y4XqYs1Z" target="_blank">
-                        <img src="./img/working14.jpg" onmouseover="this.src='./img/working14_b.jpg'" onmouseout="this.src='./img/working14.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item15">
-                    <a href="https://postimg.cc/McZpcSj1" target="_blank">
-                        <img src="./img/working15.jpg" onmouseover="this.src='./img/working15_b.jpg'" onmouseout="this.src='./img/working15.jpg'" alt="">
-                    </a>
-                </li>
-                <li class="gal_item16">
-                    <a href="https://postimg.cc/yDHdH91Q" target="_blank">
-                        <img src="./img/working16.jpg" onmouseover="this.src='./img/working16_b.jpg'" onmouseout="this.src='./img/working16.jpg'" alt="">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </main>
-    <footer class="ft">
-        <p class="copyright">Copyright 2019. LIM HEE EUN. All rights reserved.</p>
-    </footer>
-</div>    
+        <main class="contents">
+            <div class="po_left">
+                <p class="po_title"></p>
+            </div>
+            <div class="po_right">
+                <ul class="gal" style="-ms-overflow-style: none;" >
+                    <li class="gal_item1">
+                        <a href="https://postimg.cc/w18xpWj5" target="_blank">
+                            <img src="./img/working01.jpg" onmouseover="this.src='./img/working01_b.jpg'"
+                            onmouseout="this.src='./img/working01.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item2">
+                        <a href="https://postimg.cc/kDGgF6HS" target="_blank">
+                            <img src="./img/working02.jpg" onmouseover="this.src='./img/working02_b.jpg'" onmouseout="this.src='./img/working02.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item3">
+                        <a href="https://postimg.cc/2L1jzMWG" target="_blank">
+                            <img src="./img/working03.jpg" onmouseover="this.src='./img/working03_b.jpg'" onmouseout="this.src='./img/working03.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item4">
+                        <a href="https://postimg.cc/hJgSJM6L" target="_blank">
+                            <img src="./img/working04.jpg" onmouseover="this.src='./img/working04_b.jpg'" onmouseout="this.src='./img/working04.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item5">
+                        <a href="https://postimg.cc/0K6xg4Ks" target="_blank">
+                            <img src="./img/working05.jpg" onmouseover="this.src='./img/working05_b.jpg'" onmouseout="this.src='./img/working05.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item6">
+                        <a href="https://postimg.cc/jwStc2sC" target="_blank">
+                            <img src="./img/working06.jpg" onmouseover="this.src='./img/working06_b.jpg'" onmouseout="this.src='./img/working06.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item7">
+                        <a href="https://postimg.cc/1n7PjStB" target="_blank">
+                            <img src="./img/working07.jpg" onmouseover="this.src='./img/working07_b.jpg'" onmouseout="this.src='./img/working07.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item8">
+                        <a href="https://postimg.cc/bSdxQ00z" target="_blank">
+                            <img src="./img/working08.jpg" onmouseover="this.src='./img/working08_b.jpg'" onmouseout="this.src='./img/working08.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item9">
+                        <a href="https://postimg.cc/Wtmt4LxW" target="_blank">
+                            <img src="./img/working09.jpg" onmouseover="this.src='./img/working09_b.jpg'" onmouseout="this.src='./img/working09.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item10">
+                        <a href="https://postimg.cc/d7tVH46q" target="_blank">
+                            <img src="./img/working10.jpg" onmouseover="this.src='./img/working10_b.jpg'" onmouseout="this.src='./img/working10.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item11">
+                        <a href="https://postimg.cc/NKc4Hc0K" target="_blank">
+                            <img src="./img/working11.jpg" onmouseover="this.src='./img/working11_b.jpg'" onmouseout="this.src='./img/working11.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item12">
+                        <a href="https://postimg.cc/Q9jk9Rx5" target="_blank">
+                            <img src="./img/working12.jpg" onmouseover="this.src='./img/working12_b.jpg'" onmouseout="this.src='./img/working12.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item13">
+                        <a href="https://postimg.cc/Z9Hvg04B" target="_blank">
+                            <img src="./img/working13.jpg" onmouseover="this.src='./img/working13_b.jpg'" onmouseout="this.src='./img/working13.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item14">
+                        <a href="https://postimg.cc/Y4XqYs1Z" target="_blank">
+                            <img src="./img/working14.jpg" onmouseover="this.src='./img/working14_b.jpg'" onmouseout="this.src='./img/working14.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item15">
+                        <a href="https://postimg.cc/McZpcSj1" target="_blank">
+                            <img src="./img/working15.jpg" onmouseover="this.src='./img/working15_b.jpg'" onmouseout="this.src='./img/working15.jpg'" alt="">
+                        </a>
+                    </li>
+                    <li class="gal_item16">
+                        <a href="https://postimg.cc/yDHdH91Q" target="_blank">
+                            <img src="./img/working16.jpg" onmouseover="this.src='./img/working16_b.jpg'" onmouseout="this.src='./img/working16.jpg'" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="ft">
+            <p class="copyright">Copyright 2019. LIM HEE EUN. All rights reserved.</p>
+        </footer>
+    </div>    
 </body>
 </html>
