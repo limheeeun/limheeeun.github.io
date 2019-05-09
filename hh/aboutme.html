@@ -28,6 +28,10 @@
 
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./js/aboutme.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/scroll.js"></script>
+    <script src="./js/loading.js"></script>
     <script> //햄버거 토글 메뉴, top 버튼 스크롤
     $(document).ready(function(){
         var scTop;
@@ -45,16 +49,12 @@
         });
         $("#upBtn").click(function(){
             $(".con_wrap").animate({
-                scollTop: 0
+                scollTop: "0px"
             }, 800);
             return false;
         });
     });
     </script>
-    <script src="./js/aboutme.js"></script>
-    <script src="./js/prefixfree.min.js"></script>
-    <script src="./js/scroll.js"></script>
-    <script src="./js/loading.js"></script>
 </head>
 <body class="contents">
     <iframe src="pug_bubble2.html" frameborder="0"></iframe>
