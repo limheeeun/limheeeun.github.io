@@ -13,7 +13,7 @@
 #searchForm {clear: both; padding-top: 40px;}
 #keyword {border: 0; outline: 0; background: #ffffff; display: block; width: 600px; height: 60px; text-align: 30px; float: left; text-indent: 10px;}
 .frmBtn {outline: 0; border: 0; display: block; width: 60px; height: 60px; background-color: #006ecd; background-repeat: no-repeat; background-position: center center; }
-.searchBtn { background-image: url(./CJ/img/index/index_icon_01.png); background-size: 50% 50%;}
+.searchBtn { background-image: url(./img/index/index_icon_01.png); background-size: 50% 50%;}
 
 .thumBox {position: absolute; right: 290px; top: 230px; width: 200px; height: 600px;}
 .thumBox li {clear: both; width: 200px; height: 200px; overflow: hidden;}
@@ -27,22 +27,22 @@
 
 .thumBox li .offBox .txt1:before {content:""; display: block; width: 58px; height: 58px; clear: both; margin: 20px auto; background-position: center center; background-repeat: no-repeat; }
 
-.thumBox li .offBox.item1 .txt1:before {background-image: url(./CJ/img/index/index_icon_02.png); }
-.thumBox li .offBox.item2 .txt1:before {background-image: url(./CJ/img/index/index_icon_03.png); }
-.thumBox li .offBox.item3 .txt1:before {background-image: url(./CJ/img/index/index_icon_04.png); }  
+.thumBox li .offBox.item1 .txt1:before {background-image: url(./img/index/index_icon_02.png); }
+.thumBox li .offBox.item2 .txt1:before {background-image: url(./img/index/index_icon_03.png); }
+.thumBox li .offBox.item3 .txt1:before {background-image: url(./img/index/index_icon_04.png); }  
 
-.thumBox li .offBox .txt1:after {background-image: url(./CJ/img/index/index_icon_05.png);content: ""; display: block; width: 28px; height: 28px; clear: both; margin: 20px auto; background-position: center center; background-repeat: no-repeat;}
+.thumBox li .offBox .txt1:after {background-image: url(./img/index/index_icon_05.png);content: ""; display: block; width: 28px; height: 28px; clear: both; margin: 20px auto; background-position: center center; background-repeat: no-repeat;}
 .thumBox li .onBox {background-position: center center; background-repeat: repeat; background-size:  100% 100%; overflow: hidden;}
-.thumBox li .item1 .onBox {background-image: url(./cj/img/index/introicon01.png);}
-.thumBox li .item2 .onBox {background-image: url(./cj/img/index/introicon02.png);}
-.thumBox li .item3 .onBox {background-image: url(./cj/img/index/hirebutton.png);}
+.thumBox li .item1 .onBox {background-image: url(./img/index/introicon01.png);}
+.thumBox li .item2 .onBox {background-image: url(./img/index/introicon02.png);}
+.thumBox li .item3 .onBox {background-image: url(./img/index/hirebutton.png);}
 
 .more {display: block; width: 200px; height: 60px; text-align: center;  line-height: 60px; border: 1px solid #ffffff; color: #ffffff; margin-top: 20px; border-radius: 40px; transition: 0.5s; }
-.more:after {content:""; display: inline-block; width: 30px; height: 8px; background-image: url(./cj/img/1.index/cursoricon_01.png); }
+.more:after {content:""; display: inline-block; width: 30px; height: 8px; background-image: url(./img/index/cursoricon_01.png); }
 .more:hover {background-color: #353e43; }
 
-#page2 {background-image: url(./cj/img/index/index_vsimg_02.jpg); background-size:125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s; }
-#page3 {background-image: url(./cj/img/index/index_vsimg_05.jpg); background-size:125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s; }
+#page2 {background-image: url(./img/index/index_vsimg_02.jpg); background-size:125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s; }
+#page3 {background-image: url(./img/index/index_vsimg_05.jpg); background-size:125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s; }
 #page2:hover, #page3:hover {background-size: 100% 100%; opacity: 1;}
 
 
@@ -78,7 +78,7 @@
 .row.one {height: 320px; margin-top: 30px; margin-bottom: 0; padding-top: 80px; }
 .row.two {height: 225px; margin-bottom: 20px;}
 
-.curBox { height: 280px; width: 590px; overflow: hidden; background-image: url("./CJ/img/index/index_socialimg_01.jpg"); background-repeat: no-repeat; background-size: 100% auto; position: relative;}
+.curBox { height: 280px; width: 590px; overflow: hidden; background-image: url("./img/index/index_socialimg_01.jpg"); background-repeat: no-repeat; background-size: 100% auto; position: relative;}
 .curBox a {display: block; padding: 35px;}
 .hvBox, .hvBox2, .hvBox3 {display: block; padding: 35px; position: relative;}
 .notiBox1, notiBox2, notiBox3 {position: relative;}
@@ -116,11 +116,11 @@
 #relNav .col2 a.item1 {height: 90px; background-image: url("./cj/img/index/logo_foo.png"); padding-top: 0px; background-position:center 10px;}
 #relNav .col2 .bgTxt {font-size: 16px; color: #ffffff; text-align: center;}
 
-#relNav .col2 a.item2 {background-image: url("./CJ/img/index/brand_alaska.png");}
-#relNav .col2 a.item3 {background-image: url("./CJ/img/index/brand_beksul.png")}
-#relNav .col2 a.item4 {background-image: url("./CJ/img/index/brand_bibigo.png")}
-#relNav .col2 a.item5 {background-image: url("./CJ/img/index/brand_bio.png")}
-#relNav .col2 a.item6 {background-image: url("./CJ/img/index/brand_cafetheplace.png")}
+#relNav .col2 a.item2 {background-image: url("./img/index/brand_alaska.png");}
+#relNav .col2 a.item3 {background-image: url("./img/index/brand_beksul.png")}
+#relNav .col2 a.item4 {background-image: url("./img/index/brand_bibigo.png")}
+#relNav .col2 a.item5 {background-image: url("./img/index/brand_bio.png")}
+#relNav .col2 a.item6 {background-image: url("./img/index/brand_cafetheplace.png")}
 
 #ftArea {width: 1280px; margin: 0 auto;}
 .copyright {width: 100%; float:left; font-size: 0.8em; line-height: 1.6; padding-top: 35px; color:#666;}

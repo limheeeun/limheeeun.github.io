@@ -15,11 +15,11 @@
     #relNav .col2 a.item1 {height: 90px; background-image: url("./cj/img/index/logo_foo.png"); padding-top: 0px; background-position:center 10px;}
     #relNav .col2 .bgTxt {font-size: 16px; color: #ffffff; text-align: center;}
 
-    #relNav .col2 a.item2 {background-image: url("./CJ/img/index/brand_alaska.png");}
-    #relNav .col2 a.item3 {background-image: url("./CJ/img/index/brand_beksul.png")}
-    #relNav .col2 a.item4 {background-image: url("./CJ/img/index/brand_bibigo.png")}
-    #relNav .col2 a.item5 {background-image: url("./CJ/img/index/brand_bio.png")}
-    #relNav .col2 a.item6 {background-image: url("./CJ/img/index/brand_cafetheplace.png")}
+    #relNav .col2 a.item2 {background-image: url("./img/index/brand_alaska.png");}
+    #relNav .col2 a.item3 {background-image: url("./img/index/brand_beksul.png")}
+    #relNav .col2 a.item4 {background-image: url("./img/index/brand_bibigo.png")}
+    #relNav .col2 a.item5 {background-image: url("./img/index/brand_bio.png")}
+    #relNav .col2 a.item6 {background-image: url("./img/index/brand_cafetheplace.png")}
 
     #ftArea {width: 1280px; margin: 0 auto;}
     .copyright {width: 100%; float:left; font-size: 0.8em; line-height: 1.6; padding-top: 35px; color:#666;}

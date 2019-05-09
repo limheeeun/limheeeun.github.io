@@ -9,10 +9,10 @@
 
     .hd {width: 100%; height: 100px; background: transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.6); position: fixed;top: 0; z-index: 100;}
     .hdWrap {width: 1200px; margin: 0 auto; position: relative;}
-    .logo {display: block; width: 75px; height: 64px; background-image: url("./CJ/img/logo/logo_foo.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; text-indent: -9999px; position: absolute; top: 0px; left: 0;}
+    .logo {display: block; width: 75px; height: 64px; background-image: url("./img/logo/logo_foo.png"); background-repeat: no-repeat; background-size: 100%; background-position: center center; text-indent: -9999px; position: absolute; top: 0px; left: 0;}
     
     .hd:hover {background:rgba(255, 255, 255, 0.8)}
-    .hd:hover .logo {display: block; width: 75px; height: 64px; background-image: url("./CJ/img/logo/cj_logo.png");}
+    .hd:hover .logo {display: block; width: 75px; height: 64px; background-image: url("./img/logo/cj_logo.png");}
 
     #topNav {position:absolute; right: 0px; top: 20px;}
     #topNav li {float: left; padding-left: 15px; text-align: center;}
