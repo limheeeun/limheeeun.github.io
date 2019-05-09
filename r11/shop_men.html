@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>파타고니아 코리아</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa16.ico">
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa32.ico">
+    <!-- 안드로이드 iOS -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa152.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/patagonia_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/patagonia_fa114.ico">
+    <!-- iPAD 홈스크린 -->
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/patagonia_fa72.ico">
+    <!-- Chrome 웹스토어 -->
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/patagonia_fa128.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="./font.css">
+ 
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="./inside.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./font.css">
+    
+    <!-- 제이쿼리 연결 -->
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="./togglemenu.js"></script>
+    <script src="./top.js"></script>  
+    
+    <!-- 폰트 설정 -->
+    <style>
+    @import "font.css";
+    body, html {font-family: 'Mont-ExtraLightDEMO', 'hangultuelgothic', sans-serif; font-weight: 400;}
+    [class*=gnb] a { color: #333;}
+    .notiTit {font-family: 'Playfair Display', serif;}
+    </style>   
+    
+    <!-- 미디어 쿼리 -->
+    <style>
+    @media screen and (min-width:768px){ 
+        .lst { max-width:768px; margin:0 auto; }   
+        .list { right:20px; }
+        .mo {display: block;}
+    }
+    @media screen and (min-width:960px){
+        .lst { max-width:960px; margin:0 auto; }  
+        .list { right:-100%; } 
+        .mo_hd {display: none;}
+        #desk_hd {display: block;}
+    }   
+    @media screen and (min-width:1280px){
+        .hd { position: relative; clear: both;}
+        .lst { max-width:1280px; margin:0 auto; height:920px; }
+        .mo {display: none;}
+        .desk {display: block;}
+        .mo_hd {display: none;}
+        #desk_hd {display: block;}
+        #mo_footer {display: none;}
+        #desk_footer {display: block}
+        .pgcon {position: relative; width: 1100px; height: 100%; margin: 10px auto; }
+        .pgcon p {min-height: 400px;}
+    }
+    </style>
+    
+    
+</head>
+<body>
+<div class="contanier">
+    <div class="mo_hd">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="파타고니아로고">
+        </a>
+        <input type="checkbox" id="menu">  
+        <label for="menu" class="menuLst">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div id="nav">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="파타고니아로고">
+            </a>
+            <div id="nav_top">   
+                <ul class="sub">
+                    <li class="menu1">
+                        <a>Shop</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">MEN'S</a></li>
+                           <li class="submenu1"><a href="">WOMEN'S</a></li>
+                           <li class="submenu1"><a href="">PACKS&GEAR</a></li>
+                           <li class="submenu1"><a href="">KID'S&BABY</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Collections</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">New Arrivals</a></li>
+                           <li class="submenu1"><a href="">R1® Regulator Fleece</a></li>
+                           <li class="submenu1"><a href="">Capilene® Cool Tech Tees</a></li>
+                           <li class="submenu1"><a href="">Recycled Rainwear</a></li>
+                           <li class="submenu1"><a href="">Single use Think twice</a></li>
+                           <li class="submenu1"><a href="">Fair Trade Certified</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Sport</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">Climbing</a></li>
+                           <li class="submenu1"><a href="">Skiing / Snowboarding</a></li>
+                           <li class="submenu1"><a href="">Surfing</a></li>
+                           <li class="submenu1"><a href="">Trail Running</a></li>
+                           <li class="submenu1"><a href="">Mountain bike</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Inside Patagonia</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="inside.html">Mission Statement</a></li>
+                           <li class="submenu1"><a href="">Brand History</a></li>
+                           <li class="submenu1"><a href="">Brand Campaign</a></li>
+                           <li class="submenu1"><a href="">News</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Single use think twice</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">About Campaign</a></li>
+                           <li class="submenu1"><a href="">Plastic Planet</a></li>
+                           <li class="submenu1"><a href="">Movement</a></li>
+                           <li class="submenu1"><a href="">Your Story</a></li>
+                       </ul>
+                    </li>
+                </ul>
+                <span class="nav_line_top"></span>
+                <span class="nav_line_bottom"></span>
+            </div>        
+        </div>
+    </div>
+    <div id="desk_hd">
+       <a href="index.html" class="logo desk">
+           <img src="./img/logo.png" alt="로고">
+       </a>
+       <div class="gnb_left">
+           <ul>
+               <li><a href="">LOGIN</a></li>
+               <li><a href="">JOIN</a></li>
+           </ul>
+       </div>
+       <div class="subBg"></div>
+       <div class="gnb_right">
+           <ul>
+               <li class="gnb1">
+                   <a href="">SHOP</a>
+                   <ul class="sub">
+                       <li><a href="">MEN'S</a></li>
+                       <li><a href="">WOMEN'S</a></li>
+                       <li><a href="">PACKS&GEAR</a></li>
+                       <li><a href="">KID'S&BABY</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">COLLECTIONS</a>
+                   <ul class="sub">
+                       <li><a href="">New Arrivals</a></li>
+                       <li><a href="">R1® Regulator Fleece</a></li>
+                       <li><a href="">Capilene® Cool Tech Tees</a></li>
+                       <li><a href="">Recycled Rainwear</a></li>
+                       <li><a href="">Single use Think twice</a></li>
+                       <li><a href="">Fair Trade Certified</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">SPORT</a>
+                   <ul class="sub">
+                       <li><a href="">Climbing</a></li>
+                       <li><a href="">Skiing / Snowboarding</a></li>
+                       <li><a href="">Surfing</a></li>
+                       <li><a href="">Trail Running</a></li>
+                       <li><a href="">Mountain bike</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="inside.html">INSIDE PATAGONIA</a>
+                   <ul class="sub">
+                       <li><a href="inside.html">Mission Statement</a></li>
+                       <li><a href="">Brand History</a></li>
+                       <li><a href="">Brand Campaign</a></li>
+                       <li><a href="">News</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">CAMPAIGN</a>
+                   <ul class="sub">
+                       <li><a href="">About Campaign</a></li>
+                       <li><a href="">Plastic Planet</a></li>
+                       <li><a href="">Movement</a></li>
+                       <li><a href="">Your Story</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+    </div>
+    <section class="content">
+        <div class="page1">
+            <div class="vs">
+                <div class="vs_tit">
+                    <h3>BRAND</h3>
+                    <h1>Inside Patagonia</h1>
+                </div>
+            </div>
+            <div class="pgcon">
+                <h1>파타고니아의 사명 선언</h1>
+                <h4>파타고니아의 존재 이유</h4>
+                <p>
+                    파타고니아는 등반 장비를 만드는 작은 회사에서 시작되었습니다. 알피니즘은 파타고니아에서 만드는 클라이밍, 스키, 스노우보드, 써핑, 플라이 낚시, 트레일 러닝, 요가 제품을 생산하는 사업에 여전히 담겨 있습니다. 
+                    <br>
+                    <br>
+                    이 활동들은 모두 맨 몸으로 하는 고요한 스포츠입니다. 석유로 움직이는 모터를 이용하지도 않으며 환호하는 군중도 없습니다. 기쁨과 즐거움은 역경을 넘어선 성취, 사람과 자연 사이의 관계 속에 있습니다.
+                    <br>
+                    <br>
+                    파타고니아의 가치는 등반가와 서퍼들이 시작한 작은 사업, 그들의 미니멀한 생활 방식에 담겨 있습니다. 제품 디자인에서는 최고의 기능, 단순함과 간결함을 핵심으로 삼습니다
+                    <br>
+                    <br>
+                    파타고니아는 자연의 아름다움을 사랑하기에 환경을 보호하기 위한 싸움에 참여하고 파괴되어 가는 지구를 되살리는 일을 돕습니다. 시간과 자원을 환경 보호에 투자하고 매년 매출 1%를 전 세계 곳곳에서 환경 보호를 위해 활동하는 수 백 개 단체를 후원하는데 사용합니다.
+                    <br>
+                    <br>
+                    매장을 밝히는 조명부터 셔츠 염색에 이르기까지 우리의 사업 활동이 환경에 영향을 미친다는 사실도 알고 있습니다. 파타고니아는 환경에 끼치는 피해를 지속적으로 줄여 나가고 있습니다. 많은 제품에 리사이클 소재를 사용하고 모든 면 제품에는 유기농 순면만을 사용합니다.
+                    <br>
+                    <br>
+                    파타고니아가 30년 이상 지켜 온 핵심 가치는 기꺼이 일하고 싶고 자랑스러운 기업으로 만들었습니다. 최고 품질의 제품을 선보이기 위해 노력하고 있으며 소비자들에게도 우리의 노력을 인정받고 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+   <div id="desk_footer">
+       <div class="ft_wrap">
+           <div class="ft_top desk">
+               <ul>
+                   <li>
+                       <a href="" class="ft_item1">매장정보</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item2">기업의 사회적 책임</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item3">이용약관</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item4">
+                           <span class="pit">개인정보처리방침</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item5">고객센터</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item6">이벤트</a>
+                   </li>
+               </ul>
+           </div>
+           <div class="copyright desk">
+               ㈜파타고니아코리아|서울특별시 강남구 삼성로122길 25 파타고니아코리아| 온라인쇼핑몰문의: 02-6196-4096|AS문의: 1544-1876 (내선번호2번)|대표: 존패트릭콜린스|개인정보보호책임자: 이진섭|사업자등록번호: 220-88-66550
+               <br>
+               통신판매업신고: 2016-서울강남-03669 [사업자정보확인]|LG U+구매안전 서비스 [서비스가입사실확인]|patagoniakorea@patagonia.kr|호스팅 서비스: (주)고도몰
+           </div>
+       </div>
+   </div>
+   <div id="mo_footer">
+       <div class="footer mo">
+           <p>COPYRIGHT 2019 (주)파타고니아코리아.</p>
+           <p>ALL RIGHTS RESERVED.</p>
+       </div>
+   </div>
+</footer>
+<a href="inside.html" class="btn listBtn" id="upBtn">
+    <img src="./img/next.png" alt="">
+</a>
+</body>
+</html>

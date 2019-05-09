@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>파타고니아 코리아</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa16.ico">
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa32.ico">
+    <!-- 안드로이드 iOS -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/patagonia_fa152.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/patagonia_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/patagonia_fa114.ico">
+    <!-- iPAD 홈스크린 -->
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/patagonia_fa72.ico">
+    <!-- Chrome 웹스토어 -->
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/patagonia_fa128.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <link rel="stylesheet" href="./font.css">
+ 
+    <!-- 외부 스타일 시트 연결 -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./font.css">
+    
+    <!-- 제이쿼리 연결 -->
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="./togglemenu.js"></script>
+    <script src="./top.js"></script>  
+    
+    <!-- 폰트 설정 -->
+    <style>
+    @import "font.css";
+    body, html {font-family: 'Mont-ExtraLightDEMO', 'hangultuelgothic', sans-serif; font-weight: 400;}
+    button {font-family: 'Mont-ExtraLightDEMO';}
+    [class*=gnb] a { color: #333;}
+    .notiTit {font-family: 'Playfair Display', serif;}
+    </style>   
+    
+    <!-- 미디어 쿼리 -->
+    <style>
+    @media screen and (min-width:768px){ 
+        .lst { max-width:768px; margin:0 auto; }   
+        .list { right:20px; }
+        .mo {display: block;}
+        .box .itemBox {display: none;}
+    }
+    @media screen and (min-width:960px){
+        .lst { max-width:960px; margin:0 auto; }  
+        .list { right:-100%; } 
+        .mo_hd {display: none;}
+        #desk_hd {display: block;}
+    }   
+    @media screen and (min-width:1280px){
+        .hd { position: relative; clear: both;}
+        .lst { max-width:1280px; margin:0 auto; height:920px; }
+        .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 { position:absolute; overflow:hidden; background-color:#f2f2f2; margin-top: 0;  }
+        .item1, .item3, .item6 { top:10px; }
+        .item2 { top:610px; }
+        .item4 { top:240px; }
+        .item5 { top:700px; }
+        .item7 { top:490px; }
+        .item8 { top:690px; }
+        .item1, .item2 { left:10px; }
+        .item3, .item4, .item5 { left:640px; }
+        .item6, .item7, .item8 { left:950px; }
+        .item1 { width: 620px; height: 590px; }
+        .item2 { width: 620px; height: 300px; }
+        .item3 { width: 300px; height: 220px; }
+        .item4 { width: 300px; height: 450px; }
+        .item5 { width: 300px; height: 210px; }
+        .item6 { width: 300px; height: 470px; }
+        .item7 { width: 300px; height: 200px; }
+        .item8 { width: 300px; height: 220px;  }
+        
+        .item2 .itemBox, .item3 .itemBox, .item4 .itemBox, .item6 .itemBox {font-family: 'Libre Barcode 39', cursive;}
+        
+        .item2 .itemBox {display: block; position: relative; width: 620px; height: 300px; background-color:rgba(255,255,255,0.5); opacity: 0; visibility: hidden; transition: 0.4s; line-height: 300px; font-size: 40px;}
+        .item2 .itemBox p {font-family: 'Mont-ExtraLightDEMO'; font-size: 20px; display: block; width: 620px; position: absolute; top: 20px; 
+            left: calc((100% - 620px) / 2 );}
+        .item2:hover .itemBox {visibility: visible; opacity: 1;}
+        
+        .item3 .itemBox {display: block; position: relative; width: 300px; height: 220px; background-color:rgba(255,255,255,0.5); opacity: 0; visibility: hidden; transition: 0.4s; line-height: 220px; font-size: 40px;}
+        .item3 .itemBox p {font-family: 'Mont-ExtraLightDEMO'; font-size: 20px; display: block; width: 300px; position: absolute; top: 20px; 
+            left: calc((100% - 300px) / 2 );}
+        .item3:hover .itemBox {visibility: visible; opacity: 1;}
+        
+        .item4 .itemBox {display: block; position: relative; width: 300px; height: 450px; background-color:rgba(255,255,255,0.5); opacity: 0; visibility: hidden; transition: 0.4s; line-height: 450px; font-size: 40px;}
+        .item4 .itemBox p {font-family: 'Mont-ExtraLightDEMO'; font-size: 20px; display: block; width: 300px; position: absolute; top: 20px; 
+            left: calc((100% - 300px) / 2 );}
+        .item4:hover .itemBox {visibility: visible; opacity: 1;}
+        
+        .item6 .itemBox {display: block; position: relative; width: 300px; height: 470px; background-color:rgba(255,255,255,0.5); opacity: 0; visibility: hidden; transition: 0.4s; line-height: 470px; font-size: 40px;}
+        .item6 .itemBox p {font-family: 'Mont-ExtraLightDEMO'; font-size: 20px; display: block; width: 300px; position: absolute; top: 20px; 
+            left: calc((100% - 300px) / 2 );}
+        .item6:hover .itemBox {visibility: visible; opacity: 1;}
+        
+        .lst li.item8 { background-position:0px -220px; } 
+        .itemBox { position:relative; top:auto; left:auto; color:#333; }
+        .mo {display: none;}
+        .desk {display: block;}
+        .mo_hd {display: none;}
+        #desk_hd {display: block;}
+        #mo_footer {display: none;}
+        #desk_footer {display: block}
+        .lstCom p { 
+                  display: -webkit-box;  
+                  -webkit-line-clamp: 5;
+                  -webkit-box-orient: vertical;}
+    }
+    </style>
+    
+    
+</head>
+<body>
+<div class="contanier">
+    <div class="mo_hd">
+        <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="파타고니아로고">
+        </a>
+        <input type="checkbox" id="menu">  
+        <label for="menu" class="menuLst">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div id="nav">
+            <a href="index.html" class="logo">
+                <img src="./img/logo.png" alt="파타고니아로고">
+            </a>
+            <div id="nav_top">   
+                <ul class="sub">
+                    <li class="menu1">
+                        <a>Shop</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">MEN'S</a></li>
+                           <li class="submenu1"><a href="">WOMEN'S</a></li>
+                           <li class="submenu1"><a href="">PACKS&GEAR</a></li>
+                           <li class="submenu1"><a href="">KID'S&BABY</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Collections</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">New Arrivals</a></li>
+                           <li class="submenu1"><a href="">R1® Regulator Fleece</a></li>
+                           <li class="submenu1"><a href="">Capilene® Cool Tech Tees</a></li>
+                           <li class="submenu1"><a href="">Recycled Rainwear</a></li>
+                           <li class="submenu1"><a href="">Single use Think twice</a></li>
+                           <li class="submenu1"><a href="">Fair Trade Certified</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Sport</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">Climbing</a></li>
+                           <li class="submenu1"><a href="">Skiing / Snowboarding</a></li>
+                           <li class="submenu1"><a href="">Surfing</a></li>
+                           <li class="submenu1"><a href="">Trail Running</a></li>
+                           <li class="submenu1"><a href="">Mountain bike</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Inside Patagonia</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="inside.html">Mission Statement</a></li>
+                           <li class="submenu1"><a href="">Brand History</a></li>
+                           <li class="submenu1"><a href="">Brand Campaign</a></li>
+                           <li class="submenu1"><a href="">News</a></li>
+                       </ul>
+                    </li>
+                    <li class="menu1">
+                        <a>Single use think twice</a>
+                        <ul class="mo_sub">
+                           <li class="submenu1"><a href="">About Campaign</a></li>
+                           <li class="submenu1"><a href="">Plastic Planet</a></li>
+                           <li class="submenu1"><a href="">Movement</a></li>
+                           <li class="submenu1"><a href="">Your Story</a></li>
+                       </ul>
+                    </li>
+                </ul>
+                <span class="nav_line_top"></span>
+                <span class="nav_line_bottom"></span>
+            </div>        
+        </div>
+    </div>
+    <div id="desk_hd">
+       <a href="" class="logo desk">
+           <img src="./img/logo.png" alt="로고">
+       </a>
+       <div class="gnb_left">
+           <ul>
+               <li><a href="">LOGIN</a></li>
+               <li><a href="">JOIN</a></li>
+           </ul>
+       </div>
+       <div class="subBg"></div>
+       <div class="gnb_right">
+           <ul>
+               <li class="gnb1">
+                   <a href="">SHOP</a>
+                   <ul class="sub">
+                       <li><a href="">MEN'S</a></li>
+                       <li><a href="">WOMEN'S</a></li>
+                       <li><a href="">PACKS&GEAR</a></li>
+                       <li><a href="">KID'S&BABY</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">COLLECTIONS</a>
+                   <ul class="sub">
+                       <li><a href="">New Arrivals</a></li>
+                       <li><a href="">R1® Regulator Fleece</a></li>
+                       <li><a href="">Capilene® Cool Tech Tees</a></li>
+                       <li><a href="">Recycled Rainwear</a></li>
+                       <li><a href="">Single use Think twice</a></li>
+                       <li><a href="">Fair Trade Certified</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">SPORT</a>
+                   <ul class="sub">
+                       <li><a href="">Climbing</a></li>
+                       <li><a href="">Skiing / Snowboarding</a></li>
+                       <li><a href="">Surfing</a></li>
+                       <li><a href="">Trail Running</a></li>
+                       <li><a href="">Mountain bike</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="inside.html">INSIDE PATAGONIA</a>
+                   <ul class="sub">
+                       <li><a href="inside.html">Mission Statement</a></li>
+                       <li><a href="">Brand History</a></li>
+                       <li><a href="">Brand Campaign</a></li>
+                       <li><a href="">News</a></li>
+                   </ul>
+               </li>
+               <li class="gnb1">
+                   <a href="">CAMPAIGN</a>
+                   <ul class="sub">
+                       <li><a href="">About Campaign</a></li>
+                       <li><a href="">Plastic Planet</a></li>
+                       <li><a href="">Movement</a></li>
+                       <li><a href="">Your Story</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </div>
+    </div>
+    <section class="content">
+        <div class="flex_item" id="contents">
+            <div class="lstGroup">
+                <ul class="lst">
+                    <li class="item1">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h3 class="lstTit">MEDIA</h3>
+                                <a href="#video"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item2">
+<!--
+                        <div class="box">
+                            <a href="" class="itemBox">
+                            MEN'S
+                            <p>men;s</p>
+                            </a>
+                        </div>
+-->
+                    </li>
+                    <li class="item3">
+<!--
+                        <div class="box">
+                            <a href="" class="itemBox">
+                            WOMEN'S
+                            <p>women;s</p>
+                            </a>
+                        </div>
+-->
+                    </li>
+                    <li class="item4">
+<!--
+                        <div class="box">
+                            <a href="" class="itemBox">
+                            KID
+                            <p>kid;baby</p>
+                            </a>
+                        </div>
+-->
+                    </li>
+                    <li class="item5">
+                        <div class="box">
+                            <a href="inside.html" class="itemBox"></a>
+                        </div>
+                    </li>
+                    <li class="item6">
+<!--
+                        <div class="box">
+                            <a href="" class="itemBox">
+                            PACKS
+                            <p>packs;gear</p>
+                            </a>
+                        </div>
+-->
+                    </li>
+                    <li class="item7">
+                        <div class="box">
+                            <div class="itemBox"></div>
+                        </div>
+                    </li>
+                    <li class="item8">
+                        <div class="box">
+                            <div class="itemBox">
+                                <h1 class="notiTit">Notice</h1>
+                                <a href="" class="lstCom">
+                                   <p class="ptit">Single use Think twice</p>
+                                   <p>한 번 쓰고 버리는 일회용 플라스틱은 어떨까요? 2015년 대한민국의 일회용 플라스틱 컵 소비량은 6억 7240만 개. 하루에 180만 개가 넘는 일회용 플라스틱 컵이 쏟아져 나오는 셈입니다. 더욱 놀라운 사실은, 우리가 익히 알고 있는 바와는 달리 이 컵들의 재활용률이 5%도 채 되지 않는다는 것입니다. (출처: 환경부)
+                                   <br>
+                                   플라스틱이 완전히 사라진 지구를 당장은 상상하기 어렵습니다. 그러나, 일회용 플라스틱을 줄이기 위한 노력은 해볼 만할 일입니다. 그리고 반드시 해야만 하는 일입니다. 
+                                   <br>
+                                   Single use Think twice 캠페인은 “한 번 쓸 건가요? 두 번 생각하세요”라는 의미로 지구와 인간을 병들게 하는 일회용 플라스틱 사용 습관을 한 번쯤 다시 생각해보자는 뜻을 담고 있습니다. 그중 우리가 일상생활에서 가장 많이 소비하는 일회용 플라스틱 컵을 줄이기 위한 가장 작은 실천, 텀블러와 머그컵 사용을 제안합니다. </p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+   <div id="desk_footer">
+       <div class="ft_wrap">
+           <div class="ft_top desk">
+               <ul>
+                   <li>
+                       <a href="" class="ft_item1">매장정보</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item2">기업의 사회적 책임</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item3">이용약관</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item4">
+                           <span class="pit">개인정보처리방침</span>
+                       </a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item5">고객센터</a>
+                   </li>
+                   <li>
+                       <a href="" class="ft_item6">이벤트</a>
+                   </li>
+               </ul>
+           </div>
+           <div class="copyright desk">
+               ㈜파타고니아코리아|서울특별시 강남구 삼성로122길 25 파타고니아코리아| 온라인쇼핑몰문의: 02-6196-4096|AS문의: 1544-1876 (내선번호2번)|대표: 존패트릭콜린스|개인정보보호책임자: 이진섭|사업자등록번호: 220-88-66550
+               <br>
+               통신판매업신고: 2016-서울강남-03669 [사업자정보확인]|LG U+구매안전 서비스 [서비스가입사실확인]|patagoniakorea@patagonia.kr|호스팅 서비스: (주)고도몰
+           </div>
+       </div>
+   </div>
+   <div id="mo_footer">
+       <div class="footer mo">
+           <p>COPYRIGHT 2019 (주)파타고니아코리아.</p>
+           <p>ALL RIGHTS RESERVED.</p>
+       </div>
+   </div>
+</footer>
+<a href="index.html" class="btn listBtn" id="upBtn">
+    <img src="./img/next.png" alt="">
+</a>
+<!--
+<div id="video">
+    <video autoplay loop muted>
+       <source src="./video/climbing-hero_WEB2.mp4"; >
+   </video>
+</div>
+-->
+</body>
+</html>
