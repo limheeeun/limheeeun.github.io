@@ -1,9 +1,14 @@
 $(document).ready(function () {
 	var slide = $(".mask"); //slide객체
 	var boxWidth = $(".mask .img").css("width").replace("px", "");  
+    
+    //이 부분은 아이템의 종류 수 만큼 복사하여 변수바꿔 설정하기
 	var boxLength = $(".mask .img").length; 
 	var totalWidth = boxWidth * boxLength + "px"; 
 	slide.css("width", totalWidth) //전체 넓이값을 설정해준다.
+    
+    
+    
 	var browserWidth = $(window).width(); 
 	var lengthNum = $(".mask .img").length;
     var maxL = parseInt(totalWidth)-browserWidth+100; 
@@ -22,7 +27,7 @@ $(document).ready(function () {
             }
 		} else if ( evt.wheelDelta < 0) { //휠을 위로할때
 			var move = now + 200;   //+200씩 이동
-            if(move<-100){
+            if(move<100){
                 slide.css({
                     transform : "matrix(1, 0, 0, 1," + move + ", 0)" 
                 }); 

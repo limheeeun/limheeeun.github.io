@@ -1,6 +1,5 @@
 $(document).ready(function(){
     var wd=$(".mask").width();
-//    var ht=$(".slider1").height();
     var len=$(".img li").length;
     var intv = setInterval(function(){
         nextAni();

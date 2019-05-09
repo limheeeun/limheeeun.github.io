@@ -28,7 +28,7 @@
     
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="./js/horizontalscroll.js"></script>
+<!--    <script src="./js/horizontalscroll.js"></script>-->
     <script> //햄버거 토글 메뉴, top 버튼 스크롤
     $(document).ready(function(){
       $(".list").click(function(){
@@ -50,32 +50,98 @@
         });    
     });
     </script>
-    <script src="./js/port.js"></script>
+<!--    <script src="./js/port.js"></script>-->
     <script src="./js/prefixfree.min.js"></script>
     <script src="./js/scroll.js"></script>
-    <script> // 페이지 로딩 애니메이션
-    $(document).ready(function(){
-        setTimeout(function() {
-            $(".loading").addClass("end");
-        }, 1000);
-    });
-    </script>
+    <script src="./js/loading.js"></script>
     <script> //탭 메뉴
     $(document).ready(function(){
-        $(".nav_menu3 li a").click(function(){
-            $(".project").addClass("on");
+        $(".nav_menu3 li a.mobile_btn").click(function(){
+            $(".project").removeClass("on");
+            $("#mobile").addClass("on");
+            $(".nav_menu3 li").removeClass("on");
+            $(this).parent("li").addClass("on");
+            activewheel();
         });
-    });
+        $(".nav_menu3 li a.res_btn").click(function(){
+            $(".project").removeClass("on");
+            $("#responsive").addClass("on");
+            $(".nav_menu3 li").removeClass("on");
+            $(this).parent("li").addClass("on");
+            activewheel();
+        });
+        $(".nav_menu3 li a.desk_btn").click(function(){
+            $(".project").removeClass("on");
+            $("#desk").addClass("on");
+            $(".nav_menu3 li").removeClass("on");
+            $(this).parent("li").addClass("on");
+            activewheel();
+        });
+        $(".nav_menu3 li a.all_btn").click(function(){
+            $(".project").removeClass("on");
+            $(".project").addClass("on");
+            $(".nav_menu3 li").removeClass("on");
+            $(this).parent("li").addClass("on");
+        });
 
+        var slide, boxWidth, boxLength, totalWidth, browserWidth, lengthNum, maxL, acLen;
+
+        $("#responsive").find(".mask").width($("#responsive").find(".mask .img li").width()*$("#responsive").find(".mask .img li").length);
+        
+        $("#mobile").find(".mask").width($("#mobile").find(".mask .img li").width()*$("#mobile").find(".mask .img li").length);
+        
+        $("#desk").find(".mask").width($("#desk").find(".mask .img li").width()*$("#desk").find(".mask .img li").length);
+        
+        activewheel();   
+        function activewheel(){    
+            slide = $(".project.on"); //slide객체
+            boxWidth = slide.find(".mask .img").css("width").replace("px", "");  
+            boxLength = slide.find(".mask .img").length; 
+
+            acLen = $(".project.on").length;
+
+            totalWidth = boxWidth * boxLength + "px"; 
+
+            slide.find(".mask").css("width", totalWidth) //전체 넓이값을 설정해준다.
+
+            browserWidth = $(window).width(); 
+            lengthNum = slide.find(".mask .img").length;
+            maxL = parseInt(totalWidth)-browserWidth+100;
+
+        }
+    //transform:matrix(scaleX, skewX, skewY, scaleY, translateX, translateY)
+        function wheelMove (e) {
+            var evt = window.event || e; //삼항연산자로 이벤트객체저장 
+            var now = slide.find(".mask").css("transform"); //현재 transform 속성을 가져온다.
+            now = now.split(",");  //,을 기준으로 배열로 변환
+            now = parseInt(now[4]); //transform:matrix를 쉼표 4번째 다음값=x이동값
+            if ( evt.wheelDelta > 0) { //휠을 아래로할때
+                var move = now - 200; // -200px씩 이동
+                if(move>-maxL){
+                slide.find(".mask").css({
+                    transform : "matrix(1, 0, 0, 1," + move + ", 0)" //move값만큼 이동한다.
+                }); 
+                }
+            } else if ( evt.wheelDelta < 0) { //휠을 위로할때
+                var move = now + 200;   //+200씩 이동
+                if(move<100){
+                    slide.find(".mask").css({
+                        transform : "matrix(1, 0, 0, 1," + move + ", 0)" 
+                    }); 
+                }
+            }
+        }
+        $("html").on("mousewheel DOMMouseScroll", function (e) { 
+            wheelMove (e);  //파이어폭스 DOMMouseScroll이벤트, mousewheel이벤트를 적용
+        });   
+    });
     </script>
 </head>
-<body onmousewheel="ScrollControl()">
-<!--
+<body>
     <div class="loading">
-      <h4>loading</h4>
+<!--      <h4>loading</h4>-->
       <span class="loading-box"></span>
     </div>
--->
     <div class="container">
         <div class="dummy">
             <div class="dummy__icon">
@@ -106,15 +172,15 @@
                                             <a href="portfolio.html">PORTFOLIO</a>
                                             <ul class="sub">
                                                 <li class="lst1">
-                                                    <a href="portfolio.html">MOBILE DESIGN</a>
+                                                    <a href="./portfolio.html#mobile">MOBILE DESIGN</a>
                                                 </li>
                                                 <li class="lst1">
-                                                    <a href="portfolio.html">DESK DESIGN</a>
+                                                    <a href="./portfolio.html#desk">DESK DESIGN</a>
                                                 </li>
                                             </ul>
                                             <ul class="sub">
                                                 <li class="lst1">
-                                                    <a href="portfolio.html">RESPONSIVE DESIGN</a>
+                                                    <a href="./portfolio.html#responsive">RESPONSIVE DESIGN</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -145,16 +211,16 @@
             </div>
 -->
             <div class="nav_menu">
-                <ul class="nav_menu3">
-                    <li><a href="">RESPONSIVE</a></li>
-                    <li><a href="">DESK</a></li>
-                    <li><a href="">MOBILE</a></li>
+                <ul class="nav_menu3">     
+                    <li><a class="res_btn">RESPONSIVE</a></li>
+                    <li><a class="desk_btn">DESK</a></li>
+                    <li><a class="mobile_btn">MOBILE</a></li>
                 </ul>
             </div>
             <nav class="navmenu">
             <ul class="navmenu_box">
                 <li><a href="aboutme.html">어바웃</a></li>
-                <li><a href="portfolio.html">작업물</a></li>
+                <li><a href="portfolio.html" style="text-decoration: line-through; text-decoration-color: blue;">작업물</a></li>
                 <li><a href="working.html">과제물</a></li>
                 <li><a href="contact.html">연락처</a></li>
             </ul>
@@ -166,17 +232,17 @@
         </div>
         <main class="contents">
             <div class="port_wrap">
+                <img src="./img/mousescroll.png" alt="">
                 <div class="port1 project on" id="responsive">
                     <div class="mask_wrap">
-                        <img src="./img/mousescroll.png" alt="">
                         <div class="mask">
                             <ul class="img">
                                 <li>
                                     <div class="img_off">
-                                        <img src="./img/po_vs01.jpg" alt="">
+                                        <img src="./img/po_vs_R1.jpg" alt="">
                                     </div>
                                     <div class="img_on">
-                                        <img src="./img/po_vsbl01.jpg" alt="">
+                                        <img src="./img/po_vs_Rbl1.jpg" alt="">
                                         <h2 class="po_title">Brand DIDIER DOBUT</h2>
                                         <h2 class="po_type">Website Renewal Design</h2>
                                         <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
@@ -186,10 +252,10 @@
                                 </li>
                                 <li>
                                     <div class="img_off">
-                                        <img src="./img/po_vs02.jpg" alt="">
+                                        <img src="./img/po_vs_R2.jpg" alt="">
                                     </div>
                                     <div class="img_on">
-                                        <img src="./img/po_vsbl02.jpg" alt="">
+                                        <img src="./img/po_vs_Rbl2.jpg" alt="">
                                         <h2 class="po_title">Brand PATAGONIA</h2>
                                         <h2 class="po_type">Website Renewal Design</h2>
                                         <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
@@ -197,11 +263,28 @@
                                         <a href="" class="po_website">Website</a>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_R3.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Rbl3.jpg" alt="">
+                                        <h2 class="po_title">Brand GENTLE MONSTER</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
                             </ul>
+                            <ul class="btnBox">
+                                <li class="prev"><button class="btn"></button></li>
+                                <li class="next"><button class="btn"></button></li>
+                            </ul>
+
                         </div>
                     </div>
                 </div>
-<!--
                 <div class="port2 project" id="desk">
                     <div class="mask_wrap">
                         <div class="mask">
@@ -232,15 +315,96 @@
                                         <a href="" class="po_website">Website</a>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_D3.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Dbl3.jpg" alt="">
+                                        <h2 class="po_title">Hospital TalmoDoctor</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
--->
-                <ul class="btnBox">
-                    <li class="prev"><button class="btn"></button></li>
-                    <li class="next"><button class="btn"></button></li>
-                </ul>
+                <div class="port3 project" id="mobile">
+                    <div class="mask_wrap">
+                        <div class="mask">
+                            <ul class="img">
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_M1.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Mbl1.jpg" alt="">
+                                        <h2 class="po_title">Brand Charm's</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_M2.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Mbl2.jpg" alt="">
+                                        <h2 class="po_title">Brand iloom</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_M3.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Mbl3.jpg" alt="">
+                                        <h2 class="po_title">Bank Kakao</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_M4.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Mbl4.jpg" alt="">
+                                        <h2 class="po_title">Brand Apple</h2>
+                                        <h2 class="po_type">Website Renewal Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_off">
+                                        <img src="./img/po_vs_M5.jpg" alt="">
+                                    </div>
+                                    <div class="img_on">
+                                        <img src="./img/po_vs_Mbl5.jpg" alt="">
+                                        <h2 class="po_title">Entertainer OaongSeongWu</h2>
+                                        <h2 class="po_type">Website Design</h2>
+                                        <h6 class="po_level">기획 100% 디자인 100% 코딩 100%</h6>
+                                        <a href="" class="po_process">Project Process</a>
+                                        <a href="" class="po_website">Website</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="ft">

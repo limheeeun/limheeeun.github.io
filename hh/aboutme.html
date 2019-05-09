@@ -44,7 +44,7 @@
             }
         });
         $("#upBtn").click(function(){
-            $(".con_wrap").animate({
+            $("html, body").animate({
                 scollTop: 0
             }, 800);
             return false;
@@ -54,8 +54,14 @@
     <script src="./js/aboutme.js"></script>
     <script src="./js/prefixfree.min.js"></script>
     <script src="./js/scroll.js"></script>
+    <script src="./js/loading.js"></script>
 </head>
 <body class="contents">
+    <iframe src="pug_bubble2.html" frameborder="0"></iframe>
+    <div class="loading">
+<!--      <h4>loading</h4>-->
+      <span class="loading-box"></span>
+    </div>
     <div class="about_contact">
         <span class="line_contact">Copyright 2019. heeeun. All rights reserved.</span>
         <span class="line_contact"><span class="point">EMAIL</span> 071381@naver.com</span>
@@ -139,8 +145,11 @@
                         <img src="./img/profile.jpg" alt="">
                     </div>
                     <div class="prof_box">
-                        <h5>"노는게 제일 좋아 월루하고 싶은 디자이너"</h5>
-                        <p>디자인을 시작하게 된 이유 디자인을 시작하게 된 이유 디자인을 시작하게 된 이유 디자인을 시작하게 된 이유 디자인을 시작하게 된 이유 디자인을 시작하게 된 이유 디자인을 시작하게 된 이유</p>
+                        <div class="prof_box_title">
+                            <h1>Introduce my self</h1>
+                            <h2><span class="prof_point">디자인에 생명을 불어넣는 디자이너</span>, 임희은입니다.</h2>
+                            <p>무에서 유를 창조했을 때 행복함을 느낍니다. </p>
+                        </div>
                         <h6><span class="about_title">PROFILE</span></h6>
                         <table class="table_profile">
                             <tr>
@@ -152,19 +161,11 @@
                                 <td class="table_con">1994년 07월 03일(만 24세)</td>
                             </tr>
                             <tr>
-                                <th class="table_list">혈&nbsp; 액&nbsp;형</th>
-                                <td class="table_con">수식어 수식어 O형</td>
-                            </tr>
-                            <tr>
                                 <th class="table_list">성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;격</th>
-                                <td class="table_con">성격성격성격성격성격</td>
+                                <td class="table_con">1px도 놓치지 않는 꼼꼼함</td>
                             </tr>
                         </table>
                         <table class="table_profile">
-                            <tr>
-                                <th class="table_list">취&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;미</th>
-                                <td class="table_con">노래듣기, 누워서숨쉬기</td>
-                            </tr>
                             <tr>
                                 <th class="table_list">주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</th>
                                 <td class="table_con">대전광역시 서구 괴정동&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -355,18 +356,19 @@
                     </div>
                 </section>
                 <section class="c2 page">
-                    <h3>사회경험</h3>
-                    <ul class="box_left">
-                        <li>
-                            <img src="http://placehold.it/200x600" alt="">
-                        </li>
-                    </ul>
-                    <ul class="box_right">
-                        <li>
-                            <h3 class="c2_title">사회경험사회경험사회경험사회경험</h3>
-                            <p class="c2_con">사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험사회경험</p>
-                        </li>
-                    </ul>
+                    <div class="career_box">
+                        <div class="career_box_title">
+                            <h1>My Experience, Social Life</h1>
+                            <p class="career_p1">꿈을 위한 여정,</p>
+                            <p class="career_p2">다양한 사회를 경험하며 능력치를 쌓다</p>
+                        </div>
+                        <p class="career_p3">24살, 대학을 갓 졸업하고 처음 시작한 사회생활은 저에게 부족했던 능력치를 쌓게 해준 좋은 기회가 되었습니다. 특히 첫 회사는 <span class="career_point1">스피드와 상황대처의 능력치를 향상</span>시켜주었습니다. 매일 매일 들어오는 당일 작업이 많았기 때문에 늘 1분 1초가 아까웠고 그 상황에 맞는 빠른 처리를 하지 않으면 나뿐만 아니라 팀원 전체가 야근을 해야하는 상황들의 연속이었습니다. 비록 처음엔 실수도 잦고 미숙했지만 많은 시행착오와 선배님들의 도움으로 <span class="career_point2">금세 존재감이 뚜렷해진, 사장님께도 인정받는 어엿한 직원</span>으로 거듭날 수 있었습니다. <br>
+                        <br>
+                        또한 책임감의 무게를 새삼 느낄 수 있었습니다. 오타 하나 하나, 전화 한통 한통을 신경 쓰는 것이 회사 매출과도 직결되었고 클라이언트의 신뢰가 달려 있었습니다. 내가 하지 않아도 누가 하겠지 라는 생각이 아닌 '내가 해야만 한다. 나밖에는 할 수 없는 일이다.' 라는 마음가짐으로 일하는 사람이 세상을 움직이는 1%가 될 수 있다고 생각합니다. 조직원들과의 화합을 중요시 여길 뿐만 아니라 <span class="career_point2">맡은 업무에 책임감을 갖고 완성도 또한 놓치지 않는 임희은</span>이 되겠습니다.</p>
+                    </div>
+                    <div class="career_img">
+                        <img src="./img/Untitled-1.jpg" alt="">
+                    </div>
                 </section>
             </div>
             <div class="btn_frame">
