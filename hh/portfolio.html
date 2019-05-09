@@ -32,7 +32,11 @@
     <script> //햄버거 토글 메뉴, top 버튼 스크롤
     $(document).ready(function(){
       $(".list").click(function(){
-        $(this).toggleClass("is-active");
+        if($("#ck1").prop("checked")==false) {
+            $(this).addClass("is-active");
+        } else {
+            $(this).removeClass("is-active");
+        }
       });
         $(".con_wrap").scroll(function(){
             var scTop = $(".con_wrap").scrollTop();
@@ -56,25 +60,37 @@
     <script src="./js/loading.js"></script>
     <script> //탭 메뉴
     $(document).ready(function(){
-        $(".nav_menu3 li a.mobile_btn").click(function(){
+        $(".nav_menu3 li a.mobile_btn, .menu_con_wrap .mobile_btn").click(function(){
+            if($("#ck1").prop("checked")==true) {
+                $("#ck1").prop("checked", false);
+                $(".list").removeClass("is-active");
+            }
             $(".project").removeClass("on");
             $("#mobile").addClass("on");
             $(".nav_menu3 li").removeClass("on");
-            $(this).parent("li").addClass("on");
+            $(".nav_menu3 li a.mobile_btn").parent("li").addClass("on");
             activewheel();
         });
-        $(".nav_menu3 li a.res_btn").click(function(){
+        $(".nav_menu3 li a.res_btn, .menu_con_wrap .res_btn").click(function(){
+            if($("#ck1").prop("checked")==true) {
+                $("#ck1").prop("checked", false);
+                $(".list").removeClass("is-active");
+            }
             $(".project").removeClass("on");
             $("#responsive").addClass("on");
             $(".nav_menu3 li").removeClass("on");
-            $(this).parent("li").addClass("on");
+            $(".nav_menu3 li a.res_btn").parent("li").addClass("on");
             activewheel();
         });
-        $(".nav_menu3 li a.desk_btn").click(function(){
+        $(".nav_menu3 li a.desk_btn, .menu_con_wrap .desk_btn").click(function(){
+            if($("#ck1").prop("checked")==true) {
+                $("#ck1").prop("checked", false);
+                $(".list").removeClass("is-active");
+            }
             $(".project").removeClass("on");
             $("#desk").addClass("on");
             $(".nav_menu3 li").removeClass("on");
-            $(this).parent("li").addClass("on");
+            $(".nav_menu3 li a.desk_btn").parent("li").addClass("on");
             activewheel();
         });
         $(".nav_menu3 li a.all_btn").click(function(){
@@ -172,15 +188,15 @@
                                             <a href="portfolio.html">PORTFOLIO</a>
                                             <ul class="sub">
                                                 <li class="lst1">
-                                                    <a href="./portfolio.html#mobile">MOBILE DESIGN</a>
+                                                    <a class="mobile_btn">MOBILE DESIGN</a>
                                                 </li>
                                                 <li class="lst1">
-                                                    <a href="./portfolio.html#desk">DESK DESIGN</a>
+                                                    <a class="desk_btn">DESK DESIGN</a>
                                                 </li>
                                             </ul>
                                             <ul class="sub">
                                                 <li class="lst1">
-                                                    <a href="./portfolio.html#responsive">RESPONSIVE DESIGN</a>
+                                                    <a class="res_btn">RESPONSIVE DESIGN</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -212,7 +228,7 @@
 -->
             <div class="nav_menu">
                 <ul class="nav_menu3">     
-                    <li><a class="res_btn">RESPONSIVE</a></li>
+                    <li class="on"><a class="res_btn">RESPONSIVE</a></li>
                     <li><a class="desk_btn">DESK</a></li>
                     <li><a class="mobile_btn">MOBILE</a></li>
                 </ul>
