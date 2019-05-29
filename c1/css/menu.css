@@ -1,0 +1,94 @@
+@charset "utf-8";
+    
+ * {margin: 0;padding: 0;}
+body, html {width: 100%;height: 100%; font-family: 'hangultuelgothic', sans-serif;}
+
+/*font-family: 'Noto Sans KR', sans-serif*/
+ul {list-style: none}    
+a { text-decoration: none;}
+input {outline: 0; border: 0; background: transparent;}
+.wrap { width: 1200px; margin: 0 auto; min-width: 1200px;}
+
+#hd { width: 100%; height: 100px; position:fixed; z-index: 90; left: 0; top: 0;}
+.logo { float: left;display: block;margin-top: 31px;}    
+
+#gnb { float: right; height: 38px;margin-top: 31px; margin-right: 50px;}
+#gnb li { float: left; margin: 0px 15px;}        
+#gnb a { display: block; line-height: 42px; font-size: 16px; color: #333;}
+#gnb a:hover { color: }
+#gnb li a:after { content: "·"; padding-left: 20px;}
+
+#gnb li:last-child a:after { content: "";}
+#gnb li:hover {color: #ffd928;}
+
+#hd .wrap { position: relative;}
+.lstBtn { display: block; width:60px; height:60px; position: absolute; top:21px; right: 0px; cursor: pointer;}
+.lstBtn span { display: block; width: 34px; height: 3px; margin: 0 auto; margin-top: 6px; background: #182659; float: right; clear: both; border-radius: 2px;}
+
+/*        익스플로러에서는 'first'-child 같은 순번이 안먹힌다. 때문에 span 태그에 span class=영어1 이런식으로 써주고 스타일에서 'first'-child부분에 .영어1 로 표시해줌. 짝수번호만 해야할 경우 이런식으로 .영어(짝수)로 다 해줘야함.*/
+.lstBtn span:first-child {margin-top:16px;}
+.lstBtn span:nth-child(2n) {width: 26px;transition: 0.5s;}
+.lstBtn:hover span:nth-child(2n) {width: 34px;}
+
+.hdFrame { width: 100%; height: 100px; position: fixed; z-index: 89; top:-100px; left:0; transition: 0.7s;}
+.hdFrame.on {top: 0px;}
+#gnb a.on {color:#333;}
+.lstBtn span.on {background: #333;}
+
+#popFrm { width: 100%; height: 100%; background:rgba(18, 18, 18, 0.7); position: fixed; top: -110%; left: 0; z-index: 100; transition: 0.8s;}
+#ck {display: none;}
+#ck:checked + #popFrm {top: 0;}
+
+.closeBtn {position: absolute; cursor: pointer; right: 18%; top: 3%; width: 60px; height: 60px; display: block; background-image: url(../img/closeBtn.png); border:1px solid #fff; text-indent: -9999px; }
+.popBox { width: 1000px; height: 50%; margin: 0 auto; margin-top: 10%; background: #fff;}
+.popBox ul {float:left; height: 100%; width: 20%; border-right: 1px solid #ffd928; box-sizing: border-box;}
+.popBox li h2 {background: #ffd928; text-align: center;line-height: 60px; font-size: 1.4em;}
+.popBox li h2 a { color: #333; font-size: 0.7em; line-height: 60px; text-indent: 0px; } 
+.popBox li a { display: block;line-height: 40px; font-size: 0.8em; color: #333; text-align: center;}
+
+
+#quick { position: fixed; right: 10px; top: 0; height: 100%; width: 100px; 
+    background: linear-gradient(rgba(168,230,207,0.9),rgba(220,237,193,0.9));
+/*background: #99dad5;   fallback for old browsers */
+/*background: -webkit-linear-gradient(to top, #B0DAB9, #99dad5);   Chrome 10-25, Safari 5.1-6 */
+/*background: linear-gradient(to top, #B0DAB9, #99dad5);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ z-index: 95; }
+.qWrap { width: 100%; height: 100%; position: relative;}
+#quick ul { position: absolute; right: 0; width: 100%;}
+#quick .top { top: 0;}
+#quick .bottom {bottom: 23%; width: 80%; left: calc((100% - 80%) / 2); border-top: 1px solid rgba(45,58,73,0.2); border-bottom: 1px solid rgba(45,58,73,0.2);}
+#quick .top_btn {bottom: 7%;}
+#quick .top li {clear: both; width: 80%; margin: 0 auto; }
+#quick .bottom li {clear: both; width: 80%; margin: 0 auto; }
+#quick .bottom li {margin-top: 20px; margin-bottom: 20px; }
+#quick .bottom li:last-child { }
+#quick .bottom li p { font-size: 11px; text-align: center; font-weight: 550; line-height: 1.7; }
+#quick .bottom li .top_point {color: #42c0bf; font-weight: bold; text-align: center; }
+#quick li a {display: block; line-height: 40px; color: #000; font-size: 0.85em; text-align: center; }
+#quick li.top_first {clear: both; width: 100%; margin: 0 auto; }
+#quick li a.qlogo { height: 60px; background-image: url(../img/symbol.png); background-color: #eee; background-repeat: no-repeat; background-position: center center; margin-bottom: 20px;}
+#quick li a.green {background-color: #dedede; color: #000;}
+#quick li a.yellow {background-color: #182659; color: #fff;}
+
+#quick .top_btn li a.totop {
+background: #00b09b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #3dc97e, #42c0bf);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #3dc97e, #42c0bf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ color: #fff; width: 80%; height: 75px; margin: 10% auto; line-height: 20px; font-size: 12px; border-bottom: 0px;}
+#quick .top_btn li a.totop:before {content: "△"; display: block; width: 100%; font-size: 1.1em; padding-top: 15px; }
+
+#quick li a.hv:hover { color:#333; background-color: #fff;}
+.quick_admin, .quick_logout, .quick_edit {display: none;}
+
+#lastpage { background: #f2f2f2; border-top: 1px solid #ececec; clear: both;}
+#lastpage li { height: 350px; }
+#lastpage .itemTitle { padding-top: 60px; padding-bottom: 30px; color: #333;}
+#lastpage .telTxt { color:#d82428; padding-top: 10px;}
+#lastpage .itemDate { padding-top: 10px; padding-bottom: 15px; font-size:0.9em; line-height: 1.5;}
+
+#ft { width: 100%; height: 42px; background: #333; color: #fff; line-height: 42px; clear: both;}
+.ftLogo { width: 180px;height: 42px; background-image: url(../img/img_logo_black.png); background-repeat: no-repeat; background-position: center center; position: absolute; right: 50px;top: 0;}
+#ft .wrap { position: relative; }
+#ft .copyright {font-size: 0.8em; }
+
+
