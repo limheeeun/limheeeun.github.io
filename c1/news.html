@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>탈모닥터에 오신 것을 환영합니다.</title>
+<!-- 구형 브라우저 -->
+<link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon16.ico">
+<!--   신형 브라우저와 안드로이드폰-->
+<link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon32.ico">
+<!--  아이폰3 이하-->
+<link rel="apple-touch-icon" size="57x57" href="./c1/favicon/favicon57.ico">
+<!--   아이패드-->
+<link rel="apple-touch-icon" size="72x72" href="./c1/favicon/favicon72.ico">
+<!-- 아이폰4 이상-->
+<link rel="apple-touch-icon" size="114x114" href="./c1/favicon/favicon114.ico">
+<!-- IE10 이상-->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="./c1/favicon/favicon-144.ico">
+
+<!-- 맵(웹 사이트)의 이름-->
+<meta name="application-name" content="Hairloss Doctor hospital Site">
+<!-- 맵(웹 사이트) 저작자 이름-->
+<meta name="author" content="heeeun"> 
+<!-- 현재 문서 설명-->
+<meta name="description" content="Hairloss Doctor hospital Site">
+<!-- 현재 문서의 제작 도구-->
+<meta name="generator" content="Barckit">
+<!-- 검색엔진에서 검색되게 할 키워드-->
+<meta name="keywords" content="탈모, 머리카락, 병원, 부천탈모">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/font.css">
+<link rel="stylesheet" href="./css/grid.css">
+<link rel="stylesheet" href="./css/menu.css">
+<link rel="stylesheet" href="./css/sub.css">
+<link rel="stylesheet" href="./css/clinic2.css">
+
+<style>
+/*    -moz(파이어폭스) -o(오페라) -webkit(사파리) */
+    body, html {-ms-overflow-style:none;}
+    ::-webkit-scrollbar {display: none;}
+    ::-o-scrollbar {display: none;}
+    ::-moz-scrollbar {display: none;}
+
+
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+/* 여기가 스크립트 처리 구간 */  
+$(function(){
+    var intv = setInterval(function(){ lAni(); }, 3000); 
+    function lAni(){
+        $(".imgBox").not(":animated").animate({"margin-left":"-420px"}, 600, function(){
+            $(".imgBox li").eq(0).appendTo($(".imgBox"));
+            $(".imgBox").css("margin-left","0px");
+        });
+    }
+    $(window).scroll(function(){
+        var scTop = $("body, html").scrollTop();
+        if(scTop>=100){
+            $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+        } else {
+            $("hdFrame, #gnb a, .lstBtn span").removeClass("on");
+        }
+    });
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll>1){
+            $("#hd").css("background", "white");
+        } else {
+            $("#hd").css("background", "transparent");
+        }
+    });
+});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUFJ1O1ojPrgL6kITDfoCzglybFyTCW1A&callback=initMap"></script> -->
+<!--
+1. 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2. http://console.cloud.google.com/getting-stared?pli=1
+3. [API 및 서비스]-사용자 인증 정보-인증 키 발급
+
+<API서비스 신청방법>
+
+구글지도 api key발급 사이트 이동- 구글로그인-[시작하기] 버튼 -Maps 선택 -[next] 버튼 -[yes] -[결제계정 만들기]-맨밑에 [무료평가판 만들기]-[프로젝트]-[새 프로젝트 만들기]
+-->
+
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4897902, 126.75527119999992);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '탈모닥터'	  //레이블을 바꿔서 입력
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<!--
+ <script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+-->
+</head>
+<body onload="initialize()">
+<div class="hdFrame"></div> 
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+           <img src="./img/img_logo_01.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li>
+                    <a href="intro.html#page1">
+                        <strong>탈모닥터 소개</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="clinic1.html#page1">
+                        <strong>모발이식 클리닉</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="clinic2.html#page1">
+                        <strong>탈모치료 클리닉</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="fue.html#page1">
+                        <strong>흉터없는 FUE</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="community.html#page1">
+                        <strong>커뮤니티</strong>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1"></span>
+            <span class="item2"></span>
+            <span class="item3"></span>
+            <span class="item4"></span>
+        </label>
+    </div>
+</header>
+<main id="content">
+   <div class="page" id="lastpage">
+       <div class="wrap">
+           <ul>
+               <li class="col4 item1 first">
+                   <h2 class="itemTitle">탈모닥터</h2>
+                   <h1 class="telTxt">032-327-4242</h1>
+                   <br>
+                   <p class="itemDate">
+                       경기도 부천시 부일로205번길 26<br>대명엔스빌 1차 303호</p>
+
+               </li>
+               <li class="col4 item2">
+                   <h2 class="itemTitle">진료시간</h2>
+                   <p class="itemDate">
+                        평일 : AM 10 :00 ~ PM 7 : 00<br>
+                        점심 : PM 12:00 ~ PM 01:00 <br>
+                        목요일 : AM 10 :00 ~ PM 9 : 00 (야간진료)<br>                       
+                        토요일 : AM 9:00 ~ PM 01:00<br>
+                       
+                   <br></p>
+                   <p class="itemDate">※ 일요일, 공휴일은 휴진입니다.</p>
+                   
+               </li>
+               <li class="col4 item3">
+                   <h2 class="itemTitle">오시는 길</h2>
+                   <div id="mapFrame"></div>
+                       <div id="map_canvas" style="width: 360px; height: 170px;"></div>
+               </li>
+           </ul>
+       </div>
+   </div>
+</main>
+<!--    footer#ft>div.wrap>p.copyright+div.ftLogo    -->
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2019 TALMODE HAIR. ALL RIGHT RESERVED.</p> 
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+    
+<!--    input[type=checkbox]#ck-->
+<input type="checkbox" id="ck">
+<!--    div#popFrm>div.popBox>ul.item*5>li*5>a-->
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                  <a href="intro.html#page1">탈모닥터 소개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">의료진 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">시설 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">진료 안내</a>
+            </li>
+            <li>
+              <a href="intro.html#page6">지역점 전화번호</a>
+            </li>                
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="clinic2.html">모발이식클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic2.html#page1">모발이식</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page2">흉터/수염이식</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page4">FAQ</a>
+            </li>       
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="clinic1.html">탈모치료클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic1.html#page1">탈모 원인 및 초기증상</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page2">탈모 유형</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page3">탈모 치료 프로그램</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page4">모발 상식과 탈모예방</a>
+            </li>            
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="fue.html">흉터없는 FUE</a>
+                </h2>
+            </li>
+            <li>
+                <a href="fue.html#page1">FUE란?</a>
+            </li>
+            <li>
+                <a href="fue.html#page2">FUE-다이렉트 모발이식</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="community.html">커뮤니티</a>
+                </h2>
+            </li>
+                <li>
+                    <a href="community.html#page1">공지사항</a>
+                </li>
+            <li>
+                <a href="community.html#page2">온라인상담</a>
+            </li>
+            <li>
+                <a href="community.html#page3">온라인예약</a>
+            </li>
+            <li>
+                <a href="community.html#page4">시술전후사진</a>
+            </li>
+            <li>
+                <a href="community.html#page5">보도자료</a>
+            </li>
+            <li>
+                <a href="community.html#page6">탈모정보</a>
+            </li>
+            <li>
+                <a href="community.html#page7">자유게시판</a>
+            </li>                   
+        </ul>                              
+</div>
+</div>
+       
+<!--aside#quick>div.qWrap>(ul.top>li*4>a)+(ul.bottom>li*3>a)-->
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>
+                <a href="Login.html" class="hv">로그인</a>
+            </li>
+            <li>
+                <a href="community.html#page2" class="hv">온라인상담</a>
+            </li>
+            <li>
+                <a href="intro.html#page3" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="clinic3.html" class="green">탈모치료클리닉</a>
+            </li>
+            <li>
+                <a href="community.html" class="yellow">커뮤니티</a>
+            </li>
+            <li>
+                <a href="#" class="totop">위로</a>
+            </li>
+        </ul>
+</div>
+</aside>
+    
+    
+    
+    
+</body>
+</html>

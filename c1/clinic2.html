@@ -1,0 +1,507 @@
+<?php
+    @session_start();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>탈모닥터에 오신 것을 환영합니다.</title>
+<!-- 구형 브라우저 -->
+<link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon16.ico">
+<!--   신형 브라우저와 안드로이드폰-->
+<link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon32.ico">
+<!--  아이폰3 이하-->
+<link rel="apple-touch-icon" size="57x57" href="./c1/favicon/favicon57.ico">
+<!--   아이패드-->
+<link rel="apple-touch-icon" size="72x72" href="./c1/favicon/favicon72.ico">
+<!-- 아이폰4 이상-->
+<link rel="apple-touch-icon" size="114x114" href="./c1/favicon/favicon114.ico">
+<!-- IE10 이상-->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="./c1/favicon/favicon-144.ico">
+
+<!-- 맵(웹 사이트)의 이름-->
+<meta name="application-name" content="Hairloss Doctor hospital Site">
+<!-- 맵(웹 사이트) 저작자 이름-->
+<meta name="author" content="heeeun"> 
+<!-- 현재 문서 설명-->
+<meta name="description" content="Hairloss Doctor hospital Site">
+<!-- 현재 문서의 제작 도구-->
+<meta name="generator" content="Barckit">
+<!-- 검색엔진에서 검색되게 할 키워드-->
+<meta name="keywords" content="탈모, 머리카락, 병원, 부천탈모">
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/font.css">
+<link rel="stylesheet" href="./css/grid.css">
+<link rel="stylesheet" href="./css/menu.css">
+<link rel="stylesheet" href="./css/sub.css">
+<link rel="stylesheet" href="./css/clinic2.css">
+
+<style>
+/*    -moz(파이어폭스) -o(오페라) -webkit(사파리) */
+    body, html {-ms-overflow-style:none;}
+    ::-webkit-scrollbar {display: none;}
+    ::-o-scrollbar {display: none;}
+    ::-moz-scrollbar {display: none;}
+
+
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+/* 여기가 스크립트 처리 구간 */  
+$(function(){
+    var intv = setInterval(function(){ lAni(); }, 3000); 
+    function lAni(){
+        $(".imgBox").not(":animated").animate({"margin-left":"-420px"}, 600, function(){
+            $(".imgBox li").eq(0).appendTo($(".imgBox"));
+            $(".imgBox").css("margin-left","0px");
+        });
+    }
+    $(window).scroll(function(){
+        var scTop = $("body, html").scrollTop();
+        if(scTop>=100){
+            $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+        } else {
+            $("hdFrame, #gnb a, .lstBtn span").removeClass("on");
+        }
+    });
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll>1){
+            $("#hd").css("background", "white");
+        } else {
+            $("#hd").css("background", "transparent");
+        }
+    });
+});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUFJ1O1ojPrgL6kITDfoCzglybFyTCW1A&callback=initMap"></script> -->
+<!--
+1. 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2. http://console.cloud.google.com/getting-stared?pli=1
+3. [API 및 서비스]-사용자 인증 정보-인증 키 발급
+
+<API서비스 신청방법>
+
+구글지도 api key발급 사이트 이동- 구글로그인-[시작하기] 버튼 -Maps 선택 -[next] 버튼 -[yes] -[결제계정 만들기]-맨밑에 [무료평가판 만들기]-[프로젝트]-[새 프로젝트 만들기]
+-->
+
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4897902, 126.75527119999992);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '탈모닥터'	  //레이블을 바꿔서 입력
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+<!--
+ <script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+-->
+</head>
+<body onload="initialize()">
+<div class="hdFrame"></div> 
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+           <img src="./img/img_logo_01.png" alt="앰블럼">
+        </a>
+        <nav id="gnb">
+            <ul>
+                <li>
+                    <a href="intro.html#page1">
+                        <strong>탈모닥터 소개</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="clinic1.html#page1">
+                        <strong>모발이식 클리닉</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="clinic2.html#page1">
+                        <strong>탈모치료 클리닉</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="fue.html#page1">
+                        <strong>흉터없는 FUE</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="community.html#page1">
+                        <strong>커뮤니티</strong>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <label for="ck" class="lstBtn">
+            <span class="item1"></span>
+            <span class="item2"></span>
+            <span class="item3"></span>
+            <span class="item4"></span>
+        </label>
+    </div>
+</header>
+<main id="content">
+    <div class="blank"></div>
+    <div class="page" id="page1">
+        <a href="#page1" class="btn1 item1">탈모의 원인</a>
+        <div class="con">
+            <figure class="vsBox">
+                <ul class="row">
+                    <li class="col6 vsImg">
+                        <img src="./img/clinic1_vsimg1.png" alt="탈모원인배너">
+                    </li>
+                    <li class="col6 vsTitBox">
+                        <h1 class="vsTitle">탈모의 <span class="gtxt">원인</span>은?</h1>
+                        <p class="vsComent">탈모는 모발생성에 필요한 영양공급과 신진대사가 원활하게 이루어지지 않아 생기는 '진행성 질환'입니다.</p>
+                        <p class="vsComent">서양인에 비해 모발 밀도가 낮은 우리나라 사람의 경우 5만~7만개 정도의 머리카락이 있으며 하루에 약 50~70개까지의 머리카락이 빠지는 것은 정상적인 현상입니다. 따라서 자고 나서나 머리를 감을 때 빠지는 머리카락의 수가 100개가 넘으면 병적인 원인에 의한 것일 가능성이 높으므로 의사와 상담해 보는 것이 좋습니다.
+                        </p>
+                    </li>
+                </ul>       
+            </figure>
+            <section class="sec1">
+                <div class="subBox">
+                    <h2 class="subTit">탈모의 원인</h2>
+                    <ul class="picLst">
+                        <li class="col6">
+                            <img src="./img/clinic1_img1.jpg" alt="원인1">
+                            <p class="picTit"><span class="picNum">1</span>유전</p>
+                            <p class="subCom">여러개의 유전자가 간접적으로 탈모에 영향을 미침</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/clinic1_img2.jpg" alt="원인2">
+                            <p class="picTit"><span class="picNum">2</span>혈액순환 장애</p>
+                            <p class="subCom">모근으로 영양분 공급이 어려움</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/clinic1_img3.jpg" alt="원인3">
+                            <p class="picTit"><span class="picNum">3</span>스트레스</p>
+                            <p class="subCom">만병의 근원으로 탈모의 진행속도를 가속화하는 작용</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/clinic1_img4.jpg" alt="원인4">
+                            <p class="picTit"><span class="picNum">4</span>과도한 헤어제품</p>
+                            <p class="subCom">화학성분이 두피에 남게 되어 모낭염, 모발 손상, 탈모 등 문제점 발생</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/clinic1_img5.jpg" alt="원인5">
+                            <p class="picTit"><span class="picNum">5</span>피부질환</p>
+                            <p class="subCom">두피에 발생하는 두부 백선 및 아토피성 피부염 등 피부질환 문제</p>
+                        </li>
+                        <li class="col6">
+                            <img src="./img/clinic1_img6.jpg" alt="원인6">
+                            <p class="picTit"><span class="picNum">6</span>영양불량</p>
+                            <p class="subCom">과도한 다이어트로 필수적인 영양이 부족</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page2">
+        <a href="#page2" class="btn1 item2">탈모의 유형</a>
+        <div class="con">
+            <h1 class="pageTitle">탈모의 유형</h1>
+            <section class="sec12 wtxt">
+                <ul class="secFrm">
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/clinic1_img7.png" alt="남성탈모">
+                        </div>
+                        <div class="right txtFrame">
+                            <h3 class="itemTitle">1. 남성 탈모</h3>
+                            <p class="itemComent">남성형 탈모는 남성호르몬인 안드로겐이 모낭 세포의 대사에 관여하면서 발생합니다. 모발이 점차 가늘어지면서 안면과 두피의 경계선이 점점 뒤로 물러나 이마가 넓어지며 두피 중앙의 굵은 머리가 점점 빠져 결국 대머리로 진행됩니다. 이마가 점점 넓어지기 시작하다 이마 양 옆이 알파벳 M자처럼 탈모가 진행되는 M자형 탈모와 정수리 부위를 중심으로 동그랗게 나타나는 O자형 탈모가 있습니다. U자형 탈모는 뒷머리조차 없는 형태로 전체 탈모라고 볼 수 있습니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left txtFrame">
+                            <h3 class="itemTitle">2. 여성 탈모</h3>
+                            <p class="itemComent">여성형 탈모는 남성 호르몬에 대한 민감성이 유전되어 발생하는 탈모 증상입니다. 폐경기와 같은 호르몬의 변화, 심리적 스트레스, 질환 약물의 부작용, 임신과 출산, 무리하나 다이어트, 잦은 염색과 파마, 철분 결핍 등에 의해 일어납니다.열성 탈모는 남자와는 달리 일정한 형태가 없이 머리 전반적으로 탈모가 발생하며 주로 중앙부위 모발이 점차 가늘어지면서 시작됩니다. 잦은 파마나 탈색, 염색으로 인해 모발과 두피가 지속적으로 손상을 받으면 탈모를 더욱 악화시킬 수 있습니다.</p>
+                        </div>
+                        <div class="right imgFrame">
+                            <img src="./img/clinic1_img8.png" alt="여성탈모">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left imgFrame">
+                            <img src="./img/clinic1_img9.png" alt="원형탈모">
+                        </div>
+                        <div class="right txtFrame">
+                            <h3 class="itemTitle">3. 원형 탈모</h3>
+                            <p class="itemComent">일반적으로 원형의 모양으로 모발이 갑자기 빠지는 증상이 특징입니다. 심한 경우 두피의 모발 전체가 빠지기도 하고 눈썹, 속눈썹, 체모가 빠질 수도 있습니다. 모발은 평균 20대 중반을 기준으로 하여 모모세포의 노화과정이 서서히 나타나게 됩니다. 이때 모발의 굵기가 점점 얇아지는 연모화 현상이 나타납니다. 60세 이후에는 그 변화의 속도가 더욱 빨라집니다. </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="page3">
+        <a href="#page3" class="btn1 item3">탈모치료 프로그램</a>
+        <div class="con">
+            <h1 class="pageTitle">탈모치료 프로그램</h1>
+            <section class="sec2">
+                <div class="subBox">
+                    <h2 class="subTit">탈모치료 프로그램 특징</h2>
+                    <table class="subTable3 item1">
+                        <thead>
+                            <th class="col12">특징</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col12"><p>일반적인 탈모약물 주입시 두피의 자극으로 재생효과를 높이는 침요법 활용</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col12"><p>옥타우수, 메조건, MTS등을 고객의 상황에 맞는 고객 맞춤 탈모치료로 더욱 빠른 탈모 치료를 도모</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col12"><p>고주파, LED레이저 등 다양한 두피와 모발 의료기기로 치료 진행</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col12"><p>일반적인 두피에 대한 케어는 기본적으로 진행</p></td>
+                            </tr>
+                            <tr>
+                                <td class="col12"><p>줄기세포, 레이저 시술과 다륜침 시술 등의 체계적인 탈모 치료로 탈모 개선과 예방</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="subBox">
+                    <h2 class="subTit">탈모치료 프로그램</h2>
+                    <table class="subTable3 item2" style="min-height:400px;">
+                        <thead>
+                            <th class="col3">치료목록</th>
+                            <th class="col9">치료내용</th>
+                        </thead>
+                        <tbody>
+                            <tr class="bg1">
+                                <td class="col3">성장인자 촉진 치료</td>
+                                <td class="col9"><p>성장인자를 촉진시켜 퇴화된 모근을 살려내는 치료방법입니다. 모근을 살려내고 탈모를 예방할 수 있습니다.</p></td>
+                            </tr>
+                            <tr class="bg1">
+                                <td class="col3">다양한 레이저 치료와 다륜침 시술</td>
+                                <td class="col9"><p>다양한 레이저를 이용한 탈모치료와 모발에 활용하여 모근의 재생과 강화시킵니다. Octuas와 MTS를 이용한 혈류 개선과 두피재생으로 탈모치료와 모발이식에 활용합니다.</p></td>
+                            </tr>
+                            <tr class="bg1">
+                                <td class="col3">새로운 탈모치료 프로그램</td>
+                                <td class="col9"><p>체질개선 프로그램, Detox 프로그램, 항노화 프로그램 등과 탈모 유전자 검사 등으로 개인의 탈모 원인을 찾아 맞춤 프로그램으로 30여 가지의 다양한 프로그램을 진행하고 있습니다. </p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page" id="lastpage">
+       <div class="wrap">
+           <ul>
+               <li class="col4 item1 first">
+                   <h2 class="itemTitle">탈모닥터</h2>
+                   <h1 class="telTxt">032-327-4242</h1>
+                   <p class="itemDate">부천시 원미구 상동 412-2번지
+                   <br>
+                   대명 엔스빌 320호 탈모닥터
+                   <br>
+                   <br>
+                   사업자 등록번호 : 130-37-85422
+                   <br>
+                   대표이사 최정근
+                   </p>
+               </li>
+               <li class="col4 item2">
+                   <h2 class="itemTitle">진료시간</h2>
+                   <p class="itemDate">
+                        평일 : AM 10 :00 ~ PM 7 : 00<br>
+                        목요일 : AM 10 :00 ~ PM 9 : 00 (야간진료)<br>                    
+                        토요일 : AM 9:00 ~ PM 01:00<br>
+                        점심시간 : PM 12:00 ~ PM 01:00 <br>
+                   <br></p>
+                   <p class="itemDate">※ 일요일, 공휴일은 휴진입니다.</p>
+               </li>
+               <li class="col4 item3">
+                   <h2 class="itemTitle">오시는 길</h2>
+                   <div id="mapFrame"></div>
+                   <div id="map_canvas" style="width: 360px; height: 170px;"></div>
+               </li>
+           </ul>
+       </div>
+   </div>
+</main>
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2019 TALMODE HAIR. ALL RIGHT RESERVED.</p> 
+        <div class="ftLogo"></div>
+    </div>
+</footer>
+<input type="checkbox" id="ck">
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                  <a href="intro.html#page1">탈모닥터 소개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">의료진 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">시설 안내</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">지역점 연락처</a>
+            </li>
+            <li>
+              <a href="intro.html#page6">오시는길</a>
+            </li>                
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="clinic1.html">모발이식클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic1.html#page1">모발이식</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page2">흉터/수염이식</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page3">FAQ</a>
+            </li>       
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="clinic2.html">탈모치료클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic2.html#page1">탈모의 원인</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page2">탈모의 유형</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page3">탈모치료 프로그램</a>
+            </li>           
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="fue.html">흉터없는 FUE</a>
+                </h2>
+            </li>
+            <li>
+                <a href="fue.html#page1">비절개 이식 FUE</a>
+            </li>
+            <li>
+                <a href="fue.html#page2">수술 과정</a>
+            </li>
+            <li>
+                <a href="fue.html#page3">FUE 장점/적용대상</a>
+            </li>
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="community.html">커뮤니티</a>
+                </h2>
+            </li>
+                <li>
+                    <a href="community.html#page1">공지사항</a>
+                </li>
+            <li>
+                <a href="community.html#page2">시술사진</a>
+            </li>
+            <li>
+                <a href="community.html#page3">온라인 상담</a>
+            </li>                  
+        </ul>                              
+</div>
+</div>
+<!--aside#quick>div.qWrap>(ul.top>li*4>a)+(ul.bottom>li*3>a)-->
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>            
+            <li class="quick_admin">
+                <a href="#" class="hv">관리자 페이지로</a>
+            </li>
+            <li class="quick_logout">
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>           
+            <li class="quick_logout">
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li class="quick_edit">
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+          } else {
+?>            
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>
+                <a href="loginForm.html" class="hv">로그인</a>
+            </li>
+<?php
+          }
+?>            
+            <li>
+                <a href="community.html#page3" class="hv">온라인상담</a>
+            </li>
+            <li>
+                <a href="intro.html#page5" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="clinic2.html" class="green">탈모치료클리닉</a>
+            </li>
+            <li>
+                <a href="community.html" class="yellow">커뮤니티</a>
+            </li>
+            <li>
+                <a href="#" class="totop">위로</a>
+            </li>
+        </ul>
+    </div>
+</aside>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>탈모닥터에 오신 것을 환영합니다.</title>
+    <!-- 구형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon16.ico">
+    <!--   신형 브라우저와 안드로이드폰-->
+    <link rel="shourtcut icon" type="image/x-con" href="./2/favicon/favicon32.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./c1/favicon/favicon57.ico">
+    <!--   아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./c1/favicon/favicon72.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./c1/favicon/favicon114.ico">
+    <!-- IE10 이상-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="./c1/favicon/favicon-144.ico">
+    
+    <!-- 맵(웹 사이트)의 이름-->
+    <meta name="application-name" content="Hairloss Doctor hospital Site">
+    <!--  맵(웹 사이트) 저작자 이름-->
+    <meta name="author" content="heeeun"> 
+    <!-- 현재 문서 설명-->
+    <meta name="description" content="Hairloss Doctor hospital Site">
+    <!--  현재 문서의 제작 도구-->
+    <meta name="generator" content="Barckit">
+    <!--   검색엔진에서 검색되게 할 키워드-->
+    <meta name="keywords" content="탈모, 머리카락, 병원, 부천탈모">
+
+    <!--    자동 새로고침 설정-->
+    <meta http-equiv="refresh" content="100"> <!--: 3분마다 자동으로 새로고침-->
+    
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="sub1.css">
+
+    
+    <style>
+/*    -moz(파이어폭스) -o(오페라) -webkit(사파리) */
+        body, html {-ms-overflow-style:none;}
+        ::-webkit-scrollbar {display: none;}
+        ::-o-scrollbar {display: none;}
+        ::-moz-scrollbar {display: none;}
+        
+        
+    </style>
+     <!--    <script src="https://code.jquery.com/jquery-latest.js"></script>-->
+<!--    <script src="./js/jquery-1.11.1.js"></script>-->
+
+    <script>
+ /* 여기가 스크립트 처리 구간 */  
+//    $(function(){
+//        var intv = setInterval(function(){ lAni(); }, 3000); 
+//        function lAni(){
+//            $(".imgBox").not(":animated").animate({"margin-left":"-420px"}, 600, function(){
+//                $(".imgBox li").eq(0).appendTo($(".imgBox"));
+//                $(".imgBox").css("margin-left","0px");
+//            });
+//        }
+//    $(window).scroll(function(){
+//        var scTop = $("body, html").scrollTop();
+//        if(scTop>=100){
+//            $(".hdFrame, #gnb a, .lstBtn span").addClass("on");
+//        } else {
+//            $("hdFrame, #gnb a, .lstBtn span").removeClass("on");
+//        }
+//    });
+//        
+//    });
+    
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUFJ1O1ojPrgL6kITDfoCzglybFyTCW1A&callback=initMap"></script> -->
+<!--
+    1. 구글 지도 api key 발급 사이트로 이동하여 지도 API 서비스 신청
+2. http://console.cloud.google.com/getting-stared?pli=1
+3. [API 및 서비스]-사용자 인증 정보-인증 키 발급
+
+<API서비스 신청방법>
+
+구글지도 api key발급 사이트 이동- 구글로그인-[시작하기] 버튼 -Maps 선택 -[next] 버튼 -[yes] -[결제계정 만들기]-맨밑에 [무료평가판 만들기]-[프로젝트]-[새 프로젝트 만들기]
+-->
+
+
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.4897902, 126.75527119999992);
+  var mapOptions = {
+    zoom: 17,
+    center: myLatlng
+  }
+
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: '탈모닥터'	  //레이블을 바꿔서 입력
+
+  });
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+ <script>
+$(function(){
+//   setTimeout(function(){
+//       $("#map_canvas > div:last-child").css("display", "none", "z-index", "-1");
+//   }, 1000); 
+});    
+</script>
+</head>
+<body onload="initialize()">
+<div class="hdFrame on"></div> 
+<header id="hd">
+    <div class="wrap">
+        <a href="index.html" class="logo">
+           <img src="./img/img_logo_02.png" alt="앰블럼">
+           </a>
+            <nav id="gnb">
+                <ul>
+                    <li><a href="intro.html#page1 class=on">탈모닥터 소개</a></li>
+                    <li><a href="clinic1.html#page1 class=on">모발이식 클리닉</a></li>
+                    <li><a href="clinic2.html#page1 class=on">탈모치료 클리닉</a></li>
+                    <li><a href="clinic3.html#page1 class=on">여성모발이식 클리닉</a></li>
+                    <li><a href="fue.html#page1 class=on">흉터없는 FUE</a></li>
+                    <li><a href="community.html#page1 class=on">커뮤니티</a></li>
+                </ul>
+            </nav>
+            <label for="ck" class="lstBtn">
+                <span class="item1 class=on"></span>
+                <span class="item2 class=on"></span>
+                <span class="item3 class=on"></span>
+                <span class="item4 class=on"></span>
+            </label>
+        </div>
+    </header>
+       
+
+<main id="content">
+ <div class="blank">
+     
+ </div>
+ <div class="page" id="page1">
+     <a href="#page1" class="btn1 item1">병원 소개</a>
+ <div class="con">
+         <h1 class="pageTitle">병원 소개</h1>
+         <section class="sec1 wtxt">
+             <h2 class="secTitle">모발이식 네트워크 <span class="rtxt">탈모닥터</span></h2>
+             <p class="secCom"> 탈모닥터는 여러분의 모발 한올, 한올을 소중하게 생각합니다.</p>
+             <p class="secCom2">부천 송내역 앞에서 한 건의 소송도 없이 20년 묵묵히 자리를 지켜왔습니다. 그 동안 수술 잘하는 병원으로 자리 잡고 뿌리내려 왔습니다. 늘 과장된 광고가 아닌 만족스러운 결과로 말해왔습니다. 정직하고 바른 진료, 합리적 가격으로 보답하겠습니다.
+             </p>
+             <br>
+             <p class="secCom3"> 탈모닥터는 의사들의 1:1 맞춤 교육으로 탈모진단과 모발이식, 탈모치료에서 프로가 되도록 교육을 하고 있습니다. 자연스러운 모발이식과 생존율을 높이는 모발이식, 다양한 프로그램에 따른 탈모치료 교육 등 완벽한 교육 시스템을 갖추고 있으며 생존율을 높이는 완벽한 모발분리와 첨단의 치료방법 및 모발분리사와 탈모치료사 교육을 하고 있습니다.<br> 모발이식 전 후 사진과 탈모치료 전후 사진, 타로모 분류별 사진, 환자 설명 프로토콜, 진료기록부 등 진료에 필요한 모든 자료글 지원하며 병원 컨설팅 과 ON-LINE, OFF-LINE 공동 마케팅, 병원 내 홍보물인 포스터와 배너 등 다양한 홍보물을 지원합니다. 또한 상담 실장, 간호사, 모발분리사, 탈모치료사 등 내부 직원 교육까지 총막라하여 체계적이고 준비된 네트워크입니다.</p>
+         </section>
+         <section class="sec2 wtxt">
+             <ul class="secFrm">
+                 <li>
+                     <div class="left imgFrame">
+                         <img src="./img/introduction_img01.png" alt="">
+                     </div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                 </li>
+                 <li>
+                     <div class="right imgFrame">
+                         <img src="./img/introduction_img02.png" alt=""></div>
+                     <div class="left txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="left txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="left txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                 </li>
+                 <li>
+                     <div class="left imgFrame">
+                         <img src="./img/introduction_img03.png" alt=""></div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                     <div class="right txtFrame">
+                         <h3 class="itemTitle itemComent"></h3>
+                     </div>
+                 </li>
+             </ul>
+         </section>
+ </div>         
+   
+ </div>
+ <div class="page" id="page2">
+     <a href="#page2" class="btn1 item2">의료진 소개</a>
+ <div class="con">
+         <h1 class="pageTitle">의료진 소개</h1>
+         <section class="sec2 wtxt">
+             <h2 class="secTitle">탈모닥터 모발이식 <br>네트워크 대표 원장, <span class="rtxt">최정근</span></h2><br><br><br><br><br>
+             <p class="sec2Com">학력</p>
+             <p class="sec2Com2">
+서울대학교 전문의<br>
+서울대학교 박사<br>
+West Virginia University fellowship<br>
+Nagoya, Gumma University fellowship<br>
+전)동국대학교, 창원대학교 겸임 교수<br>
+전)국제 미용 성형학회 회장<br>
+전)대한탈모모발이식전문가학회 회장<br>
+전)국제모발이식전문가학회 회장<br>
+전)국제두피모발관리협회 부회장<br>
+현)슬림코리아 지방성형의학회 고문<br>
+현)예스의원 모발이식클리닉 대표원장<br>
+             </p>
+             <br>
+             <p class="secCom3"></p>
+         </section>         
+ </div>
+ <div class="page" id="page3">
+     <a href="#page3" class="btn1 item3">시설 안내</a>
+     <div class="con">
+         <h1 class="pageTitle">시설 안내</h1>
+             <section class="sec21">
+                 <input type="radio" name="ra20" id="ra21" class="raItem">
+                 <input type="radio" name="ra20" id="ra22" class="raItem">
+                 <input type="radio" name="ra20" id="ra23" class="raItem">
+                 <ul class="btnFrame">
+                     <li>
+                         <label for="ra21" class="raBtn item1">탈모닥터</label>
+                         <label for="ra22" class="raBtn item1">치료실</label>
+                     </li>
+                 </ul>
+                 <ul class="conFrame">
+                     <li class="itemFrame item1">
+                         <input type="radio" class="raItem conRa1" id="ra201">
+                         <input type="radio" class="raItem conRa1" id="ra202">
+                     </li>
+                 </ul>
+                 <ul class="tbImgFrm">
+                     <li class="raCon1">
+                         <img src="./img/intro3_img4.jpg" alt="탈모닥터 진료실">
+                     </li>
+                     <li class="raCon2">
+                         <img src="./img/intro3_img5.jpg" alt="탈모닥터 대기실">
+                     </li>
+                 </ul>
+                 <div class="titBox">
+                     <h3 class="tbTitle">탈모닥터</h3>
+                     <p class="tbComent">생명을 되려니와, 이상, 투명하되 대중을 꽃 청춘의 뜨거운지라, 충분히 힘있다. 불어 꾸며 같지 같이, 그들은 위하여, 심장의 뿐이다. 뜨거운지라, 이는 것이 대한 이것이다. 것은 이상은 산야에 군영과 사막이다. 청춘을 붙잡아 수 것은 생의 이것이야말로 피고 목숨이 스며들어 봄바람이다. 웅대한 없으면 이것은 전인 위하여, 몸이 청춘의 뜨거운지라, 가지에 이것이다. 이는 보는 못하다 착목한는 풍부하게 간에 위하여서. 끝에 곧 살았으며, 물방아 품에 군영과 그들에게 있는 황금시대다. 광야에서 뜨고, 천지는 미묘한 싹이 붙잡아 보는 아니한 운다.</p>
+                 </div>
+                 <ul class="thumBox">
+                     <li class="thumBtn1">
+                        <label for="ra201">
+                            <img src="./img/intro3_img4.jpg" alt=""> 
+                        </label>
+                     </li>
+                 </ul>
+                 <ul class="thumBox">
+                     <li class="thumBtn2">
+                        <label for="ra202">
+                            <img src="./img/intro3_img5.jpg" alt=""> 
+                        </label>
+                     </li>
+                 </ul>
+                 <ul>
+                     <li class="itemFrame item2">
+                         <input type="radio" class="raItem conRa1" id="ra211">
+                         <input type="radio" class="raItem conRa1" id="ra212">
+                     </li>
+                 </ul>
+                 <ul class="tbImgFrm">
+                     <li class="raCon1">
+                         <img src="./img/intro3_img4.jpg" alt="탈모닥터 진료실">
+                     </li>
+                     <li class="raCon2">
+                         <img src="./img/intro3_img5.jpg" alt="탈모닥터 대기실">
+                     </li>
+                 </ul>
+                 <div class="titBox">
+                     <h3 class="tbTitle">탈모닥터</h3>
+                     <p class="tbComent">생명을 되려니와, 이상, 투명하되 대중을 꽃 청춘의 뜨거운지라, 충분히 힘있다. 불어 꾸며 같지 같이, 그들은 위하여, 심장의 뿐이다. 뜨거운지라, 이는 것이 대한 이것이다. 것은 이상은 산야에 군영과 사막이다. 청춘을 붙잡아 수 것은 생의 이것이야말로 피고 목숨이 스며들어 봄바람이다. 웅대한 없으면 이것은 전인 위하여, 몸이 청춘의 뜨거운지라, 가지에 이것이다. 이는 보는 못하다 착목한는 풍부하게 간에 위하여서. 끝에 곧 살았으며, 물방아 품에 군영과 그들에게 있는 황금시대다. 광야에서 뜨고, 천지는 미묘한 싹이 붙잡아 보는 아니한 운다.</p>
+                 </div>
+                 <ul class="thumBox">
+                     <li class="thumBtn1">
+                        <label for="ra211">
+                            <img src="./img/intro3_img4.jpg" alt=""> 
+                        </label>
+                     </li>
+                 </ul>
+                 <ul class="thumBox">
+                     <li class="thumBtn2">
+                        <label for="ra212">
+                            <img src="./img/intro3_img5.jpg" alt=""> 
+                        </label>
+                     </li>
+                 </ul>                 
+             </section>
+ </div>
+ </div>
+ <div class="page" id="page4">
+     <a href="#page4" class="btn1 item4">진료 안내</a>
+     <div class="con"></div>
+         <h1 class="pageTitle">진료 안내</h1>
+ </div>
+ <div class="page" id="page5">
+     <a href="#page5" class="btn1 item5">지역점 전화번호</a>
+ <div class="con">
+         <h1 class="pageTitle">지역점 전화번호</h1>
+             <section class="sec5">
+                 <div class="subBox">
+                     <h2 class="subTitle">탈모닥터 국내 병원 전화번호 안내입니다.</h2>
+                     <p class="subCom">문의사항이 있으시면 아래 번호로 연락을 주시기 바랍니다.</p>
+                        <ul>
+                            <li class="col6">
+                                <h3 class="subcomTitle">경기 용인점
+                                    <dl>
+                                        <dt>전화번호</dt>
+                                        <dd>031-283-1211</dd>
+                                    </dl>
+                                </h3>
+                            </li>
+                            <li class="col6">
+                                <h3 class="subcomTitle">경남 김해점
+                                    <dl>
+                                        <dt>전화번호</dt>
+                                        <dd>055-324-8335</dd>
+                                    </dl>
+                                </h3>
+                            </li>
+                        </ul>
+                 </div>
+                 <div class="subBox">
+                     <h2 class="subTitle">탈모닥터 해외 병원 전화번호 안내입니다.</h2>
+                     <p class="subCom">문의사항이 있으시면 아래 번호로 연락을 주시기 바랍니다.</p>
+                        <ul>
+                            <li class="col6">
+                                <h3 class="subcomTitle">대만점
+                                    <dl>
+                                        <dt>전화번호</dt>
+                                        <dd>886-2721-3069</dd>
+                                    </dl>
+                                </h3>
+                            </li>
+                            <li class="col6">
+                                <h3 class="subcomTitle">타이페이점
+                                    <dl>
+                                        <dt>전화번호</dt>
+                                        <dd>886-2771-3122</dd>
+                                    </dl>
+                                </h3>
+                            </li>
+                        </ul>
+                 </div>
+             </section>
+ </div>    
+ </div>  
+   <div class="page" id="lastpage">
+       <div class="wrap">
+           <ul>
+               <li class="col4 item1 first">
+                   <h2 class="itemTitle">탈모닥터</h2>
+                   <h1 class="telTxt">032-327-4242</h1>
+                   <br>
+                   <p class="itemDate">
+                       부천시 원미구 상동 412-2번지 대명 엔스빌 320호</p>
+                   <p class="itemDate" style="padding-bottom: 40px;">대표이사 최정근</p>
+               </li>
+               <li class="col4 item2">
+                   <h2 class="itemTitle">진료시간</h2>
+                   <p class="itemDate">
+                        평일 : AM 10 :00 ~ PM 7 : 00<br>
+                        점심 : PM 12:00 ~ PM 01:00 <br>
+                        목요일 : AM 10 :00 ~ PM 9 : 00 (야간진료)<br>                       
+                        토요일 : AM 9:00 ~ PM 01:00<br>
+                       
+                   <br></p>
+                   <p class="itemDate">※ 일요일, 공휴일은 휴진입니다.</p>
+                   
+               </li>
+               <li class="col4 item3">
+                   <h2 class="itemTitle">오시는 길</h2>
+                   <div id="mapFrame"></div>
+                       <div id="map_canvas" style="width: 360px; height: 170px;"></div>
+               </li>
+           </ul>
+       </div>
+   </div>
+</main>
+<!--    footer#ft>div.wrap>p.copyright+div.ftLogo    -->
+<footer id="ft">
+    <div class="wrap">
+        <p class="copyright">ⓒ 2019 TALMODE HAIR. ALL RIGHT RESERVED. SITE BY MOVEMENT H GROUP.</p> 
+            <div class="ftLogo"></div>
+        </div>
+</footer>
+    
+<!--    input[type=checkbox]#ck-->
+<input type="checkbox" id="ck">
+<!--    div#popFrm>div.popBox>ul.item*5>li*5>a-->
+<div id="popFrm">
+    <label for="ck" class="closeBtn">닫기</label>
+    <div class="popBox">
+        <ul class="item1">
+            <li>
+                <h2>
+                  <a href="intro.html#page1">탈모닥터 소개</a>
+                </h2>
+            </li>
+            <li>
+                <a href="intro.html#page2">병원 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page3">의료진 소개</a>
+            </li>
+            <li>
+                <a href="intro.html#page4">지역점 전화번호</a>
+            </li>
+            <li>
+                <a href="intro.html#page5">진료 안내</a>
+            </li>
+            <li>
+              <a href="intro.html#page6">탈모닥터 책 소개</a>
+            </li>                
+        </ul>
+        <ul class="item2">
+            <li>
+                <h2>
+                    <a href="clinic1.html">탈모치료클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic1.html#page1">탈모치료프로그램</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page2">남성 탈모</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page3">여성 탈모</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page4">탈모 약물치료</a>
+            </li>
+            <li>
+                <a href="clinic1.html#page5">탈모 예방</a>
+            </li>
+            <li>
+                  <a href="clinic1.html#page6">탈모 관리</a>
+            </li>                   
+        </ul>
+        <ul class="item3">
+            <li>
+                <h2>
+                    <a href="clinic2.html">모발이식클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic2.html#page1">모발이식이란?</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page2">모발이식</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page3">4시간이면 남성고민 끝</a>
+            </li>
+            <li>
+                <a href="clinic2.html#page4">FAQ</a>
+            </li>
+        </ul>
+        <ul class="item4">
+            <li>
+                <h2>
+                    <a href="clinic3.html">여성모발이식클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic3.html#page1">2시간이면 여성고민 끝</a>
+            </li>
+            <li>
+                <a href="clinic3.html#page2">무모증</a>
+            </li>
+            <li>
+                <a href="clinic3.html#page3">헤어라인 교정</a>
+            </li>
+            <li>
+                <a href="clinic3.html#page4">눈썹/속눈썹 이식수술</a>
+            </li>
+            <li>
+                <a href="clinic3.html#page5">제모클리닉</a>
+            </li>
+            <li>
+                <a href="clinic3.html#page6">여성고민 FAQ</a>
+            </li>                   
+        </ul>
+        <ul class="item5">
+            <li>
+                <h2>
+                    <a href="fue.html">흉터없는 FUE</a>
+                </h2>
+            </li>
+            <li>
+                <a href="fue.html#page1">FUE란?</a>
+            </li>
+            <li>
+                <a href="fue.html#page2">FUE-다이렉트 모발이식</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h2>
+                    <a href="clinic4.html">줄기세포 클리닉</a>
+                </h2>
+            </li>
+            <li>
+                <a href="clinic4.html#page1">줄기세포란</a>
+            </li>
+            <li>
+                <a href="clinic4.html#page2">줄기세포 탈모치료</a>
+            </li>
+        </ul>
+        <ul class="item6">
+            <li>
+                <h2>
+                    <a href="community.html">커뮤니티</a>
+                </h2>
+            </li>
+                <li>
+                    <a href="community.html#page1">공지사항</a>
+                </li>
+            <li>
+                <a href="community.html#page2">온라인상담</a>
+            </li>
+            <li>
+                <a href="community.html#page3">온라인예약</a>
+            </li>
+            <li>
+                <a href="community.html#page4">시술전후사진</a>
+            </li>
+            <li>
+                <a href="community.html#page5">보도자료</a>
+            </li>
+            <li>
+                <a href="community.html#page6">탈모정보</a>
+            </li>
+            <li>
+                <a href="community.html#page7">자유게시판</a>
+            </li>                   
+        </ul>                              
+</div>
+</div>
+       
+<!--aside#quick>div.qWrap>(ul.top>li*4>a)+(ul.bottom>li*3>a)-->
+<aside id="quick">
+    <div class="qWrap">
+        <ul class="top">
+            <li>
+                <a href="" class="qlogo"></a>
+            </li>
+            <li>
+                <a href="joinForm.html" class="hv">회원가입</a>
+            </li>
+            <li>
+                <a href="Login.html" class="hv">로그인</a>
+            </li>
+            <li>
+                <a href="community.html#page2" class="hv">온라인상담</a>
+            </li>
+            <li>
+                <a href="intro.html#page3" class="hv">오시는길</a>
+            </li>
+        </ul>
+        <ul class="bottom">
+            <li>
+                <a href="clinic3.html" class="green">탈모치료클리닉</a>
+            </li>
+            <li>
+                <a href="community.html" class="yellow">커뮤니티</a>
+            </li>
+            <li>
+                <a href="#" class="totop">위로</a>
+            </li>
+        </ul>
+</div>
+</aside>
+    
+    
+    
+    
+</body>
+</html>
