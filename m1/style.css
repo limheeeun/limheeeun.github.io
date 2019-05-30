@@ -4,7 +4,7 @@
 body, html { width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; font-family: 'Noto Sans KR', sans-serif; font-weight:400; }
 ul { list-style: none;}    
 a { text-decoration: none; color:#333; }    
-button, label, input { outline: 0; border:0; background: transparent; }
+button, label, input { outline: 0; border:0; background: transparent; display: none; }
 
 .hidItem { display:none; }    
 .Container { width: 100%; height: 100%; }    
@@ -34,24 +34,27 @@ button, label, input { outline: 0; border:0; background: transparent; }
 .imgBox img {width: 100%; height: 100%; margin: 30px auto 0 auto;}
 
 /* page1 */
-.btnBox {width: 100%; height: 100%; margin: 0 auto;}
-.btnBox[class^="btn"] {width: 100%; margin: 0 auto; }
-.btnBox[class^="btn"] a {display: block; margin: 30px auto; border: 1px solid #666; text-align: center; line-height: 3.1em; color: #666; font-size: 0.8em; border-style: dotted;}
-.btnBox .btn1 {width: 48%; float: left;}
-.btnBox .btn2 {width: 48%; float: right;}
+[class^="btn"] {width: 100%; margin: 0 auto; display: block; margin: 30px auto; border: 1px solid #666; text-align: center; line-height: 3.1em; color: #666; font-size: 0.8em; border-style: dotted; cursor: pointer; }
+.btn1 { width: 80%; }
+.btn2 { width: 80%; }
 
-.videoBox {width: 100%; }
-.videoBox iframe {width: 100%; margin: 0 auto; padding-top: 20px;}
+[class^=videoBox] {width: 100%; }
+[class^=videoBox] iframe {width: 100%; margin: 0 auto; padding-top: 20px;}
+
+[class^=videoBox] {display: none;}
+#ck1:checked ~ .videoBox1 {display: block;}
+#ck2:checked ~ .videoBox2 {display: block;}
+
 
 /* page2 */
-.proTit { line-height:1.8; font-size: 0.85em; }    
+.proTit { line-height:1.8; font-size: 0.85em; } 
 .proCom { font-size:0.8em; padding:0.25em; overflow:hidden; max-height:40px; white-space: nowrap; text-overflow: ellipsis;} 
 .date { font-size:0.7em; padding:0.4em; } 
 .grid1 { width:310px; margin:0 auto; padding-top: 25px; }
 .grid1 li { float:left; width:150px; padding-top: 20px; margin-top: 20px; margin-bottom: 20px; padding-bottom: 20px; }
 .grid1 li:nth-child(2n+1) { margin-right:10px; }    
 .grid1 li img { display:block; width:150px; height:auto; margin:0 auto 10px auto; }
-
+.page2_more {display: block;clear: both; width: 150px; height: 50px; background: #fff; border: 1px solid #333; margin: 0 auto; text-align: center; line-height: 50px;}
 
 /* page3 */
 .iconlist1 { width:80%; margin:20px auto; margin-top: 40px; }      
@@ -97,7 +100,7 @@ input[class^="inputItem"] {text-indent: 10px;}
 input#send {margin-left: 20px; float: left;}
 label.sendTit {margin-left: 20px; width: 90%; font-size: 14px; color: #000;}
 .itemSend {width: 100%; margin: 0 auto; }
-.contactBtn {width: 90%; height: 30px; margin-top: 30px; outline: 0; background:#e2000f; color: #fff; margin: 50px auto; display:block; float:none;}
+.contactBtn {width: 90%; height: 40px; margin-top: 30px; outline: 0; background:#e2000f; color: #fff; margin: 35px auto; display:block; float:none;}
 
 
 /* 풋터 */
