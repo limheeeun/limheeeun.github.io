@@ -1,0 +1,32 @@
+@charset 'uft-8';
+body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'KoPubWorldDotumMedium','돋움',dotum,sans-serif;color:#000}
+a{color:#000;text-decoration:none}
+a:active,a:hover{text-decoration:underline}
+a:active{background-color:transparent}
+h1,h2,h3,h4,h5,h6,strong,address,caption,cite,code,dfn,em,var,th{font-style:normal;font-weight:normal}
+#kakaoIndex{overflow:hidden;width:1px;font-size:1px;line-height:0;text-indent:-9999px}
+.ir_pm{display:block;overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
+.ir_wa{display:block;overflow:hidden;position:relative;z-index:-1;width:100%;height:100%}
+.screen_out{overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.show{display:block}
+.hide{display:none}
+.caption_g{overflow:hidden;width:1px;font-size:0;line-height:0;text-indent:-9999px}
+.inp_g::-webkit-input-placeholder{color:#aaa}
+.inp_g::-moz-input-placeholder{color:#aaa}
+.inp_g::-ms-input-placeholder{color:#aaa}
+.txt_left{text-align:left}
+.txt_right{text-align:right}
+
+h1 {font-size: 2.5em;}
+h2 {font-size: 2.2em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 1.1em;}
+
+
+@font-face {
+    font-family:"KoPubWorldDotumMedium";
+    src:url("../font/kopubdotum/KoPubWorldDotumMedium.eot");
+    src:url("../font/kopubdotum/KoPubWorldDotumMedium.eot?#iefix") format("embeded-opentype"), 
+        url("../font/kopubdotum/KoPubWorldDotumMedium.woff") format("woff"),
+        url("../font/kopubdotum/KoPubWorldDotumMedium.ttf") format("truetype");
+    }
