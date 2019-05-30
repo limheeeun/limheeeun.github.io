@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iloom</title>
+    <!--  파비콘 설정 -->
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/iloom_fa16.ico">
+    <!-- 안드로이드 -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/iloom_fa32.ico">
+    <!-- 안드로이드 iOS -->
+    <link rel="shourtcut icon" type="image/x-con" href="./img/favicon/iloom_fa152.ico">
+    <!--  아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./img/favicon/iloom_fa57.ico">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./img/favicon/iloom_fa114.ico">
+    <!-- iPAD 홈스크린 -->
+    <link rel="shourtcut icon" type="72x72" href="./img/favicon/iloom_fa72.ico">
+    <!-- Chrome 웹스토어 -->
+    <link rel="shourtcut icon" type="128x128" href="./img/favicon/iloom_fa128.ico">
+
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
+     
+    <!-- 외부 스타일 시트 -->
+    <link rel="stylesheet" href="style.css">   
+    
+    <!-- 사용 폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+KR" rel="stylesheet">
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>    
+    <script src="slide.js"></script>
+    <script>
+    $(document).ready(function(){
+        var tar;
+        $("#gnb button").click(function(){
+            tar = "#" + $(this).attr("data-target");
+            $(".page").removeClass("on");
+            $(tar).addClass("on");
+        });
+        $(".login").click(function(){
+            $("#menuLst").slideToggle();
+        });
+    });    
+    </script>
+</head>
+<body>
+<input type="checkbox" id="ckOpen" class="hidItem">
+<div id="menuLst">
+    <ul>
+        <li>
+            <img src="./img/iloom_logo_tr.png" alt="">
+        </li>
+        <li><a href="" class="icon1">로그인</a></li>
+        <li><a href="" class="icon2">회원가입</a></li>
+        <li><a href="" class="icon3">주문배송</a></li>
+        <li><a href="" class="icon4">뉴스</a></li>
+        <li><a href="" class="icon5">매장안내</a></li>
+        <li><label for="" class="login">
+            <i class="fa fa-times-circle"></i></label></li>
+    </ul>
+</div>
+<main class="Container">
+    <div class="hd">
+        <div class="nav-container">
+            <a href="" class="home"><i class="fa fa-home"></i></a>
+            <h2 class="logo">
+                <img src="./img/iloom_logo_tr_hs.png" alt="로고"></h2>
+            <label for="ckOpen" class="login"><i class="fa fa-ellipsis-h"></i></label>
+        </div>
+        <nav id="gnb">
+            <ul>
+                <li><button data-target="page1">회사소개</button></li>
+                <li><button data-target="page2">제품소개</button></li>
+                <li><button data-target="page3">이벤트</button></li>
+                <li><button data-target="page4">고객센터</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="conRotate">
+            <section class="page page1 on" id="page1">
+                <h2 class="title">회사소개</h2>
+                <div class="imgBox">
+                    <img src="./img/page1Img01.jpg" alt="">
+                </div>
+                <div class="btnBox">
+                    <div class="btn1">
+                        <a href="#">디자인</a>
+                    </div>
+                    <div class="btn2">
+                        <a href="#">친환경</a>
+                    </div>
+                </div>
+                <div class="videoBox">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/uX0cNLB2uJk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+            
+            <section class="page page2" id="page2">
+                <h2 class="title">제품소개</h2>
+                <ul class="grid1">
+                    <li>
+                        <a href="">
+                            <img src="./img/product01.jpg" alt="">
+                            <h3 class="proTit">레마 카페장</h3>
+                            <p class="proCom">437,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product02.jpg" alt="">
+                            <h3 class="proTit">세타플러스 의자</h3>
+                            <p class="proCom">135,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product03.jpg" alt="">
+                            <h3 class="proTit">3인벤치H</h3>
+                            <p class="proCom">305,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product04.jpg" alt="">
+                            <h3 class="proTit">쿠시노 저상형 패밀리침대</h3>
+                            <p class="proCom">1,005,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product05.jpg" alt="">
+                            <h3 class="proTit">아르지안 트윈모션베드</h3>
+                            <p class="proCom">3,153,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product06.jpg" alt="">
+                            <h3 class="proTit">아르지안 리프트업 테이블</h3>
+                            <p class="proCom">249,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product07.jpg" alt="">
+                            <h3 class="proTit">마리 3인</h3>
+                            <p class="proCom">1,190,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product08.jpg" alt="">
+                            <h3 class="proTit">아르지안 모션베드</h3>
+                            <p class="proCom">2,185,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product09.jpg" alt="">
+                            <h3 class="proTit">미엘갤러리 화장대</h3>
+                            <p class="proCom">473,000원</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/product10.jpg" alt="">
+                            <h3 class="proTit">메이 시크릿장</h3>
+                            <p class="proCom">1,010,000원</p>
+                        </a>
+                    </li>
+                </ul>    
+            </section>
+            
+            <section class="page page3" id="page3">
+                <h2 class="title">이벤트</h2>
+                <ul class="iconlist1">
+                    <li>
+                        <a href="">
+                            <img src="./img/event01.jpg" alt="이벤트1">
+                            <h3 class="proTit">찰떡궁합 프로모션</h3>
+                            <p class="proCom">완벽한 궁합을 자랑하는 일룸 제품을 만나보세요.</p>
+                            <p class="date">2019-02-28 ~ 2019-04-30</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./img/event02.jpg" alt="이벤트2">
+                            <h3 class="proTit">포토 상품평 이벤트</h3>
+                            <p class="proCom">참여자 전원 스타벅스 하트파이 기프티콘 증정</p>
+                            <p class="date">2018-12-01 ~ 2019-12-31</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="page page4" id="page4">
+                <h2 class="title">고객센터</h2>
+                <p class="pCom">보다 나은 서비스를 제공하도록 최선을 다하겠습니다.</p>
+                <div class="noticeBox">
+                    <h2 class="tel">1577-5670</h2>
+                    <table style="width: 100%; height: 37px;text-align: center; margin: auto; padding:5px;">
+                        <tr class="noto">
+                            <td class="noto">평일 9:30~17:30</td>
+                            <td class="noto">토요일 9:30~12:30</td>
+                            <td class="noto">일요일 및 법정 공휴일 휴무</td>
+                        </tr>
+                        <tr>
+                            <td class="notos">(점심시간 12:30~13:30)</td>
+                            <td class="notos">(쇼핑몰 구매상담 미운영)</td>
+                            <td></td>
+                        </tr>
+				    </table>
+                    <p class="notoCon">매주 월,화요일과 공휴일 다음날은 상담전화가 많아 일정이 다소 지연될 수 있습니다.<br>해당일을 피해서 문의 주시면 더욱 빠른 상담을 받으실 수 있습니다.</p>
+                </div>
+                <div class="notiIcon">
+                    <div class="notiWrap">
+                        <ul>
+                            <li><a href=""><span style="font-size: 1.8em;color:#666;"><i class="fa fa-volume-down"></i></span></a></li>
+                            <li><a href=""><span style="font-size: 1.8em;color:#666;"><i class="fa fa-question-circle"></i></span></a></li>
+                            <li><a href=""><span style="font-size: 1.8em;color:#666;"><i class="fa fa-wrench"></i></span></a></li>
+                            <li><a href=""><span style="font-size: 1.8em;color:#666;"><i class="fa fa-truck"></i></span></a></li>
+                            <li><a href=""><span style="font-size: 1.8em;color:#666;"><i class="fa fa-comments"></i></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page5" id="contact">
+                    <h1 class="pgTit5">문의</h1>
+                    <form action="" id="cont">
+                        <ul class="pageLst frmLst">
+                            <li class="item">
+                                <input type="text" class="inputItem" placeholder="Name *">
+                            </li>
+                            <li class="item">
+                                <input type="email" class="inputItem" placeholder="Email *">
+                            </li>
+                        </ul>
+                        <ul class="pageLst frmLst">
+                            <li class="item">
+                                <input type="tel" class="inputItem" placeholder="Tel *">
+                            </li>
+                            <li class="item">
+                                <textarea name="memo" id="memo" cols="40" rows="7" class="inputItem1">내용을 입력해주세요</textarea>
+                            </li>
+                            <input type="checkbox" id="send">
+                            <label for="send" class="sendTit">전화번호, 이메일 등 개인정보 수집에 동의합니다.</label>
+                            <li class="itemSend">
+                                <input type="submit" value="SEND" class="contactBtn">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </section>
+        </div>       
+    </div>
+    <div class="ft">
+        <nav id="sns">
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/iloom_official/">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/myiloom/">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="copyright">서울시 송파구 오금로 311 (오금동45-1) ㈜일룸<br>Copyright ⓒ 2019 iloom lnc. All rights reserved</p>
+    </div>
+</main>    
+</body>
+</html>
