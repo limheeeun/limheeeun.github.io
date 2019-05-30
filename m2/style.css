@@ -85,7 +85,7 @@ button, label, input {outline: 0; border:0; background:transparent; cursor: poin
 .pageTit { font-size:2.2em; padding:1em; text-align:center; color:#444; padding-top:1.8em; border-top:3px solid #efefef; }
 .pageTit .upper { border-top:1px solid #444; }    
 .pageTit .downer { border-bottom:1px solid #444; }   
-.pageCon {text-align: center;}
+.pageCon {text-align: center; width: 90%; margin: 0 auto;}
 .pageSubTit {text-align: center; line-height: 4; font-size: 1.8em;}
 
 .pageLst { clear:both; width:100%; }    
