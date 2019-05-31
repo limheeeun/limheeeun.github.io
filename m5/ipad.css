@@ -1,0 +1,310 @@
+@charset "utf-8";
+
+/*초기화*/
+* {margin: 0; padding: 0;}
+body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif;}
+li {list-style: none;}
+a {text-decoration: none;}
+input {display: none;}
+button {border: 0; outline: 0;}
+
+
+
+/*hd*/
+.container {width: 100%; height: 100%; clear: both; }
+.hd {width: 100%; height: 60px; position: fixed; clear: both; background:#fff;z-index: 99;}
+.hd label {display: block;  width: 40px; height: 40px; line-height: 40px; position:absolute; top:10px; z-index:20; }
+.logoBox {text-align:center; padding-top:10px; }
+
+.hd .gnbCall {left: 10px;}
+.hd .gnbCall span {position: absolute; z-index: 21; background: #000; width: 25px; height: 1px; margin-left: 5px;}
+.gnbCall .lst1 {top: 13px;}
+.gnbCall .lst2 {top: 23px;}
+.hd .tnbCall {right: 0; top: 20px;}
+.hd .tnbCall img {display: block; width: 20px; height: 20px;}
+
+#gnb { position:fixed; top:0; left:-100%; width:85%; height:100%; z-index:99; transition:0.6s; background: #fff; }
+.gnbBox {height: 60px; border-bottom: 1px solid #eaebea;}
+.btnBox {padding: 15px 0 0 6%;}
+.gnbBox img {float: left; display:block; width: 30px; height: 30px; }
+.gnbBox label img {display: block; float: right; padding: 8px 20px 0 0; width: 18px; height: 18px;}
+
+.gnbLst {clear: both; width: 100%; height: auto; margin-bottom: 10px;  background: #cacaca; }
+.gnbLst li {line-height: 3; border-bottom: 0.5px solid #999;}
+.gnbLst li:last-child {border-bottom: 0;}
+.gnbLst li a {padding-left: 8%; color: #000; font-size: 14px;}
+
+/*로그인, 회원가입 폼*/
+.memForm {width: 100%; height: 70px; }
+.memForm li {}
+.memForm .login {float: left; width: 49%; height: 50px; background: #fff;}
+.memForm .login a {padding-left: 10px; color: #000; line-height: 5; font-size: 14px;}
+
+.memForm .join {float: right; width: 49%; height: 50px; background: #fff;}
+.memForm .join a {display: block; text-align: right; padding-right: 10px; color: #000; line-height: 5; font-size: 14px;}
+
+/* 언어설정 */
+.lang {width: 100%;}
+.langBox {display: block; font-size: 14px; text-align: center;}
+.langBox a {display: block; color: #000; font-weight: 400;}
+
+#ck1:checked ~ #gnb {left: 0;}
+
+/* 검색폼 */
+#tnb { width: 100%; height: 100%; top: -100%; background:#fff; position: fixed; z-index: 99; left:0; transition:0.7s; }
+.search {width: 100%; margin-top: 50px;}
+#searchForm {clear: both; }
+#keyword {border:0; outline: 0; background: #cbcbcb; display: block; width: 320px; height: 45px; margin: 0 auto; padding-left: 10px; border-radius: 10px;}
+.ser_close {width: 100%;}
+.ser_close label img {display: block; float: right; padding: 20px 20px 30px 0; width: 25px; height: 25px;}
+
+#ck2:checked ~ #tnb {top: 0; }
+
+/* ipad */
+/* page1 당신의 능력, iPAD Pro로 커지다 */
+.page1 {width: 100%; min-height: 600px; clear: both; padding-top: 100px;  }
+.pageWrap {width: 100%; min-height: 600px; background-image: url("./img/ipad06.png"); background-size: cover; }
+.pageWrap h1 {text-align: center;}
+.pageWrap h4 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap p {width: 100%; text-align: center;}
+.pageWrap a  {display: inline-block; width: 100%; padding-top: 20px; color: #007bd5;  }
+
+/* page2 iPad Pro 새로움 한가득 */
+.page2 {width: 100%; min-height: 600px; clear: both; }
+.pageWrap2 {width: 100%; min-height: 600px; background:#f2f2f2; padding-top: 50px;  }
+.pageWrap2 h1 {text-align: center;}
+.pageWrap2 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap2 ul {width: 100%; text-align: center;}
+.pageWrap2 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap2 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap2 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap2 .bgBox img {display: block; margin: 0 auto; width: 300px; height: 100%; padding-top: 20px; }
+
+/* page3 컴퓨터답게 컴퓨터와는 다르게 */
+.page3 {width: 100%; min-height: 600px; clear: both; }
+.pageWrap3 {width: 100%; min-height: 600px; background:#fff; padding-top: 50px; }
+.pageWrap3 h1 {text-align: center;}
+.pageWrap3 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap3 ul {width: 100%; text-align: center;}
+.pageWrap3 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap3 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap3 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap3 .bgBox img {display: block; margin: 0 auto; width: 300px; height: 100%; padding-top: 20px; }
+
+/* page4 iPad 모델 비교하기 */
+.page4 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap4 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff;; padding-top: 50px;  }
+.pageWrap4 h1 {text-align: center;}
+.pageWrap4 ul {width: 100%; text-align: center;}
+.pageWrap4 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap4 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap4 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap4 .bgBox img {display: block; margin: 0 auto; width: 300px; height: 100%; padding-top: 20px; }
+
+/* page5 사용하던 아이패드를 새 아이패드 구매시 */
+.page5 {width: 100%; min-height: 500px; clear: both; background:#f2f2f2; }
+.pageWrap5 {width: 90%; min-height: 500px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap5 h1 {text-align: center;}
+.pageWrap5 h5 {text-align: center; line-height: 1.8; padding-top: 20px; text-indent: 10px;}
+.pageWrap5 ul {width: 100%; text-align: center;}
+.pageWrap5 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap5 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap5 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap5 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 50px; }
+
+/* page6 iPad Pro를 사면 Beats가 덤으로 */
+.page6 {width: 100%; min-height: 500px; clear: both; background:#f2f2f2; }
+.pageWrap6 {width: 90%; min-height: 500px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap6 h1 {text-align: center;}
+.pageWrap6 h4 {text-align: center; color: #ff5858; }
+.pageWrap6 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap6 ul {width: 100%; text-align: center;}
+.pageWrap6 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap6 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap6 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap6 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; }
+
+/* page7 Today at Apple */
+.page7 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap7 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap7 h1 {text-align: center;}
+.pageWrap7 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap7 ul {width: 100%; text-align: center;}
+.pageWrap7 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap7 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap7 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap7 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; bottom: 0;}
+
+/* page8 무료배송 개인맞춤설정 */ 
+.page8 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap8 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; padding-bottom: 50px; }
+.pageWrap8 h2 {text-align: center; font-weight: 400;}
+.pageWrap8 h4 {text-align: center; line-height: 1.8; font-weight: 400;}
+.pageWrap8 h4.bold {text-align: center; line-height: 1.8; font-weight: 600;}
+.pageWrap8 div {clear: both; line-height: 50px;}
+.pageWrap8 ul {width: 100%; text-align: center;}
+.pageWrap8 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap8 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap8 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap8 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; bottom: 0;}
+
+/* page9 아이패드와 천생연분 */ 
+.page9 {width: 100%; background:#f2f2f2; }
+.pageWrap9 {width: 100%; padding: 40px 0 40px 0;}
+h1 { text-align: center; font-weight: 800; line-height: 1.5; }
+
+/* page10 애플펜슬 */
+.page10 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap10 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap10 h1 {text-align: center;}
+.pageWrap10 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap10 ul {width: 100%; text-align: center;}
+.pageWrap10 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap10 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap10 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap10 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; bottom: 0;}
+
+/* page11 스마트 키보드 폴리오 */
+.page11 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap11 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap11 h1 {text-align: center;}
+.pageWrap11 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap11 ul {width: 100%; text-align: center;}
+.pageWrap11 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap11 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap11 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap11 .bgBox img {display: block; margin: 0 auto; width: 80%; height: 80%; padding-top: 20px; bottom: 0;}
+
+/* page12 액세서리 */
+.page12 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap12 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap12 h1 {text-align: center;}
+.pageWrap12 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap12 ul {width: 100%; text-align: center;}
+.pageWrap12 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap12 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap12 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap12 .bgBox img {display: block; margin: 0 auto; width: 80%; height: 80%; padding-top: 20px; bottom: 0;}
+
+/* page13 에어팟 */
+.page13 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap13 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap13 h1 {text-align: center;}
+.pageWrap13 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap13 ul {width: 100%; text-align: center;}
+.pageWrap13 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap13 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap13 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap13 .bgBox img {display: block; margin: 0 auto; width: 80%; height: 80%; padding-top: 20px; bottom: 0;}
+
+/* page14 아이패드와 천생연분 */ 
+.page14 {width: 100%; line-height: 5; background:#f2f2f2; }
+.page14 h1 { text-align: center; font-weight: 800; }
+
+/* page15 iOS 12 */
+.page15 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap15 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap15 h1 {text-align: center;}
+.pageWrap15 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap15 ul {width: 100%; text-align: center;}
+.pageWrap15 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap15 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap15 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap15 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; bottom: 0;}
+
+/* page16 증강 현실 */
+.page16 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap16 {width: 90%; min-height: 400px; margin: 0 auto; background-image: url("./img/ar02.png"); padding-top: 50px; }
+.pageWrap16 h1 {text-align: center; color: #fff;}
+.pageWrap16 h5 {text-align: center; line-height: 1.8; padding-top: 20px; color: #fff;}
+.pageWrap16 ul {width: 100%; text-align: center;}
+.pageWrap16 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap16 .btnBox2 li a {display: inline-block; color: #fff;}
+.pageWrap16 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap16 .bgBox img {display: block; margin: 0 auto; width: 100%; height: 100%; padding-top: 20px; bottom: 0;}
+
+/* page17 iCloud */
+.page17 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap17 {width: 90%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap17 h1 {text-align: center;}
+.pageWrap17 h5 {text-align: center; line-height: 1.8; padding-top: 20px;}
+.pageWrap17 ul {width: 100%; text-align: center;}
+.pageWrap17 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap17 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap17 .bgBox {width: 100%; margin: 0 auto; overflow: hidden;}
+.pageWrap17 .bgBox img {display: block; margin: 0 auto; width: 50em; height: 100%; padding-top: 20px; right: 0;}
+
+/* page18 아이패드를 더 잘 활용하는 법 */ 
+.page18 {width: 100%; background:#f2f2f2; }
+.pageWrap18 {width: 100%; padding: 40px 0 40px 0;}
+h1 { text-align: center; font-weight: 800; line-height: 1.5; }
+
+/* page19 MUSIC */
+.page19 {width: 100%; min-height: 500px; clear: both; background:#f2f2f2;}
+.pageWrap19 {width: 90%; min-height: 500px; margin: 0 auto; 
+background: #DBE6F6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #C5796D, #DBE6F6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #C5796D, #DBE6F6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ padding-top: 50px;  }
+.pageWrap19 h1 {text-align: center; color: #fff;}
+.pageWrap19 h4 {text-align: center; line-height: 1.8; padding-top: 20px; color: #fff;}
+.pageWrap19 ul {width: 100%; text-align: center;}
+.pageWrap19 .btnBox2 li {display: inline-block; padding-top: 20px; }
+.pageWrap19 .btnBox2 li a {display: inline-block; color: #007bd5;}
+.pageWrap19 ul {text-align: center;}
+.pageWrap19 li {display: inline-block;}
+.pageWrap19 li a {display: inline-block; color: #fff;line-height: 5;}
+.pageWrap19 .bgBox {width: 100%; margin: 0 auto; overflow: hidden;}
+.pageWrap19 .bgBox img {display: block; margin: 0 auto; width: 25em; height: 100%;  margin-top: 60px;}
+
+/* page20 Clip, Swift Playgrounds */
+.page20 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.page20 h1 {text-align: center;}
+.pageWrap20 {width: 100%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageWrap20 h1 {text-align: center; color: #fff; line-height: 3;}
+.pageWrap20 h4 {text-align: center; color: #fff; }
+.pageWrap20 ul {text-align: center;}
+.pageWrap20 li {display: inline-block; width: 320px; min-height: 450px; padding-top: 20px; padding-bottom: 20px; 
+background: #654ea3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+
+.pageWrap20 li:last-child {background: #7F7FD5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+
+.pageWrap20 li a { color: #fff; line-height: 5;}
+
+.pageWrap20 .bgBox {width: 100%; margin: 0 auto;}
+.pageWrap20 .bgBox img {display: block; margin: 0 auto; width: 60%; height: 100%; padding-top: 20px; bottom: 0;}
+
+
+/* page21 교육을 위한, 비즈니스를 위한 */
+.page21 {width: 100%; min-height: 400px; clear: both; background:#f2f2f2; }
+.pageWrap21{width: 100%; min-height: 400px; margin: 0 auto; background:#fff; padding-top: 50px; }
+.pageBox1 h1, .pageBox2 h1 {text-align: center; color: #fff; line-height: 4;}
+.pageBox1 h4, .pageBox2 h4 {text-align: center; color: #fff; line-height: 1.8; }
+
+.pageWrap21 ul {text-align: center;}
+.pageWrap21 > ul > li {display: inline-block; width: 320px; min-height: 400px; padding-top: 20px; padding-bottom: 20px; background-image: url("./img/edu01.jpg"); background-size: cover;}
+
+.pageWrap21 li:last-child {background-image: url("./img/business01.jpg")}
+.pageWrap21 li a { color: #fff;  }
+
+.pageWrap21 > ul > li > ul {width: 100%; text-align: center; margin-top: 20px;}
+.pageWrap21 .btnBox2 li {display: block; background: transparent; }
+.pageWrap21 .btnBox2 li a {clear: both; display:block; color: #fff; line-height: 1.5;}
+
+
+/* last page */
+.pageLast {width: 90%; min-height: 250px; margin: 10px auto;}
+.pageLast p.lastCom {font-size: 0.7em; }
+
+/* 풋터 */
+.ft { position:fixed; width:100%; height:42px; z-index:90; left:0; bottom:0; background:#fff; color:#000; text-align:center; line-height:45px; font-size:0.7em; }
+
+
+
+

@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*초기화*/
+* {margin: 0; padding: 0;}
+body, html {width: 100%; height: 100%; font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Montserrat', sans-serif;}
+li {list-style: none;}
+a {text-decoration: none;}
+input {display: none;}
+button {border: 0; outline: 0;}
+
+
+
+/*hd*/
+.container {width: 100%; height: 100%; clear: both;}
+.hd {width: 100%; height: 60px; position: fixed; clear: both; background:#fff;z-index: 99;}
+.hd label {display: block;  width: 40px; height: 40px; line-height: 40px; position:absolute; top:10px; z-index:20; }
+.logoBox {text-align:center; padding-top:10px; }
+
+.hd .gnbCall {left: 10px;}
+.hd .gnbCall span {position: absolute; z-index: 21; background: #000; width: 25px; height: 1px; margin-left: 5px;}
+.gnbCall .lst1 {top: 13px;}
+.gnbCall .lst2 {top: 23px;}
+.hd .tnbCall {right: 0; top: 20px;}
+.hd .tnbCall img {display: block; width: 20px; height: 20px;}
+
+#gnb { position:fixed; top:0; left:-100%; width:85%; height:100%; z-index:99; transition:0.6s; background: #fff; }
+.gnbBox {height: 60px; border-bottom: 1px solid #eaebea;}
+.btnBox {padding: 15px 0 0 6%;}
+.gnbBox img {float: left; display:block; width: 30px; height: 30px; }
+.gnbBox label img {display: block; float: right; padding: 8px 20px 0 0; width: 18px; height: 18px;}
+
+
+.gnbLst {clear: both; width: 100%; height: auto; margin-bottom: 10px;  background: #cacaca; }
+.gnbLst li {line-height: 3; border-bottom: 0.5px solid #999;}
+.gnbLst li:last-child {border-bottom: 0;}
+.gnbLst li a {padding-left: 8%; color: #000; font-size: 14px;}
+
+/*로그인, 회원가입 폼*/
+.memForm {width: 100%; height: 70px; }
+.memForm li {}
+.memForm .login {float: left; width: 49%; height: 50px; background: #fff;}
+.memForm .login a {padding-left: 10px; color: #000; line-height: 5; font-size: 14px;}
+
+.memForm .join {float: right; width: 49%; height: 50px; background: #fff;}
+.memForm .join a {display: block; text-align: right; padding-right: 10px; color: #000; line-height: 5; font-size: 14px;}
+
+/* 언어설정 */
+.lang {width: 100%;}
+.langBox {display: block; font-size: 14px; text-align: center;}
+.langBox a {display: block; color: #000; font-weight: 400;}
+
+#ck1:checked ~ #gnb {left: 0;}
+
+/* 검색폼 */
+#tnb { width: 100%; height: 100%; top: -100%; background:#fff; position: fixed; z-index: 99; left:0; transition:0.7s; }
+.search {width: 100%; margin-top: 50px;}
+#searchForm {clear: both; }
+#keyword {border:0; outline: 0; background: #cbcbcb; display: block; width: 320px; height: 45px; margin: 0 auto; padding-left: 10px; border-radius: 10px;}
+.ser_close {width: 100%;}
+.ser_close label img {display: block; float: right; padding: 20px 20px 30px 0; width: 25px; height: 25px;}
+
+#ck2:checked ~ #tnb {top: 0; }
+
+/* visual 이미지 */
+#vs {width: 100%; height: 100%; overflow: hidden;}
+.vsBox {width: 400%; height: 100%; }
+.vsBox li {float:left; width: 25%; height: 100%; background-repeat:no-repeat; background-position:center center; background-size:cover; transition:0.5s; }
+.vsBox li.on {padding-top: 0; opacity: 1;}
+.vsBox .item1 {background-image: url("./img/airpods01.jpg");}
+.vsBox .item2 {background-image: url("./img/Apple-Shot-on-iPhone-Challenge02.jpg");}
+.vsBox .item3 {background-image: url("./img/Apple-Shot-on-iPhone-Challenge03.jpg");}
+.vsBox .item4 {background-image: url("./img/Apple-Shot-on-iPhone-Challenge04.jpg");}
+
+.vsBox li .vsTit { text-align: center; padding:2em; padding-top:6em; color:#fff; font-size:2em; padding-bottom:0.5em; margin-top: 100%; opacity:0; transition:0.6s; transition-delay:0s, 0.6s; } 
+.vsBox li .vsCom { text-align:center; padding: 2em; font-size:1em; color:#fff;} 
+.vsBox li .vsMore { display:block; width:100px; line-height:2; margin:15px auto; border-bottom:2px solid rgba(255, 255, 255, 0.6); text-align:center; color:#fff; font-size:1.1em; }  
+.vsBox li.on .vsTit { margin-top:0; opacity:1; }   
+
+/* 풋터 */
+.ft { position:fixed; width:100%; height:42px; z-index:90; left:0; bottom:0; background:#fff; color:#000; text-align:center; line-height:45px; font-size:0.7em; }
+
+
+
