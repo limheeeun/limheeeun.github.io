@@ -7,15 +7,38 @@
         * {margin: 0; padding: 0;}
         body, html {width: 100%; height: 100%; position: relative; background: blue;}
         iframe {position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.4;}
-        div {width: 75%; height: 80%; margin: 0 auto;}
-        div img {display: block; width: 100%; height: auto; }
+        #page1 {width: 75%; height: 80%; margin: 0 auto;}
+        #page1 img {display: block; width: 100%; height: auto; }
+        #upBtn { display: none; position:fixed; z-index:999; right: 15%; bottom:5%; cursor: pointer;}
+        #upBtn img {display: block; width: 35px; height: 35px;}
         
     </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script> //햄버거 토글 메뉴, top 버튼 스크롤
+    $( document ).ready( function() {  
+        $("#upBtn").css("display", "none");
+        $(window).scroll( function() {
+            var scTop = $(window).scrollTop();
+          if ( scTop >= 50 ) {
+            $("#upBtn").fadeIn();
+          } else {
+            $( "#upBtn" ).fadeOut();
+          }
+        });
+        $( "#upBtn" ).click( function() {
+          $( 'html, body' ).animate( { scrollTop : 0 }, 800 );
+          return false;
+        });
+      });
+    </script>
 </head>
 <body>
     <iframe src="pug_bubble2.html" frameborder="0"></iframe>
     <div id="page1">
         <img src="./img/charmsproject.jpg" alt="참스 프로젝트프로세스">
+    </div>
+    <div id="upBtn">
+        <img src="./img/upbtn.png" alt="">
     </div>
 </body>
 </html>
