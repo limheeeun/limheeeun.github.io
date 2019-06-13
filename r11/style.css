@@ -56,7 +56,7 @@ label.menuLst {right: 10px; top: 5px; clear: both; width: 40px; height: 40px; po
 [class*=gnb_] li a:hover {color: #bca78b;} 
 
 /* 서브 메뉴 배경 */
-.subBg {position: absolute; z-index: 1; width: 100%; height: 500px; background:rgba(94, 94, 94, 0.9); top: 80%; transition: 0.8s; opacity: 0;}
+.subBg {position: absolute; z-index: 1; width: 100%; height: 380px; background:url(./img/Untitled-1.jpg); top: 80%; transition: 0.8s; opacity: 0;}
 
 .gnb_right:hover + .subBg {opacity: 1;}
 
@@ -65,7 +65,7 @@ label.menuLst {right: 10px; top: 5px; clear: both; width: 40px; height: 40px; po
 
 .gnb1 .sub li {clear: both; width: 150px;  }
 .gnb1 .sub li:first-child {padding-top: 20px;}
-.gnb1 .sub li a {color: #fff; font-size: 0.9em;}
+.gnb1 .sub li a {font-size: 0.9em;}
 
 #hd:hover .subBg {visibility: visible; opacity: 1;}
 .gnb_right:hover .sub {visibility: visible; opacity: 0.6;}
@@ -99,7 +99,6 @@ label.menuLst {right: 10px; top: 5px; clear: both; width: 40px; height: 40px; po
 /*.item1 .itemBox a {display: block; width: 100%; height: 320px; cursor: pointer;} 비디오 */
 /*
  박스마다 버튼 - 모바일용
-
 .item1 {transition-duration: 0.5s; }
 .item2 .itemBox { display: block; width: 180px; height: 50px; line-height: 50px; position: absolute; top: 130px; left: calc((100% - 180px) / 2); border: 1px solid #fff; font-weight: 800; font-size: 0.8vw; color: #fff;}
 .item2 .itemBox:hover {background:rgba(0,0,0,0.6); color: #fff;}
