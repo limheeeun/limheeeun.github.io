@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>금산군청에 오신 것을 환영합니다.</title>
+    
+    <!-- 구형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_16x16.ico">
+    <!-- 신형 브라우저 -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_32x32.ico">
+    <!-- IE10 이상-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="144">
+    
+    <!-- 아이폰3 이하 -->
+    <link rel="apple-touch-icon" size="57x57" href="img/favicon/ci_57x57.ico">
+    <!-- 아이폰4 이상 -->
+    <link rel="apple-touch-icon" size="114x114" href="/img/favicon/ci_114x114.ico">
+    <!-- 안드로이드폰(Galaxy S8+) -->
+    <link rel="shourtcut icon" type="image/x-con" href="/img/favicon/ci_152x152.ico">
+    
+    <!-- 아이패드 mini4 홈스크린 아이콘-->
+    <link rel="apple-touch-icon" size="72x72" href="/img/favicon/ci_72x72.ico">
+    <!-- 아이패드 mini4 -->
+    <link rel="shourtcut icon" size="152x152" href="/img/favicon/ci_152x152.ico">
+    
+    <!-- 맵(웹 사이트)의 이름-->
+    <meta name="application-name" content="geumsan county office Site">
+    <!-- 맵(웹 사이트) 저작자 이름-->
+    <meta name="author" content="LimHE"> 
+    <!-- 현재 문서 설명-->
+    <meta name="description" content="geumsan county office Site">
+    <!-- 현재 문서의 제작 도구-->
+    <meta name="generator" content="Barckit">
+    <!-- 검색엔진에서 검색되게 할 키워드-->
+    <meta name="keywords" content="금산, 금산군청, geumsan, ">
+    <!-- 자동 새로고침 설정-->
+<!--    <meta http-equiv="refresh" content="180">-->
+    
+    <!-- 반응형, 모바일, 태블릿 사이트일 경우 뷰포트 설정-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        
+ 
+    <!-- 크로스 브라우징 -->
+    <style>
+    /*-moz(파이어폭스) -o(오페라) -webkit(사파리) */
+    body, html {-ms-overflow-style:none;}
+    ::-webkit-scrollbar {display: none;}
+    ::-o-scrollbar {display: none;}
+    ::-moz-scrollbar {display: none;}
+    </style>
+   
+    <!-- 사용 폰트 설정-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    
+    
+    <!-- CSS 불러오기-->
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="mobile.css">
+    
+    <!-- js 불러오기 -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <!-- 모바일, 태블릿 바꾸기 -->
+<!--
+    <script>
+    $(document).ready(function(){
+       var mediaWd = parseInt($(window).width());
+        if(mediaWd<=767){
+            location.href="mobile.html";
+        } else if(mediaWd>=768 && mediaWd<=959){
+            location.href="tablet.html";      
+        } else {
+            location.href="index.html";      
+        }
+    });    
+    </script>
+-->
+    <script src="./weather/jquery.xdomainajax.js"></script>
+    <script>
+    var request = new XMLHttpRequest();
+    request.open('GET', '/', async=true);
+    request.send();
+    </script>
+    <script>
+        var city = "Geumsan,KR";  //도시명 변경
+        function parseWeather() {
+            loadJSON(function (response) {
+                var jsonData = JSON.parse(response);
+                document.getElementById("todaysWeather").innerHTML = jsonData["list"][0]["weather"][0]["main"];
+            });
+        }
+        function loadJSON(callback) { //url의 json 데이터 불러오는 함수
+            var url = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+city+"&cnt=7&appid=2a1ad423e9fad1a3ceda81fda56b1366";
+            var request = new XMLHttpRequest();
+            request.overrideMimeType("application/json");
+            request.open('GET', url, true);
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == "200") {
+                    callback(request.responseText);
+                }
+            };
+            request.send(null);
+        }
+        window.onload = function () {
+            parseWeather();
+        }
+    </script>
+    <script>
+    $(document).ready(function(){
+        setTimeout(function (){
+            var wed = $("#todaysWeather").text();
+            console.log(wed.trim().toLocaleLowerCase());
+            
+            if (wed.toLocaleLowerCase() == 'clear') {
+                $("#weatherTxt").text("날씨 : 맑음");
+                $("#weatherPic img").attr("src" ,"./img/weathericon/icon_01.gif");
+            } else if(wed.toLocaleLowerCase() == 'rain') {
+                $("#weatherTxt").text("날씨 : 비");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_19.gif");
+            } else if(wed.toLocaleLowerCase() == 'few clouds') {
+                $("#weatherTxt").text("날씨 : 구름 조금");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_03.gif");
+            } else if(wed.toLocaleLowerCase() == 'snow') {
+                $("#weatherTxt").text("날씨 : 눈");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_23.gif");
+            } else if(wed.toLocaleLowerCase() == 'broken clouds') {
+                $("#weatherTxt").text("날씨 : 구름 많음");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_04.gif");
+            } else {
+                $("#weatherTxt").text("날씨 : 흐림");
+                $("#weatherPic img").attr("src", "./img/weathericon/icon_16.gif");
+            }
+        }, 400);
+    });
+/* 날씨 변수
+few clouds
+broken clouds
+overcast clouds
+scattered clouds
+rain
+snow
+clear
+sky is clear
+heavy intensity rain
+light rain
+moderate rain
+thunderstorm
+mist ....
+*/
+    </script>
+    <!-- 복사하여 붙여 넣기 끝 -->
+    
+    <script src="./main.js"></script>
+    <script src="./main2.js"></script>
+    
+</head>
+<body>
+<div class="container">
+    <div id="mhd">
+    <input type="checkbox" id="ck1" class="ck">
+    <input type="checkbox" id="ck2" class="ck"> 
+    <header class="mhd">
+        <label for="ck1" class="gnbCall">
+            <img src="./mobile/user.png" alt="회원정보">
+        </label>
+        <h1 class="logoFrame">
+            <a href="mobile.html" class="mlogo">
+                <img src="./img/ci_02.jpg" alt="로고">
+            </a>
+        </h1>
+        <label for="ck2" class="tnbCall">
+            <span class="lst1"></span>
+            <span class="lst2"></span>
+            <span class="lst3"></span>
+        </label>
+    </header>
+    <nav id="mgnb">
+        <ul>
+            <li><a href="">로그인</a></li>
+            <li><a href="">나의금산</a></li>
+            <li><a href="">전자우편</a></li>
+            <li><a href="">우리금산</a></li>
+            <li><a href="">소통참여</a></li>
+            <li><a href="">부서안내</a></li>
+            <li><a href="">청사안내도</a></li>
+        </ul>
+        <label for="ck1" class="closeBtn"></label>
+    </nav>
+    <nav id="mtnb">
+        <ul>
+            <li><a href="">미디어</a></li>
+            <li><a href="">전자민원</a></li>
+            <li><a href="">정보공개</a></li>
+            <li><a href="">분야별정보</a></li>
+        </ul>
+        <label for="ck1" class="closeBtn"></label>
+    </nav>
+    </div>
+<!--
+<header>
+    <div id="header_top" class="hd">
+       <div class="hdWrap">
+           <a href="index.html" class="logo"></a>
+       <nav id="gnb">
+       <ul>
+           <li class="gnbItem1"><a href="login.html">로그인</a></li>
+           <li class="gnbItem1"><a href="login.html">나의금산</a></li>
+           <li class="gnbItem1"><a href="login.html">전자우편</a></li>
+           <li class="gnbItem1"><a href="geumsan.html">우리금산</a></li>
+           <li class="gnbItem1"><a href="citizen.html">소통참여</a></li>
+           <li class="gnbItem1"><a href="geumsan_sub11.html">부서안내</a></li>
+           <li class="gnbItem1"><a href="geumsan_sub14.html">청사안내도</a></li>
+       </ul>
+       </nav>
+       <nav id="topNav">
+           <ul>
+               <li><a href="media.html">미디어</a></li>
+               <li><a href="">전자민원</a></li>
+               <li><a href="">정보공개</a></li>
+               <li><a href="">분야별정보</a></li>
+           </ul>
+       </nav>   
+       </div>      
+    </div>
+    <div id="header_bottom" class="hd2">
+        <div class="hdWrap2">
+            <a href="index.html" class="logo2"></a>
+            <nav id="gnb2">
+                <form action="" id="searchForm">
+                    <input type="text" id="keyword" placeholder="검색어를 입력해 주세요." autofocus name="keyword">
+                    <input type="submit" class="frmBtn searchBtn" value="">
+                </form>
+            </nav>
+            <nav class="weatherForm">
+                <div id="todaysWeather" style="display:none;"></div>
+                <div id="weatherTxt"></div>
+                <div id="weatherPic">
+                    <img src="" alt="">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+-->
+<main class="content">
+   <!--page1-->
+    <div class="page1">
+    <div id="slide" class="page">
+       <ul class="ban">
+           <li><a href=""><img src="./mobile/vsimg01.jpg" alt="세계중요농업유산등재"></a></li>
+           <li><a href=""><img src="./mobile/vsimg02.jpg" alt="전자도서관"></a></li>
+           <li><a href=""><img src="./mobile/vsimg03.jpg" alt="금산역사문화박물관"></a></li>
+           <li><a href=""><img src="./mobile/vsimg04.jpg" alt="책대출반납"></a></li>
+           <li><a href=""><img src="./mobile/vsimg05.jpg" alt="2019년사업체조사"></a></li>
+           <li><a href=""><img src="./mobile/vsimg06.jpg" alt="어느멋진날에김동규"></a></li>
+           <li><a href=""><img src="./mobile/vsimg07.jpg" alt="전국노래자랑"></a></li>
+       </ul>
+       <ul class="btnFrame">
+           <li class="left">
+               <button class="banBtn prevBtn"></button>
+           </li>
+           <li class="right">
+               <button class="banBtn nextBtn"></button>
+           </li>
+       </ul>
+    </div>
+<!--
+   <div id="sideban" class="page">
+       <ul class="side">
+           <li><a href="" class="sideimg1">
+               <img src="./img/slide_ban03.jpg" alt="민원서비스"></a></li>
+           <li><a href="" class="sideimg2">
+               <img src="./img/slide_ban02.jpg" alt="금산인삼"></a></li>
+           <li><a href="" class="sideimg3">
+               <img src="./img/slide_ban01.jpg" alt="평생학습포탈"></a></li>
+       </ul>
+    </div>
+-->
+   </div>
+   <!--page2-->
+   <div class="page2">
+       <div class="menu">
+           <ul class="subMenu">
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon08.png" alt="">
+                       <p class="menuCom">복지정보</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon07.png" alt="">
+                       <p class="menuCom">금산농업</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon06.png" alt="">
+                       <p class="menuCom">기업/경제</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon05.png" alt="">
+                       <p class="menuCom">교통/환경</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon04.png" alt="">
+                       <p class="menuCom">교육/문화</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon03.png" alt="">
+                       <p class="menuCom">부동산/토지</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon02.png" alt="">
+                       <p class="menuCom">생활건강</p>
+                   </a>
+               </li>
+               <li>
+                   <a href="">
+                       <img src="./img/vsicon01.png" alt="">
+                       <p class="menuCom">보건정보</p>
+                   </a>
+               </li>
+           </ul>
+       </div>
+   </div>
+   <!--page3-->
+   <div class="page3">
+      <div id="board1" class="page">
+           <h2>금산은 지금</h2>
+<!--
+           <div class="notiImg">
+              <p class="img">
+                  <a href="">
+                      <img src="./img/notiImg01.jpg" alt="금산군보건소">
+                  </a>
+              </p>
+              <p class="txt">
+                 <a href="">금산군보건소, 보호자없는 병원 사업 호응</a>
+              </p> 
+           </div>
+-->
+           <div class="notiTxt">
+               <ul>
+                   <li>
+                       <a href=""><span class="ntxt">보도자료</span></a>
+                       <a href="">금산다락원, 상반기 5대 특별 기획공연 이벤트 확정</a>
+                   </li>
+                   <li>
+                       <a href=""><span class="ntxt">고시공고</span></a>
+                       <a href="">금산군 새기술실증포장 관리 기간제근로자 공개채용 공고</a>
+                   </li>
+                   <li>
+                       <a href=""><span class="ntxt">입법예고</span></a>
+                       <a href="">금산군 참전유공자 지원에 관한 조례 일부개정 조례안 입법예고</a>
+                   </li>
+                   <li>
+                       <a href=""><span class="ntxt">읍면소식</span></a>
+                       <a href="">2019년 전기이륜차 및 전기자동차 민간보급사업 공고 알림</a>
+                   </li>
+               </ul>
+           </div>
+       </div>
+       <div id="may" class="page">
+           <div class="mayor">
+               <a href="" class="mayorImg">
+                   <h2 class="mayTit">열린 군수실</h2>
+                   <p class="mayCom">금산군수 문정우</p>
+               </a>
+           <ul>
+               <li ><a href="https://www.geumsan.go.kr/chief/" class="chief">열린군수실</a></li>
+               <li ><a href="http://www.geumsan.go.kr/html/gunsu/sub03/sub03_0303.html" class="gunsu">공약사항</a></li>
+           </ul>
+           </div>
+       </div>
+   </div>
+   <!--page4-->
+   <div class="page4">
+       <div id="sevi" class="page">
+           <h2>주요 서비스</h2>      
+           <div class="seviMenu">
+               <ul>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon01.png" alt="유가정보"></a>
+                       <p class="seviCom">유가정보</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon02.png" alt="교통정보"></a>
+                       <p class="seviCom">교통정보</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon03.png" alt="취업정보"></a>
+                       <p class="seviCom">취업정보</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon04.png" alt="문화공연"></a>
+                       <p class="seviCom">문화공연</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon05.png" alt="부동산정보"></a>
+                       <p class="seviCom">부동산정보</p>
+                   </li>
+               </ul>
+               <ul>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon06.png" alt="재난안전"></a>
+                       <p class="seviCom">재난안전</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon07.png" alt="금산통계"></a>
+                       <p class="seviCom">금산통계</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon08.png" alt="군수실방문"></a>
+                       <p class="seviCom">군수실방문</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon09.png" alt="미디어센터"></a>
+                       <p class="seviCom">미디어센터</p>
+                   </li>
+                   <li class="seviItme1">
+                       <a href="">
+                       <img src="./img/icon10.png" alt="학습포털"></a>
+                       <p class="seviCom">학습포털</p>
+                   </li>
+               </ul>
+           </div>
+       </div>   
+<!--
+       <div id="sevi2" class="page">
+           <div class="seviBtn">
+              <a href="" class="setBtn">설정하기
+                  <img src="./img/setBtn.png" alt="설정하기">
+              </a>
+           </div>  
+           <div class="seviLst">
+               <ul class="seviLst2">
+                   <li><a href="">예산안내</a></li>
+                   <li><a href="">온라인전자민원창구</a></li>
+                   <li><a href="">군정알리미</a></li>
+                   <li><a href="">부서안내</a></li>
+                   <li><a href="">철도승차권온라인예매</a></li>
+               </ul>
+           </div>
+       </div>
+-->
+       
+       
+   </div>
+   <!--page5-->
+   <!-- 카테고리 네이밍
+    생활 p_life
+    여행 p_trip
+    문화 p_cul
+    뉴스 p_news
+    사람 p_person
+   -->
+   <div class="page5">
+       <div id="news" class="page">
+           <h1>새소식</h1>
+           <div class="newsBorad">
+               <div class="newsLstmenu1">
+               <ul class="newsLst1">
+                   <li>
+                       <h2 class="p_news">뉴스</h2>
+                       <a href="">
+                           <img src="./img/p_news_img01.jpg" alt="">
+                           <h3 class="newsTit">금산군, 가옥주변 재해 위험목 제거 박차</h3>
+                           <p class="newsCom">금산군, 가옥주변 재해 위험목 제거 박차 안전위협 42그루 제거 금산군은 일상의 안전을 위협하는 위험목 사전 제거에 박차를 가하고 있다. 주민의 생명과 재산보호에 대한 선제적 대응은 물론 생활불편 최소화를 위해서다.</p>
+                       </a>
+                   </li>
+                   <li>
+                       <h2 class="p_news">뉴스</h2>
+                       <a href="">
+                           <img src="./img/p_news_img02.jpg" alt="">
+                           <h3 class="newsTit">금산 통합건강이동버스 오지마을 주치의 역할 톡톡</h3>
+                           <p class="newsCom">금산 통합건강이동버스 오지마을 주치의 역할 톡톡 지난해 78개소 2324명 혜택, 한방진료 가장 인기 금산군보건소 통합건강이동버스가 의료접근성이 낮은 지역주민들의 주치의 역할을 톡톡히 해내고 있다.</p>
+                       </a>
+                   </li>
+                   <li>
+                       <h2 class="p_trip">여행</h2>
+                       <a href="">
+                           <img src="./img/p_trip_img01.jpg" alt="">
+                           <h3 class="newsTit">온가족 다함께 즐기는 #금산역사문화박물관 놀러오세요!</h3>
+                           <p class="newsCom">지난 5월, 고대하던 금산역사문화박물관이 개관했어요!위치는 (구)향토관, 인삼모자상이 위치해 있는 곳이에요~!| 네비게이션주소 : 충청남도 금산군 금산읍 금산로 1575, 금산역사문화박물관</p>
+                       </a>
+                   </li>
+               </ul>
+               </div>
+               <div class="newsLstmenu2">
+               <ul class="newsLst2">
+                   <li>
+                       <h2 class="p_cul">문화</h2>
+                       <a href="">
+                           <h3 class="newsTit">충남무형문화재 금산농바우끄시기,여성이 지내는 기우제</h3>
+                           <p class="newsCom">충남무형문화재 제32호로 지정된 금산농바우끄시기는 금강변에 위치한 부리면 어재리 느재마을을 중심으로 인근 마을과 제원면(濟原面) 일대에서 치러지는 기우제입니다. 농바우끄시기는 ‘농(籠)바위끌기’라는 뜻으로, 농바우는 느재마을에서 동남쪽 약 350m 떨어진 시루봉 중턱에 있는 바위라고 하는데요.</p>
+                       </a>
+                   </li>
+                   <li>
+                       <h2 class="p_cul">문화</h2>
+                       <a href="">
+                           <h3 class="newsTit">#박물관에서 #배우는 #재미있는 #금산의역사</h3>
+                           <p class="newsCom">지난 5월 개관한 금산역사문화박물관에서는 첫 번째 교육프로그램으로 초등학생 대상 여름방학 특집을 기획했었는데요. 바로 ‘재미있게 배우는 금산의 역사’ 라는 주제로 하루 동안 금산의 역사를 체험하는 프로그램입니다.</p>
+                       </a>
+                   </li>
+               </ul>   
+               <ul class="newsLst21">
+                   <li>
+                       <h2 class="p_news">뉴스</h2>
+                       <a href="">
+                           <img src="./img/p_news_img03.jpg" alt="">
+                           <h3 class="newsTit">이낙연 국무총리, 깻잎 주산지 생산 유통현장 금산 방문</h3>
+                           <p class="newsCom">이낙연 국무총리, 깻잎 주산지 생산 유통현장 금산 방문 이낙연 국무총리는 지난 16일 주말 오전에 충남 금산 만인산농협 산지유통센터을 방문, 금산깻잎 산지유통시설 및 깻잎생산 농가와 대화를 가졌다. 이 총리는 박기범 만인산농협 산지유통센터장으로부터 깻잎생산과 산지유통센터, 쌈채류 유통 현황에 대해 설명을 듣고 최근 수년간 농가 소득이 좀처럼 오르지 않아 걱정이 많았는데 만인산농협처럼 특화된 장점을 살린 곳이 많아지면 농가 소득도 높아질 것이라고 말했다.</p>
+                       </a>
+                   </li>
+               </ul>
+               <ul class="newsLst22">
+                   <li>
+                       <h2 class="p_life">생활</h2>
+                       <a href="">
+                           <h3 class="newsTit">금산시장 시네마켓 청년몰, 재래시장활성화를 위한 발걸음!</h3>
+                           <p class="newsCom">요즘 젊은이들이 고민과 화두는 역시 일자리다. 해외연수에 박사학위 등 스펙이 아무리 좋아도 낙타가 바늘구멍을 통과하는 것만큼 녹록치 않다. 공무원 및 공공기관의 경쟁률은 수 백 대 일에 달하고, 적잖은 돈이 들어가는 창업은 더 큰 고민을 부른다. 하지만 어떤 젊은이들은 온갖 정보력을 동원해 길을 찾고 자신만의 영역을 구축한다. 얼마 전 마무리된 금산시장 창업골목에 당당하게 점포를 낸 젊은 창업주들을 만났다.</p>
+                       </a>
+                   </li>
+                   <li>
+                       <h2 class="p_life">생활</h2>
+                       <a href="">
+                           <h3 class="newsTit">#밥도둑 #깻잎요리 #금산추부깻잎</h3>
+                           <p class="newsCom">금산 깻잎 1년 생산량은 총 8,716톤으로 상자로 환산하면 435만 8천 상자에 해당하는데요. 하루 5톤 차량 10대 분량의 깻잎이 서울, 대전, 광주 등 전국 각 지역으로 출하됩니다. 이는 낱장(1상자당 1,200장)으로 따지면, 대한민국 인구 1인당 101장 가량 소비하는 셈이라고 해요!</p>
+                       </a>
+                   </li>
+               </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!--page6-->
+   <div class="page6">
+       <div id="etcBorad" class="page">
+          <div class="eventLst">
+          <h2>이벤트 신청</h2>
+               <ul>
+                   <li>
+                   <a href="">
+                       <span class="event">[진행중]</span>
+                       <span class="event_env">환경</span> 서울대공원 홈페이지 만족도 조사에 참여해주세요!
+                   </a>
+                   </li>
+                   <li>
+                   <a href="">
+                       <span class="event">[진행중]</span>
+                       <span class="event_work">행정</span> 서울이 묻습니다! 시민 모니터링단(소통평가) 모집
+                   </a>
+                   </li>
+                   <li>
+                   <a href="">
+                       <span class="event">[진행중]</span>
+                       <span class="event_env">환경</span> 서울시, 주요 4개 공원에서 스몰_에코웨딩 예비부부 144쌍 모집
+                   </a>
+                   </li>
+                   <li>
+                   <a href="">
+                       <span class="event">[진행중]</span>
+                       <span class="event_env">환경</span> 2019년 승용차마일리지 신규가입 모집안내
+                   </a>
+                   </li>
+                   <li>
+                   <a href="">
+                       <span class="event">[진행중]</span>
+                       <span class="event_wel">복지</span> 서울시, 청소년 정책 스스로 만든다... 70여명 청소년 모집
+                   </a>
+                   </li>
+               </ul>
+           </div>
+           <div class="festiLst">
+               <h2>이달의 행사 및 축제</h2>
+               <ul>
+                   <li>
+                       <a href=""><span class="festi_cul">문화</span></a>
+                       <a href="">2019. 2월 문화달력</a>
+                   </li>
+                   <li>
+                       <a href=""><span class="festi_cul">문화</span>
+                       <a href="">2/16일 서울역사박물관 재능나눔콘서트</a>
+                   </a>
+                   </li>
+                   <li>
+                       <a href=""><span class="festi_eco">경제</span>
+                       <a href="">아시아 최고 경쟁률 뚫은 크리에이터, 오는 28일 서울에 모인다.</a>
+                   </a>
+                   </li>
+                   <li>
+                       <a href=""><span class="festi_cul">문화</span>
+                       <a href="">서울로미디어캔버스 제5회 기획전시</a>
+                   </a>
+                   </li>
+                   <li>
+                       <a href=""><span class="festi_cul">문화</span>
+                       <a href="">서울도서관, 환경과 미래 주제 도서 추천 '2월 테마 도서 전시' 개최</a>
+                   </a>
+                   </li>
+               </ul>
+           </div>
+           <div class="life_serviceLst">
+               <h2>생활정보 서비스</h2>
+               <ul>
+                   <li class="col6"><a href="">버스</a></li>
+                   <li class="col6"><a href="">지하철</a></li>
+               </ul>
+               <ul>
+                   <li class="col6"><a href="">도로소통</a></li>
+                   <li class="col6"><a href="">심야버스</a></li>
+               </ul>
+               <ul>
+                   <li class="col6"><a href="">내주변정보</a></li>
+                   <li class="col6"><a href="">부동산</a></li>
+               </ul>
+           </div>
+       </div>
+   </div>
+   <div class="banner">
+       <div id="banner" class="page">
+           <ul class="ban2">
+           <li><a href=""><img src="./img/ban_img01.jpg" alt="전국시장군수구청장협의회"></a></li>
+           <li><a href=""><img src="./img/ban_img02.jpg" alt="예산낭비신고하세요"></a></li>
+           <li><a href=""><img src="./img/ban_img03.jpg" alt="조직정보지표공개"></a></li>
+           <li><a href=""><img src="./img/ban_img04.jpg" alt="부동산불법거래신고센터"></a></li>
+           <li><a href=""><img src="./img/ban_img05.jpg" alt="공무원의불친절부조리신고"></a></li>
+           <li><a href=""><img src="./img/ban_img06.jpg" alt="지방규제개혁지원사전컨설팅감사"></a></li>
+           <li><a href=""><img src="./img/ban_img07.jpg" alt="대한법률구조공단"></a></li>
+           <li><a href=""><img src="./img/ban_img08.jpg" alt="행정공제회"></a></li>
+           <li><a href=""><img src="./img/ban_img09.jpg" alt="1회용비닐봉투사용금지"></a></li>
+           <li><a href=""><img src="./img/ban_img10.jpg" alt="자연스러운공무원이야기"></a></li>
+       </ul>
+       </div>
+   </div>
+</main>   
+<footer id="footer">
+       <div class="footer_top">
+           <div class="ftLst">
+           <ul>
+               <li><a href="">개인정보처리방침</a></li>
+               <li><a href="">저작권정책</a></li>
+               <li><a href="">이메일집단수집거부</a></li>
+               <li><a href="">뷰어다운로드</a></li>
+           </ul>
+           </div>
+       </div>
+       <div class="footer_buttom">
+           <a href="" class="ftlogo">
+               <img src="./img/ci_black.gif" alt="">
+            </a>
+           <div class="address">
+                <p class="city">[32733] 충청남도 금산군 금산읍 군청길 13
+                    <a href="geumsan_sub13.html"  onclick="" class="map">[찾아오시는 길]</a></p>
+                <p class="call">전화번호 : 041-750-2114 </p>
+                <p class="copy">&copy; COPYRIGHT(C) 2015 BY GEUMSAN COUNTY ALL RIGHTS RESERVED</p>
+           </div>
+<!--
+           <div class="mark">
+                <a href="" onclick="" title="웹접근성 품질마크">
+                <img src="./img/accessibility.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" /></a>
+           </div>
+-->
+       </div> 
+   </footer>
+</div>   
+</body>
+</html>
