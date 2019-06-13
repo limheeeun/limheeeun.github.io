@@ -1,7 +1,7 @@
 @charset "uft-8";
 
 * {margin: 0; padding: 0;}
-body, html {width: 100%; height: 100%; font-family: 'Open Sans', 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+body, html {width: 100%; height: 100%; font-family: 'Open Sans', 'Noto Sans KR', sans-serif;}
 ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background:transparent; outline: 0; border: 0; display: none; }
@@ -166,7 +166,7 @@ label.memship {padding-left: 8px;}
 .more:after { content:"MORE +"; }    
 
 
-.btn_frame { position:absolute; width:100%; bottom:35px; z-index:60;  } 
+.btn_frame { position:absolute; width:100%; bottom:35px; z-index:10;  } 
 .btn_box { position:relative; width:80px; margin:0 auto; }
 .btn_box li { width:20px; height:20px; 
      position:absolute;  top:2px; }
@@ -182,7 +182,7 @@ label.memship {padding-left: 8px;}
 /*본문 - 인스타그램*/
 .main_instagram {clear: both; }
 .page_subtitle {text-align:center; padding-bottom: 30px; letter-spacing: 2px; font-size: 2vh; color: #333;}
-.main_instagram .wrap {position: relative; width: 100%; height: 550px;}
+.main_instagram .wrap {position: relative; width: 100%; min-height: 550px;}
 .main_instagram .insta1 {text-align: center; clear: both;}
 .main_instagram .insta1 li {display: inline-block;}
 .main_instagram .insta1 [class*=item] img {display: block; width: 200px; height: 200px; opacity: 1;}

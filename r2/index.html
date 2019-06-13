@@ -32,19 +32,22 @@
     
     <!-- 제이쿼리 연결 -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./top.js"></script>
+
     <script src="./slide.js"></script>
     <script src="./slide2.js"></script>
+    <script src="./top.js"></script>
 
     
     <style>
     @media screen and (min-width:960px) { 
+        body {overflow-x: hidden;}
         .hd { position:fixed; width:260px; height:100%; left:0;  z-index:90; float: left;}
         .logo img { width:150px; padding-top: 17px; }  
         #container { position:relative; width: 90%; float:left; margin-right: -100%; padding-left:260px; }
         .mo { display:none; }
         .mobile { display:none; }
-        .vs .mobile { display:none; }   
+        .vs .mobile { display:none; }
+        .img_frm1 video {width: 100%;}
         .close {display: none;}
         .desk { display:block; }
         #gnb { position:relative; top:auto; right:auto; height:auto; }
@@ -81,13 +84,13 @@
             <label for="sel3" class="login">Login</label>
             <label for="sel4" class="memship">Membership</label>
             <div class="button">
-                <button class="shop"  onclick="location.href='http://www.didierdubot.co.kr/'">SHOP</button>
+                <button class="shop"  onclick="window.open('http://www.didierdubot.co.kr/')">SHOP</button>
             </div>    
         </div>
         <ul class="gnb">
             <li class="item1">
                 <a href=""><span>MAISON</span></a>
-                <ul class="sub">
+                <ul class="sub desk">
                     <li class="sub_menu1">
                         <a href="sub1.html">Story</a>
                     </li>
@@ -107,7 +110,7 @@
             </li>
             <li class="item3">
                 <a href="sub3.html"><span>COLLECTION</span></a>
-                <ul class="sub">
+                <ul class="sub desk">
                     <li class="sub_menu1">
                         <a>Mariage</a>
                     </li>
@@ -218,7 +221,6 @@
 </header>
 <div id="container">
     <figure class="vs">
-        <h1 class="vs_tit">Couleur de femme</h1>
         <img src="./img/vs_bg.jpg" alt="비주얼" class="mobile">
         <ul class="imgBox desk">
             <li class="img_frm1">
@@ -321,30 +323,30 @@
         <div class="ban1 mobile">
             <ul class="ban_frame" id="vs_data1">
                 <li class="ban_item1">
-                    <img src="./img/ban_2019.jpg" alt="배너1">
+                    <img src="./img/ban_mo_2019.jpg" alt="배너1">
                     <div class="titBox">   
-                        <h3 class="contentTit">19' Le vent chaud_La D.D<br>with leenayoung</h3>
+                        <h3 class="contentTit"></h3>
                         <a href="" class="more"></a>
                     </div>    
                 </li>
                 <li class="ban_item2">
-                    <img src="./img/ban_2018.jpg" alt="배너2">
+                    <img src="./img/ban_mo_2018.jpg" alt="배너2">
                     <div class="titBox">   
-                        <h3 class="contentTit">18' La réalité et Le rêve</h3>
+                        <h3 class="contentTit"></h3>
                         <a href="" class="more"></a>
                     </div>    
                 </li>
                 <li class="ban_item3">
-                    <img src="./img/ban_2017.jpg" alt="배너3">
+                    <img src="./img/ban_mo_2017.jpg" alt="배너3">
                     <div class="titBox">   
-                        <h3 class="contentTit">17' Couleur de femme</h3>
+                        <h3 class="contentTit"></h3>
                         <a href="" class="more"></a>
                     </div>    
                 </li>
                 <li class="ban_item4">
-                    <img src="./img/ban_2016.jpg" alt="배너3">
+                    <img src="./img/ban_mo_2016.jpg" alt="배너3">
                     <div class="titBox">   
-                        <h3 class="contentTit">16' Respiration et repos</h3>
+                        <h3 class="contentTit"></h3>
                         <a href="" class="more"></a>
                     </div>    
                 </li>
@@ -362,7 +364,7 @@
     <section class="main_instagram">
         <h2 class="page_title">Instagram</h2>
         <p class="page_subtitle">@didierdubot_official</p>
-        <div class="wrap desk">
+        <div class="wrap">
         <ul class="insta1">
             <li class="insta_item1">
                 <a href="https://www.instagram.com/p/BwDyBvcBgGm/">

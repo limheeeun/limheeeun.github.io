@@ -1,7 +1,7 @@
 @charset "uft-8";
 
 * {margin: 0; padding: 0;}
-body, html {width: 100%; height: 100%; font-family: 'Open Sans', 'Noto Sans KR', sans-serif; overflow-x: hidden;}
+body, html {width: 100%; height: 100%; font-family: 'Open Sans', 'Noto Sans KR', sans-serif;}
 ul {list-style: none;}
 a {text-decoration: none;}
 input, button {background:transparent; outline: 0; border: 0; display: none; }
@@ -10,7 +10,7 @@ input, button {background:transparent; outline: 0; border: 0; display: none; }
 .hd {width: 100%; height: 60px; position: relative; background: #fff;}
 .mo {display: block; position: absolute; z-index: 10; width: 60px; height: 60px; }
 /*.logo {display:block; width: 100%; height:40px; text-align:center;  padding-top: 19px; position: fixed; z-index: 30; background:#fff;}*/
-.logo { display:block; width:100%; height:auto; text-align:center; padding-top: 17px; transition: 0.8s; }
+.logo { display:block; width:100%; height:auto; text-align:center; padding-top: 30px; transition: 0.8s; }
 .logo:hover {transform: scale(1.1);}
 .logo img {width: 150px;}
 
@@ -56,6 +56,11 @@ label.memship {padding-left: 8px;}
 .gnb .item4:hover .sub {height: 129px; opacity: 1; left: 260px;}
 .gnb .sub_menu1:hover {background:#fff; color: #555;}
 
+/*sns*/
+.sns { clear:both; position: absolute; bottom: 0; left: calc((100% - 160px) / 2); width:160px; height: 100px;  }
+.sns a { display:block; float:left; width:40px; height:40px; font-size: 0.9em; color: #333;}
+.sns a img {width: 20px; height: 20px;}
+
 
 /*로그인폼*/
 #loginFrm {width: 100%; min-height: 1000px; background:#fff; left: -100%; top: 0; position: fixed; transition: 0.8s; padding-top: 16%; z-index: 21; }
@@ -95,7 +100,7 @@ label.memship {padding-left: 8px;}
 .link-area li a {font-size: 0.8em; color: #333; line-height: 3;}
 .copyright {clear: both; font-size: 0.7em; color: #555; text-align: center; }
 
-.sns { clear:both; width:160px; height: 30px; margin: 20px auto 0; }
+.sns { clear:both; width:160px; height: 100px; margin: 20px auto 0; }
 .sns a { display:block; float:left; width:40px; height:40px; font-size: 0.9em; color: #333;}
 .sns a img {width: 20px; height: 20px;}
 .footer { position:relative; width: 100%; }    
@@ -108,10 +113,12 @@ label.memship {padding-left: 8px;}
 .link-area li {display: inline-block;}
 .link-area li a {font-size: 0.8em; color: #ccc; line-height: 3;}
 .copyright {clear: both; font-size: 0.7em; color: #ccc; text-align: center; }
-.sns { clear:both; width:110px; height: 30px; margin: 0px auto; }
+/*
+.sns { clear:both; width:110px; height: 100px; margin: 0px auto; }
 .sns a { display:block; float:left; width:20px; height:20px; font-size: 0.9em; color: #ccc; padding-right: 10px;}
 .sns a:last-child {padding-right: 0; }
 .sns a img {width: 18px; height: 18px;}
+*/
 
 /*-----------여기까지 공통-----------------*/
 /*-----------여기까지 공통-----------------*/
