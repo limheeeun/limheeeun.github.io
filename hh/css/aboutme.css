@@ -181,14 +181,13 @@ ul, h2, p {margin: 0; padding: 0;}
 /* desk 메뉴 끝 */
 
 /* mobile 메뉴 시작*/
-.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 90; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Muli', 'Gothic A1', sans-serif; }
+.gnb_mo { position: fixed; width: 100%; min-height: 100%; top: -100%; left: 0; transition: 0.5s; z-index: 31; visibility: hidden; background: #e8e8ec; border: 10px solid #fff; font-family: 'Permanent Marker', cusrive; }
 .gnb_mo_menu {width: 80%; min-height: 100%; margin: 25vh auto;}
 .gnb_mo_menu li {line-height: 2;}
 .gnb_mo_menu li a {display: block; text-align: center; font-size: 1.8em; letter-spacing: 2px; color: #333; transition: 0.4s;  }
 .gnb_mo_menu li a:hover {text-decoration: line-through blue; }
 #ck1:checked ~ .gnb_mo {top: 0; visibility: visible;}
 /* mobile 메뉴 끝*/
-
 
 /* 본문 */
 .container {width: 100%; height: 100%; margin: 0 auto; position: relative; }
@@ -213,10 +212,6 @@ ul, h2, p {margin: 0; padding: 0;}
 
 .prof_box {float: right; width: 65%; animation: aboAni 3s ease-in-out; animation-delay: 1s; }
 .prof_box .prof_box_title {width: 95%;}
-.prof_box h2 {line-height: 2; text-align: right; }
-.prof_point {background: blue; color: #fff; }
-.prof_box p {font-size: 0.9em; line-height: 2; text-align: right;}
-.about_title {text-decoration: line-through; text-decoration-color: #fff; color: blue; font-size: 1.2em; line-height: 3;}
 
 .table_profile {float: left; width: 50%;}
 .table_list { font-size: 0.45em; line-height: 2; letter-spacing: 1px; text-align: justify;}
@@ -230,7 +225,7 @@ ul, h2, p {margin: 0; padding: 0;}
 .btn_box li .btn { display:block; width: 15px; height: 15px; border:0; border-radius: 30px; border: 1px solid blue;  background: #fff; margin:0 auto; color: #333;  font-weight: bold; font-size: 0.8em;}
 .btn_box li .btn.on { background: blue; color: #fff;}
 
-.about_bottom {width: 100%; height: 100%; }
+.about_bottom {width: 100%; height: 100%; margin-top: 12%; }
 
 /* 어빌리티 */
 .ability { width: 45%; float: left;  margin-top: 5%; margin-right: 5%;}
