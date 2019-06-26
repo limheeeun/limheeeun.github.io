@@ -417,15 +417,39 @@ $(function(){
 <aside id="quick">
     <div class="qWrap">
         <ul class="top">
-            <li>
+            <li class="top_first">
                 <a href="" class="qlogo"></a>
             </li>
+<?php 
+        if($_SESSION['userid']=="admin") {         
+?>            
+            <li class="quick_admin">
+                <a href="#" class="hv">관리자 페이지로</a>
+            </li>
+            <li class="quick_logout">
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+<?php
+         } else if(isset($_SESSION['userid'])) {
+?>           
+            <li class="quick_logout">
+                <a href="logout.php" class="hv">로그아웃</a>
+            </li>
+            <li class="quick_edit">
+                <a href="#" class="hv">정보수정</a>
+            </li>
+<?php
+          } else {
+?>            
             <li>
                 <a href="joinForm.html" class="hv">회원가입</a>
             </li>
             <li>
-                <a href="Login.html" class="hv">로그인</a>
+                <a href="loginForm.html" class="hv">로그인</a>
             </li>
+<?php
+          }
+?>            
             <li>
                 <a href="community.html#page3" class="hv">온라인상담</a>
             </li>
@@ -435,13 +459,23 @@ $(function(){
         </ul>
         <ul class="bottom">
             <li>
-                <a href="clinic2.html" class="green">탈모치료클리닉</a>
+                <p>고객센터<br><span class="top_point">032.123.456</span></p>
+            </li>
+            <li>
+                <p>진료시간<br><span class="top_point">10:00~19:00</span></p>
+            </li>
+<!--
+            <li>
+                <a href="clinic2.html" class="green">탈모클리닉</a>
             </li>
             <li>
                 <a href="community.html" class="yellow">커뮤니티</a>
             </li>
+-->
+        </ul>
+        <ul class="top_btn">
             <li>
-                <a href="#" class="totop">위로</a>
+                <a href="#" class="totop">TOP</a>
             </li>
         </ul>
     </div>
