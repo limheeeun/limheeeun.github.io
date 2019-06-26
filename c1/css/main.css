@@ -4,7 +4,7 @@
 #vs {width: 100%; height: auto; overflow-x: hidden; position: relative; }
 .banBox {width: 200%; height: auto;transition: 0.6s;}
 .banBox li {float:left; width: 50%;}
-.banBox li img { display: block; width: 100%; height: 968px;}
+.banBox li img { display: block; width: 100%; height: auto;} /*height: 968px*/
 .banBox .ban_title {position: absolute; top: 30%; left: 10%; font-size: 8em; font-weight: bold; font-family: 'Archivo Black', sans-serif; letter-spacing: 2px; color:rgba(255,255,255,0.8);}
 .banBox .ban_coment {position: absolute; top: 48%; left: 10%; font-size: 1.5em; font-weight: bold; font-family: 'hangultuelgothic', sans-serif; text-indent: 10px; letter-spacing: 2px; color:rgba(255,255,255,0.9); text-shadow: 1px 2px 10px #747474;}
 .banBox .ban_more {display: block; position: absolute; top: 53%; left: 11%; width: 250px; height: 50px; line-height: 50px; border: 1px solid #fff; border-radius: 40px; text-align: center; color: #fff;}
