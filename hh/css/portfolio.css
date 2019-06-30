@@ -237,7 +237,7 @@ ul, h2, p {margin: 0; padding: 0;}
 #desk .img li:hover .img_on { opacity: 1; visibility: visible;}
 #desk .img li:first-child {width: 1200px; }
 
-#mobile .img {position: relative; width:6500px; height: 679px;  }
+#mobile .img {position: relative; width: 4000px; height: 679px;  }
 #mobile .img li {width: 1200px; height: 679px; float: left; margin-right:1%; position: relative; }
 #mobile .img li img {display: block; width: 1200px; height: 650px; box-shadow: 3px 5px 5px #bcbcbc;}
 #mobile .img li .img_on {position: absolute; top: 0; left: 0; color: #fff; opacity: 0; visibility: hidden; transition: 0.8s; }
