@@ -196,7 +196,8 @@ ul, h2, p {
     z-index: 6;
     width: 300px;
     height: 350px;
-    background-image: url(../img/profile.jpg); 
+    /*background-image: url(../img/profile.jpg);*/
+    background-image: url(../img/190613.jpg);
     background-size: cover; 
     background-repeat: no-repeat; 
     right: 0; 
